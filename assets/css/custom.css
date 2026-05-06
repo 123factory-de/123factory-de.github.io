@@ -1,0 +1,164 @@
+/* 123factory Brand Identity Overrides - High Contrast Technical Style */
+
+:root {
+  /* Real 123factory.de colors: High contrast, Minimal, Technical */
+  --bg-deep: #000000; 
+  --accent-primary: #bfff00; 
+  --accent-mid-purple: #bfff00; 
+  --accent-light-purple: #ffffff;
+  --accent-secondary: #ffffff;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa; 
+  --text-muted: #71717a;
+  
+  --glass-surface: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --accent-primary-rgba-03: rgba(191, 255, 0, 0.15);
+  --accent-primary-rgba-05: rgba(191, 255, 0, 0.3);
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-deep: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #3f3f46;
+  --text-muted: #71717a;
+  --accent-primary: #4d7c0f; 
+  --accent-light-purple: #000000;
+}
+
+/* Global Background and Body */
+body {
+  background-color: var(--bg-deep) !important;
+  background-image: none !important;
+}
+
+[data-theme="light"] body {
+  background-color: #ffffff !important;
+}
+
+/* Header Refinement */
+.sticky-header {
+  background-color: var(--bg-deep) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.header-nav {
+  background-color: transparent !important;
+}
+
+.logo-link {
+  color: var(--text-primary) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Breadcrumbs Fix: Restoring Accent Color for Links */
+.breadcrumb-list a {
+  color: var(--accent-primary) !important; /* Home, Posts back to Lime */
+  text-decoration: none;
+}
+
+.breadcrumb-list span.breadcrumb-sep {
+  color: var(--text-muted) !important; /* Separator remains muted */
+}
+
+.breadcrumb-list .breadcrumb-current {
+  color: var(--text-secondary) !important; /* Current page stays muted */
+}
+
+.breadcrumb-list a:hover {
+  color: var(--text-primary) !important;
+  text-decoration: underline;
+}
+
+/* Hero Section: Sophisticated Bold Typography */
+.hero-section {
+  padding: 10rem 1.5rem !important;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-image {
+  display: none !important;
+}
+
+.hero-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 1000px !important;
+  margin: 0 auto;
+  gap: 2.5rem !important;
+}
+
+.hero-title-line1, .hero-title-line2 {
+  font-size: clamp(3.5rem, 8vw, 6.5rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.hero-title-line1 {
+  color: var(--text-primary) !important;
+}
+
+.hero-title-line2 {
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(191, 255, 0, 0.2));
+}
+
+[data-theme="light"] .hero-title-line2 {
+  background: none;
+  -webkit-text-fill-color: #4d7c0f;
+  color: #4d7c0f !important;
+  filter: none;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem !important;
+  color: var(--text-secondary) !important;
+  margin-top: 1rem !important;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
+
+/* Card and Content Surface */
+.post-card, .single-post, .post-toc {
+  background-color: #080808 !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+[data-theme="light"] .post-card, 
+[data-theme="light"] .single-post, 
+[data-theme="light"] .post-toc {
+  background-color: #fafafa !important;
+}
+
+/* Tags */
+.post-tag, .tag-item {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--glass-border) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px !important;
+}
+
+.post-tag:hover, .tag-item:hover {
+  background-color: var(--accent-primary) !important;
+  color: #000000 !important;
+  border-color: var(--accent-primary) !important;
+}
