@@ -1,0 +1,117 @@
+baseURL = 'https://123factory.de/'
+defaultContentLanguage = 'en'
+title = '123factory Blog'
+theme = 'hugo-mana-theme'
+
+# Configure how many posts to show per page
+[pagination]
+  pageSize = 10
+
+# Table of Contents
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+    style = "catppuccin-macchiato"
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  enableIntegrity = false
+  relatedPostsCount = 3
+  description = "123factory Official Blog"
+  author = "123factory"
+  heroTitleLine1 = "123factory"
+  heroTitleLine2 = "Creative Studio & Blog"
+  footerText = "Built with Hugo and Mana theme"
+
+  [params.social]
+    github = "https://github.com/123factory-de"
+    email = "hello@123factory.de"
+
+  [params.codeHighlight]
+    darkTheme = "catppuccin-macchiato"
+    lightTheme = "catppuccin-frappe"
+
+  [params.copyright]
+    startYear = 2026
+    owner = "123factory"
+
+# English (default)
+[languages.en]
+  languageCode = "en-US"
+  languageName = "English"
+  contentDir = "content/en"
+  weight = 1
+  title = "123factory Blog"
+
+  [[languages.en.menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+
+  [[languages.en.menus.main]]
+    name = "Posts"
+    pageRef = "/posts"
+    weight = 20
+
+  [[languages.en.menus.main]]
+    name = "Tags"
+    pageRef = "/tags"
+    weight = 30
+
+  [[languages.en.menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 40
+
+# Korean
+[languages.ko]
+  languageCode = "ko-KR"
+  languageName = "한국어"
+  contentDir = "content/ko"
+  weight = 2
+  title = "123factory 블로그"
+
+  [languages.ko.params]
+    description = "123factory 공식 블로그"
+    heroTitleLine1 = "123factory"
+    heroTitleLine2 = "크리에이티브 스튜디오 & 블로그"
+
+  [[languages.ko.menus.main]]
+    name = "홈"
+    pageRef = "/"
+    weight = 10
+
+  [[languages.ko.menus.main]]
+    name = "포스트"
+    pageRef = "/posts"
+    weight = 20
+
+  [[languages.ko.menus.main]]
+    name = "태그"
+    pageRef = "/tags"
+    weight = 30
+
+  [[languages.ko.menus.main]]
+    name = "소개"
+    url = "/about/"
+    weight = 40
