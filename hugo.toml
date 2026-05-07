@@ -1,4 +1,4 @@
-baseURL = 'https://123factory.de/'
+baseURL = 'https://blog.123factory.de/'
 defaultContentLanguage = 'en'
 title = '123 Factory Blog'
 theme = 'hugo-mana-theme'
