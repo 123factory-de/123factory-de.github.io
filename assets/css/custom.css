@@ -171,6 +171,17 @@ body {
   border: 1px solid var(--glass-border) !important;
 }
 
+.single-post {
+  padding: 3rem !important;
+  border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+  .single-post {
+    padding: 1.5rem !important;
+  }
+}
+
 [data-theme="light"] .post-card, 
 [data-theme="light"] .single-post, 
 [data-theme="light"] .post-toc {
