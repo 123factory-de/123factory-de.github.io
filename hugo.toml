@@ -57,6 +57,9 @@ theme = 'hugo-mana-theme'
     startYear = 2022
     owner = "123 Factory"
 
+  [params.googleAnalytics]
+    id = 'G-RX5SD0WZWS'
+
 # English (default)
 [languages.en]
   languageCode = "en-US"
