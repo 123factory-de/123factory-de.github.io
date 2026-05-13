@@ -16,7 +16,7 @@ Berlin currently hosts 5,052 startups, 1,052 investors, 80 accelerators, and 485
 ![[European Startup Chronicles] Berlin's Startup Ecosystem ①](image1.jpg)
 *Digital Hubs in Germany leading the efficient introduction of AI and digitalization technologies for SMEs. There are 12 Digital Hubs across Germany. Photo: de:hub Homepage*
 
-> **#Berlin Startups' Key Industries: Fintech, AI, and Big Data**
+### #Berlin Startups' Key Industries: Fintech, AI, and Big Data
 
 As digital-related companies and startups emerged, Germany's appeal as a digital industrial nation increased. However, internal criticism grew regarding the slow pace of digitalization. In response, the German Federal Ministry for Economic Affairs and Energy recognized the need for national support and established specialized <b>Digital Hubs (de:hub)</b> in 12 regions in 2017, each focusing on different industries.
 
@@ -31,11 +31,11 @@ At the heart of Berlin's Fintech scene is <b>Finleap</b>, a Fintech-specialized 
 
 The Berlin IoT Hub network centers around Code University of Applied Sciences within Factory Berlin, Next Big Thing AG (a specialized venture studio), Motion Lab (a hardware innovation hub), BuildingMinds (a Schindler Group startup and Microsoft partner), Team Neusta (providing IoT software solutions), HTW Berlin (University of Applied Sciences), and Berlin Partner (an agency under the Berlin Senate Department for Economics).
 
-> **#Unicorn Companies in Berlin**
+### #Unicorn Companies in Berlin
 
 A unicorn company refers to a privately held startup valued at over $1 billion and founded within the last 10 years. Unicorns hailing from Berlin include Auto 1 (an online used car trading platform), <b>N26</b> (a digital banking service), <b>Delivery Hero</b> (famous for acquiring Korea's 'Woowa Brothers'), <b>Omio</b> (a travel and transportation info platform), <b>HelloFresh</b> (a meal kit service), <b>Sumup</b> (a contactless card payment service), <b>Zalando</b> (an online fashion mall), <b>WeFox</b> (an Insurtech startup), and <b>GetYourGuide</b> (a travel startup).
 
-> **#Promising Startups in Berlin**
+### #Promising Startups in Berlin
 
 The startup-focused media outlet eu-startups.com announced a list of <b>notable German startups to watch in 2021</b>. Many of these are based in Berlin.
 

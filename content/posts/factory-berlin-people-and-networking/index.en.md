@@ -16,13 +16,13 @@ I moved into Factory Berlin in February 2020. I happened to visit in December 20
 ![Factory Berlin CRO Catherine Bischoff. I applied to Factory Berlin with her as my role model. Photo: Factory Berlin](image1.webp)
 *Factory Berlin CRO Catherine Bischoff. I applied to Factory Berlin with her as my role model. Photo: Factory Berlin*
 
-> **#Meeting Catherine Bischoff**
+### #Meeting Catherine Bischoff
 
 At the time, I was quite excited to meet a C-level executive from one of Europe's leading startup accelerators. The meeting was short but very intense. She kindly explained **Factory's comfortable environment, where people can occasionally bring their children or pets to work, and the support programs for female founders within Factory**, using her own situation as an example. I felt that Catherine's dynamism made Factory shine even more. After that, I decided to apply to Factory, thinking, "I want to work in the same space as Catherine. I want to grow as a similar woman."
 
 At the time, I didn't have a specific business idea, but I was contemplating how to make the most of my identity as a Korean. So, my first goal was simply to become a member of a community and meet as many people as possible. Just as I was influenced by "one person" to enter Factory, I wanted to be "one person" who gives and receives influence among many people in this community. However, COVID-19 started right as I moved in.
 
-> **#Networking Through Matchmaking**
+### #Networking Through Matchmaking
 
 It was a bit desperate. All the various events I had dreamed of were canceled, and there were no opportunities to gather and network after events. Looking back, for someone like me who is quite shy during first meetings, the stress of open networking parties would have been significant, so in a way, it was a relief. Instead, Factory held two rounds of online matchmaking events, through which I was able to meet a variety of people.
 
@@ -33,17 +33,17 @@ In the first round, after conducting a survey about "my interests, my business p
 
 In the second round, instead of 1:1 matchmaking, we did group matchmaking with four people per group. In my group, I met Shauna, a Canadian software developer; Truls, a Norwegian co-founder of [shift](https://shiftfm.app), a music player and podcast app for exercise; and Hana, a French founder of an event and catering management company.
 
-> **#Am I the Influencer??**
+### #Am I the Influencer??
 
 We introduced ourselves in a group Slack chat and talked about what we were interested in, what we could provide, and what kind of meetings we wanted. At first, it felt like an awkward blind date, but interestingly, three out of the four people invited to this room were very interested in Korea, so I unintentionally became the "influencer" of the group. Most people in the tech or developer industry had a very good impression of Korea, seeing it as a "technology-advanced nation," and for those in the culture or event industry, BTS, Blackpink, and Korean food like Kimchi and Bibimbap were already the trendiest things. I soon exchanged private messages with Hana, who was most curious about each other, and met her offline.
 
-> **#Meeting Another Influencer, Hana**
+### #Meeting Another Influencer, Hana
 
 Hana studied in Shanghai, Madrid, and Paris before moving to Berlin to work as a project manager at Uber and Airbnb, eventually founding her own company, [travelogue.co](http://travelogue.co). It's a company that comprehensively plans and manages spaces, food, and programs needed for team events, seminars, and company workshops. They plan programs of various lengths—hourly, daily, or weekly—and create different programs depending on the space, whether using workshop spaces within the company, special event spaces outside, or distant travel destinations. travelogue has a total of six employees, including Hana, a social media/content manager, an event manager, a sales manager, a partnership manager, and a photographer. Since travelogue doesn't prepare everything from space sourcing to catering on its own, **various partnerships are one of the most important elements of Hana's company.**
 
 Because of this, when Hana first came to Berlin to start her business, she participated in at least two, and up to five, meetings a day to meet entrepreneurs and find good catering companies to partner with, and she attended various evening events in Berlin from Monday to Sunday without rest. While preparing for her startup, she counted that she met about 4,000 people in a year, through which she was able to establish partnerships with about 80 catering-related companies. Hana runs a Facebook group called *Berlin Experience Makers*, creating a community for people who plan various events in Berlin. In fact, while I was having tea with her at Factory Berlin, almost everyone who passed by greeted her.
 
-> **#"Connecting with a Focus on People and Experience"**
+### #"Connecting with a Focus on People and Experience"
 
 ![Hana, whom I met through Factory Berlin's group matchmaking. She founded travelogue to plan events, seminars, workshops, etc. Photo: travelogue](image3.webp)
 *Hana, whom I met through Factory Berlin's group matchmaking. She founded travelogue to plan events, seminars, workshops, etc. Photo: travelogue*
