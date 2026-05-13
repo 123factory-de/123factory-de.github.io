@@ -20,7 +20,7 @@ While the AsiaBerlin Summit is held once a year, it also provides year-round eve
 
 Seeing various Korean startups and related individuals active throughout Germany, this situation is somewhat regrettable. In major German cities such as Berlin, Hamburg, Frankfurt, and Munich, there are already quite a few Korean startups actively operating. **In addition to startups, there are many people and companies that can play an important role as a 'bridge' in the startup ecosystem, and I recently met three important women connecting South Korea, China, and Japan with Germany. As the first encounter, I introduce Business PowerZone, led by CEO Clara Min.**
 
-### #First Korean Senior Director at Adidas Headquarters
+### First Korean Senior Director at Adidas Headquarters
 
 <u>Business PowerZone is a startup that helps startups, a startup that consults global companies where 'cultural differences' are very important because talents from all over the world gather to work.</u> It is based in Nuremberg, Germany. The career of Clara Min, who leads Business PowerZone, is eye-catching. She worked at Adidas for 12 years, five of which she served as a Senior Director of Global Sales at the German headquarters. Before that, she built a solid career in product, sales, and strategic planning for domestic and international projects for about 25 years at leading global companies on three continents—including Adidas Korea, Germany's largest e-commerce company OTTO, fashion brand Stefanel, and American Gianni Versace.
 
@@ -39,7 +39,7 @@ However, if these differences are understood effectively, they can become import
 
 In fact, all these problems were things CEO Min personally experienced during her work. As a senior director leading the franchise and product business units of the global headquarters, she pondered every day and every hour to solve these. Through continuous study and participation in various workshops, she realized that all problems are human relationship problems and that solutions must be found within them. So, while working at the company, she separately completed an international coaching certification course. She applied what she learned to actual work and solved problems one by one. The process was very thrilling—so much so that she left a global corporation to start a consulting company that plays the role of a 'problem solver.'
 
-### #Helping Startups Become Competitive on the Global Stage
+### Helping Startups Become Competitive on the Global Stage
 
 When she first thought about starting a business, it wasn't easy to decide. For several months, she carried a resignation letter and kept thinking about when would be the best timing. It wasn't because she hated the company or work was hard; she was receiving the industry's best treatment, so the 'moment of decision' was continuously delayed. However, <u>the difficulties she had experienced while working, the solutions she discovered in the process of solving them, and the inner conviction and belief she gained through them were unstoppable.</u>
 
