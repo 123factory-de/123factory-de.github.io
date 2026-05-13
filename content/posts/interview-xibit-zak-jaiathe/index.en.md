@@ -9,12 +9,12 @@ image = "cover.png"
 canonicalUrl = "https://brunch.co.kr/@123factory/2"
 +++
 
-> **People I Met at Factory Berlin**
+## People I Met at Factory Berlin
 
 ![Zak Jaiathe of Xibit](image1.png)
 *Zak Jaiathe of Xibit*
 
-### If Only I Could Catch a Glimpse from Afar
+## If Only I Could Catch a Glimpse from Afar
 
 My interest in virtual reality (VR) began with the thought: "If only I could watch someone I can't meet in person, even from a distance." When I first studied theater in Berlin, I learned about the acting theory of Michael Chekhov, a Russian actor. My teacher, describing Chekhov's performance, spoke of it with such vividness.
 
@@ -27,7 +27,7 @@ Of course, recordings of him exist. In Alfred Hitchcock's 1945 film *Spellbound*
 
 {{< youtube Yl7PeSy1cYU >}}
 
-### Virtual Reality (VR) + Augmented Reality (AR) = Mixed Reality (MR)?!
+## Virtual Reality (VR) + Augmented Reality (AR) = Mixed Reality (MR)?!
 
 The reason I brought up these old stories is that I realized something impossible 10 years ago might now be possible with current technology. Earlier this year, the VR human documentary *Meeting You*, produced by MBC, garnered an explosive response with about 22 million views and 49,000 comments on YouTube. A mother who lost her 7-year-old daughter to leukemia was briefly reunited with her daughter, recreated through VR technology.
 
@@ -51,7 +51,7 @@ Currently, the leader in MR technology is Microsoft's HoloLens. First revealed i
 ![HoloLens 2 has been released. ©microsoft](image4.png)
 *HoloLens 2 has been released. ©microsoft*
 
-### Xibit: An MR Software Startup at Factory Berlin
+## Xibit: An MR Software Startup at Factory Berlin
 
 As soon as I moved into Factory, COVID-19 hit, and I could hardly use the space. Through occasional online networking, I met several startup founders, consultants, and staff. Zakaria Jaiathe, the founder of Xibit, and I happened to connect through both Factory and LinkedIn networking, leading us to exchange messages and meet for a casual cup of coffee. I was interested in Xibit's MR technology, and Zakaria was interested in entering the Korean market.
 
@@ -99,7 +99,7 @@ A. 90% of my life is related to Xibit. I spend 5% on sleeping, and the remaining
 
 A. They are the most interesting content in the world. Actually, my ex-girlfriend was Korean. It's a long story from here... (laughs)
 
-### Shall We Do Something Fun with Xibit?
+## Shall We Do Something Fun with Xibit?
 
 Thanks to Zak, who knows Korea well, stories about Korean culture and technology flowed naturally without me having to explain much. We ended our brief coffee meeting with excitement about each other's potential.
 

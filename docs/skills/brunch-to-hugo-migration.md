@@ -21,13 +21,18 @@ This guide outlines the standardized process for migrating blog posts from Brunc
 
 To ensure consistency across different Markdown parsers and themes, follow these HTML/Markdown hybrid rules:
 
-- **Emphasis (Bold)**: Use `<b>text</b>` or `**text**` to match the original bolding.
+- **Emphasis (Bold)**: Always use `<b>text</b>` instead of `**text**`. This ensures 1:1 visual parity with Brunch and prevents Markdown parsing issues when text contains special characters (like parentheses or symbols).
 - **Underline**: Use `<u>text</u>` for passages that are underlined in the original Brunch article.
 - **Sub-headers**: 
-    - Use standard Markdown headers (`###`) for all sections you want to appear in the **Table of Contents (TOC)**.
-    - For Brunch section titles (usually starting with `#`), remove the `#` prefix and use `### Title` (e.g., `### 제목`).
+    - Use standard Markdown headers (`##`) for all sections you want to appear in the **Table of Contents (TOC)**.
+    - **Lead Highlights**: Convert the main lead quote or summary (often found as a blockquote `>` at the top in Brunch) to a `##` (h2) header.
+    - For Brunch section titles (usually starting with `#`), remove the `#` prefix and use `## Title` (e.g., `## 제목`).
+    - Using `##` (h2) is recommended as the primary section header since the post title is typically `h1`.
     - The `#` is redundant when using standard Markdown header tags and looks cleaner in the Table of Contents.
-- **Front Matter Description**: The `description` field should match the Brunch subtitle/description exactly. Do not combine it with other body text or lead quotes.
+- **Description Field**: Set this exactly to the Brunch subtitle/description. Do not append body text.
+- **Cover Photo Credit**: If the Brunch post has a cover photo credit (e.g., *커버사진 출처 = ...*), add it as an italicized line immediately following the first header (h2) of the body content.
+  - Korean: `*커버 사진 출처 = ...*`
+  - English: `*Cover photo source = ...*`
 - **Paragraphs**: Maintain the exact paragraph breaks as the original.
 - **Lists**: Use standard Markdown lists, but check if they were intended as plain paragraphs with symbols in Brunch.
 

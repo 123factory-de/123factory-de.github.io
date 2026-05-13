@@ -9,7 +9,7 @@ image = "cover.png"
 canonicalUrl = "https://brunch.co.kr/@123factory/5"
 +++
 
-> **Starting as a KAIST in-house venture and discussing an AI-powered intelligent traffic control system with the City of Hamburg**
+## Starting as a KAIST in-house venture and discussing an AI-powered intelligent traffic control system with the City of Hamburg
 
 ![The Korean AI startup 'Nota' has established a European legal entity in Berlin. Nota introduction posted at the entrance of Factory Berlin. Photo = Provided by Eunseo Yi](image1.jpg)
 *The Korean AI startup 'Nota' has established a European legal entity in Berlin. Nota introduction posted at the entrance of Factory Berlin. Photo = Provided by Eunseo Yi*
@@ -18,13 +18,13 @@ COVID-19 hit just as Nota moved into Factory Berlin, the mecca of Berlin startup
 
 In the meantime, Factory conducted various experiments to revive its unique function of networking. Factory Berlin's internal community channel, Slack, became more active than ever. Various communication channels suitable for the situation, such as #-discuss-corona_rescue, were opened to exchange information on support for founders during the pandemic, and the community sought ways to coexist. Factory management also introduced various programs such as individual online 1:1 meetings, mentor-mentee connections, VR product experiences for startups, and virtual exhibitions combining art and technology.
 
-### Nota Enters Berlin
+## Nota Enters Berlin
 
 I participated in as many online events as possible at Factory to build my network one by one. I contacted people in my areas of interest individually via Slack messages to get to know them. Then, I noticed a company called "newcomers Nota AI" had joined Factory. Seeing that their headquarters was listed as Daejeon, I realized it was the Korean startup "Nota" that had recently entered Berlin, and I reached out to them.
 
 
 
-### Nota Secures AI Model Lightweighting Technology
+## Nota Secures AI Model Lightweighting Technology
 
 Nota is a company that started as a KAIST in-house venture in 2015 under the philosophy of "making life more convenient and abundant with artificial intelligence." After the match between AlphaGo and Lee Sedol, AI became a major trend. Among them, Nota is an AI deep-tech startup that provides on-device AI solutions based on deep learning model lightweighting technology.
 
@@ -35,7 +35,7 @@ In 2020, it succeeded in attracting Series A investment from Samsung Venture Inv
 ![Nota developed the lightweighting platform 'NetsPresso' and used it to conduct an intelligent traffic control system (ITS) pilot project with Pyeongtaek City, Gyeonggi-do. Photo: Nota Homepage](image2.jpg)
 *Nota developed the lightweighting platform 'NetsPresso' and used it to conduct an intelligent traffic control system (ITS) pilot project with Pyeongtaek City, Gyeonggi-do. Photo: Nota Homepage*
 
-### Nota Goes Beyond Korea and into the World
+## Nota Goes Beyond Korea and into the World
 
 Myungsu Chae, CEO of Nota, believed from the beginning that Nota's technology would be competitive enough in the global market. In 2019, they participated in BMW Open Innovation and received favorable reviews from global companies. Therefore, Chae's plan was to aggressively enter overseas markets and continuously build collaborative references with global companies.
 
@@ -48,7 +48,7 @@ Manager Hyejin Lee, who is in charge of the practical operations of the German e
 ![Due to COVID-19, offline meetings at Factory Berlin disappeared, and meeting with companies became difficult, making the role of intermediaries like Factory Berlin even more important. Photo: Factory Berlin Facebook](image3.jpg)
 *Due to COVID-19, offline meetings at Factory Berlin disappeared, and meeting with companies became difficult, making the role of intermediaries like Factory Berlin even more important. Photo: Factory Berlin Facebook*
 
-### Lightweighting Platform 'NetsPresso'
+## Lightweighting Platform 'NetsPresso'
 
 Nota initially focused on vision-based AI in mobility, security monitoring, and retail before launching the <b>lightweighting platform 'NetsPresso'</b>. Through this, they operated a successful intelligent traffic control system (ITS) case with Pyeongtaek City and are now in discussions with various local governments, including the City of Hamburg, which is leading in this field in Germany, and other municipalities with smart city plans for ITS. Thanks to these active efforts, Nota was listed on the German federal government's AI startup map less than a year after its establishment in Germany and is active in the German AI field as a member of the Digital Hub Mobility in Munich and the Digital Hub in Karlsruhe.
 

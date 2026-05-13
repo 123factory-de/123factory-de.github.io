@@ -9,11 +9,12 @@ image = "cover.jpg"
 canonicalUrl = "https://brunch.co.kr/@123factory/9"
 +++
 
-> **Coworking spaces, coaching, mentoring programs, and investment—all accessible in Berlin**
+## Coworking spaces, coaching, mentoring programs, and investment—all accessible in Berlin
+*Cover photo source = Hubraum website*
 
 Beyond affordable living costs, an international atmosphere, and strong government support, the reason Berlin has become a paradise for startups is its vibrant investment ecosystem. Here, we introduce the major institutions providing coworking spaces, coaching, and mentoring, as well as the investment opportunities that provide the capital essential for a startup's growth.
 
-### Diverse Hubs Providing Coworking Space and Accelerating
+## Diverse Hubs Providing Coworking Space and Accelerating
 
 In addition to the previously mentioned Factory Berlin and Finleap's H:32, where fintech startups gather, Berlin has a variety of spaces that serve as both coworking hubs and accelerators.
 
@@ -31,7 +32,7 @@ Silicon Allee is very friendly toward foreign founders. This is because it start
 
 World-famous companies are also participating in these startup hubs. Microsoft operates startup accelerating programs in six cities worldwide, including Berlin. Microsoft Accelerator Berlin started in 2013 as a four-month immersive program. It features mentoring, technical training, and opportunities for investor connections and collaboration with Microsoft.
 
-### More than 50% of German Venture Capital is Concentrated in Berlin
+## More than 50% of German Venture Capital is Concentrated in Berlin
 
 In Germany, 58% of all venture capital (VC) investment is concentrated in Berlin. In 2020, the scale of VC investment in Berlin startups reached 3.1 billion euros (approx. 4.2 trillion KRW). Startups in the mobility sector received the most investment, followed by software, e-commerce, and healthcare.
 

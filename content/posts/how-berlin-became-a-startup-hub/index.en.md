@@ -9,7 +9,7 @@ image = "cover.webp"
 canonicalUrl = "https://brunch.co.kr/@123factory/7"
 +++
 
-> **Large influx of young people thanks to low costs and techno music… The 'effect' of timely startup support policies**
+## Large influx of young people thanks to low costs and techno music… The 'effect' of timely startup support policies
 
 ![Berlin, which had slow economic growth due to the division of the city, has now become the city with the most startups in Germany and the youngest city in the world. Photo = City of Berlin](image1.webp)
 *Berlin, which had slow economic growth due to the division of the city, has now become the city with the most startups in Germany and the youngest city in the world. Photo = City of Berlin*
@@ -20,7 +20,7 @@ Berlin was one of the largest and most developed cities in Europe around 1870. E
 
 After Berlin became the capital of a unified Germany, efforts to rebuild industry began anew. Industries in service, technology, and creative sectors, which can grow rapidly even without a pre-existing foundation, settled in Berlin. As large corporations in various fields such as Siemens, Deutsche Bank, Lufthansa, and Allianz established second headquarters, Berlin slowly regained its economic vitality. Of course, it was not yet competitive with the financial hub of Frankfurt, the research and development-centered technology industry led by North Rhine-Westphalia based on prestigious technical universities, or Bavaria, which has an economy strong enough to stand alone as a nation. However, <b>as it emerged as the center of politics after unification, Berlin became an increasingly important city.</b>
 
-### Young People Flocking Due to Low Living Costs and Techno Music
+## Young People Flocking Due to Low Living Costs and Techno Music
 
 Meanwhile, artists began to gather because the cost of living was lower than in other German cities. While Hamburg was dominated by rock music and Düsseldorf by electro-pop, techno music was undoubtedly supreme in Berlin. Even during the division, art existed in Berlin. The popularity of Berlin techno music, which began in the 1960s, was led by young men from West Germany who wanted to avoid military service. Musicians who gathered in dark clubs to play experimental music and enjoy improvisation developed this into a resistant cultural movement centered around the Kreuzberg district of Berlin.
 
@@ -29,7 +29,7 @@ In the 1990s, Berlin's unique techno music led the subculture centered around a 
 ![Source = City of Berlin (berlin.de)](image2.webp)
 *Source = City of Berlin (berlin.de)*
 
-### Berlin's Image Transformation
+## Berlin's Image Transformation
 
 Berlin realized that trying to take the lead in automotive, finance, and bio/health sectors, where other cities were already focused, was meaningless. Instead, <b>the city set its policy direction to attract and actively support startups by highlighting this young and international atmosphere.</b> This coincided well with the global startup boom. Factory Berlin, established in 2014 in cooperation with Google, played a major role in attracting startups to Berlin. Many founders with ideas but little money gathered in Berlin, and Berlin Partner (Berlin Partner für Wirtschaft und Technologie GmbH), an economic promotion agency under the City of Berlin, also took the lead in actively attracting startups by establishing business support programs focused on them. <b>In this way, Berlin became the city with the highest number of startups in Germany.</b>
 
@@ -38,7 +38,7 @@ Berlin has an average of 40,000 business registrations per year, of which 500 ar
 ![Source = Berlin Startup Monitor 2020](image3.webp)
 *Source = Berlin Startup Monitor 2020*
 
-### Berlin Grows into an International and Young City of Ideas
+## Berlin Grows into an International and Young City of Ideas
 
 Since Brexit, many European headquarters of global financial institutions have moved to Frankfurt, which still holds the title of a traditional financial city, but <b>most new ideas start in Berlin.</b> N26, a unicorn that has now expanded not only to Germany but also to the US and surprised the global financial market, started in Berlin. Vivid, which conquered the Russian financial world and entered Europe; Penta, which makes it easy to open corporate accounts and manage them by linking with programs such as tax and accounting; and Trade Republic, an app for easy stock investment, are all from Berlin.
 
