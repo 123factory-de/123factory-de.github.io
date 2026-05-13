@@ -21,9 +21,13 @@ This guide outlines the standardized process for migrating blog posts from Brunc
 
 To ensure consistency across different Markdown parsers and themes, follow these HTML/Markdown hybrid rules:
 
-- **Emphasis (Bold)**: Use `<b>text</b>` instead of `**text**` when accuracy is critical or when the text contains special characters that might break standard Markdown parsing.
+- **Emphasis (Bold)**: Use `<b>text</b>` or `**text**` to match the original bolding.
 - **Underline**: Use `<u>text</u>` for passages that are underlined in the original Brunch article.
-- **Sub-headers**: Use Markdown header tags (e.g., `### Sub-header Title`) for the stylized headers common in Brunch. This ensures they are properly indexed in the Table of Contents (TOC). You may add a prefix like `#` if it was present in the original.
+- **Sub-headers**: 
+    - Use standard Markdown headers (`###`) for all sections you want to appear in the **Table of Contents (TOC)**.
+    - For Brunch section titles (usually starting with `#`), use `### #Title` to preserve the original look.
+    - For lead quotes or summary paragraphs that act as structural breaks, also use `### Title` (without `#` if not in original) to ensure they are indexed in the TOC.
+- **Front Matter Description**: The `description` field should match the Brunch subtitle/description exactly. Do not combine it with other body text or lead quotes.
 - **Paragraphs**: Maintain the exact paragraph breaks as the original.
 - **Lists**: Use standard Markdown lists, but check if they were intended as plain paragraphs with symbols in Brunch.
 
