@@ -1,49 +1,56 @@
 +++
 title = "Where Art Meets Tech: Factory Berlin"
 date = "2020-09-25T00:00:00+02:00"
-draft = false
-tags = ["Berlin", "Startup", "Germany"]
-description = "\"I'm going to start something in Germany.\" | Entering Factory Berlin, the mecca of Berlin startups where art and tech meet."
+description = "I'm going to make things happen in Germany."
+tags = ["Berlin", "Startup", "Germany", "Factory Berlin"]
+categories = ["Column"]
+author = "Eunseo Yi"
+image = "cover.jpg"
 canonicalUrl = "https://brunch.co.kr/@123factory/1"
-image = "image1.jpg"
 +++
 
-There is a question in the MBTI test, which is quite popular these days: *"Do you find it difficult to introduce yourself to other people?"*
+> **I'm going to make things happen in Germany.**
 
-I am one of those who strongly agree with this question. When I meet someone for the first time, during the roughly three seconds of silence after saying "Hello," my mind is filled with intense conflict and existential questions like, "Who am I, and where am I going?"
+![Yin and Yang](image1.ko.jpg)
 
-Unfortunately, this happens every single time without exception. Those with keen observation might have already noticed the subtle tremor within the ellipsis of my words, "I am..."
+There is a question in the MBTI test that is popular these days.
 
-![Yin and Yang](image1.jpg)
+**"You find it difficult to introduce yourself to other people."**
 
-Sometimes I feel like a marble. A pendulum marble swinging back and forth, or a marble bouncing up and down.
+I am one of those who strongly agree with this question. When I first meet someone, during the silence of about 3 seconds after saying "Hello," intense conflict and agony, and questions like "Who am I and where am I going?" flash through my mind at high speed.
 
-At the end of last February, I entered Factory Berlin ([factory berlin](https://factoryberlin.com/)), known as the mecca of Berlin startups in the heart of Europe's startup scene. Ten years ago, I came to Berlin to study theatre properly, after studying law in university and working in alternative education with the belief that theatre could play a crucial role in art education. And now, here I am at Factory Berlin.
+Unfortunately, it's like that every single time. Sharp-eyed people will have already noticed. The severe trembling that exists within the ellipsis of my words, "I am..."
 
-Ten years ago, Berlin was quite "shabby." The smell of urine in the streets, young people walking around with beer bottles shaking their bodies everywhere—there was a certain raw freshness in the somewhat tacky outfits and shop interiors. There, I studied theatre and felt freedom. I learned intensely and played hard for a year and a half. Then I returned to Korea to direct plays, only to come back to Berlin three years ago.
+Sometimes I feel like I've become a marble. A pendulum marble swinging back and forth between right and left, or a marble bouncing up and down.
 
-So I returned. But upon arrival, what I faced for settlement was less of "freedom" and more of the sorrow of an immigrant struggling to settle and the high threshold of administrative processing.
+In late February, I entered Factory Berlin, the mecca of Berlin startups and a sanctuary for European startups. I studied law at university, then worked in alternative education, believing that education is a major issue in Korean society and that the theater I did as an amateur could play an important role in art education. It was 10 years ago when I came to Berlin to study theater in earnest. And now, I am at Factory Berlin.
 
-What shall I do here? Theatre? Performance? Art? Or a Korean restaurant? I spent countless nights with (fortunately delicious and cheap) beer and wine. I met many people and saw the bottom of my bank account. However, the situation was actually simple. Searching for a self I couldn't even find in Korea was too far-fetched; I just had to do legal work within the scope of the visa the country gave me.
+Ten years ago, Berlin was really underdeveloped. The smell of urine everywhere in the city, young people carrying beer bottles and shaking their bodies here and there on the streets, and the somewhat rustic clothing of people and the interior of shops felt fresh. There, I studied theater and felt freedom. In the short time of a year and a half, I learned intensely and played excitingly. Then I went back to Korea to direct theater, and returned to Berlin three years ago.
 
-I received a lot of help until I got the visa. Fortunately, I got an opportunity to teach Korean at a school, and thanks to that, the Berlin Immigration Office gave me a "visa for those engaged in teaching or research." With this visa, I can only legally do work related to "education, research, and publishing."
+So I returned. But as soon as I arrived, what I experienced to settle here was the sorrow of being an immigrant struggling to settle and the high threshold of administrative processing, rather than "freedom."
 
-I used to make documentary theatre based on awareness of various social issues through research. In a broad context, the theatre I had done resembled the process of research. So, I decided to do research that comes out as a book rather than research put on stage in Germany.
+What will I do here? Theater? Performance? Art? Or a Korean restaurant? I spent countless nights with (fortunately delicious and cheap) beer and wine. I met many people and saw the end of my bank balance. But the situation was rather simple. It was too vain to think of finding my self here that I couldn't find in Korea, and I just had to do legal work within the scope of the visa this country gave me.
 
-That's how I became interested in writing and making books. However, as someone whose native language is neither German nor English, it was extremely difficult to be hired by someone for book-related work. So, I decided to start my own business.
+Many people helped me until I received my visa. Luckily, I got a chance to teach Korean at a school, and thanks to that, the Berlin Immigration Office gave me a "visa for those engaged in teaching or research." With this visa, I can only legally do work related to education, research, and publishing.
 
-This is the heavily simplified process of how I came to think about "startup." Although the situation now is very different from the beginning, I wanted to organize the direction of the path I am taking. And with the modest goal of shortening the hesitation in the process of introducing myself by about a second.
+I have mainly done documentary theater based on a critical mind toward various social issues. In a broad context, the theater I have done resembled the process of research. So, I decided to do research that comes out as a book, rather than research put on stage in Germany.
 
-In ten years, Berlin has transformed from a "poor city for artists" to the "Silicon Valley of Europe, the mecca of startups." It is a natural result of gentrification following the hip city created by artists. Factory Berlin stands right in the middle of it.
+That's how I became interested in writing and making books. However, for me, whose mother tongue is not German or English, being hired by someone for book-related work was quite difficult. So, I decided to start my own business.
 
-![Factory Berlin's second campus located in Kreuzberg, Berlin](image2.jpg)
+This is the process of thinking about "entrepreneurship," simplified significantly. It's much different from the situation at the beginning, but I wanted to organize the direction of the path I'm taking a bit. And with the modest goal of shortening the hesitation in the process of introducing myself by about a second.
+
+In 10 years, Berlin has changed from a "poor city for artists" to "Silicon Valley of Europe, a mecca for startups." It's the result of the inevitable gentrification that follows the hip city created by artists. Factory Berlin is at the heart of it.
+
+![Factory Berlin's second campus located in Kreuzberg, Berlin](image2.ko.jpg)
 *Factory Berlin's second campus located in Kreuzberg, Berlin*
 
-Factory Berlin is home to companies like N26, Twitter, SoundCloud, Uber, Rocket Internet, Freeletics, and Pinterest. It gathers entrepreneurs from various levels, from individual founders (60-70%) to large-scale startups (20-30%) and major corporations (10%).
+Factory Berlin is where N26, Twitter, Sound Cloud, Uber, Rocket Internet, Freeletics, and Pinterest are located. From individual founders (60-70%) to large-scale startups (20-30%) and large corporations (10%), entrepreneurs of various levels gather.
 
-If I was going to do it, I wanted to start at the very heart of this neighborhood. So I became a member of Factory Berlin, and I began to "start things" in Germany.
+If I was going to do it, I wanted to start at the most essential place in this neighborhood. That's how I became a member of Factory Berlin, and I started making things happen in Germany.
 
-"Starting things" was something I had been confident in since birth. I challenged almost every field I wanted to learn, met everyone I wanted to meet, and did everything I wanted to do. Now, my task in this new Berlin is to organize and record while starting things, archiving them, and finally stringing these "marbles" together.
+I've always been confident in making things happen since I was born. I've challenged almost every area I wanted to learn, and I've met everyone I wanted to meet and done everything I wanted to do. Now, organizing while making things happen, recording, and archiving, and thus stringing these marbles together, is what I need to do in the new Berlin I've met.
 
 **Eunseo Yi**
 eunseo.yi@123factory.de
+
+*This article was edited and adapted from the "European Startup Chronicles" series in BizHankook.*
