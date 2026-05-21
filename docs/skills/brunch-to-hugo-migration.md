@@ -29,7 +29,7 @@ To ensure consistency across different Markdown parsers and themes, follow these
     - For Brunch section titles (usually starting with `#`), remove the `#` prefix and use `## Title` (e.g., `## 제목`).
     - Using `##` (h2) is recommended as the primary section header since the post title is typically `h1`.
     - The `#` is redundant when using standard Markdown header tags and looks cleaner in the Table of Contents.
-- **Description Field**: Set this exactly to the Brunch subtitle/description. Do not append body text.
+- **Description Field**: Set this exactly to the Brunch subtitle/description. Do not append body text, lead highlights, or subsequent headers (e.g., do not combine the subtitle with the first `##` header text).
 - **Cover Photo Credit**: If the Brunch post has a cover photo credit (e.g., *커버사진 출처 = ...*), add it as an italicized line immediately following the first header (h2) of the body content.
   - Korean: `*커버 사진 출처 = ...*`
   - English: `*Cover photo source = ...*`

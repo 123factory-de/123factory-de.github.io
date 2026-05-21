@@ -1,7 +1,7 @@
 +++
-title = "German 'K-Beauty' Startup 'Yepoda'"
+title = "[European Startup Chronicles] German 'K-Beauty' Startup 'Yepoda'"
 date = "2022-03-24T09:55:00+09:00"
-description = "Sander van Bladel, CEO of Dutch-Korean heritage, and Park Eun-young, Marketing Lead - Conquering Europe with 'Good Cosmetics' valuing Korean beauty products and sustainability"
+description = "'Good cosmetics' valuing Korean skincare and sustainability…"
 tags = ["Startup", "Germany", "Europe", "Entrepreneurship", "KBeauty", "Cosmetics", "Marketing"]
 categories = ["Column"]
 author = "Eunseo Yi"
@@ -9,8 +9,9 @@ image = "cover.jpeg"
 canonicalUrl = "https://brunch.co.kr/@123factory/14"
 +++
 
-## German cosmetics startup 'Yepoda' competing with 'K-Beauty'… 'Good cosmetics' valuing Korean skincare and sustainability grows rapidly within a year via online and social media
 *Cover photo source=Yepoda homepage*
+
+## German cosmetics startup 'Yepoda' competing with 'K-Beauty'… 'Good cosmetics' valuing Korean skincare and sustainability grows rapidly within a year via online and social media
 
 About 4 to 5 years ago, Korean mask sheets and BB creams began appearing in German drugstores. Seeing Korean packaging introduced directly to the German market made it easy to realize the popularity of Korean cosmetics. Nowadays, it is hard not to spot the word ‘Korea’ in department stores, drugstores, and other shops where cosmetics can be purchased. Korean cosmetics or Korean-style skincare products have become that mainstream. This is thanks to the influence of Korean dramas and K-Pop, which have become easily accessible anywhere in the world through new media like Netflix, YouTube, and Instagram.
 
@@ -23,6 +24,8 @@ According to 'Cosmetics Europe 2019,' Europe boasts the largest cosmetics market
 ![‘Yepoda’ co-founder Veronika Strotmann, CEO Sander van Bladel, and Marketing Lead Park Eun-young (from left). Photo=yepoda.me](image1.jpg)
 *‘Yepoda’ co-founder Veronika Strotmann, CEO Sander van Bladel, and Marketing Lead Park Eun-young (from left). Photo=yepoda.me*
 
+## I Was Curious About the Secret of Korean Cosmetics My Friends Always Asked For
+
 ‘<a href="https://yepoda.de/" target="_blank">Yepoda</a>’ was established in Berlin in February 2020. Sander, the founder and CEO, was born and raised in the Netherlands. Thanks to his Korean mother, he visited Korea frequently, and since his Dutch father also traveled between Europe and Korea doing trade business, he was familiar with Korean culture and industry. As a university student, he had several occasions to visit Korea, and each time, Sander had a recurring experience.
 
 “When I told my friends I was going to Korea, I was always asked to buy some Korean cosmetics. Because I knew nothing about cosmetics, I didn't think much of it at first, but since this was repeated, I became curious. What secret does Korean cosmetics hold?”
@@ -31,10 +34,10 @@ Sander studied economics and law at Erasmus University Rotterdam and came to Ber
 
 <b>When founding the cosmetics startup, the critical aspects were to be rooted in K-Beauty, and that the entire process from cosmetic production to sales be designed based on the value of sustainability.</b> These two were the main pillars. “Korea's beauty industry is far ahead of Germany's. The cost invested in cosmetics R&D in Korea is around 600 million euros annually, so I think it is only natural that innovative products emerge.”
 
+Sander says that once he examined the structure and scale of the Korean cosmetics industry, it became instantly clear why K-Beauty had no choice but to succeed. And he thought the skincare routine Koreans have was culturally novel. Compared to the German skincare culture where applying Nivea cream (the undisputed number one in the German cosmetics industry) after washing the face was the end, <b>the Korean skincare routine, spanning ‘cleansing, washing, toning, essence, moisturizing, and nourishing,’ felt like a form of focus and meditation time for the skin and one's own body, performed in the morning and at night. “It felt like self-care time looking back at oneself from a holistic perspective rather than just for the skin, so I had a strong desire to introduce this ‘cultural’ element to Europe</b>.”
+
 ![Sander van Bladel says that the Korean skincare routine felt like a form of focus and meditation time for the skin and one's own body, which sparked a strong desire to introduce this 'cultural' element to Europe. Photo=@yepoda.me](image2.jpg)
 *Sander van Bladel says that the Korean skincare routine felt like a form of focus and meditation time for the skin and one's own body, which sparked a strong desire to introduce this 'cultural' element to Europe. Photo=@yepoda.me*
-
-Sander says that once he examined the structure and scale of the Korean cosmetics industry, it became instantly clear why K-Beauty had no choice but to succeed. And he thought the skincare routine Koreans have was culturally novel. Compared to the German skincare culture where applying Nivea cream (the undisputed number one in the German cosmetics industry) after washing the face was the end, <b>the Korean skincare routine, spanning ‘cleansing, washing, toning, essence, moisturizing, and nourishing,’ felt like a form of focus and meditation time for the skin and one's own body, performed in the morning and at night. “It felt like self-care time looking back at oneself from a holistic perspective rather than just for the skin, so I had a strong desire to introduce this ‘cultural’ element to Europe</b>.”
 
 Thus, when he first resolved to establish a company in January 2019, the very first thing Sander did was product development. To collaborate with laboratories in Korea, he visited Korea several times, bustling about to find partners for a startup starting from ground zero. “This process was the most challenging time in the entire process of founding. <u>Since we focused on ‘sustainability’ as a startup</u>, we wanted to use glass rather than plastic for cosmetic containers and recycled paper for packaging. We also wanted to make the products using only natural ingredients, leaving out all chemical elements. The phrase I heard the most at this time was ‘You are crazy.’”
 
@@ -42,14 +45,14 @@ Nevertheless, Sander did not bend his principles. Producing glass containers car
 
 Moreover, they established the principle of <b>giving back to society</b> by donating <b>1% of total sales to ‘1% for the Planet.’</b> Meeting with around 20 laboratories for product development, and visiting the manufacturer who agreed with Sander's ideas six times to negotiate production took a full year.
 
-![Yepoda uses no chemicals or animal ingredients, nor does it conduct animal testing. Sustainability is prioritized throughout the production and packaging processes. Photo=yepoda.me](image3.jpg)
-*Yepoda uses no chemicals or animal ingredients, nor does it conduct animal testing. Sustainability is prioritized throughout the production and packaging processes. Photo=yepoda.me*
-
 ## Corona and Social Media, the Beginning and the Growth
 
 <u>Although Yepoda is a German startup, it adopts K-Beauty as its primary motto.</u> In a way, they placed a bet on the value of ‘Korea.’ Won't this trend fade once the ‘K-Wave’ ends? Sander showed confidence. “There are many industries that have branded their countries, such as Swiss watches and German cars, <u>and if the product quality is excellent, that value persists</u>. I believe Korean cosmetics have also established themselves as a unique brand. Therefore, rather than simply riding a wave of fad, I think we have built a ‘unique’ brand image.”
 
 In fact, while small cosmetics stores founded directly by Koreans are occasionally visible in Germany, their presence is not significant. South Korea's Missha is the only enterprise that has entered Germany with its own brand and owns local stores, but it has not yet expanded into major cities. Thus, Yepoda is truly unique as a company founded directly by a local, using K-Beauty itself as its banner.
+
+![Yepoda uses no chemicals or animal ingredients, nor does it conduct animal testing. Sustainability is prioritized throughout the production and packaging processes. Photo=yepoda.me](image3.jpg)
+*Yepoda uses no chemicals or animal ingredients, nor does it conduct animal testing. Sustainability is prioritized throughout the production and packaging processes. Photo=yepoda.me*
 
 After a year of product development, Yepoda founded the company and launched its first products in April 2020. As was the case for many, the onset of COVID-19 was an obstacle that delayed the start. However, this obstacle also served as a stepping stone. When stores closed and lockdowns began, online shopping usage surged, making Yepoda incredibly busy. In the first 6 months after launching the first product, sales doubled every month. Even now, it is growing steadily at an average of 179% per month.
 
