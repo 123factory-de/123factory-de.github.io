@@ -6,7 +6,6 @@ tags = ["Startup", "Germany", "Europe", "Entrepreneurship", "China", "Consulting
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.png"
-canonicalUrl = "https://brunch.co.kr/@123factory/11"
 +++
 
 ## Founding a solo startup with a focus on digitalization after majoring in Chinese studies... A series of expert interviews as the primary business model

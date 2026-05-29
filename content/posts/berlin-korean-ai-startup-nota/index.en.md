@@ -6,7 +6,6 @@ tags = ["AI", "Startup", "Berlin", "Nota", "Factory Berlin"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.png"
-canonicalUrl = "https://brunch.co.kr/@123factory/5"
 +++
 
 ## Starting as a KAIST in-house venture and discussing an AI-powered intelligent traffic control system with the City of Hamburg

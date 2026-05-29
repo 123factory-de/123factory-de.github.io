@@ -6,7 +6,6 @@ tags = ["Startup", "Germany", "Europe", "Entrepreneurship", "Consulting"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.jpg"
-canonicalUrl = "https://brunch.co.kr/@123factory/10"
 +++
 
 ## Founding a startup consulting company to solve 'human relationship issues' experienced while working at leading global companies

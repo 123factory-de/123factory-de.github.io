@@ -6,7 +6,6 @@ tags = ["Augmented Reality", "Virtual Reality", "VR", "Interview", "Startup", "G
 categories = ["Interview"]
 author = "Eunseo Yi"
 image = "cover.png"
-canonicalUrl = "https://brunch.co.kr/@123factory/2"
 +++
 
 ## People I Met at Factory Berlin

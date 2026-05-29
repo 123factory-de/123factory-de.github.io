@@ -6,7 +6,6 @@ tags = ["Startup", "Berlin", "Fintech", "IoT", "Digital Hub"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.png"
-canonicalUrl = "https://brunch.co.kr/@123factory/8"
 +++
 
 ## Home to the National Hub Agency… Accelerator 'Finleap' plays a central role in Berlin's Fintech scene

@@ -6,7 +6,6 @@ tags = ["Startup", "Berlin", "Networking", "Factory Berlin", "Community"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.webp"
-canonicalUrl = "https://brunch.co.kr/@123factory/6"
 +++
 
 ## Inspiration and the power of networks through Factory Berlin CRO Catherine Bischoff and founder Hana

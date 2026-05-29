@@ -6,7 +6,6 @@ tags = ["Startup", "Entrepreneurship", "Europe", "Berlin", "Factory Berlin"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.jpg"
-canonicalUrl = "https://brunch.co.kr/@123factory/4"
 +++
 
 ## How affordable living and support policies turned Berlin into a startup hub… The role of Factory Berlin in building the ecosystem

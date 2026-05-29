@@ -6,7 +6,6 @@ tags = ["Startup", "Berlin", "Investment", "Germany", "VC"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.jpg"
-canonicalUrl = "https://brunch.co.kr/@123factory/9"
 +++
 
 ## Coworking spaces, coaching, mentoring programs, and investment—all accessible in Berlin

@@ -4,7 +4,7 @@ This guide outlines the standardized process for migrating blog posts from Brunc
 
 ## 1. Preparation & Metadata
 
-- **Original URL**: Always reference the source Brunch URL in the `canonicalUrl` frontmatter.
+- **Original URL (Canonical)**: Only reference the source Brunch URL in the `canonicalUrl` frontmatter of the original Korean post (`index.ko.md`). Do not add `canonicalUrl` to translated posts (e.g., `index.en.md`).
 - **Date**: Use the original publication date found on Brunch (e.g., `2022-03-22T10:00:00+09:00`).
 - **Multilingual Support**: Create both `index.ko.md` and `index.en.md` within a post bundle directory.
 

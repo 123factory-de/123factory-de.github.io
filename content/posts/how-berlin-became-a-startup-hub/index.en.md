@@ -6,7 +6,6 @@ tags = ["Startup", "Berlin", "History", "Economy", "Technology"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.webp"
-canonicalUrl = "https://brunch.co.kr/@123factory/7"
 +++
 
 ## Large influx of young people thanks to low costs and techno music… The 'effect' of timely startup support policies

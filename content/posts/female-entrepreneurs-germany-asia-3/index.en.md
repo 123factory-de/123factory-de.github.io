@@ -6,7 +6,6 @@ tags = ["Startup", "Germany", "Europe", "Entrepreneurship", "Japan", "Consulting
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.png"
-canonicalUrl = "https://brunch.co.kr/@123factory/12"
 +++
 
 *Cover photo source=Crossbie homepage*

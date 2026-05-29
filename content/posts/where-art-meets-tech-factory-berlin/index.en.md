@@ -6,7 +6,6 @@ tags = ["Berlin", "Startup", "Germany", "Factory Berlin"]
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.jpg"
-canonicalUrl = "https://brunch.co.kr/@123factory/1"
 +++
 
 ## I'm going to make things happen in Germany.

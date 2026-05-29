@@ -6,7 +6,6 @@ tags = ["Startup", "Germany", "Europe", "Entrepreneurship", "KBeauty", "Cosmetic
 categories = ["Column"]
 author = "Eunseo Yi"
 image = "cover.jpeg"
-canonicalUrl = "https://brunch.co.kr/@123factory/14"
 +++
 
 *Cover photo source=Yepoda homepage*
