@@ -1,0 +1,87 @@
+# Alert/Admonition translations
+note = "Hinweis"
+tip = "Tipp"
+important = "Wichtig"
+warning = "Warnung"
+caution = "Achtung"
+info = "Info"
+success = "Erfolgreich"
+question = "Frage"
+danger = "Gefahr"
+bug = "Fehler"
+example = "Beispiel"
+
+# Header & navigation
+menu = "Menü"
+search = "Suche"
+searchPlaceholder = "Suchen..."
+clearSearch = "Suche löschen"
+closeSearch = "Suche schließen"
+toggleMenu = "Menü umschalten"
+closeMenu = "Menü schließen"
+toggleTheme = "Design umschalten"
+language = "Sprache"
+
+# Accessibility
+skipToMain = "Zum Hauptinhalt springen"
+scrollToTop = "Nach oben scrollen"
+
+# Home
+home = "Startseite"
+recentPosts = "Aktuelle Beiträge"
+
+# List & filters
+posts = "Beiträge"
+filters = "Filter"
+searchTags = "Nach Tags suchen..."
+tagsLabel = "Tags"
+yearMonth = "Jahr & Monat"
+allDates = "Alle Daten"
+clearFilters = "Filter zurücksetzen"
+
+# Pagination
+pageOf = "Seite %d von %d"
+postSingular = "Beitrag"
+postPlural = "Beiträge"
+pageSingular = "Seite"
+pagePlural = "Seiten"
+postsOnThisPage = "auf dieser Seite"
+paginationFirst = "Erste"
+paginationPrev = "Vorherige"
+paginationNext = "Nächste"
+paginationLast = "Letzte"
+
+# Navigation links
+backToHome = "Zurück zur Startseite"
+allTags = "Alle Tags"
+readMore = "Weiterlesen"
+
+# Archive
+archive = "Archiv"
+
+# Single post
+relatedPosts = "Ähnliche Beiträge"
+tags = "Tags"
+navPrev = "Vorheriger"
+navNext = "Nächster"
+
+# Post meta
+wordCount = "Wörter"
+readingTime = "Min"
+
+# Table of contents
+tableOfContents = "Inhaltsverzeichnis"
+toggleToc = "Inhaltsverzeichnis umschalten"
+
+# Tags page
+tagsHelp = "Klicken Sie auf einen Tag, um ähnliche Beiträge anzuzeigen"
+searchNoResults = "Keine Ergebnisse gefunden"
+searchNoTagsFound = "Keine Tags gefunden"
+
+# Buy Me a Coffee
+buyMeACoffeeDescription = "Unterstütze mich auf Buy me a coffee!"
+
+# 404 page
+404Title = "Diese Seite existiert nicht"
+404DefaultMessage = "Es tut uns leid, die von Ihnen gesuchte Seite konnte nicht gefunden werden."
+404ReturnHome = "Zurück zur Startseite"

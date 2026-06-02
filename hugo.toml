@@ -120,3 +120,36 @@ theme = 'hugo-mana-theme'
     name = "소개"
     url = "/about/"
     weight = 40
+
+# German
+[languages.de]
+  languageCode = "de-DE"
+  languageName = "Deutsch"
+  contentDir = "content"
+  weight = 3
+  title = "123 Factory Blog"
+
+  [languages.de.params]
+    description = "Offizieller Blog von 123 Factory"
+    heroTitleLine1 = "Fueling Bold Ideas, Fast."
+    heroTitleLine2 = "Connecting People, Capital, and Ideas across Borders."
+
+  [[languages.de.menus.main]]
+    name = "Startseite"
+    pageRef = "/"
+    weight = 10
+
+  [[languages.de.menus.main]]
+    name = "Beiträge"
+    pageRef = "/posts"
+    weight = 20
+
+  [[languages.de.menus.main]]
+    name = "Tags"
+    pageRef = "/tags"
+    weight = 30
+
+  [[languages.de.menus.main]]
+    name = "Über uns"
+    url = "/about/"
+    weight = 40
