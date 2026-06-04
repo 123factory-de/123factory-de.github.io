@@ -10,7 +10,7 @@ image = "cover.jpg"
 
 ## I'm going to make things happen in Germany.
 
-![Yin and Yang](image1.ko.jpg)
+![Yin and Yang](image1.jpg)
 
 There is a question in the MBTI test that is popular these days.
 
@@ -40,7 +40,7 @@ This is the process of thinking about "entrepreneurship," simplified significant
 
 In 10 years, Berlin has changed from a "poor city for artists" to "Silicon Valley of Europe, a mecca for startups." It's the result of the inevitable gentrification that follows the hip city created by artists. Factory Berlin is at the heart of it.
 
-![Factory Berlin's second campus located in Kreuzberg, Berlin](image2.ko.jpg)
+![Factory Berlin's second campus located in Kreuzberg, Berlin](image2.jpg)
 *Factory Berlin's second campus located in Kreuzberg, Berlin*
 
 Factory Berlin is where N26, Twitter, Sound Cloud, Uber, Rocket Internet, Freeletics, and Pinterest are located. From individual founders (60-70%) to large-scale startups (20-30%) and large corporations (10%), entrepreneurs of various levels gather.

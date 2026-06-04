@@ -10,7 +10,7 @@ image = "cover.jpg"
 
 ## Ich werde in Deutschland Dinge in Bewegung setzen.
 
-![Yin und Yang](image1.ko.jpg)
+![Yin und Yang](image1.jpg)
 
 Es gibt eine Frage im derzeit so beliebten MBTI-Test:
 
@@ -40,7 +40,7 @@ Dies ist der Prozess des Nachdenkens über „Unternehmertum“, stark vereinfac
 
 In 10 Jahren hat sich Berlin von einer „armen Stadt für Künstler“ zum „Silicon Valley Europas, einem Mekka für Startups“ gewandelt. Es ist das Ergebnis der unvermeidlichen Gentrifizierung, die auf die von Künstlern geschaffene hippe Stadt folgt. Die Factory Berlin steht im Mittelpunkt dieses Prozesses.
 
-![Der zweite Campus der Factory Berlin in Kreuzberg, Berlin](image2.ko.jpg)
+![Der zweite Campus der Factory Berlin in Kreuzberg, Berlin](image2.jpg)
 *Der zweite Campus der Factory Berlin in Kreuzberg, Berlin*
 
 In der Factory Berlin haben sich Unternehmen wie N26, Twitter, SoundCloud, Uber, Rocket Internet, Freeletics und Pinterest niedergelassen. Von einzelnen Gründern (60–70 %) über etablierte Startups (20–30 %) bis hin zu Großkonzernen (10 %) kommen hier Unternehmer verschiedenster Ebenen zusammen.
