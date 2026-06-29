@@ -68,4 +68,9 @@ Die von PwC vorgestellten Startup-Themen, die in der künftigen Mobilität im Ra
 
 Auch Bits & Pretzels, die Startup-Konferenz, die Ende September auf dem Münchner Oktoberfest stattfand, wanderte ganz natürlich zur IAA Mobility, als das Oktoberfest abgesagt wurde. Am 9. September findet die von Bits & Pretzels veranstaltete „Founders Day"-Veranstaltung statt – ein exklusives Event, bei dem man neben der Bildung von Startup-Netzwerken innerhalb von Bits & Pretzels auch Tisch-Meetings mit Investoren, VCs (Venture Capital) und Angel-Investoren abhalten kann. Außerdem unterstützt Dassault Systèmes, das als Fortune-50-Unternehmen ausgewählte französische 3D-Softwareunternehmen, Startups, indem es eine Meeting-Lounge nur für sie einrichtet. Nächste Woche planen wir, die europäischen Startups, die an der IAA-Mobility-Ausstellung teilgenommen haben, persönlich zu treffen, ihre innovativen Ideen vorzustellen und die Zukunft des Mobilitätssektors zu prognostizieren.
 
-*Dieser Artikel ist eine bearbeitete und adaptierte Fassung von [European Startup Chronicles] aus <Bizhankook>.*
+---
+
+**Eunseo Yi**
+eunseo.yi@123factory.de
+
+*Dieser Artikel ist eine bearbeitete und adaptierte Fassung von [European Startup Chronicles] aus &lt;Bizhankook&gt;.*

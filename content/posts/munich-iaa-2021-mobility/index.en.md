@@ -68,4 +68,9 @@ The startup-field themes that PwC presented as worthy of the spotlight in future
 
 Bits & Pretzels, the startup conference held at Munich's Oktoberfest in late September, also naturally moved into IAA Mobility as Oktoberfest was canceled. On September 9, the "Founders Day" event hosted by Bits & Pretzels takes place — an exclusive event where, in addition to forming startup networks within Bits & Pretzels, one can hold table meetings with investors, VCs (venture capital), and angel investors. In addition, Dassault Systèmes, the French 3D-related software company selected as a Fortune 50 company, supports startups by setting up a meeting lounge just for them. Next week, we plan to meet in person the European startups that took part in the IAA Mobility exhibition, introduce their innovative ideas, and forecast the future of the mobility sector.
 
-*This article is an edited and adapted version of [European Startup Chronicles] from <Bizhankook>.*
+---
+
+**Eunseo Yi**
+eunseo.yi@123factory.de
+
+*This article is an edited and adapted version of [European Startup Chronicles] from &lt;Bizhankook&gt;.*

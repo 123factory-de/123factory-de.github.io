@@ -8,8 +8,6 @@ author = "Eunseo Yi"
 image = "cover.webp"
 +++
 
-## <b>Die koreanische Welle erfasst Berlin - K-Startups</b>
-
 *Titelbildquelle=offizielle Facebook-Seite von KIC-Europe*
 
 ## Was passiert, wenn Berlin auf Korea trifft?
@@ -69,4 +67,9 @@ Jongwoon Hwang, Leiter von KIC Europe, betonte: „Anders als in Korea werden di
 
 Das On-Device-KI-Startup Nota, die fotorealismus-basierte VR/XR-Plattform immersivecast, das Solarenergie-IT-Unternehmen haezoom und das datenbasierte Asian-Food-Meal-Kit-Startup easycook Asia gehörten zu den koreanischen Startups, die an dieser Veranstaltung teilnahmen und eine wichtige Rolle spielten. Behalten wir die Synergie, die Berlin und Korea erzeugen werden, sowie das Wachstum dieser Startups kontinuierlich im Auge.
 
-*Dieser Artikel ist eine bearbeitete und adaptierte Fassung von [European Startup Chronicles] aus <Bizhankook>.*
+---
+
+**Eunseo Yi**
+eunseo.yi@123factory.de
+
+*Dieser Artikel ist eine bearbeitete und adaptierte Fassung von [European Startup Chronicles] aus &lt;Bizhankook&gt;.*

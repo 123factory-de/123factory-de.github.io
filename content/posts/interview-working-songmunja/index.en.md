@@ -76,12 +76,12 @@ What follows is Mother's reply, sent over KakaoTalk.
 > To my daughter-in-law,
 > Without any preparation, I take up the notebook and write a few words.
 > Happy birthday, and thank you for coming to our home as our daughter-in-law, and thank you for giving us a grandchild — yet every year your birthday just passes by like this.
->
+> 
 > The way you don't turn away from your blunt mother-in-law and always speak kindly and in detail — in my heart I am grateful for it.
 > Your body is heavy now, so don't be too greedy about work; please rest while you go about things.
 > Lastly, I pray our whole family stays healthy. And that you have a safe delivery.
 > I've prepared seaweed soup, fresh cabbage kimchi, and deodeok, so grill them and eat.
->
+> 
 > May 2015
 
 *A letter Ms. Song Munja gave her daughter-in-law on her birthday*
@@ -94,19 +94,19 @@ That caring hand fed me, put me to sleep, dressed me, and washed me. Above all, 
 
 > Dear OO,
 > I just want to call you that, like a daughter. Thank you for everything. Living with a mother-in-law who isn't affectionate by nature, you must have suffered much in your heart. I don't know whether we'll meet and live together again, but I'm sorry I couldn't help make our time together more comfortable, and if I make an excuse, shall I blame it on my age?
->
+> 
 > Your character, the way you push forward without hesitation, without fear — I envy it, too…
->
+> 
 > With that character and that clever head of yours, I believe you will succeed.
->
+> 
 > And I believe you will raise your children, who take after you, well too.
->
+> 
 > Even if everything goes well, if you lose your health it all seems to come to nothing. I hope you all take care of your health, and when I think of the life you must pioneer, going off with two children to that place like a barren wilderness with no foundation at all, my heart aches and I feel for you endlessly — but it is the path you chose, so I can only pray for your success. Just contact me often, and let me see the children growing up. That's all I ask......
->
+> 
 > Above all, I pray you stay healthy and do your best toward your goal.
->
+> 
 > I pray that the little money you have is received as much.
->
+> 
 > February 2017
 
 *A letter Ms. Song Munja wrote when sending her daughter-in-law off to live on her own*
@@ -117,3 +117,8 @@ It declines to let mothers be treated as if they all had to play the role of mot
 
 ![Together with the two grandchildren added by my eldest son's late marriage](image5.webp)
 *Together with the two grandchildren added by my eldest son's late marriage*
+
+---
+
+**Eunseo Yi**
+eunseo.yi@123factory.de

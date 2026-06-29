@@ -76,12 +76,12 @@ Es folgt die Antwort der Mutter, geschickt über KakaoTalk.
 > An meine Schwiegertochter,
 > Ohne jede Vorbereitung nehme ich das Notizheft und schreibe ein paar Worte.
 > Alles Gute zum Geburtstag, und danke, dass du als unsere Schwiegertochter in unser Haus gekommen bist, und danke, dass du uns einen Enkel geschenkt hast – und doch zieht dein Geburtstag Jahr für Jahr einfach so vorbei.
->
+> 
 > Wie du dich nicht von deiner schroffen Schwiegermutter abwendest und immer freundlich und ausführlich mit mir redest – in meinem Herzen bin ich dafür dankbar.
 > Dein Körper ist jetzt schwer, also sei nicht zu ehrgeizig bei der Arbeit; ruh dich aus, während du deinen Dingen nachgehst.
 > Zuletzt bete ich, dass unsere ganze Familie gesund bleibt. Und dass du eine sichere Entbindung hast.
 > Ich habe Seetangsuppe, frischen Kohl-Kimchi und Deodeok vorbereitet, also brate sie und iss.
->
+> 
 > Mai 2015
 
 *Ein Brief, den Frau Song Munja ihrer Schwiegertochter zum Geburtstag gab*
@@ -93,20 +93,20 @@ Diese sorgende Hand hat mich gefüttert, mich schlafen gelegt, mich angezogen un
 ## Die sorgende Hand, die betende Hand zieht die Stadt groß.
 
 > Liebe OO,
-> Ich möchte dich einfach so nennen, wie eine Tochter. Danke für alles in dieser Zeit. Mit einer von Natur aus nicht herzlichen Schwiegermutter zu leben, hat dir gewiss viel Kummer bereitet. Ich weiß nicht, ob wir uns wiedersehen und zusammenleben werden, aber es tut mir leid, dass ich unsere gemeinsame Zeit nicht angenehmer gestalten konnte, und wenn ich eine Ausrede mache, soll ich es auf mein Alter schieben?
->
-> Deinen Charakter, die Art, wie du ohne Zögern, ohne Furcht vorangehst – ich beneide sie sogar…
->
+> Ich möchte dich einfach so nennen, wie eine Tochter. Danke für alles. Da du mit einer Schwiegermutter zusammengelebt hast, die von Natur aus nicht liebevoll ist, musst du in deinem Herzen viel gelitten haben. Ich weiß nicht, ob wir uns wiedersehen und zusammenleben werden, aber es tut mir leid, dass ich nicht helfen konnte, unsere gemeinsame Zeit angenehmer zu machen, und wenn ich eine Ausrede suche, soll ich es auf mein Alter schieben?
+> 
+> Dein Charakter, die Art und Weise, wie du ohne Zögern, ohne Angst voranschreitest – ich beneide ihn auch…
+> 
 > Mit diesem Charakter und deinem klugen Kopf glaube ich, dass du Erfolg haben wirst.
->
+> 
 > Und ich glaube, dass du auch deine Kinder, die dir nachgeraten sind, gut großziehen wirst.
->
+> 
 > Selbst wenn alles gut läuft, scheint alles vergebens, wenn man die Gesundheit verliert. Ich hoffe, ihr alle achtet auf eure Gesundheit, und wenn ich an das Leben denke, das ihr euch erschließen müsst – mit zwei Kindern an jenen Ort wie eine öde Wildnis ohne jede Grundlage zu gehen –, schmerzt mein Herz und ich fühle endlos mit euch, aber es ist der Weg, den ihr gewählt habt, also kann ich nur für euren Erfolg beten. Meldet euch nur oft und lasst mich sehen, wie die Kinder heranwachsen. Mehr verlange ich nicht......
->
+> 
 > Vor allem bete ich, dass ihr gesund bleibt und euer Bestes auf euer Ziel hin gebt.
->
+> 
 > Ich bete, dass das wenige Geld, das ihr habt, groß empfangen werde.
->
+> 
 > Februar 2017
 
 *Ein Brief, den Frau Song Munja schrieb, als sie ihre Schwiegertochter in die Selbstständigkeit entließ*
@@ -117,3 +117,8 @@ Es lehnt ab, dass Mütter so behandelt werden, als hätten sie alle die Rolle de
 
 ![Zusammen mit den zwei Enkeln, die durch die späte Heirat meines ältesten Sohnes hinzukamen](image5.webp)
 *Zusammen mit den zwei Enkeln, die durch die späte Heirat meines ältesten Sohnes hinzukamen*
+
+---
+
+**Eunseo Yi**
+eunseo.yi@123factory.de

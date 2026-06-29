@@ -16,6 +16,7 @@ theme = 'hugo-mana-theme'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      hardWraps = true
     [markup.goldmark.parser]
       [markup.goldmark.parser.attribute]
         block = true
