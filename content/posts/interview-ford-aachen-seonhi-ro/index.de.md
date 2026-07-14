@@ -1,6 +1,6 @@
 +++
 title = "[Interview] Mit meiner Tradition und Identität im Mittelpunkt arbeiten"
-date = "2022-09-23T19:59:10+09:00"
+date = "2022-09-24T19:59:10+09:00"
 description = "Dr. Noh Seon-hee, Ford Forschungsinstitut Aachen, Deutschland"
 tags = ["Interview", "Ford", "Labor", "Wissenschaftler", "Aachen", "Deutschland"]
 categories = ["Interview"]

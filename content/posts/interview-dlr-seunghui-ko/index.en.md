@@ -1,6 +1,6 @@
 +++
 title = "[Interview] Not being afraid of mistakes"
-date = "2022-09-23T19:02:24+09:00"
+date = "2022-09-24T19:02:24+09:00"
 description = "Researcher Seunghee Ko at the German Aerospace Research Center"
 tags = ["interview", "aerospace", "germany", "researcher"]
 categories = ["Interview"]
