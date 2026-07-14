@@ -1,4 +1,9 @@
-# SKILL: Brunch to Hugo Migration Guide
+---
+name: brunch-to-hugo-migration
+description: Standardized process for migrating blog posts from Brunch (brunch.co.kr) to this Hugo site with 1:1 content parity, visual fidelity, and Korean/English sync. Use when migrating, porting, or importing a Brunch article into a Hugo post bundle (index.ko.md / index.en.md), localizing its images, or verifying styling parity against the original.
+---
+
+# Brunch to Hugo Migration Guide
 
 This guide outlines the standardized process for migrating blog posts from Brunch (brunch.co.kr) to a Hugo-based website, ensuring 1:1 content parity, visual fidelity, and multilingual synchronization.
 
