@@ -1,6 +1,6 @@
 +++
 title = "[Interview] Keine Angst vor Fehlern"
-date = "2022-09-23T19:02:24+09:00"
+date = "2022-09-24T19:02:24+09:00"
 description = "Forscher Seunghee Ko vom Deutschen Zentrum für Luft- und Raumfahrt"
 tags = ["Interview", "Luft- und Raumfahrt", "Deutschland", "Forscher"]
 categories = ["Interview"]
