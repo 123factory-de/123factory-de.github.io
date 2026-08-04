@@ -139,7 +139,7 @@ Das engstirnige Denken, das die Illusion einer „Beschäftigung im Ausland“ a
 
 > Er absolvierte die Abteilung für Spieledesign der Hongik-Universität in Korea, absolvierte ein Praktikum in der globalen Designabteilung von Naver, arbeitete als Marketingdesigner bei IBM und zog dann nach Kopenhagen, Dänemark, wo er den Interaction Design-Kurs am Copenhagen Institute of Interaction Design (CIID) abschloss.
 >
-> Nach seiner Tätigkeit als UX-Designer in Berlin arbeitete er bei der Designagentur Icon Mobile Group ([iconmobile group](https://www.icongroup.com/)) und dem Fintech-Company-Builder [핀립(Finleap)](https://finleap.com/) und arbeitet derzeit als leitender UX-Designer bei [이모스카웃(ImmoScout24)](https://www.immobilienscout24.de/), Deutschlands größter Immobilienplattform.
+> Nach seiner Tätigkeit als UX-Designer in Berlin arbeitete er bei der Designagentur Icon Mobile Group ([iconmobile group](https://www.icongroup.com/)) und dem Fintech-Company-Builder [Finleap](https://finleap.com/) und arbeitet derzeit als leitender UX-Designer bei [ImmoScout24](https://www.immobilienscout24.de/), Deutschlands größter Immobilienplattform.
 >
 > *LinkedIn ([https://www.linkedin.com/in/hyeona/](https://www.linkedin.com/in/hyeona/))
 
@@ -149,7 +149,7 @@ Das engstirnige Denken, das die Illusion einer „Beschäftigung im Ausland“ a
 
 > Er wuchs als französisch-koreanischer Mischling auf, verbrachte seine Kindheit in Korea, schloss sein Studium an der Universität Sorbonne Nouvelle in Paris, Frankreich, ab und begann seine Karriere als UX-Forscher bei LG Electronics France in Paris.
 >
-> Danach habe ich zum ersten Mal einen Fuß nach Berlin gesetzt, als ich als UX-Designer bei der iconmobile-Gruppe in Berlin gearbeitet habe. Derzeit arbeite ich als Hauptproduktdesigner bei [잘란도](https://en.zalando.de/), Europas größtem Mode-E-Commerce-Unternehmen.
+> Danach habe ich zum ersten Mal einen Fuß nach Berlin gesetzt, als ich als UX-Designer bei der iconmobile-Gruppe in Berlin gearbeitet habe. Derzeit arbeite ich als Hauptproduktdesigner bei [Zalando](https://en.zalando.de/), Europas größtem Mode-E-Commerce-Unternehmen.
 >
 > *LinkedIn ([https://www.linkedin.com/in/clementinejinhee/](https://www.linkedin.com/in/clementinejinhee/))
 
@@ -159,11 +159,11 @@ Das engstirnige Denken, das die Illusion einer „Beschäftigung im Ausland“ a
 
 > Nach seinem Abschluss an der Abteilung für Industriedesign der Keimyung-Universität schloss er sein Masterstudium in Transportdesign am Umeå Institute of Design (UID) in Schweden ab, das dafür bekannt ist, viele erstklassige Designtalente hervorzubringen.
 >
-> Danach kam ich nach Berlin, um bei icon incar unter der iconmobile-Gruppe am UX/UI-Design für die Automobilindustrie zu arbeiten, und arbeitete später an verschiedenen automobilbezogenen Projekten, darunter einem Automobil-OEM-Strategieberatungsprojekt, im McKinsey Digital Lab in Berlin. Nachdem er über fünf Jahre als leitender UX-Designer bei Daimler Fleet Board Innovation und Daimler Trucks gearbeitet hatte, arbeitete er in der Innovationsabteilung eines großen deutschen Unternehmens und startete kürzlich eine neue Karriere als General Manager bei [노타(Nota AI)](https://nota.ai/en/index.php), einem in Korea ansässigen Berliner Startup.
+> Danach kam ich nach Berlin, um bei icon incar unter der iconmobile-Gruppe am UX/UI-Design für die Automobilindustrie zu arbeiten, und arbeitete später an verschiedenen automobilbezogenen Projekten, darunter einem Automobil-OEM-Strategieberatungsprojekt, im McKinsey Digital Lab in Berlin. Nachdem er über fünf Jahre als leitender UX-Designer bei Daimler Fleet Board Innovation und Daimler Trucks gearbeitet hatte, arbeitete er in der Innovationsabteilung eines großen deutschen Unternehmens und startete kürzlich eine neue Karriere als General Manager bei [Nota AI](https://nota.ai/en/index.php), einem in Korea ansässigen Berliner Startup.
 >
 > *LinkedIn ([https://www.linkedin.com/in/seri-saekyoung-an/](https://www.linkedin.com/in/seri-saekyoung-an/))
 
-* Dieser Artikel wurde zu <원티드>s [All About Overseas Employment „Europa“] beigetragen.
+* Dieser Artikel wurde zu Wonteds [All About Overseas Employment „Europa“] beigetragen.
 
 ---
 
