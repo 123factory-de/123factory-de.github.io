@@ -18,7 +18,7 @@ image = "cover.jpg"
 
 <b>Anseri (im Folgenden „Se“ genannt): </b><b>Der Grund, warum ich auch nach der Geburt eines Kindes in jungen Jahren in Deutschland arbeiten konnte, liegt in der Leistungsfähigkeit dieses Systems. Ich war dankbar, dass es ein Umfeld war, in dem ich die Entwicklung meines Kindes und meiner Karriere miterleben konnte, ohne etwas zu verpassen.</b><b> </b>
 
-Meine Frau und ich haben zusammen insgesamt 14 Monate Elternzeit genommen, genau die Hälfte. Bevor mein Kind in die Schule kam, haben mein Mann und ich einmal nur 30 Stunden am Stück gearbeitet. Dies war möglich, weil ich über ein System verfügte, das ein Umfeld schuf, in dem ich ohne Diskriminierung oder Bedenken arbeiten konnte, und weil ich einen Ehemann hatte, der mit seiner offenen Einstellung eine gute Balance fand. <b>Der Grund, warum ich eine Beschäftigung bei europäischen Unternehmen empfehle, ist, dass ich denke, dass es eine Gelegenheit ist, die Idee zu verwirklichen: „Die Welt ist weit und meine Bühne ist die Welt!“</b>
+Mein Mann und ich haben zusammen insgesamt 14 Monate Elternzeit genommen, genau die Hälfte. Bevor mein Kind in die Schule kam, haben mein Mann und ich einmal nur 30 Stunden am Stück gearbeitet. Dies war möglich, weil ich über ein System verfügte, das ein Umfeld schuf, in dem ich ohne Diskriminierung oder Bedenken arbeiten konnte, und weil ich einen Ehemann hatte, der mit seiner offenen Einstellung eine gute Balance fand. <b>Der Grund, warum ich eine Beschäftigung bei europäischen Unternehmen empfehle, ist, dass ich denke, dass es eine Gelegenheit ist, die Idee zu verwirklichen: „Die Welt ist weit und meine Bühne ist die Welt!“</b>
 
 ![Anseri hält ein Seminar mit Kollegen, während er als Designer bei Daimler Trucks arbeitet ⓒ Anseri](image1.png)
 

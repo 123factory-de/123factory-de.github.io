@@ -18,7 +18,7 @@ image = "cover.jpg"
 
 <b>Anseri (hereinafter referred to as ‘Se’): </b><b>The reason why I was able to work in Germany even after having a child at an early age is because of the power of this system. I was grateful that it was an environment where I could take the process of my child's growth and my career growth without missing anything.</b><b> </b>
 
-My wife and I took a total of 14 months of parental leave together, exactly half. Before my child started school, there was a time when my husband and I only worked 30 hours at a time. This was possible because I had a system that created an environment where I could work without any discrimination or concern, and a husband who struck a good balance with an open mind. <b>The reason why I recommend employment at European companies is because I think it is an opportunity to realize the idea that ‘the world is wide and my stage is the world!’</b>
+My husband and I took a total of 14 months of parental leave together, exactly half. Before my child started school, there was a time when my husband and I only worked 30 hours at a time. This was possible because I had a system that created an environment where I could work without any discrimination or concern, and a husband who struck a good balance with an open mind. <b>The reason why I recommend employment at European companies is because I think it is an opportunity to realize the idea that ‘the world is wide and my stage is the world!’</b>
 
 ![Anseri holding a seminar with colleagues while working as a designer at Daimler Trucks ⓒ Anseri](image1.png)
 
