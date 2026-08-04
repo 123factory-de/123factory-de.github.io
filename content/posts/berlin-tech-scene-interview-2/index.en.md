@@ -139,7 +139,7 @@ The narrow-minded thinking that creates the illusion of ‘overseas employment�
 
 > He graduated from Hongik University's Department of Game Design in Korea, did an internship at Naver's global design department, worked as a marketing designer at IBM, and then moved to Copenhagen, Denmark, where he graduated from the Interaction Design course at the Copenhagen Institute of Interaction Design (CIID).
 >
-> After working as a UX designer in Berlin, he worked at design agency Icon Mobile Group ([iconmobile group](https://www.icongroup.com/)) and fintech company builder [핀립(Finleap)](https://finleap.com/), and is currently working as the lead UX designer at [이모스카웃(ImmoScout24)](https://www.immobilienscout24.de/), Germany's largest real estate platform.
+> After working as a UX designer in Berlin, he worked at design agency Icon Mobile Group ([iconmobile group](https://www.icongroup.com/)) and fintech company builder [Finleap](https://finleap.com/), and is currently working as the lead UX designer at [ImmoScout24](https://www.immobilienscout24.de/), Germany's largest real estate platform.
 >
 > *LinkedIn ([https://www.linkedin.com/in/hyeona/](https://www.linkedin.com/in/hyeona/))
 
@@ -149,7 +149,7 @@ The narrow-minded thinking that creates the illusion of ‘overseas employment�
 
 > He grew up as a French-Korean mixed race, spent his childhood in Korea, graduated from Sorbonne Nouvelle University in Paris, France, and began his career as a UX researcher at LG Electronics France in Paris.
 >
-> Afterwards, I first set foot in Berlin while working as a UX designer at the iconmobile group in Berlin. Currently, I am working as a Principal Product Designer at [잘란도](https://en.zalando.de/), Europe's largest fashion e-commerce company.
+> Afterwards, I first set foot in Berlin while working as a UX designer at the iconmobile group in Berlin. Currently, I am working as a Principal Product Designer at [Zalando](https://en.zalando.de/), Europe's largest fashion e-commerce company.
 >
 > *LinkedIn ([https://www.linkedin.com/in/clementinejinhee/](https://www.linkedin.com/in/clementinejinhee/))
 
@@ -159,11 +159,11 @@ The narrow-minded thinking that creates the illusion of ‘overseas employment�
 
 > After graduating from Keimyung University's Department of Industrial Design, he completed his master's degree in Transportation Design at Umeå Institute of Design (UID), Sweden, which is famous for producing many world-class design talents.
 >
-> Afterwards, I came to Berlin to work on automotive UX/UI design at icon incar under the iconmobile group, and later worked on various automobile-related projects, including an automobile OEM strategy consulting project, at McKinsey Digital Lab in Berlin. After working as a lead UX designer at Daimler Fleet Board Innovation and Daimler Trucks for over five years, he worked in the innovation department within a large German company, and has recently started a new career as a general manager at [노타(Nota AI)](https://nota.ai/en/index.php), a Korean-based Berlin startup.
+> Afterwards, I came to Berlin to work on automotive UX/UI design at icon incar under the iconmobile group, and later worked on various automobile-related projects, including an automobile OEM strategy consulting project, at McKinsey Digital Lab in Berlin. After working as a lead UX designer at Daimler Fleet Board Innovation and Daimler Trucks for over five years, he worked in the innovation department within a large German company, and has recently started a new career as a general manager at [Nota AI](https://nota.ai/en/index.php), a Korean-based Berlin startup.
 >
 > *LinkedIn ([https://www.linkedin.com/in/seri-saekyoung-an/](https://www.linkedin.com/in/seri-saekyoung-an/))
 
-* This article was contributed to <원티드>’s [All About Overseas Employment ‘Europe].
+* This article was contributed to Wanted’s [All About Overseas Employment ‘Europe].
 
 ---
 
