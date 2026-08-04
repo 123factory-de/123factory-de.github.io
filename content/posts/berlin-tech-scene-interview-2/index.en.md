@@ -16,7 +16,7 @@ image = "cover.jpg"
 
 <b>Yang Hyo-na (hereinafter referred to as ‘Hyo’): </b><b>I feel like the company system keeps my life more stable than in Korea. </b>For example, our company has a diversity team, a sustainability team, and a parents support team. I feel like the company is helping me achieve a good work-life balance. Each team has a slack channel, so you can communicate and receive support about difficulties at any time.
 
-<b>Anseri (hereinafter referred to as ‘An’): </b><b>The reason why I was able to work in Germany even after having a child at an early age is because of the power of this system. I was grateful that it was an environment where I could take the process of my child's growth and my career growth without missing anything.</b><b> </b>
+<b>Anseri (hereinafter referred to as ‘Se’): </b><b>The reason why I was able to work in Germany even after having a child at an early age is because of the power of this system. I was grateful that it was an environment where I could take the process of my child's growth and my career growth without missing anything.</b><b> </b>
 
 My wife and I took a total of 14 months of parental leave together, exactly half. Before my child started school, there was a time when my husband and I only worked 30 hours at a time. This was possible because I had a system that created an environment where I could work without any discrimination or concern, and a husband who struck a good balance with an open mind. <b>The reason why I recommend employment at European companies is because I think it is an opportunity to realize the idea that ‘the world is wide and my stage is the world!’</b>
 
@@ -30,7 +30,7 @@ My wife and I took a total of 14 months of parental leave together, exactly half
 
 If I didn't know anyone, I contacted them through a friend of a friend at <b><u>LinkedIn </u></b>. I am currently working <b><u>25 hours a week</u></b>. Find a company that meets these requirements and ask people who work at this company on LinkedIn. ‘How is the atmosphere at your company?’ I think it is very important to actively find out about the company culture that suits you.
 
-<b> Clemontin:</b> Designers are usually hired through a 4-5 step process. Starting with the first HR screening and recruiter interview, there is also a document and portfolio case study, a whiteboard design test (in-depth workshop), and a conversation with the team to see if the culture is a good fit. The process has become much more complicated than before.
+<b>Clementin (hereinafter referred to as ‘Cle’):</b> Designers are usually hired through a 4-5 step process. Starting with the first HR screening and recruiter interview, there is also a document and portfolio case study, a whiteboard design test (in-depth workshop), and a conversation with the team to see if the culture is a good fit. The process has become much more complicated than before.
 
 <b>The tip is that you should always have an updated portfolio as standard.</b> It is better to upload it to a portfolio platform such as Behance or Dribbble, and for case studies, it is important to use Keynote or GoogleSlide to constantly update it with a focus on recent projects. You need to make an effort to confidently show your unique expertise that accumulates with experience and continue to promote yourself.
 
