@@ -95,7 +95,7 @@ Afterwards, I conducted mobile phone user experience testing through UX research
 
 <b><u>What company are you currently working in?</u></b>
 
-<b>Club: </b>I am currently working at <b>ZAlando</b>, a fashion e-commerce company. Zalando is a startup that started as an online shoe seller in 2008 and has now grown into a fashion platform where you can shop over 2,000 fashion brands in over 18 European markets. Recently, we signed a strategic partnership with Louis Vuitton Moët Hennessy's cosmetics platform Sephora, allowing you to shop high-end beauty products. It is an organization that continues to scale up.
+<b>Cl: </b>I am currently working at <b>ZAlando</b>, a fashion e-commerce company. Zalando is a startup that started as an online shoe seller in 2008 and has now grown into a fashion platform where you can shop over 2,000 fashion brands in over 18 European markets. Recently, we signed a strategic partnership with Louis Vuitton Moët Hennessy's cosmetics platform Sephora, allowing you to shop high-end beauty products. It is an organization that continues to scale up.
 
 ![Inside the Berlin fashion e-commerce company Zalando headquarters © zalando](image7.jpg)
 
@@ -129,7 +129,7 @@ Therefore, we must always put the customer at the center and design well so that
 
 <b>I imagined what it would be like if the decision maker in the business was a designer. </b><b>If you look at business success cases, they were cases where companies with high design maturity created and provided user-centric products and services. While I have played that role as a design lead, at Nota, I would like to take on the challenge of successfully operating the European subsidiary with a focus on customers and co-workers. </b>
 
-<b>Cle: I think the job of a designer is to design experiences. </b> Ultimately, people are the ones who use the product, and the designer's job is to make people have a good experience through the product. Even if a product is created by a technology-based company, it is ultimately people who use it. I think the designer's mission is to define and solve problems and deliver good UX.
+<b>Cl: I think the job of a designer is to design experiences. </b> Ultimately, people are the ones who use the product, and the designer's job is to make people have a good experience through the product. Even if a product is created by a technology-based company, it is ultimately people who use it. I think the designer's mission is to define and solve problems and deliver good UX.
 
 To do so, it is very important for detailed professionals such as product designers, user researchers, branding designers, UX writers, product managers, and engineers, who are a combination of UX/UI, to come together and collaborate closely. One of the roles of a principal designer is to actively lead such collaboration to take place well. It is also my daily work.
 
@@ -157,7 +157,7 @@ Afterwards, I worked on rebranding at Emo Scout 24 and did a lot of work to stru
 
 <b><u>
 </u></b>
-<b>cl: The good thing about startups and companies in the European tech scene is that they eliminate as much as possible from the hiring process any discriminatory factors such as race, education, age or gender. This is to secure appropriate talent that fits the organization's culture and position without bias during the hiring screening process.
+<b>Cl: The good thing about startups and companies in the European tech scene is that they eliminate as much as possible from the hiring process any discriminatory factors such as race, education, age or gender. This is to secure appropriate talent that fits the organization's culture and position without bias during the hiring screening process.
 
 <b>The second is that we consistently make efforts to provide fair compensation for work performance.</b> In the case of Zalando, there is a performance compensation system that evaluates the results of work performed. Once a year, I receive feedback from team members who have worked closely with me, and the summarized content goes to the board of directors to evaluate and decide as objectively as possible whether I need a salary increase or a promotion. There is no need to worry too much about salary negotiation, and it is not decided by my boss’ subjective thoughts. I understand that more tech companies are moving towards this fair system for talent management.
 

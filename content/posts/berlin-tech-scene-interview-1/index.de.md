@@ -95,7 +95,7 @@ Anschließend habe ich mithilfe von UX-Forschung Tests zur Benutzererfahrung von
 
 <b><u>In welchem ​​Unternehmen arbeiten Sie derzeit?</u></b>
 
-<b>Club: </b>I arbeitet derzeit bei <b>ZAlando</b>, einem Mode-E-Commerce-Unternehmen. Zalando ist ein Startup, das 2008 als Online-Schuhverkäufer begann und sich mittlerweile zu einer Modeplattform entwickelt hat, auf der Sie über 2.000 Modemarken in über 18 europäischen Märkten einkaufen können. Vor Kurzem haben wir eine strategische Partnerschaft mit der Kosmetikplattform Sephora von Louis Vuitton Moët Hennessy unterzeichnet, die es Ihnen ermöglicht, hochwertige Schönheitsprodukte zu kaufen. Es ist eine Organisation, die weiter wächst.
+<b>Cl: </b>I arbeitet derzeit bei <b>ZAlando</b>, einem Mode-E-Commerce-Unternehmen. Zalando ist ein Startup, das 2008 als Online-Schuhverkäufer begann und sich mittlerweile zu einer Modeplattform entwickelt hat, auf der Sie über 2.000 Modemarken in über 18 europäischen Märkten einkaufen können. Vor Kurzem haben wir eine strategische Partnerschaft mit der Kosmetikplattform Sephora von Louis Vuitton Moët Hennessy unterzeichnet, die es Ihnen ermöglicht, hochwertige Schönheitsprodukte zu kaufen. Es ist eine Organisation, die weiter wächst.
 
 ![Im Hauptsitz des Berliner Mode-E-Commerce-Unternehmens Zalando © zalando](image7.jpg)
 
@@ -129,7 +129,7 @@ Deshalb müssen wir den Kunden stets in den Mittelpunkt stellen und gut gestalte
 
 <b>I stellte sich vor, wie es wäre, wenn der Entscheidungsträger im Unternehmen ein Designer wäre. </b><b>Wenn Sie sich Geschäftserfolgsfälle ansehen, handelt es sich um Fälle, in denen Unternehmen mit hoher Designreife benutzerzentrierte Produkte und Dienstleistungen entwickelt und bereitgestellt haben. Während ich diese Rolle als Designleiter gespielt habe, möchte ich bei Nota die Herausforderung annehmen, die europäische Niederlassung erfolgreich mit Fokus auf Kunden und Mitarbeiter zu führen. </b>
 
-<b>Cle: Ich denke, die Aufgabe eines Designers besteht darin, Erlebnisse zu entwerfen. </b> Letztendlich sind es die Menschen, die das Produkt nutzen, und die Aufgabe des Designers besteht darin, den Menschen eine gute Erfahrung mit dem Produkt zu ermöglichen. Selbst wenn ein Produkt von einem technologiebasierten Unternehmen entwickelt wird, sind es letztendlich Menschen, die es nutzen. Ich denke, die Mission des Designers besteht darin, Probleme zu definieren und zu lösen und eine gute UX zu liefern.
+<b>Cl: Ich denke, die Aufgabe eines Designers besteht darin, Erlebnisse zu entwerfen. </b> Letztendlich sind es die Menschen, die das Produkt nutzen, und die Aufgabe des Designers besteht darin, den Menschen eine gute Erfahrung mit dem Produkt zu ermöglichen. Selbst wenn ein Produkt von einem technologiebasierten Unternehmen entwickelt wird, sind es letztendlich Menschen, die es nutzen. Ich denke, die Mission des Designers besteht darin, Probleme zu definieren und zu lösen und eine gute UX zu liefern.
 
 Um dies zu erreichen, ist es sehr wichtig, dass detaillierte Fachleute wie Produktdesigner, Benutzerforscher, Branding-Designer, UX-Autoren, Produktmanager und Ingenieure, die eine Kombination aus UX/UI sind, zusammenkommen und eng zusammenarbeiten. Zu den Aufgaben eines Chefdesigners gehört es, aktiv dafür zu sorgen, dass eine solche Zusammenarbeit gut verläuft. Es ist auch meine tägliche Arbeit.
 
@@ -157,7 +157,7 @@ Anschließend arbeitete ich am Rebranding bei Emo Scout 24 und leistete viel Arb
 
 <b><u>
 </u></b>
-<b>cl: Das Gute an Startups und Unternehmen in der europäischen Tech-Szene ist, dass sie diskriminierende Faktoren wie Rasse, Bildung, Alter oder Geschlecht so weit wie möglich aus dem Einstellungsprozess eliminieren. Dies dient dazu, geeignete Talente zu gewinnen, die ohne Voreingenommenheit während des Einstellungsauswahlprozesses zur Kultur und Position der Organisation passen.
+<b>Cl: Das Gute an Startups und Unternehmen in der europäischen Tech-Szene ist, dass sie diskriminierende Faktoren wie Rasse, Bildung, Alter oder Geschlecht so weit wie möglich aus dem Einstellungsprozess eliminieren. Dies dient dazu, geeignete Talente zu gewinnen, die ohne Voreingenommenheit während des Einstellungsauswahlprozesses zur Kultur und Position der Organisation passen.
 
 <b>Das zweite ist, dass wir uns konsequent um eine faire Vergütung der Arbeitsleistung bemühen.</b> Bei Zalando gibt es ein Leistungsvergütungssystem, das die Ergebnisse der geleisteten Arbeit bewertet. Einmal im Jahr erhalte ich Feedback von Teammitgliedern, die eng mit mir zusammengearbeitet haben, und die zusammengefassten Inhalte gehen an den Vorstand, um möglichst objektiv zu bewerten und zu entscheiden, ob ich eine Gehaltserhöhung oder eine Beförderung benötige. Über die Gehaltsverhandlung muss man sich keine allzu großen Gedanken machen, und darüber entscheiden auch nicht die subjektiven Gedanken meines Chefs. Ich verstehe, dass immer mehr Technologieunternehmen auf dieses faire System für das Talentmanagement umsteigen.
 
