@@ -9,7 +9,7 @@ image = "cover.jpg"
 canonicalUrl = "https://brunch.co.kr/@123factory/36"
 +++
 
-[<b>[인터뷰] 베를린 테크 씬에서 일하고 있습니다. (1) 바로 가기 </b>](https://brunch.co.kr/@123factory/35)
+[<b>[인터뷰] 베를린 테크 씬에서 일하고 있습니다. (1) 바로 가기 </b>](../berlin-tech-scene-interview-1/)
 
 ---
 

@@ -8,7 +8,7 @@ author = "123 Factory"
 image = "cover.jpg"
 +++
 
-[<b>[Interview] I am working in the Berlin tech scene. (1) Shortcut </b>](https://brunch.co.kr/@123factory/35)
+[<b>[Interview] I am working in the Berlin tech scene. (1) Shortcut </b>](../berlin-tech-scene-interview-1/)
 
 ---
 
