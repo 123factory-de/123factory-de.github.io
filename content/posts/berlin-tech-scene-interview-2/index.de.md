@@ -8,7 +8,7 @@ author = "123 Factory"
 image = "cover.jpg"
 +++
 
-[<b>[Interview] Ich arbeite in der Berliner Tech-Szene. (1) Verknüpfung </b>](https://brunch.co.kr/@123factory/35)
+[<b>[Interview] Ich arbeite in der Berliner Tech-Szene. (1) Verknüpfung </b>](../berlin-tech-scene-interview-1/)
 
 ---
 
