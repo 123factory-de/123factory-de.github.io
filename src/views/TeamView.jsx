@@ -311,11 +311,211 @@ function AnimatedStatCounter({ value, inView }) {
   return <span>{displayValue}+</span>;
 }
 
+function formatOfficeTime(timeZone) {
+  try {
+    return new Date().toLocaleTimeString('en-GB', {
+      timeZone,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+  } catch (e) {
+    return '--:--:--';
+  }
+}
+
+function BerlinBlueprintSvg() {
+  return (
+    <svg viewBox="0 0 520 220" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Berlin HQ Architectural Blueprint">
+      <defs>
+        <pattern id="berlinGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.035)" strokeWidth="1" />
+        </pattern>
+        <linearGradient id="berlinGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#FFAB00" stopOpacity="0.3" />
+          <stop offset="50%" stopColor="#FFAB00" stopOpacity="1" />
+          <stop offset="100%" stopColor="#FFAB00" stopOpacity="0.3" />
+        </linearGradient>
+      </defs>
+
+      {/* Blueprint Grid Background */}
+      <rect width="100%" height="100%" fill="#070709" />
+      <rect width="100%" height="100%" fill="url(#berlinGrid)" />
+
+      {/* Ground Baseline */}
+      <line x1="20" y1="192" x2="500" y2="192" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+      <line x1="20" y1="196" x2="500" y2="196" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
+
+      {/* Facade Outer Outline */}
+      <rect x="110" y="58" width="300" height="134" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.5" />
+
+      {/* Cornice & Parapet */}
+      <line x1="98" y1="58" x2="422" y2="58" stroke="url(#berlinGoldGrad)" strokeWidth="2.5" />
+      <line x1="104" y1="50" x2="416" y2="50" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1" />
+      <rect x="230" y="38" width="60" height="12" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
+      <polygon points="260,26 230,38 290,38" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
+
+      {/* Structural Pilaster Lines */}
+      <line x1="185" y1="58" x2="185" y2="192" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" strokeDasharray="4 2" />
+      <line x1="260" y1="50" x2="260" y2="192" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" strokeDasharray="6 3" />
+      <line x1="335" y1="58" x2="335" y2="192" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" strokeDasharray="4 2" />
+
+      {/* Floor Dividers */}
+      <line x1="110" y1="105" x2="410" y2="105" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      <line x1="110" y1="150" x2="410" y2="150" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+
+      {/* Top Floor Windows */}
+      <rect x="130" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="148" y1="70" x2="148" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="205" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="223" y1="70" x2="223" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="279" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="297" y1="70" x2="297" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="354" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="372" y1="70" x2="372" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+
+      {/* Mid Floor Windows */}
+      <rect x="130" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="148" y1="115" x2="148" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="205" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="223" y1="115" x2="223" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="279" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="297" y1="115" x2="297" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      <rect x="354" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <line x1="372" y1="115" x2="372" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+
+      {/* Ground Floor Windows & Archway */}
+      <rect x="130" y="160" width="36" height="32" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <rect x="354" y="160" width="36" height="32" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
+      <path d="M 235 192 L 235 168 A 25 25 0 0 1 285 168 L 285 192 Z" fill="rgba(255, 171, 0, 0.08)" stroke="#FFAB00" strokeWidth="1.5" />
+      <line x1="260" y1="168" x2="260" y2="192" stroke="#FFAB00" strokeWidth="1" />
+
+      {/* Width dimension annotation */}
+      <line x1="110" y1="205" x2="410" y2="205" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="110" y1="198" x2="110" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="410" y1="198" x2="410" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <text x="260" y="215" fill="rgba(255, 255, 255, 0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" letterSpacing="0.08em">WIDTH: 32.4M · FACADE</text>
+
+      {/* Height dimension annotation */}
+      <line x1="75" y1="58" x2="75" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="68" y1="58" x2="82" y2="58" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="68" y1="192" x2="82" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <text x="64" y="128" fill="rgba(255, 255, 255, 0.45)" fontSize="8.5" fontFamily="monospace" textAnchor="end">H: 18.6M</text>
+
+      {/* Modernist Compass */}
+      <circle cx="465" cy="40" r="16" fill="none" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <circle cx="465" cy="40" r="5" fill="none" stroke="#FFAB00" strokeWidth="1" />
+      <line x1="465" y1="20" x2="465" y2="60" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+      <line x1="445" y1="40" x2="485" y2="40" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+      <text x="465" y="15" fill="#FFAB00" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">N</text>
+
+      {/* Technical Blueprint Callouts */}
+      <text x="24" y="32" fill="rgba(255, 255, 255, 0.4)" fontSize="9" fontFamily="monospace" letterSpacing="0.1em">ELEVATION 01 · CHARLOTTENBURG</text>
+      <text x="24" y="46" fill="#FFAB00" fontSize="9" fontFamily="monospace" letterSpacing="0.05em">52°30'42"N · 13°18'45"E</text>
+    </svg>
+  );
+}
+
+function SeoulBlueprintSvg() {
+  return (
+    <svg viewBox="0 0 520 220" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Seoul Office Architectural Blueprint">
+      <defs>
+        <pattern id="seoulGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.035)" strokeWidth="1" />
+        </pattern>
+      </defs>
+
+      {/* Blueprint Grid Background */}
+      <rect width="100%" height="100%" fill="#070709" />
+      <rect width="100%" height="100%" fill="url(#seoulGrid)" />
+
+      {/* Ground Baseline */}
+      <line x1="20" y1="192" x2="500" y2="192" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
+      <line x1="20" y1="196" x2="500" y2="196" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
+
+      {/* Left Low-Rise Innovation Wing */}
+      <rect x="105" y="115" width="85" height="77" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.38)" strokeWidth="1.2" />
+      <line x1="105" y1="135" x2="190" y2="135" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      <line x1="105" y1="160" x2="190" y2="160" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      <line x1="125" y1="120" x2="125" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      <line x1="150" y1="120" x2="150" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      <line x1="172" y1="120" x2="172" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+
+      {/* Right Modernist Wing */}
+      <rect x="325" y="95" width="85" height="97" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.38)" strokeWidth="1.2" />
+      <line x1="325" y1="125" x2="410" y2="125" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      <line x1="325" y1="155" x2="410" y2="155" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      <line x1="345" y1="102" x2="345" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      <line x1="370" y1="102" x2="370" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      <line x1="392" y1="102" x2="392" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+
+      {/* Central Innovation Tower */}
+      <rect x="205" y="38" width="105" height="154" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.5" />
+      
+      {/* Diagrid Bracing */}
+      <line x1="205" y1="38" x2="310" y2="90" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <line x1="310" y1="38" x2="205" y2="90" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <line x1="205" y1="90" x2="310" y2="142" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <line x1="310" y1="90" x2="205" y2="142" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <line x1="205" y1="142" x2="310" y2="192" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <line x1="310" y1="142" x2="205" y2="192" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+
+      {/* Axis & Spire */}
+      <line x1="257.5" y1="20" x2="257.5" y2="192" stroke="rgba(255, 171, 0, 0.65)" strokeWidth="1.2" strokeDasharray="6 3" />
+      <line x1="195" y1="38" x2="320" y2="38" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="2" />
+      <polygon points="257.5,14 252,38 263,38" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
+      <circle cx="257.5" cy="12" r="3" fill="#FFAB00" />
+
+      {/* Ground Glass Atrium */}
+      <rect x="225" y="165" width="65" height="27" fill="rgba(255, 171, 0, 0.08)" stroke="#FFAB00" strokeWidth="1.2" />
+      <line x1="257.5" y1="165" x2="257.5" y2="192" stroke="#FFAB00" strokeWidth="1" />
+
+      {/* Dimensions Annotations */}
+      <line x1="445" y1="14" x2="445" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="438" y1="14" x2="452" y2="14" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="438" y1="192" x2="452" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <text x="456" y="105" fill="rgba(255, 255, 255, 0.45)" fontSize="8.5" fontFamily="monospace">H: 88.5M</text>
+
+      <line x1="105" y1="205" x2="410" y2="205" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="105" y1="198" x2="105" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="410" y1="198" x2="410" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <text x="257.5" y="215" fill="rgba(255, 255, 255, 0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" letterSpacing="0.08em">WIDTH: 42.0M · CAMPUS</text>
+
+      {/* Radar Rings */}
+      <circle cx="65" cy="45" r="20" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+      <circle cx="65" cy="45" r="10" fill="none" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" />
+      <circle cx="65" cy="45" r="2.5" fill="#3CC79B" />
+      <line x1="65" y1="20" x2="65" y2="70" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" strokeDasharray="2 2" />
+      <line x1="40" y1="45" x2="90" y2="45" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" strokeDasharray="2 2" />
+
+      {/* Technical Blueprint Labels */}
+      <text x="24" y="32" fill="rgba(255, 255, 255, 0.4)" fontSize="9" fontFamily="monospace" letterSpacing="0.1em">ELEVATION 02 · SEOCHO HUB</text>
+      <text x="24" y="46" fill="#3CC79B" fontSize="9" fontFamily="monospace" letterSpacing="0.05em">37°29'34"N · 127°01'22"E</text>
+    </svg>
+  );
+}
+
 export default function TeamView() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeStep, setActiveStep] = useState(0);
   const [metricsInView, setMetricsInView] = useState(false);
   const metricsRef = useRef(null);
+
+  const [officeTimes, setOfficeTimes] = useState({
+    berlin: formatOfficeTime('Europe/Berlin'),
+    seoul: formatOfficeTime('Asia/Seoul'),
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setOfficeTimes({
+        berlin: formatOfficeTime('Europe/Berlin'),
+        seoul: formatOfficeTime('Asia/Seoul'),
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const navItems = [
     { id: 'overview', label: 'Overview' },
@@ -324,6 +524,7 @@ export default function TeamView() {
     { id: 'services', label: '03 · Our Services' },
     { id: 'team', label: '04 · Leadership & Team' },
     { id: 'partners', label: '05 · 18 Global Partners' },
+    { id: 'offices', label: '06 · Global Hubs' },
   ];
 
   const scrollToSection = (id) => {
@@ -342,7 +543,7 @@ export default function TeamView() {
   // Scroll spy to update active nav tab
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['overview', 'how-we-work', 'impact', 'services', 'team', 'partners'];
+      const sections = ['overview', 'how-we-work', 'impact', 'services', 'team', 'partners', 'offices'];
       const scrollPosition = window.scrollY + 180;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -1310,25 +1511,26 @@ export default function TeamView() {
           line-height: 1.35;
         }
 
-        /* 18 Partners Continuous Grid (Dark Mode Portfolio Style) */
+        /* 18 Partners Continuous Full-Bleed Grid (Portfolio Style) */
         .about-partners-grid {
           display: grid;
           grid-template-columns: repeat(6, 1fr);
           border-top: 1px solid rgba(255, 255, 255, 0.12);
           border-left: 1px solid rgba(255, 255, 255, 0.12);
           margin-top: 0;
+          margin-bottom: clamp(60px, 8vw, 100px);
           width: 100%;
           box-sizing: border-box;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1280px) {
           .about-partners-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
         @media (max-width: 768px) {
           .about-partners-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
         }
         @media (max-width: 480px) {
@@ -1363,7 +1565,7 @@ export default function TeamView() {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: clamp(12px, 1.5vw, 22px);
+          padding: clamp(18px, 2.5vw, 36px);
           box-sizing: border-box;
           pointer-events: none;
         }
@@ -1371,8 +1573,8 @@ export default function TeamView() {
         .about-partner-logo {
           width: 100%;
           height: 100%;
-          max-width: clamp(140px, 11.5vw, 175px);
-          max-height: clamp(50px, 4.5vw, 66px);
+          max-width: clamp(120px, 9.5vw, 160px);
+          max-height: clamp(44px, 3.8vw, 58px);
           object-fit: contain;
           object-position: center;
           filter: brightness(0) invert(1);
@@ -1402,32 +1604,6 @@ export default function TeamView() {
 
         .about-partner-card:hover .about-partner-hover-overlay {
           opacity: 1;
-        }
-
-        .about-partner-hover-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .about-partner-hover-country {
-          font-family: var(--font-mono, monospace);
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #FFAB00;
-        }
-
-        .about-partner-hover-arrow {
-          font-size: 15px;
-          color: rgba(255, 255, 255, 0.7);
-          transition: transform 0.2s ease, color 0.2s ease;
-        }
-
-        .about-partner-card:hover .about-partner-hover-arrow {
-          transform: translate(2px, -2px);
-          color: #FFAB00;
         }
 
         .about-partner-hover-mid {
@@ -1480,6 +1656,178 @@ export default function TeamView() {
           max-width: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+
+        /* =========================================================================
+           SECTION 7: DUAL-HUB PRESENCE (BERLIN & SEOUL)
+           ========================================================================= */
+        .about-offices-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: clamp(20px, 2.5vw, 36px);
+          margin-top: clamp(36px, 4.5vw, 56px);
+        }
+
+        @media (max-width: 960px) {
+          .about-offices-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .about-office-card {
+          background: #0B0B0E;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 6px;
+          padding: clamp(24px, 3vw, 36px);
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          overflow: hidden;
+          transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .about-office-card:hover {
+          border-color: rgba(255, 171, 0, 0.45);
+          transform: translateY(-3px);
+          box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.65), 0 0 24px -4px rgba(255, 171, 0, 0.08);
+        }
+
+        .about-office-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .about-office-hub-badge {
+          font-family: var(--font-mono, monospace);
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #FFAB00;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .about-office-time-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 4px 10px;
+          border-radius: 20px;
+          font-family: var(--font-mono, monospace);
+          font-size: 11.5px;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.85);
+          letter-spacing: 0.02em;
+        }
+
+        .about-office-pulse-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #3CC79B;
+          box-shadow: 0 0 8px #3CC79B;
+          animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .about-office-blueprint-wrap {
+          width: 100%;
+          height: 220px;
+          background: #070709;
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 4px;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .about-office-blueprint-svg {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .about-office-card:hover .about-office-blueprint-svg {
+          transform: scale(1.02);
+        }
+
+        .about-office-title {
+          font-family: var(--font-sans);
+          font-size: clamp(20px, 2vw, 24px);
+          font-weight: 700;
+          letter-spacing: -0.025em;
+          color: #FFFFFF;
+          margin: 0 0 8px 0;
+        }
+
+        .about-office-address {
+          font-family: var(--font-sans);
+          font-size: 14.5px;
+          color: rgba(255, 255, 255, 0.75);
+          line-height: 1.5;
+          margin: 0 0 6px 0;
+        }
+
+        .about-office-coords {
+          font-family: var(--font-mono, monospace);
+          font-size: 11.5px;
+          color: rgba(255, 255, 255, 0.45);
+          margin-bottom: 18px;
+          letter-spacing: 0.04em;
+        }
+
+        .about-office-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 24px;
+          flex: 1;
+        }
+
+        .about-office-tag {
+          font-family: var(--font-mono, monospace);
+          font-size: 10px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.7);
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          padding: 3px 9px;
+          border-radius: 2px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+
+        .about-office-map-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-family: var(--font-sans);
+          font-size: 13.5px;
+          font-weight: 600;
+          color: #FFAB00;
+          text-decoration: none;
+          transition: gap 0.2s ease, color 0.2s ease;
+          width: fit-content;
+        }
+
+        .about-office-map-link:hover {
+          color: #FFC043;
+          gap: 12px;
         }
 
         /* Divider Line */
@@ -2019,48 +2367,155 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(60px, 7vw, 90px) 0',
             wordBreak: 'keep-all'
           }}>
             Our cross-border programs are co-created with top public agencies, research universities, multinational corporate innovation hubs, and trade associations across Korea and Germany.
           </p>
+        </div>
 
-          {/* 18 Partners Grid (Dark Mode Portfolio Style: 6 cols x 3 rows) */}
-          <div className="about-partners-grid">
-            {ALL_PARTNERS.map((partner) => (
+        {/* 18 Partners Edge-to-Edge Grid (Portfolio Style: 6 cols x 3 rows, no side margins) */}
+        <div className="about-partners-grid">
+          {ALL_PARTNERS.map((partner) => (
+            <a
+              key={partner.name}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-partner-card"
+              title={`${partner.enName || partner.name} — ${partner.tag}`}
+            >
+              <div className="about-partner-logo-wrap">
+                <img
+                  src={partner.logo}
+                  alt={partner.enName || partner.name}
+                  className="about-partner-logo"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="about-partner-hover-overlay">
+                <div className="about-partner-hover-mid">
+                  <h4 className="about-partner-hover-name">{partner.enName || partner.name}</h4>
+                  {partner.desc && (
+                    <p className="about-partner-hover-desc">{partner.desc}</p>
+                  )}
+                </div>
+                <div className="about-partner-hover-bottom">
+                  <span className="about-partner-hover-tag">{partner.tag}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div className="about-container"><div className="about-divider-line" /></div>
+
+      {/* =========================================================================
+          SECTION 7: DUAL-HUB PRESENCE (BERLIN HQ & SEOUL OFFICE)
+         ========================================================================= */}
+      <section id="offices" className="about-section" style={{ paddingTop: 'clamp(70px, 9vh, 120px)' }}>
+        <div className="about-container">
+          <span className="about-eyebrow">Dual-Hub Infrastructure</span>
+          <h2 className="about-display-h2">
+            Anchored in Berlin and Seoul
+          </h2>
+          <p style={{
+            fontSize: 'clamp(21px, 2vw, 28px)',
+            color: 'rgba(255, 255, 255, 0.72)',
+            maxWidth: '100%',
+            lineHeight: 1.45,
+            letterSpacing: '-0.015em',
+            margin: '0 0 clamp(48px, 6vw, 72px) 0',
+            wordBreak: 'keep-all'
+          }}>
+            Our cross-border infrastructure bridges Europe and Asia in real time. We operate dedicated hubs in Berlin and Seoul to provide ground-level market entry, regulatory landing, and cross-border syndication.
+          </p>
+
+          {/* Dual-Hub Office Grid */}
+          <div className="about-offices-grid">
+            {/* BERLIN HQ CARD */}
+            <div className="about-office-card">
+              <div className="about-office-header">
+                <div className="about-office-hub-badge">
+                  <span>BERLIN (HQ)</span>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.6)', fontWeight: 500 }}>EUROPE</span>
+                </div>
+                <div className="about-office-time-badge">
+                  <span className="about-office-pulse-dot" />
+                  <span>{officeTimes.berlin} CET</span>
+                </div>
+              </div>
+
+              {/* Architectural Precision Blueprint */}
+              <div className="about-office-blueprint-wrap">
+                <BerlinBlueprintSvg />
+              </div>
+
+              {/* Details */}
+              <h3 className="about-office-title">123 Factory Berlin HQ</h3>
+              <p className="about-office-address">Bismarckstraße 10-12, 10625 Berlin, Germany</p>
+              <div className="about-office-coords">Charlottenburg · 52° 30' 42" N, 13° 18' 45" E</div>
+
+              <div className="about-office-tags">
+                <span className="about-office-tag">European Landing</span>
+                <span className="about-office-tag">Bilateral Syndication</span>
+                <span className="about-office-tag">Regulatory & Tax</span>
+                <span className="about-office-tag">Industrial Pilots</span>
+              </div>
+
               <a
-                key={partner.name}
-                href={partner.url}
+                href="https://www.google.com/maps/search/?api=1&query=Bismarckstra%C3%9Fe+10-12,+10625+Berlin,+Germany"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="about-partner-card"
-                title={`${partner.enName || partner.name} — ${partner.tag}`}
+                className="about-office-map-link"
               >
-                <div className="about-partner-logo-wrap">
-                  <img
-                    src={partner.logo}
-                    alt={partner.enName || partner.name}
-                    className="about-partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="about-partner-hover-overlay">
-                  <div className="about-partner-hover-top">
-                    <span className="about-partner-hover-country">{partner.country}</span>
-                    <span className="about-partner-hover-arrow">↗</span>
-                  </div>
-                  <div className="about-partner-hover-mid">
-                    <h4 className="about-partner-hover-name">{partner.enName || partner.name}</h4>
-                    {partner.desc && (
-                      <p className="about-partner-hover-desc">{partner.desc}</p>
-                    )}
-                  </div>
-                  <div className="about-partner-hover-bottom">
-                    <span className="about-partner-hover-tag">{partner.tag}</span>
-                  </div>
-                </div>
+                Open in Google Maps ↗
               </a>
-            ))}
+            </div>
+
+            {/* SEOUL OFFICE CARD */}
+            <div className="about-office-card">
+              <div className="about-office-header">
+                <div className="about-office-hub-badge">
+                  <span>SEOUL OFFICE</span>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.6)', fontWeight: 500 }}>ASIA-PACIFIC</span>
+                </div>
+                <div className="about-office-time-badge">
+                  <span className="about-office-pulse-dot" />
+                  <span>{officeTimes.seoul} KST</span>
+                </div>
+              </div>
+
+              {/* Architectural Precision Blueprint */}
+              <div className="about-office-blueprint-wrap">
+                <SeoulBlueprintSvg />
+              </div>
+
+              {/* Details */}
+              <h3 className="about-office-title">123 Factory Seoul Office</h3>
+              <p className="about-office-address">Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea</p>
+              <div className="about-office-coords">Seocho-gu · 37° 29' 34" N, 127° 01' 22" E</div>
+
+              <div className="about-office-tags">
+                <span className="about-office-tag">Deep-Tech Scouting</span>
+                <span className="about-office-tag">Founder Acceleration</span>
+                <span className="about-office-tag">GovTech & Consortia</span>
+                <span className="about-office-tag">Cross-Border R&D</span>
+              </div>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Saimdang-ro+8-gil+13,+Seocho-gu,+Seoul,+Korea"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="about-office-map-link"
+              >
+                Open in Google Maps ↗
+              </a>
+            </div>
           </div>
         </div>
       </section>
