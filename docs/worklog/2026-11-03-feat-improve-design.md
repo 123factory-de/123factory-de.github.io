@@ -19,7 +19,11 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Removed corner country badges, hover country labels (`KR` / `DE`), and hover arrow (`↗`) for a pure, distraction-free visual presentation.
 - **Dual-Hub Presence Section (Berlin HQ & Seoul Office)**:
   - Added dedicated global hubs section (`#offices`) under the partners grid.
-  - Implemented custom architectural blueprint SVGs (`BerlinBlueprintSvg` & `SeoulBlueprintSvg`) featuring fine vector drafting elevations, dimension markers, and coordinate grids instead of standard photos.
+  - Replaced standard building drawings with hyper-minimalist line-art vector city maps (`BerlinMapSvg` & `SeoulMapSvg`):
+    - Minimalist waterway ribbons (River Spree for Berlin, Han River for Seoul).
+    - Hairline urban street grids and arterial axes (Bismarckstraße & Ernst-Reuter-Platz roundabout in Berlin; Saimdang-ro, Banpo-daero, & Gangnam-daero in Seoul).
+    - Precision target crosshairs with pulsing radar beacon animation (`radarPing`) pointing directly at the office addresses.
+    - Floating coordinate badges (`52°30'42"N · 13°18'45"E` and `37°29'34"N · 127°01'22"E`), scale bars, and cardinal direction indicators.
   - Added live ticking digital clocks with status pulse indicators for Berlin (CET, UTC+1) and Seoul (KST, UTC+9).
   - Included precise geo-coordinates, core cross-border function tags, and direct Google Maps navigation links.
   - Connected the new section to the sticky subnav bar for smooth navigation.

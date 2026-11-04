@@ -325,173 +325,309 @@ function formatOfficeTime(timeZone) {
   }
 }
 
-function BerlinBlueprintSvg() {
+function BerlinMapSvg() {
   return (
-    <svg viewBox="0 0 520 220" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Berlin HQ Architectural Blueprint">
+    <svg viewBox="0 0 540 230" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Berlin Office Minimalist Map and Coordinates">
       <defs>
-        <pattern id="berlinGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.035)" strokeWidth="1" />
+        <pattern id="berlinMapGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="1" />
         </pattern>
-        <linearGradient id="berlinGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#FFAB00" stopOpacity="0.3" />
-          <stop offset="50%" stopColor="#FFAB00" stopOpacity="1" />
-          <stop offset="100%" stopColor="#FFAB00" stopOpacity="0.3" />
+        <linearGradient id="berlinSpreeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#4FA8D8" stopOpacity="0.25" />
+          <stop offset="50%" stopColor="#4FA8D8" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="#4FA8D8" stopOpacity="0.2" />
         </linearGradient>
       </defs>
 
-      {/* Blueprint Grid Background */}
+      {/* Base Canvas & Fine Grid */}
       <rect width="100%" height="100%" fill="#070709" />
-      <rect width="100%" height="100%" fill="url(#berlinGrid)" />
+      <rect width="100%" height="100%" fill="url(#berlinMapGrid)" />
 
-      {/* Ground Baseline */}
-      <line x1="20" y1="192" x2="500" y2="192" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
-      <line x1="20" y1="196" x2="500" y2="196" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
+      {/* River Spree (Minimalist Ribbon) */}
+      <path
+        d="M -20,48 C 60,35 120,70 190,62 C 260,54 330,22 410,28 C 470,33 505,48 560,42"
+        fill="none"
+        stroke="url(#berlinSpreeGrad)"
+        strokeWidth="14"
+        strokeLinecap="round"
+      />
+      <path
+        d="M -20,48 C 60,35 120,70 190,62 C 260,54 330,22 410,28 C 470,33 505,48 560,42"
+        fill="none"
+        stroke="rgba(255, 255, 255, 0.25)"
+        strokeWidth="1"
+        strokeDasharray="4 4"
+      />
+      <text x="75" y="42" fill="rgba(255, 255, 255, 0.3)" fontSize="7.5" fontFamily="monospace" letterSpacing="0.2em">SPREE</text>
 
-      {/* Facade Outer Outline */}
-      <rect x="110" y="58" width="300" height="134" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="1.5" />
+      {/* Minimalist Urban Blocks (Charlottenburg) */}
+      <rect x="35" y="80" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="125" y="80" width="75" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="220" y="80" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="310" y="70" width="60" height="52" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
 
-      {/* Cornice & Parapet */}
-      <line x1="98" y1="58" x2="422" y2="58" stroke="url(#berlinGoldGrad)" strokeWidth="2.5" />
-      <line x1="104" y1="50" x2="416" y2="50" stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1" />
-      <rect x="230" y="38" width="60" height="12" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
-      <polygon points="260,26 230,38 290,38" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
+      <rect x="35" y="142" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="125" y="142" width="75" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="220" y="142" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="310" y="142" width="60" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
 
-      {/* Structural Pilaster Lines */}
-      <line x1="185" y1="58" x2="185" y2="192" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" strokeDasharray="4 2" />
-      <line x1="260" y1="50" x2="260" y2="192" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" strokeDasharray="6 3" />
-      <line x1="335" y1="58" x2="335" y2="192" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" strokeDasharray="4 2" />
+      {/* Secondary Streets (Hairlines) */}
+      <line x1="30" y1="20" x2="30" y2="215" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
+      <line x1="115" y1="20" x2="115" y2="215" stroke="rgba(255, 255, 255, 0.14)" strokeWidth="1" />
+      <line x1="210" y1="20" x2="210" y2="215" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1.2" />
+      <line x1="300" y1="20" x2="300" y2="215" stroke="rgba(255, 255, 255, 0.14)" strokeWidth="1" />
 
-      {/* Floor Dividers */}
-      <line x1="110" y1="105" x2="410" y2="105" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
-      <line x1="110" y1="150" x2="410" y2="150" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
+      {/* Tiergarten / Roundabout Hub (Ernst-Reuter-Platz) */}
+      <circle cx="430" cy="132" r="28" fill="none" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.5" />
+      <circle cx="430" cy="132" r="16" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" strokeDasharray="3 3" />
+      <line x1="430" y1="104" x2="375" y2="20" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1.5" />
+      <line x1="445" y1="110" x2="495" y2="20" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
+      <line x1="458" y1="132" x2="540" y2="132" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="2" />
+      <line x1="445" y1="154" x2="490" y2="225" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
 
-      {/* Top Floor Windows */}
-      <rect x="130" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="148" y1="70" x2="148" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="205" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="223" y1="70" x2="223" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="279" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="297" y1="70" x2="297" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="354" y="70" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="372" y1="70" x2="372" y2="94" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      {/* Main Arterials */}
+      {/* Kantstraße (South) */}
+      <line x1="0" y1="195" x2="540" y2="195" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1.5" />
+      <text x="35" y="191" fill="rgba(255, 255, 255, 0.25)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em">KANTSTRASSE</text>
 
-      {/* Mid Floor Windows */}
-      <rect x="130" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="148" y1="115" x2="148" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="205" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="223" y1="115" x2="223" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="279" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="297" y1="115" x2="297" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
-      <rect x="354" y="115" width="36" height="24" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <line x1="372" y1="115" x2="372" y2="139" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="0.8" />
+      {/* Bismarckstraße (Main Axis) */}
+      <line x1="0" y1="132" x2="402" y2="132" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="2.5" />
+      <text x="40" y="127" fill="rgba(255, 255, 255, 0.45)" fontSize="7" fontFamily="monospace" letterSpacing="0.15em">BISMARCKSTRASSE</text>
 
-      {/* Ground Floor Windows & Archway */}
-      <rect x="130" y="160" width="36" height="32" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <rect x="354" y="160" width="36" height="32" fill="none" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1" />
-      <path d="M 235 192 L 235 168 A 25 25 0 0 1 285 168 L 285 192 Z" fill="rgba(255, 171, 0, 0.08)" stroke="#FFAB00" strokeWidth="1.5" />
-      <line x1="260" y1="168" x2="260" y2="192" stroke="#FFAB00" strokeWidth="1" />
+      {/* Precise Target Crosshairs at Bismarckstr. 10-12 (x: 185, y: 132) */}
+      <g transform="translate(185, 132)">
+        {/* Radar Ping Animation */}
+        <circle cx="0" cy="0" r="16" fill="none" stroke="#FFAB00" strokeWidth="1" strokeDasharray="3 3">
+          <animate attributeName="r" values="8;26;8" dur="3.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.9;0.1;0.9" dur="3.2s" repeatCount="indefinite" />
+        </circle>
+        
+        {/* Crosshair Hairlines */}
+        <line x1="-24" y1="0" x2="-8" y2="0" stroke="#FFAB00" strokeWidth="1.2" />
+        <line x1="8" y1="0" x2="24" y2="0" stroke="#FFAB00" strokeWidth="1.2" />
+        <line x1="0" y1="-24" x2="0" y2="-8" stroke="#FFAB00" strokeWidth="1.2" />
+        <line x1="0" y1="8" x2="0" y2="24" stroke="#FFAB00" strokeWidth="1.2" />
 
-      {/* Width dimension annotation */}
-      <line x1="110" y1="205" x2="410" y2="205" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="110" y1="198" x2="110" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="410" y1="198" x2="410" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <text x="260" y="215" fill="rgba(255, 255, 255, 0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" letterSpacing="0.08em">WIDTH: 32.4M · FACADE</text>
+        {/* Pin Target Rings */}
+        <circle cx="0" cy="0" r="7" fill="rgba(255, 171, 0, 0.2)" stroke="#FFAB00" strokeWidth="1.5" />
+        <circle cx="0" cy="0" r="2.8" fill="#FFAB00" />
 
-      {/* Height dimension annotation */}
-      <line x1="75" y1="58" x2="75" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="68" y1="58" x2="82" y2="58" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="68" y1="192" x2="82" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <text x="64" y="128" fill="rgba(255, 255, 255, 0.45)" fontSize="8.5" fontFamily="monospace" textAnchor="end">H: 18.6M</text>
+        {/* Leader Line to Floating Coordinate Tag */}
+        <polyline points="0,-10 0,-42 22,-42" fill="none" stroke="#FFAB00" strokeWidth="1" strokeDasharray="2 2" />
+        
+        {/* Floating Callout Pill */}
+        <g transform="translate(26, -58)">
+          <rect x="0" y="0" width="158" height="32" rx="3" fill="#0C0C10" stroke="#FFAB00" strokeWidth="1" strokeOpacity="0.8" />
+          <rect x="0" y="0" width="3" height="32" rx="1.5" fill="#FFAB00" />
+          <text x="10" y="13" fill="#FFFFFF" fontSize="8" fontFamily="var(--font-sans), sans-serif" fontWeight="700" letterSpacing="0.06em">
+            123 FACTORY BERLIN
+          </text>
+          <text x="10" y="24" fill="#FFAB00" fontSize="7.2" fontFamily="monospace" letterSpacing="0.04em">
+            52°30'42"N · 13°18'45"E
+          </text>
+        </g>
+      </g>
 
-      {/* Modernist Compass */}
-      <circle cx="465" cy="40" r="16" fill="none" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <circle cx="465" cy="40" r="5" fill="none" stroke="#FFAB00" strokeWidth="1" />
-      <line x1="465" y1="20" x2="465" y2="60" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-      <line x1="445" y1="40" x2="485" y2="40" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-      <text x="465" y="15" fill="#FFAB00" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="bold">N</text>
+      {/* Cartographic UI Overlays */}
+      {/* Top Left: Sector & Coordinates */}
+      <g transform="translate(16, 20)">
+        <text fill="rgba(255, 255, 255, 0.55)" fontSize="8" fontFamily="monospace" letterSpacing="0.1em" fontWeight="600">
+          CARTOGRAPHY // BERLIN HQ
+        </text>
+        <text y="12" fill="rgba(255, 255, 255, 0.3)" fontSize="7" fontFamily="monospace">
+          SECTOR: CHARLOTTENBURG-WILMERSDORF
+        </text>
+      </g>
 
-      {/* Technical Blueprint Callouts */}
-      <text x="24" y="32" fill="rgba(255, 255, 255, 0.4)" fontSize="9" fontFamily="monospace" letterSpacing="0.1em">ELEVATION 01 · CHARLOTTENBURG</text>
-      <text x="24" y="46" fill="#FFAB00" fontSize="9" fontFamily="monospace" letterSpacing="0.05em">52°30'42"N · 13°18'45"E</text>
+      {/* Top Right: Minimalist Compass */}
+      <g transform="translate(505, 22)">
+        <circle cx="0" cy="0" r="11" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+        <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+        <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+        <polygon points="0,-11 -2.5,-3 2.5,-3" fill="#FFAB00" />
+        <text x="0" y="-16" fill="#FFAB00" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fontWeight="700">N</text>
+      </g>
+
+      {/* Bottom Right: Scale Bar */}
+      <g transform="translate(425, 212)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <line x1="45" y1="-2" x2="45" y2="2" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
+        <line x1="90" y1="-3" x2="90" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <text x="0" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace">0</text>
+        <text x="45" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="middle">250m</text>
+        <text x="90" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="end">500m</text>
+      </g>
+
+      {/* Border Coordinate Tick Marks */}
+      <line x1="0" y1="0" x2="540" y2="0" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="0" y1="230" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="0" y1="0" x2="0" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="540" y1="0" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+
+      {/* Ticks */}
+      <line x1="135" y1="0" x2="135" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="270" y1="0" x2="270" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="405" y1="0" x2="405" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="135" y1="226" x2="135" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="270" y1="226" x2="270" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="405" y1="226" x2="405" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
     </svg>
   );
 }
 
-function SeoulBlueprintSvg() {
+function SeoulMapSvg() {
   return (
-    <svg viewBox="0 0 520 220" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Seoul Office Architectural Blueprint">
+    <svg viewBox="0 0 540 230" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Seoul Office Minimalist Map and Coordinates">
       <defs>
-        <pattern id="seoulGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.035)" strokeWidth="1" />
+        <pattern id="seoulMapGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="1" />
         </pattern>
+        <linearGradient id="seoulHanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#3CC79B" stopOpacity="0.2" />
+          <stop offset="45%" stopColor="#4FA8D8" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#3CC79B" stopOpacity="0.15" />
+        </linearGradient>
       </defs>
 
-      {/* Blueprint Grid Background */}
+      {/* Base Canvas & Fine Grid */}
       <rect width="100%" height="100%" fill="#070709" />
-      <rect width="100%" height="100%" fill="url(#seoulGrid)" />
+      <rect width="100%" height="100%" fill="url(#seoulMapGrid)" />
 
-      {/* Ground Baseline */}
-      <line x1="20" y1="192" x2="500" y2="192" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
-      <line x1="20" y1="196" x2="500" y2="196" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="3 3" />
+      {/* River Han (Hangang) Majestic Curve */}
+      <path
+        d="M -20,40 C 90,32 170,52 250,46 C 340,40 430,16 560,18"
+        fill="none"
+        stroke="url(#seoulHanGrad)"
+        strokeWidth="18"
+        strokeLinecap="round"
+      />
+      <path
+        d="M -20,40 C 90,32 170,52 250,46 C 340,40 430,16 560,18"
+        fill="none"
+        stroke="rgba(255, 255, 255, 0.22)"
+        strokeWidth="1"
+        strokeDasharray="4 4"
+      />
+      <text x="80" y="34" fill="rgba(255, 255, 255, 0.3)" fontSize="7.5" fontFamily="monospace" letterSpacing="0.2em">HANGANG (HAN RIVER)</text>
 
-      {/* Left Low-Rise Innovation Wing */}
-      <rect x="105" y="115" width="85" height="77" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.38)" strokeWidth="1.2" />
-      <line x1="105" y1="135" x2="190" y2="135" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
-      <line x1="105" y1="160" x2="190" y2="160" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
-      <line x1="125" y1="120" x2="125" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
-      <line x1="150" y1="120" x2="150" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
-      <line x1="172" y1="120" x2="172" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      {/* Bridges crossing Han River (Banpo Bridge & Hannam Bridge) */}
+      <line x1="220" y1="20" x2="220" y2="70" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="2.2" />
+      <line x1="410" y1="5" x2="410" y2="55" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="2" />
 
-      {/* Right Modernist Wing */}
-      <rect x="325" y="95" width="85" height="97" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.38)" strokeWidth="1.2" />
-      <line x1="325" y1="125" x2="410" y2="125" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
-      <line x1="325" y1="155" x2="410" y2="155" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1" />
-      <line x1="345" y1="102" x2="345" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
-      <line x1="370" y1="102" x2="370" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
-      <line x1="392" y1="102" x2="392" y2="185" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="6 4" />
+      {/* Minimalist Urban Blocks (Seocho / Gangnam Grid) */}
+      <rect x="40" y="80" width="60" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="115" y="80" width="85" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="235" y="80" width="75" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="330" y="80" width="65" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
 
-      {/* Central Innovation Tower */}
-      <rect x="205" y="38" width="105" height="154" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="1.5" />
-      
-      {/* Diagrid Bracing */}
-      <line x1="205" y1="38" x2="310" y2="90" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <line x1="310" y1="38" x2="205" y2="90" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <line x1="205" y1="90" x2="310" y2="142" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <line x1="310" y1="90" x2="205" y2="142" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <line x1="205" y1="142" x2="310" y2="192" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
-      <line x1="310" y1="142" x2="205" y2="192" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" />
+      <rect x="40" y="135" width="60" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="115" y="135" width="85" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="235" y="135" width="75" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
+      <rect x="330" y="135" width="65" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
 
-      {/* Axis & Spire */}
-      <line x1="257.5" y1="20" x2="257.5" y2="192" stroke="rgba(255, 171, 0, 0.65)" strokeWidth="1.2" strokeDasharray="6 3" />
-      <line x1="195" y1="38" x2="320" y2="38" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="2" />
-      <polygon points="257.5,14 252,38 263,38" fill="none" stroke="#FFAB00" strokeWidth="1.5" />
-      <circle cx="257.5" cy="12" r="3" fill="#FFAB00" />
+      {/* Vertical Arterials */}
+      {/* Banpo-daero */}
+      <line x1="220" y1="65" x2="220" y2="225" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="2.2" />
+      <text x="224" y="95" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em" transform="rotate(90, 224, 95)">BANPO-DAERO</text>
 
-      {/* Ground Glass Atrium */}
-      <rect x="225" y="165" width="65" height="27" fill="rgba(255, 171, 0, 0.08)" stroke="#FFAB00" strokeWidth="1.2" />
-      <line x1="257.5" y1="165" x2="257.5" y2="192" stroke="#FFAB00" strokeWidth="1" />
+      {/* Seochojungang-ro */}
+      <line x1="110" y1="75" x2="110" y2="225" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
 
-      {/* Dimensions Annotations */}
-      <line x1="445" y1="14" x2="445" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="438" y1="14" x2="452" y2="14" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="438" y1="192" x2="452" y2="192" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <text x="456" y="105" fill="rgba(255, 255, 255, 0.45)" fontSize="8.5" fontFamily="monospace">H: 88.5M</text>
+      {/* Gyeongbu Corridor */}
+      <line x1="320" y1="65" x2="320" y2="225" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" strokeDasharray="6 3" />
 
-      <line x1="105" y1="205" x2="410" y2="205" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="105" y1="198" x2="105" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="410" y1="198" x2="410" y2="212" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <text x="257.5" y="215" fill="rgba(255, 255, 255, 0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" letterSpacing="0.08em">WIDTH: 42.0M · CAMPUS</text>
+      {/* Gangnam-daero */}
+      <line x1="410" y1="50" x2="410" y2="225" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2.2" />
+      <text x="414" y="95" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em" transform="rotate(90, 414, 95)">GANGNAM-DAERO</text>
 
-      {/* Radar Rings */}
-      <circle cx="65" cy="45" r="20" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
-      <circle cx="65" cy="45" r="10" fill="none" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1" />
-      <circle cx="65" cy="45" r="2.5" fill="#3CC79B" />
-      <line x1="65" y1="20" x2="65" y2="70" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" strokeDasharray="2 2" />
-      <line x1="40" y1="45" x2="90" y2="45" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1" strokeDasharray="2 2" />
+      {/* Horizontal Arterials */}
+      {/* Seocho-daero / Teheran-ro */}
+      <line x1="0" y1="126" x2="540" y2="126" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" />
+      <text x="35" y="122" fill="rgba(255, 255, 255, 0.35)" fontSize="7" fontFamily="monospace" letterSpacing="0.12em">SEOCHO-DAERO ── TEHERAN-RO</text>
 
-      {/* Technical Blueprint Labels */}
-      <text x="24" y="32" fill="rgba(255, 255, 255, 0.4)" fontSize="9" fontFamily="monospace" letterSpacing="0.1em">ELEVATION 02 · SEOCHO HUB</text>
-      <text x="24" y="46" fill="#3CC79B" fontSize="9" fontFamily="monospace" letterSpacing="0.05em">37°29'34"N · 127°01'22"E</text>
+      {/* Saimdang-ro (Office Street) */}
+      <line x1="0" y1="178" x2="540" y2="178" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="2.2" />
+      <text x="35" y="174" fill="rgba(255, 255, 255, 0.45)" fontSize="7" fontFamily="monospace" letterSpacing="0.15em">SAIMDANG-RO</text>
+
+      {/* Precise Target Crosshairs at Saimdang-ro 8-gil 13 (x: 165, y: 178) */}
+      <g transform="translate(165, 178)">
+        {/* Radar Ping Animation */}
+        <circle cx="0" cy="0" r="16" fill="none" stroke="#3CC79B" strokeWidth="1" strokeDasharray="3 3">
+          <animate attributeName="r" values="8;26;8" dur="3.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.9;0.1;0.9" dur="3.2s" repeatCount="indefinite" />
+        </circle>
+
+        {/* Crosshair Hairlines */}
+        <line x1="-24" y1="0" x2="-8" y2="0" stroke="#3CC79B" strokeWidth="1.2" />
+        <line x1="8" y1="0" x2="24" y2="0" stroke="#3CC79B" strokeWidth="1.2" />
+        <line x1="0" y1="-24" x2="0" y2="-8" stroke="#3CC79B" strokeWidth="1.2" />
+        <line x1="0" y1="8" x2="0" y2="24" stroke="#3CC79B" strokeWidth="1.2" />
+
+        {/* Pin Target Rings */}
+        <circle cx="0" cy="0" r="7" fill="rgba(60, 199, 155, 0.2)" stroke="#3CC79B" strokeWidth="1.5" />
+        <circle cx="0" cy="0" r="2.8" fill="#3CC79B" />
+
+        {/* Leader Line to Floating Coordinate Tag */}
+        <polyline points="0,-10 0,-42 22,-42" fill="none" stroke="#3CC79B" strokeWidth="1" strokeDasharray="2 2" />
+
+        {/* Floating Callout Pill */}
+        <g transform="translate(26, -58)">
+          <rect x="0" y="0" width="158" height="32" rx="3" fill="#0C0C10" stroke="#3CC79B" strokeWidth="1" strokeOpacity="0.8" />
+          <rect x="0" y="0" width="3" height="32" rx="1.5" fill="#3CC79B" />
+          <text x="10" y="13" fill="#FFFFFF" fontSize="8" fontFamily="var(--font-sans), sans-serif" fontWeight="700" letterSpacing="0.06em">
+            123 FACTORY SEOUL
+          </text>
+          <text x="10" y="24" fill="#3CC79B" fontSize="7.2" fontFamily="monospace" letterSpacing="0.04em">
+            37°29'34"N · 127°01'22"E
+          </text>
+        </g>
+      </g>
+
+      {/* Cartographic UI Overlays */}
+      {/* Top Left: Sector & Coordinates */}
+      <g transform="translate(16, 20)">
+        <text fill="rgba(255, 255, 255, 0.55)" fontSize="8" fontFamily="monospace" letterSpacing="0.1em" fontWeight="600">
+          CARTOGRAPHY // SEOUL HUB
+        </text>
+        <text y="12" fill="rgba(255, 255, 255, 0.3)" fontSize="7" fontFamily="monospace">
+          SECTOR: SEOCHO-GU · GANGNAM TECH BELT
+        </text>
+      </g>
+
+      {/* Top Right: Minimalist Compass */}
+      <g transform="translate(505, 22)">
+        <circle cx="0" cy="0" r="11" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+        <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+        <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
+        <polygon points="0,-11 -2.5,-3 2.5,-3" fill="#3CC79B" />
+        <text x="0" y="-16" fill="#3CC79B" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fontWeight="700">N</text>
+      </g>
+
+      {/* Bottom Right: Scale Bar */}
+      <g transform="translate(425, 212)">
+        <line x1="0" y1="0" x2="90" y2="0" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <line x1="45" y1="-2" x2="45" y2="2" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
+        <line x1="90" y1="-3" x2="90" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
+        <text x="0" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace">0</text>
+        <text x="45" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="middle">250m</text>
+        <text x="90" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="end">500m</text>
+      </g>
+
+      {/* Border Coordinate Tick Marks */}
+      <line x1="0" y1="0" x2="540" y2="0" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="0" y1="230" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="0" y1="0" x2="0" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+      <line x1="540" y1="0" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
+
+      {/* Ticks */}
+      <line x1="135" y1="0" x2="135" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="270" y1="0" x2="270" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="405" y1="0" x2="405" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="135" y1="226" x2="135" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="270" y1="226" x2="270" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+      <line x1="405" y1="226" x2="405" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
     </svg>
   );
 }
@@ -2449,9 +2585,9 @@ export default function TeamView() {
                 </div>
               </div>
 
-              {/* Architectural Precision Blueprint */}
+              {/* Minimalist Cartographic Line-Art Map */}
               <div className="about-office-blueprint-wrap">
-                <BerlinBlueprintSvg />
+                <BerlinMapSvg />
               </div>
 
               {/* Details */}
@@ -2490,9 +2626,9 @@ export default function TeamView() {
                 </div>
               </div>
 
-              {/* Architectural Precision Blueprint */}
+              {/* Minimalist Cartographic Line-Art Map */}
               <div className="about-office-blueprint-wrap">
-                <SeoulBlueprintSvg />
+                <SeoulMapSvg />
               </div>
 
               {/* Details */}
