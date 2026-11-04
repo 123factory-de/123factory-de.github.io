@@ -17,16 +17,17 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Added clean responsive breakpoints (`repeat(3, 1fr)` at `<= 1280px`, `repeat(2, 1fr)` at `<= 768px`).
 - **Portfolio-Inspired Details & Minimalist Styling**:
   - Removed corner country badges, hover country labels (`KR` / `DE`), and hover arrow (`↗`) for a pure, distraction-free visual presentation.
-- **Dual-Hub Presence Section (Berlin HQ & Seoul Office)**:
-  - Added dedicated global hubs section (`#offices`) under the partners grid.
-  - Replaced standard building drawings with hyper-minimalist line-art vector city maps (`BerlinMapSvg` & `SeoulMapSvg`):
-    - Minimalist waterway ribbons (River Spree for Berlin, Han River for Seoul).
-    - Hairline urban street grids and arterial axes (Bismarckstraße & Ernst-Reuter-Platz roundabout in Berlin; Saimdang-ro, Banpo-daero, & Gangnam-daero in Seoul).
-    - Precision target crosshairs with pulsing radar beacon animation (`radarPing`) pointing directly at the office addresses.
-    - Floating coordinate badges (`52°30'42"N · 13°18'45"E` and `37°29'34"N · 127°01'22"E`), scale bars, and cardinal direction indicators.
-  - Added live ticking digital clocks with status pulse indicators for Berlin (CET, UTC+1) and Seoul (KST, UTC+9).
-  - Included precise geo-coordinates, core cross-border function tags, and direct Google Maps navigation links.
-  - Connected the new section to the sticky subnav bar for smooth navigation.
+- **Dual-Hub Presence Section (Interactive Grayish World Map)**:
+  - Added dedicated global hubs section (`#offices`) under the partners grid featuring a cohesive, interactive world map component (`WorldOfficeMap.jsx`).
+  - Styled continental landmasses in a sleek, muted tech grayish tone (`#1A1C23`) with high-precision ISO country vectors, graticule reference grid lines, and subtle highlights for Germany and Korea.
+  - Rendered a dynamic bilateral geodesic corridor arc bridging Berlin and Seoul with animated data packet pulses.
+  - Pinned exact locations for both hubs with pulsing radar beacon animations:
+    - **Berlin HQ**: Bismarckstraße 10-12, 10625 Berlin (Gold accent `#FFAB00`).
+    - **Seoul Office**: Saimdang-ro 8-gil 13, Seocho-gu, Seoul (Emerald accent `#3CC79B`).
+  - Added floating address badges directly on/above each pin showing hub title, full address, and coordinates.
+  - Implemented interactive hover effects (scale-up, elevation, glow) and on-click actions:
+    - Clicking a pin or badge triggers a browser Google Maps popup window and opens an in-page Google Maps modal popup featuring full address copy, tags, and direct map navigation.
+  - Connected the new section to the sticky subnav bar for seamless navigation.
 
 ## Verification
 

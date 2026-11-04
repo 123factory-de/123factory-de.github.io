@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import WorldOfficeMap from '../components/WorldOfficeMap';
 
 // 18 Partners Data from Home Marquee
 const ALL_PARTNERS = [
@@ -325,312 +326,7 @@ function formatOfficeTime(timeZone) {
   }
 }
 
-function BerlinMapSvg() {
-  return (
-    <svg viewBox="0 0 540 230" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Berlin Office Minimalist Map and Coordinates">
-      <defs>
-        <pattern id="berlinMapGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-          <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="1" />
-        </pattern>
-        <linearGradient id="berlinSpreeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#4FA8D8" stopOpacity="0.25" />
-          <stop offset="50%" stopColor="#4FA8D8" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="#4FA8D8" stopOpacity="0.2" />
-        </linearGradient>
-      </defs>
 
-      {/* Base Canvas & Fine Grid */}
-      <rect width="100%" height="100%" fill="#070709" />
-      <rect width="100%" height="100%" fill="url(#berlinMapGrid)" />
-
-      {/* River Spree (Minimalist Ribbon) */}
-      <path
-        d="M -20,48 C 60,35 120,70 190,62 C 260,54 330,22 410,28 C 470,33 505,48 560,42"
-        fill="none"
-        stroke="url(#berlinSpreeGrad)"
-        strokeWidth="14"
-        strokeLinecap="round"
-      />
-      <path
-        d="M -20,48 C 60,35 120,70 190,62 C 260,54 330,22 410,28 C 470,33 505,48 560,42"
-        fill="none"
-        stroke="rgba(255, 255, 255, 0.25)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
-      />
-      <text x="75" y="42" fill="rgba(255, 255, 255, 0.3)" fontSize="7.5" fontFamily="monospace" letterSpacing="0.2em">SPREE</text>
-
-      {/* Minimalist Urban Blocks (Charlottenburg) */}
-      <rect x="35" y="80" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="125" y="80" width="75" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="220" y="80" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="310" y="70" width="60" height="52" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-
-      <rect x="35" y="142" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="125" y="142" width="75" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="220" y="142" width="70" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="310" y="142" width="60" height="42" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-
-      {/* Secondary Streets (Hairlines) */}
-      <line x1="30" y1="20" x2="30" y2="215" stroke="rgba(255, 255, 255, 0.12)" strokeWidth="1" />
-      <line x1="115" y1="20" x2="115" y2="215" stroke="rgba(255, 255, 255, 0.14)" strokeWidth="1" />
-      <line x1="210" y1="20" x2="210" y2="215" stroke="rgba(255, 255, 255, 0.18)" strokeWidth="1.2" />
-      <line x1="300" y1="20" x2="300" y2="215" stroke="rgba(255, 255, 255, 0.14)" strokeWidth="1" />
-
-      {/* Tiergarten / Roundabout Hub (Ernst-Reuter-Platz) */}
-      <circle cx="430" cy="132" r="28" fill="none" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.5" />
-      <circle cx="430" cy="132" r="16" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" strokeDasharray="3 3" />
-      <line x1="430" y1="104" x2="375" y2="20" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1.5" />
-      <line x1="445" y1="110" x2="495" y2="20" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
-      <line x1="458" y1="132" x2="540" y2="132" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="2" />
-      <line x1="445" y1="154" x2="490" y2="225" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
-
-      {/* Main Arterials */}
-      {/* Kantstraße (South) */}
-      <line x1="0" y1="195" x2="540" y2="195" stroke="rgba(255, 255, 255, 0.22)" strokeWidth="1.5" />
-      <text x="35" y="191" fill="rgba(255, 255, 255, 0.25)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em">KANTSTRASSE</text>
-
-      {/* Bismarckstraße (Main Axis) */}
-      <line x1="0" y1="132" x2="402" y2="132" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="2.5" />
-      <text x="40" y="127" fill="rgba(255, 255, 255, 0.45)" fontSize="7" fontFamily="monospace" letterSpacing="0.15em">BISMARCKSTRASSE</text>
-
-      {/* Precise Target Crosshairs at Bismarckstr. 10-12 (x: 185, y: 132) */}
-      <g transform="translate(185, 132)">
-        {/* Radar Ping Animation */}
-        <circle cx="0" cy="0" r="16" fill="none" stroke="#FFAB00" strokeWidth="1" strokeDasharray="3 3">
-          <animate attributeName="r" values="8;26;8" dur="3.2s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.9;0.1;0.9" dur="3.2s" repeatCount="indefinite" />
-        </circle>
-        
-        {/* Crosshair Hairlines */}
-        <line x1="-24" y1="0" x2="-8" y2="0" stroke="#FFAB00" strokeWidth="1.2" />
-        <line x1="8" y1="0" x2="24" y2="0" stroke="#FFAB00" strokeWidth="1.2" />
-        <line x1="0" y1="-24" x2="0" y2="-8" stroke="#FFAB00" strokeWidth="1.2" />
-        <line x1="0" y1="8" x2="0" y2="24" stroke="#FFAB00" strokeWidth="1.2" />
-
-        {/* Pin Target Rings */}
-        <circle cx="0" cy="0" r="7" fill="rgba(255, 171, 0, 0.2)" stroke="#FFAB00" strokeWidth="1.5" />
-        <circle cx="0" cy="0" r="2.8" fill="#FFAB00" />
-
-        {/* Leader Line to Floating Coordinate Tag */}
-        <polyline points="0,-10 0,-42 22,-42" fill="none" stroke="#FFAB00" strokeWidth="1" strokeDasharray="2 2" />
-        
-        {/* Floating Callout Pill */}
-        <g transform="translate(26, -58)">
-          <rect x="0" y="0" width="158" height="32" rx="3" fill="#0C0C10" stroke="#FFAB00" strokeWidth="1" strokeOpacity="0.8" />
-          <rect x="0" y="0" width="3" height="32" rx="1.5" fill="#FFAB00" />
-          <text x="10" y="13" fill="#FFFFFF" fontSize="8" fontFamily="var(--font-sans), sans-serif" fontWeight="700" letterSpacing="0.06em">
-            123 FACTORY BERLIN
-          </text>
-          <text x="10" y="24" fill="#FFAB00" fontSize="7.2" fontFamily="monospace" letterSpacing="0.04em">
-            52°30'42"N · 13°18'45"E
-          </text>
-        </g>
-      </g>
-
-      {/* Cartographic UI Overlays */}
-      {/* Top Left: Sector & Coordinates */}
-      <g transform="translate(16, 20)">
-        <text fill="rgba(255, 255, 255, 0.55)" fontSize="8" fontFamily="monospace" letterSpacing="0.1em" fontWeight="600">
-          CARTOGRAPHY // BERLIN HQ
-        </text>
-        <text y="12" fill="rgba(255, 255, 255, 0.3)" fontSize="7" fontFamily="monospace">
-          SECTOR: CHARLOTTENBURG-WILMERSDORF
-        </text>
-      </g>
-
-      {/* Top Right: Minimalist Compass */}
-      <g transform="translate(505, 22)">
-        <circle cx="0" cy="0" r="11" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
-        <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-        <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-        <polygon points="0,-11 -2.5,-3 2.5,-3" fill="#FFAB00" />
-        <text x="0" y="-16" fill="#FFAB00" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fontWeight="700">N</text>
-      </g>
-
-      {/* Bottom Right: Scale Bar */}
-      <g transform="translate(425, 212)">
-        <line x1="0" y1="0" x2="90" y2="0" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <line x1="45" y1="-2" x2="45" y2="2" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
-        <line x1="90" y1="-3" x2="90" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <text x="0" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace">0</text>
-        <text x="45" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="middle">250m</text>
-        <text x="90" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="end">500m</text>
-      </g>
-
-      {/* Border Coordinate Tick Marks */}
-      <line x1="0" y1="0" x2="540" y2="0" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="0" y1="230" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="0" y1="0" x2="0" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="540" y1="0" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-
-      {/* Ticks */}
-      <line x1="135" y1="0" x2="135" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="270" y1="0" x2="270" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="405" y1="0" x2="405" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="135" y1="226" x2="135" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="270" y1="226" x2="270" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="405" y1="226" x2="405" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-    </svg>
-  );
-}
-
-function SeoulMapSvg() {
-  return (
-    <svg viewBox="0 0 540 230" width="100%" height="100%" className="about-office-blueprint-svg" aria-label="Seoul Office Minimalist Map and Coordinates">
-      <defs>
-        <pattern id="seoulMapGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-          <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="1" />
-        </pattern>
-        <linearGradient id="seoulHanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#3CC79B" stopOpacity="0.2" />
-          <stop offset="45%" stopColor="#4FA8D8" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#3CC79B" stopOpacity="0.15" />
-        </linearGradient>
-      </defs>
-
-      {/* Base Canvas & Fine Grid */}
-      <rect width="100%" height="100%" fill="#070709" />
-      <rect width="100%" height="100%" fill="url(#seoulMapGrid)" />
-
-      {/* River Han (Hangang) Majestic Curve */}
-      <path
-        d="M -20,40 C 90,32 170,52 250,46 C 340,40 430,16 560,18"
-        fill="none"
-        stroke="url(#seoulHanGrad)"
-        strokeWidth="18"
-        strokeLinecap="round"
-      />
-      <path
-        d="M -20,40 C 90,32 170,52 250,46 C 340,40 430,16 560,18"
-        fill="none"
-        stroke="rgba(255, 255, 255, 0.22)"
-        strokeWidth="1"
-        strokeDasharray="4 4"
-      />
-      <text x="80" y="34" fill="rgba(255, 255, 255, 0.3)" fontSize="7.5" fontFamily="monospace" letterSpacing="0.2em">HANGANG (HAN RIVER)</text>
-
-      {/* Bridges crossing Han River (Banpo Bridge & Hannam Bridge) */}
-      <line x1="220" y1="20" x2="220" y2="70" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="2.2" />
-      <line x1="410" y1="5" x2="410" y2="55" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="2" />
-
-      {/* Minimalist Urban Blocks (Seocho / Gangnam Grid) */}
-      <rect x="40" y="80" width="60" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="115" y="80" width="85" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="235" y="80" width="75" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="330" y="80" width="65" height="40" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-
-      <rect x="40" y="135" width="60" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="115" y="135" width="85" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="235" y="135" width="75" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-      <rect x="330" y="135" width="65" height="38" fill="rgba(255, 255, 255, 0.015)" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="0.8" />
-
-      {/* Vertical Arterials */}
-      {/* Banpo-daero */}
-      <line x1="220" y1="65" x2="220" y2="225" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="2.2" />
-      <text x="224" y="95" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em" transform="rotate(90, 224, 95)">BANPO-DAERO</text>
-
-      {/* Seochojungang-ro */}
-      <line x1="110" y1="75" x2="110" y2="225" stroke="rgba(255, 255, 255, 0.2)" strokeWidth="1.2" />
-
-      {/* Gyeongbu Corridor */}
-      <line x1="320" y1="65" x2="320" y2="225" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" strokeDasharray="6 3" />
-
-      {/* Gangnam-daero */}
-      <line x1="410" y1="50" x2="410" y2="225" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2.2" />
-      <text x="414" y="95" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" letterSpacing="0.12em" transform="rotate(90, 414, 95)">GANGNAM-DAERO</text>
-
-      {/* Horizontal Arterials */}
-      {/* Seocho-daero / Teheran-ro */}
-      <line x1="0" y1="126" x2="540" y2="126" stroke="rgba(255, 255, 255, 0.4)" strokeWidth="2" />
-      <text x="35" y="122" fill="rgba(255, 255, 255, 0.35)" fontSize="7" fontFamily="monospace" letterSpacing="0.12em">SEOCHO-DAERO ── TEHERAN-RO</text>
-
-      {/* Saimdang-ro (Office Street) */}
-      <line x1="0" y1="178" x2="540" y2="178" stroke="rgba(255, 255, 255, 0.55)" strokeWidth="2.2" />
-      <text x="35" y="174" fill="rgba(255, 255, 255, 0.45)" fontSize="7" fontFamily="monospace" letterSpacing="0.15em">SAIMDANG-RO</text>
-
-      {/* Precise Target Crosshairs at Saimdang-ro 8-gil 13 (x: 165, y: 178) */}
-      <g transform="translate(165, 178)">
-        {/* Radar Ping Animation */}
-        <circle cx="0" cy="0" r="16" fill="none" stroke="#3CC79B" strokeWidth="1" strokeDasharray="3 3">
-          <animate attributeName="r" values="8;26;8" dur="3.2s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0.9;0.1;0.9" dur="3.2s" repeatCount="indefinite" />
-        </circle>
-
-        {/* Crosshair Hairlines */}
-        <line x1="-24" y1="0" x2="-8" y2="0" stroke="#3CC79B" strokeWidth="1.2" />
-        <line x1="8" y1="0" x2="24" y2="0" stroke="#3CC79B" strokeWidth="1.2" />
-        <line x1="0" y1="-24" x2="0" y2="-8" stroke="#3CC79B" strokeWidth="1.2" />
-        <line x1="0" y1="8" x2="0" y2="24" stroke="#3CC79B" strokeWidth="1.2" />
-
-        {/* Pin Target Rings */}
-        <circle cx="0" cy="0" r="7" fill="rgba(60, 199, 155, 0.2)" stroke="#3CC79B" strokeWidth="1.5" />
-        <circle cx="0" cy="0" r="2.8" fill="#3CC79B" />
-
-        {/* Leader Line to Floating Coordinate Tag */}
-        <polyline points="0,-10 0,-42 22,-42" fill="none" stroke="#3CC79B" strokeWidth="1" strokeDasharray="2 2" />
-
-        {/* Floating Callout Pill */}
-        <g transform="translate(26, -58)">
-          <rect x="0" y="0" width="158" height="32" rx="3" fill="#0C0C10" stroke="#3CC79B" strokeWidth="1" strokeOpacity="0.8" />
-          <rect x="0" y="0" width="3" height="32" rx="1.5" fill="#3CC79B" />
-          <text x="10" y="13" fill="#FFFFFF" fontSize="8" fontFamily="var(--font-sans), sans-serif" fontWeight="700" letterSpacing="0.06em">
-            123 FACTORY SEOUL
-          </text>
-          <text x="10" y="24" fill="#3CC79B" fontSize="7.2" fontFamily="monospace" letterSpacing="0.04em">
-            37°29'34"N · 127°01'22"E
-          </text>
-        </g>
-      </g>
-
-      {/* Cartographic UI Overlays */}
-      {/* Top Left: Sector & Coordinates */}
-      <g transform="translate(16, 20)">
-        <text fill="rgba(255, 255, 255, 0.55)" fontSize="8" fontFamily="monospace" letterSpacing="0.1em" fontWeight="600">
-          CARTOGRAPHY // SEOUL HUB
-        </text>
-        <text y="12" fill="rgba(255, 255, 255, 0.3)" fontSize="7" fontFamily="monospace">
-          SECTOR: SEOCHO-GU · GANGNAM TECH BELT
-        </text>
-      </g>
-
-      {/* Top Right: Minimalist Compass */}
-      <g transform="translate(505, 22)">
-        <circle cx="0" cy="0" r="11" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
-        <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-        <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1" strokeDasharray="2 2" />
-        <polygon points="0,-11 -2.5,-3 2.5,-3" fill="#3CC79B" />
-        <text x="0" y="-16" fill="#3CC79B" fontSize="6.5" fontFamily="monospace" textAnchor="middle" fontWeight="700">N</text>
-      </g>
-
-      {/* Bottom Right: Scale Bar */}
-      <g transform="translate(425, 212)">
-        <line x1="0" y1="0" x2="90" y2="0" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <line x1="45" y1="-2" x2="45" y2="2" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1" />
-        <line x1="90" y1="-3" x2="90" y2="3" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="1.2" />
-        <text x="0" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace">0</text>
-        <text x="45" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="middle">250m</text>
-        <text x="90" y="9" fill="rgba(255, 255, 255, 0.35)" fontSize="6.5" fontFamily="monospace" textAnchor="end">500m</text>
-      </g>
-
-      {/* Border Coordinate Tick Marks */}
-      <line x1="0" y1="0" x2="540" y2="0" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="0" y1="230" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="0" y1="0" x2="0" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-      <line x1="540" y1="0" x2="540" y2="230" stroke="rgba(255, 255, 255, 0.1)" strokeWidth="1" />
-
-      {/* Ticks */}
-      <line x1="135" y1="0" x2="135" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="270" y1="0" x2="270" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="405" y1="0" x2="405" y2="4" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="135" y1="226" x2="135" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="270" y1="226" x2="270" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-      <line x1="405" y1="226" x2="405" y2="230" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
-    </svg>
-  );
-}
 
 export default function TeamView() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -1795,175 +1491,487 @@ export default function TeamView() {
         }
 
         /* =========================================================================
-           SECTION 7: DUAL-HUB PRESENCE (BERLIN & SEOUL)
+           SECTION 7: DUAL-HUB PRESENCE (WORLD MAP // BERLIN & SEOUL)
            ========================================================================= */
-        .about-offices-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: clamp(20px, 2.5vw, 36px);
-          margin-top: clamp(36px, 4.5vw, 56px);
+        .world-office-section-wrap {
+          width: 100%;
+          margin: 0 auto;
         }
 
-        @media (max-width: 960px) {
-          .about-offices-grid {
-            grid-template-columns: 1fr;
+        .world-map-viewport {
+          width: 100%;
+          position: relative;
+          aspect-ratio: 784 / 458;
+          background: #07070A;
+          border: 1px solid rgba(255, 255, 255, 0.09);
+          border-radius: 6px;
+          overflow: hidden;
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+        }
+
+        .world-map-svg {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        /* Grayish matte tech world map styling (User: "세계지도를 약간 회색빛돌게 해주고") */
+        .world-countries-group path {
+          fill: #1A1C23;
+          stroke: rgba(255, 255, 255, 0.07);
+          stroke-width: 0.5px;
+          transition: fill 0.25s ease, stroke 0.25s ease;
+        }
+
+        .world-countries-group path:hover {
+          fill: #262934;
+        }
+
+        /* Highlight Germany & South Korea */
+        .world-countries-group #de {
+          fill: #2C2F3D;
+          stroke: rgba(255, 171, 0, 0.6);
+          stroke-width: 0.9px;
+        }
+
+        .world-countries-group #kr {
+          fill: #2C2F3D;
+          stroke: rgba(60, 199, 155, 0.6);
+          stroke-width: 0.9px;
+        }
+
+        /* Corridor flight line animation */
+        .world-corridor-flight-line {
+          animation: corridorDash 20s linear infinite;
+        }
+
+        @keyframes corridorDash {
+          to {
+            stroke-dashoffset: -1000;
           }
         }
 
-        .about-office-card {
-          background: #0B0B0E;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Interactive HTML Pins & Address Cards */
+        .world-pin-container {
+          position: absolute;
+          transform: translate(-50%, -100%);
+          cursor: pointer;
+          z-index: 10;
+          pointer-events: auto;
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+        }
+
+        .world-pin-container:hover,
+        .world-pin-container.is-hovered {
+          transform: translate(-50%, -105%) scale(1.03);
+          z-index: 20;
+        }
+
+        .world-pin-stem {
+          width: 1.5px;
+          height: 24px;
+          margin: 0 auto;
+          opacity: 0.75;
+        }
+
+        /* Address Card floating above pin */
+        .world-pin-card {
+          background: rgba(12, 13, 17, 0.92);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.12);
           border-radius: 6px;
-          padding: clamp(24px, 3vw, 36px);
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          overflow: hidden;
-          transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+          padding: 10px 14px;
+          min-width: 200px;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .about-office-card:hover {
-          border-color: rgba(255, 171, 0, 0.45);
-          transform: translateY(-3px);
-          box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.65), 0 0 24px -4px rgba(255, 171, 0, 0.08);
+        .world-pin-container:hover .world-pin-card {
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 255, 255, 0.1);
         }
 
-        .about-office-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 20px;
-          flex-wrap: wrap;
-          gap: 10px;
+        .berlin-pin:hover .world-pin-card {
+          border-color: #FFAB00;
         }
 
-        .about-office-hub-badge {
-          font-family: var(--font-mono, monospace);
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #FFAB00;
+        .seoul-pin:hover .world-pin-card {
+          border-color: #3CC79B;
+        }
+
+        .world-pin-card-top {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
+          margin-bottom: 4px;
         }
 
-        .about-office-time-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 7px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          padding: 4px 10px;
-          border-radius: 20px;
-          font-family: var(--font-mono, monospace);
-          font-size: 11.5px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.85);
-          letter-spacing: 0.02em;
-        }
-
-        .about-office-pulse-dot {
+        .world-pin-badge-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #3CC79B;
-          box-shadow: 0 0 8px #3CC79B;
-          animation: pulseGlow 2s infinite ease-in-out;
+          display: inline-block;
+          box-shadow: 0 0 6px currentColor;
         }
 
-        @keyframes pulseGlow {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(0.85); }
+        .world-pin-card-hub {
+          font-family: var(--font-sans);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: #FFFFFF;
         }
 
-        .about-office-blueprint-wrap {
-          width: 100%;
-          height: 220px;
-          background: #070709;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          border-radius: 4px;
-          position: relative;
-          overflow: hidden;
-          margin-bottom: 24px;
+        .world-pin-click-hint {
+          margin-left: auto;
+          font-family: monospace;
+          font-size: 9.5px;
+          color: rgba(255, 255, 255, 0.5);
+          padding: 1px 5px;
+          background: rgba(255, 255, 255, 0.08);
+          border-radius: 3px;
+        }
+
+        .world-pin-card-address {
+          font-family: var(--font-sans);
+          font-size: 12px;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.4;
+          margin-bottom: 6px;
+          white-space: nowrap;
+        }
+
+        .world-pin-card-footer {
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
+          gap: 8px;
+          padding-top: 5px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .about-office-blueprint-svg {
-          width: 100%;
-          height: 100%;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .world-pin-coord-tag {
+          font-family: monospace;
+          font-size: 9px;
+          color: rgba(255, 255, 255, 0.45);
         }
 
-        .about-office-card:hover .about-office-blueprint-svg {
-          transform: scale(1.02);
-        }
-
-        .about-office-title {
+        .world-pin-action-label {
           font-family: var(--font-sans);
-          font-size: clamp(20px, 2vw, 24px);
+          font-size: 10px;
+          font-weight: 600;
+          color: #FFAB00;
+        }
+
+        .seoul-pin .world-pin-action-label {
+          color: #3CC79B;
+        }
+
+        /* Bottom Bar on Map */
+        .world-map-bottom-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 10px 16px;
+          background: linear-gradient(180deg, transparent, rgba(7, 7, 10, 0.95));
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          pointer-events: none;
+        }
+
+        .world-map-legend-item {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-family: monospace;
+          font-size: 10.5px;
+          color: rgba(255, 255, 255, 0.7);
+          letter-spacing: 0.06em;
+        }
+
+        .world-legend-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+        }
+
+        .world-map-legend-corridor {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-family: monospace;
+          font-size: 9.5px;
+          color: rgba(255, 255, 255, 0.45);
+          letter-spacing: 0.12em;
+        }
+
+        .world-legend-corridor-line {
+          width: 24px;
+          height: 1px;
+          background: linear-gradient(90deg, #FFAB00, #FFFFFF, #3CC79B);
+        }
+
+        /* Summary Cards below map */
+        .world-offices-summary-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          margin-top: 24px;
+        }
+
+        .world-summary-card {
+          background: #0A0B0E;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 4px;
+          padding: 24px;
+          cursor: pointer;
+          transition: all 0.25s ease;
+        }
+
+        .world-summary-card:hover {
+          border-color: rgba(255, 255, 255, 0.25);
+          background: #0E0F14;
+          transform: translateY(-2px);
+        }
+
+        .world-summary-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 12px;
+        }
+
+        .world-summary-badge {
+          font-family: monospace;
+          font-size: 11px;
           font-weight: 700;
-          letter-spacing: -0.025em;
-          color: #FFFFFF;
-          margin: 0 0 8px 0;
+          letter-spacing: 0.08em;
+          padding: 3px 8px;
+          border: 1px solid;
+          border-radius: 2px;
         }
 
-        .about-office-address {
+        .world-summary-map-btn {
           font-family: var(--font-sans);
-          font-size: 14.5px;
-          color: rgba(255, 255, 255, 0.75);
-          line-height: 1.5;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.6);
+          transition: color 0.2s;
+        }
+
+        .world-summary-card:hover .world-summary-map-btn {
+          color: #FFFFFF;
+        }
+
+        .world-summary-title {
+          font-family: var(--font-sans);
+          font-size: 18px;
+          font-weight: 700;
+          color: #FFFFFF;
           margin: 0 0 6px 0;
         }
 
-        .about-office-coords {
-          font-family: var(--font-mono, monospace);
-          font-size: 11.5px;
-          color: rgba(255, 255, 255, 0.45);
-          margin-bottom: 18px;
-          letter-spacing: 0.04em;
-        }
-
-        .about-office-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-          margin-bottom: 24px;
-          flex: 1;
-        }
-
-        .about-office-tag {
-          font-family: var(--font-mono, monospace);
-          font-size: 10px;
-          font-weight: 600;
+        .world-summary-address {
+          font-family: var(--font-sans);
+          font-size: 14px;
           color: rgba(255, 255, 255, 0.7);
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          padding: 3px 9px;
-          border-radius: 2px;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
+          margin: 0 0 4px 0;
         }
 
-        .about-office-map-link {
-          display: inline-flex;
+        .world-summary-coords {
+          font-family: monospace;
+          font-size: 11.5px;
+          color: rgba(255, 255, 255, 0.4);
+          margin: 0;
+        }
+
+        /* Modal Popup */
+        .world-map-modal-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          animation: modalFadeIn 0.2s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        .world-map-modal-content {
+          background: #0E0F14;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 8px;
+          width: 100%;
+          max-width: 620px;
+          overflow: hidden;
+          box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+          animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalScaleUp {
+          from { transform: scale(0.96); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+
+        .world-modal-header {
+          padding: 20px 24px 16px 24px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .world-modal-hub-tag {
+          font-family: monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          display: block;
+          margin-bottom: 4px;
+        }
+
+        .world-modal-title {
+          font-family: var(--font-sans);
+          font-size: 20px;
+          font-weight: 700;
+          color: #FFFFFF;
+          margin: 0;
+        }
+
+        .world-modal-close-btn {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: rgba(255, 255, 255, 0.7);
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .world-modal-close-btn:hover {
+          border-color: #FFFFFF;
+          color: #FFFFFF;
+        }
+
+        .world-modal-address-bar {
+          padding: 12px 24px;
+          background: rgba(255, 255, 255, 0.02);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .world-modal-address-info {
+          display: flex;
           align-items: center;
           gap: 8px;
           font-family: var(--font-sans);
           font-size: 13.5px;
-          font-weight: 600;
-          color: #FFAB00;
-          text-decoration: none;
-          transition: gap 0.2s ease, color 0.2s ease;
-          width: fit-content;
+          color: rgba(255, 255, 255, 0.85);
         }
 
-        .about-office-map-link:hover {
-          color: #FFC043;
-          gap: 12px;
+        .world-modal-copy-btn {
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: #FFFFFF;
+          padding: 5px 10px;
+          border-radius: 3px;
+          font-family: var(--font-sans);
+          font-size: 11.5px;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: background 0.2s;
+        }
+
+        .world-modal-copy-btn:hover {
+          background: rgba(255, 255, 255, 0.16);
+        }
+
+        .world-modal-tags {
+          padding: 14px 24px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .world-modal-tag {
+          font-family: var(--font-sans);
+          font-size: 11px;
+          padding: 3px 8px;
+          border-radius: 2px;
+          background: rgba(255, 255, 255, 0.04);
+          color: rgba(255, 255, 255, 0.65);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .world-modal-actions {
+          padding: 16px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: #090A0D;
+        }
+
+        .world-modal-coords {
+          font-family: monospace;
+          font-size: 11.5px;
+          color: rgba(255, 255, 255, 0.45);
+        }
+
+        .world-modal-launch-btn {
+          color: #000000;
+          font-family: var(--font-sans);
+          font-size: 13px;
+          font-weight: 700;
+          padding: 10px 18px;
+          border-radius: 3px;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          transition: opacity 0.2s;
+        }
+
+        .world-modal-launch-btn:hover {
+          opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+          .world-pin-card {
+            min-width: 140px;
+            padding: 6px 8px;
+          }
+          .world-pin-card-address {
+            font-size: 10px;
+            max-width: 140px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .world-pin-action-label,
+          .world-pin-coord-tag {
+            display: none;
+          }
+          .world-offices-summary-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         /* Divider Line */
@@ -2569,90 +2577,8 @@ export default function TeamView() {
             Our cross-border infrastructure bridges Europe and Asia in real time. We operate dedicated hubs in Berlin and Seoul to provide ground-level market entry, regulatory landing, and cross-border syndication.
           </p>
 
-          {/* Dual-Hub Office Grid */}
-          <div className="about-offices-grid">
-            {/* BERLIN HQ CARD */}
-            <div className="about-office-card">
-              <div className="about-office-header">
-                <div className="about-office-hub-badge">
-                  <span>BERLIN (HQ)</span>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.6)', fontWeight: 500 }}>EUROPE</span>
-                </div>
-                <div className="about-office-time-badge">
-                  <span className="about-office-pulse-dot" />
-                  <span>{officeTimes.berlin} CET</span>
-                </div>
-              </div>
-
-              {/* Minimalist Cartographic Line-Art Map */}
-              <div className="about-office-blueprint-wrap">
-                <BerlinMapSvg />
-              </div>
-
-              {/* Details */}
-              <h3 className="about-office-title">123 Factory Berlin HQ</h3>
-              <p className="about-office-address">Bismarckstraße 10-12, 10625 Berlin, Germany</p>
-              <div className="about-office-coords">Charlottenburg · 52° 30' 42" N, 13° 18' 45" E</div>
-
-              <div className="about-office-tags">
-                <span className="about-office-tag">European Landing</span>
-                <span className="about-office-tag">Bilateral Syndication</span>
-                <span className="about-office-tag">Regulatory & Tax</span>
-                <span className="about-office-tag">Industrial Pilots</span>
-              </div>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Bismarckstra%C3%9Fe+10-12,+10625+Berlin,+Germany"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about-office-map-link"
-              >
-                Open in Google Maps ↗
-              </a>
-            </div>
-
-            {/* SEOUL OFFICE CARD */}
-            <div className="about-office-card">
-              <div className="about-office-header">
-                <div className="about-office-hub-badge">
-                  <span>SEOUL OFFICE</span>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>·</span>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.6)', fontWeight: 500 }}>ASIA-PACIFIC</span>
-                </div>
-                <div className="about-office-time-badge">
-                  <span className="about-office-pulse-dot" />
-                  <span>{officeTimes.seoul} KST</span>
-                </div>
-              </div>
-
-              {/* Minimalist Cartographic Line-Art Map */}
-              <div className="about-office-blueprint-wrap">
-                <SeoulMapSvg />
-              </div>
-
-              {/* Details */}
-              <h3 className="about-office-title">123 Factory Seoul Office</h3>
-              <p className="about-office-address">Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea</p>
-              <div className="about-office-coords">Seocho-gu · 37° 29' 34" N, 127° 01' 22" E</div>
-
-              <div className="about-office-tags">
-                <span className="about-office-tag">Deep-Tech Scouting</span>
-                <span className="about-office-tag">Founder Acceleration</span>
-                <span className="about-office-tag">GovTech & Consortia</span>
-                <span className="about-office-tag">Cross-Border R&D</span>
-              </div>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Saimdang-ro+8-gil+13,+Seocho-gu,+Seoul,+Korea"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about-office-map-link"
-              >
-                Open in Google Maps ↗
-              </a>
-            </div>
-          </div>
+          {/* Interactive World Map Dual-Hub Presence */}
+          <WorldOfficeMap />
         </div>
       </section>
 
