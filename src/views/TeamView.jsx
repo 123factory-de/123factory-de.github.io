@@ -432,6 +432,14 @@ export default function TeamView() {
           box-sizing: border-box;
         }
 
+        .about-container-wide {
+          width: 100%;
+          max-width: 1840px;
+          margin: 0 auto;
+          padding: 0 clamp(20px, 3.5vw, 56px);
+          box-sizing: border-box;
+        }
+
         /* Sticky Minimal Subnav Bar (Dark Translucent Glass) */
         .about-subnav-sticky {
           position: sticky;
@@ -980,11 +988,11 @@ export default function TeamView() {
         /* Expanding Horizontal Accordion Metric Cards with Color Hover & Detail Reveal */
         .ecosystem-metrics-grid {
           display: flex;
-          gap: clamp(12px, 1.4vw, 20px);
+          gap: clamp(14px, 1.4vw, 22px);
           width: 100%;
           box-sizing: border-box;
           margin-top: clamp(24px, 3vw, 48px);
-          min-height: 480px;
+          min-height: 500px;
         }
 
         @media (max-width: 1024px) {
@@ -1007,7 +1015,7 @@ export default function TeamView() {
           position: relative;
           flex: 1;
           min-width: 0;
-          height: 480px;
+          height: clamp(480px, 34vw, 540px);
           border-radius: 12px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1015,7 +1023,7 @@ export default function TeamView() {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding: clamp(22px, 2vw, 32px);
+          padding: clamp(24px, 2.2vw, 36px);
           box-sizing: border-box;
           cursor: pointer;
           transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1027,13 +1035,13 @@ export default function TeamView() {
 
         @media (min-width: 1025px) {
           .metric-photo-card:hover {
-            flex: 2.75;
+            flex: 2.85;
             border-color: var(--card-accent, rgba(255, 255, 255, 0.45));
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 32px var(--card-glow, rgba(255, 255, 255, 0.08));
           }
 
           .ecosystem-metrics-grid:hover .metric-photo-card:not(:hover) {
-            flex: 0.75;
+            flex: 0.72;
             opacity: 0.65;
           }
         }
@@ -1143,13 +1151,13 @@ export default function TeamView() {
 
         .metric-photo-desc {
           font-family: var(--font-sans);
-          font-size: clamp(13px, 1.05vw, 14.5px);
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
+          font-size: clamp(13.5px, 1.05vw, 15px);
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.88);
           letter-spacing: -0.01em;
           word-break: keep-all;
-          max-width: 540px;
-          margin-top: 14px;
+          max-width: 640px;
+          margin-top: 16px;
         }
 
         @media (min-width: 1025px) {
@@ -2172,17 +2180,17 @@ export default function TeamView() {
           SECTION 3: IMPACT & METRICS (THE 4 CORE NUMBERS FROM HERO)
          ========================================================================= */}
       <section id="impact" className="about-section" ref={metricsRef}>
-        <div className="about-container">
+        <div className="about-container-wide">
           <h2 className="about-display-h2">
             The Numbers Behind Our Ecosystem
           </h2>
           <p style={{
             fontSize: 'clamp(21px, 2vw, 28px)',
             color: 'rgba(255, 255, 255, 0.72)',
-            maxWidth: '100%',
+            maxWidth: '1200px',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(44px, 5vw, 68px) 0',
             wordBreak: 'keep-all'
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
@@ -2324,7 +2332,7 @@ export default function TeamView() {
         </div>
 
         {/* Ultra-Wide Workshop Photo Matching Hero Presentation */}
-        <div className="about-hero-full-container" style={{ marginTop: 'clamp(56px, 7vw, 96px)' }}>
+        <div className="about-hero-full-container" style={{ marginTop: 'clamp(140px, 16vw, 240px)' }}>
           <div className="about-photo-frame about-photo-frame-hero">
             <img
               src="/about/about-team-table.jpg"
