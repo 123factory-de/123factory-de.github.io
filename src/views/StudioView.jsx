@@ -144,8 +144,26 @@ export default function StudioView() {
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: rgba(10, 10, 10, 0.45);
-          display: block;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
           margin-bottom: clamp(18px, 2.5vh, 28px);
+        }
+
+        .startups-dots-wrap {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+        }
+
+        .startups-dot {
+          display: inline-block;
+          width: 6.5px;
+          height: 6.5px;
+          border-radius: 50%;
+          background: #FFAB00;
+          box-shadow: 0 0 8px rgba(255, 171, 0, 0.55);
+          flex-shrink: 0;
         }
 
         /* Hero Headline matching exact Cross-Border Expansion Made Simple style */
@@ -707,14 +725,17 @@ export default function StudioView() {
         </div>
       </section>
 
-      <div className="startups-container"><div className="startups-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 1: EARLY-STAGE SUPPORT
          ========================================================================= */}
       <section id="early-stage" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">01 // Startup Programs · Early-Stage Support</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+            </span>
+            Early-Stage Support
+          </span>
           <h2 className="startups-display-h2">
             We back early-stage founders with the tools, guidance, and network to find traction and grow with clarity.
           </h2>
@@ -772,7 +793,13 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="scaleups" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">02 // Startup Programs · Accelerators & Scale-ups</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+            </span>
+            Accelerators & Scale-ups
+          </span>
           <h2 className="startups-display-h2">
             Scale smart, grow globally: technical validation & commercial revenue acceleration.
           </h2>
@@ -830,7 +857,14 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="funding" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">03 // Startup Programs · Funding & Investment</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+            </span>
+            Funding & Investment
+          </span>
           <h2 className="startups-display-h2">
             Fueling ambition with the right capital: precision fundraising & syndication.
           </h2>

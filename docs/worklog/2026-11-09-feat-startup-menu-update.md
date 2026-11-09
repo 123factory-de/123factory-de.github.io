@@ -13,7 +13,8 @@ request-source: "Chat, 2026-11-09"
 4. Remove the thin divider line above the 01/02 track cards grid.
 5. Increase spacing/margin between the photo and the track cards grid.
 6. Remove small track/platform subheadings (`01 // TRACK`, `04 // PLATFORM`, etc.) and the "Explore Program ↓" links from the 6 program cards.
-7. Wrap each card in an invisible box that reveals a brand orange (`#FFAB00`) border and subtle background on hover, smoothly scrolling down to the corresponding section when clicked.
+8. Remove the faint horizontal divider line under the overview grid.
+9. Replace section numbers `01`, `02`, `03` with 1, 2, and 3 glowing orange dots (`#FFAB00`), and remove the "Startup Programs · " prefix from each eyebrow.
 
 ## Changes
 
@@ -25,6 +26,9 @@ request-source: "Chat, 2026-11-09"
   - Increased `margin-top` on `.startups-programs-grid` to `clamp(60px, 8vh, 100px)` for cleaner, airy spacing.
   - Removed `<span className="startups-program-num">` and `<span className="startups-program-link">` from all 6 overview cards.
   - Styled `.startups-program-card` with an invisible border (`border: 1.5px solid transparent`), smooth transition, and an orange border (`border-color: #FFAB00`), subtle tint, and lift on hover.
+  - Removed the faint divider line between the overview cards grid and Section 1.
+  - Added `.startups-dots-wrap` and `.startups-dot` CSS, styling glowing orange indicator dots.
+  - Updated Section 1, 2, and 3 eyebrows to display 1, 2, and 3 orange dots respectively, with cleanly formatted titles (`Early-Stage Support`, `Accelerators & Scale-ups`, `Funding & Investment`).
 
 ## Verification
 
