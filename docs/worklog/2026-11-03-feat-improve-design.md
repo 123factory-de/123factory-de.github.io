@@ -62,13 +62,16 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
     - Replaced the previous side-by-side vertical cards with wide, expansive horizontal cards (`.about-service-card`) stacked in a flex column.
     - Inside each card, implemented an editorial 2-column layout (`1.15fr 1fr`): the left side displays category eyebrow, headline, description, and action button; the right side displays a framed list of 5 key capabilities.
     - **Neutral Action Buttons**: Replaced saturated orange and green buttons with crisp, high-contrast neutral buttons (`.about-service-btn-neutral` with pure white background, dark typography, and refined hover lift).
-    - **Calm Ambient Halos on Card Hover**: Hovering over the Startups card radiates an ambient, diffuse orange/amber halo glow (`0 0 45px rgba(255, 171, 0, 0.18), 0 0 90px rgba(255, 171, 0, 0.08)`); hovering over the Corporates card radiates an ambient green halo glow (`0 0 45px rgba(39, 201, 159, 0.18), 0 0 90px rgba(39, 201, 159, 0.08)`).
+  - **Closing CTA Copy & Newsletter Action**:
+    - Updated closing CTA headline to: `"Let’s turn your vision into real momentum, together."`
+    - Maintained primary contact action (`Contact Berlin & Seoul Office ➔`) and converted the secondary action into `"Subscribe to Our Newsletter ↗"`, which smoothly scrolls directly to and focuses on the footer newsletter form.
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
-- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#services`.
+- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about`.
+- Verified closing CTA displays `"Let’s turn your vision into real momentum, together."` with primary contact button and newsletter button that smoothly scrolls to and focuses the email input.
 - Verified Core Capabilities displays wide horizontal cards with left-column text/neutral button and right-column framed capabilities list, radiating gentle orange and green ambient halos on hover.
 - Verified generous vertical spacing, breathable paragraphs, and balanced dividers across the entire About Us page.
 - Verified "The Numbers Behind Our Ecosystem" title and description are perfectly aligned with "Our Methodology", while the accordion cards below break out widely across the viewport (`max-width: 1840px`).

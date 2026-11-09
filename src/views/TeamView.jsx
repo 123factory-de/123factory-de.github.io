@@ -1958,6 +1958,7 @@ export default function TeamView() {
           letter-spacing: -0.01em;
           padding: 18px 36px;
           text-decoration: none;
+          cursor: pointer;
           transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
@@ -2558,7 +2559,7 @@ export default function TeamView() {
           <div className="about-cta-grid">
             <div>
               <h2 className="about-cta-title">
-                Let’s build cross-border ventures together.
+                Let’s turn your vision into real momentum, together.
               </h2>
             </div>
             <div className="about-cta-actions">
@@ -2568,12 +2569,19 @@ export default function TeamView() {
               >
                 Contact Berlin & Seoul Office ➔
               </a>
-              <Link
-                to="/startups"
+              <button
+                type="button"
+                onClick={() => {
+                  const input = document.querySelector('.form-input-field');
+                  if (input) {
+                    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    input.focus();
+                  }
+                }}
                 className="about-btn-secondary"
               >
-                Explore Acceleration Programs ↗
-              </Link>
+                Subscribe to Our Newsletter ↗
+              </button>
             </div>
           </div>
         </div>
