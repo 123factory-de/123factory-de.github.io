@@ -11,7 +11,7 @@ Apply subtle polish and styling consistency to the Corporate Venturing page (`sr
 - Remove image mouse hover zoom effects.
 - Clean up the 3-pillar focus overview cards by removing small category numbers/labels (`01 // FOCUS`) and arrow links (`Explore Scouting ↓`), replacing them with interactive cards showing an emerald/green (`#3CC79B`) border, subtle background, and soft shadow on mouse hover.
 - Replace numeric section indicators (`01`, `02`, `03`) with glowing emerald dot indicators (1 dot for Scouting, 2 dots for Governance, 3 dots for Investment).
-- Refine layout spacing: remove photo captions, remove the faint divider line below the overview cards, increase headline bottom margins, and align 3-item methodology lists vertically with the adjacent photos.
+- Refine layout spacing: remove photo captions, remove the faint divider line below the overview cards, increase headline bottom margins, align 3-item methodology lists vertically with the adjacent photos, and increase breathing room between the methodology lists and deliverables cards.
 
 ## Changes
 
@@ -25,6 +25,7 @@ Apply subtle polish and styling consistency to the Corporate Venturing page (`sr
   - Removed faint divider line directly below the overview grid.
   - In Sections 1, 2, and 3, replaced the prefixed section headers (`01 // Corporate Ventures · Startup Scouting`, etc.) with dot-based eyebrow indicators (1 dot, 2 dots, 3 dots).
   - Applied `.corp-feature-split.has-feature-list` and `.corp-feature-list-wrap` to Sections 1 and 2, setting `align-items: stretch` and `justify-content: space-between` to make the 3 methodology items align vertically flush with the top and bottom of the adjacent photo.
+  - Increased `.corp-deliverables-grid` margin-top from `clamp(48px, 6vh, 80px)` to `clamp(76px, 10vh, 136px)` to provide generous spacing between the core methodologies and the deliverables cards.
   - Removed static photo captions below full-width hero and Section 3 photography.
 
 ## Verification

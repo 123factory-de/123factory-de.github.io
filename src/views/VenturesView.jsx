@@ -379,13 +379,14 @@ export default function VenturesView() {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: clamp(24px, 3.5vw, 48px);
-          margin-top: clamp(48px, 6vh, 80px);
+          margin-top: clamp(76px, 10vh, 136px);
         }
 
         @media (max-width: 900px) {
           .corp-deliverables-grid {
             grid-template-columns: 1fr;
             gap: 40px;
+            margin-top: 56px;
           }
         }
 
