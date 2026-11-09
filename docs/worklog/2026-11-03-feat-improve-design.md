@@ -38,7 +38,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Replaced the previous timeline layout with 4 sleek rectangular cards featuring dark black-and-white background photography corresponding to each ecosystem metric:
     - **100+ Workshops & Executive Seminars**: `/corporates/corporate-hero.jpg` (Executive corporate workshop)
     - **200+ Matchmaking & Industry Showcases**: `/corporates/scouting-demoday.jpg` (Startup demo day & industry showcase hall)
-    - **300+ GtM & Market Access**: `/startups/startups-scaleups.jpg` (Tech founders collaborating on scaleup market access)
+    - **300+ Go-to-Market & Market Access**: `/startups/startups-scaleups.jpg` (Tech founders collaborating on scaleup market access; spelled out as Go-to-Market for 2-line visual balance across all cards)
     - **400+ Strategic Insights & Market Intelligence**: `/about/about-hero-keynote.jpg` (Keynote presentation with market intelligence screen)
   - Applied dark B&W photo filtering (`grayscale(100%) contrast(115%) brightness(0.36)`) with subtle gradient vignettes for optimal readability.
   - Rendered big bold white counters (`100+`, `200+`, `300+`, `400+`) and white descriptive typography directly over the photo cards with subtle lift and zoom effects on hover.

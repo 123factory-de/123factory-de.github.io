@@ -2170,12 +2170,12 @@ export default function TeamView() {
               </div>
             </div>
 
-            {/* CARD 3: 300+ GtM & Market Access */}
+            {/* CARD 3: 300+ Go-to-Market & Market Access */}
             <div className="metric-photo-card">
               <div className="metric-photo-bg-wrap">
                 <img
                   src="/startups/startups-scaleups.jpg"
-                  alt="GtM & Market Access"
+                  alt="Go-to-Market & Market Access"
                   className="metric-photo-img"
                   loading="lazy"
                 />
@@ -2188,7 +2188,7 @@ export default function TeamView() {
                     <AnimatedStatCounter value={300} inView={metricsInView} />
                   </div>
                   <div className="metric-photo-label">
-                    GtM & Market Access
+                    Go-to-Market & Market Access
                   </div>
                 </div>
               </div>
