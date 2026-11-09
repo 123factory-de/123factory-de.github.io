@@ -61,10 +61,13 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - **Core Capabilities Horizontal Layout & Ambient Halo Glows**:
     - Replaced the previous side-by-side vertical cards with wide, expansive horizontal cards (`.about-service-card`) stacked in a flex column.
     - Inside each card, implemented an editorial 2-column layout (`1.15fr 1fr`): the left side displays category eyebrow, headline, description, and action button; the right side displays a framed list of 5 key capabilities.
-    - **Neutral Action Buttons**: Replaced saturated orange and green buttons with crisp, high-contrast neutral buttons (`.about-service-btn-neutral` with pure white background, dark typography, and refined hover lift).
-  - **Closing CTA Copy & Newsletter Action**:
-    - Updated closing CTA headline to: `"Let’s turn your vision into real momentum, together."`
-    - Maintained primary contact action (`Contact Berlin & Seoul Office ➔`) and converted the secondary action into `"Subscribe to Our Newsletter ↗"`, which smoothly scrolls directly to and focuses on the footer newsletter form.
+  - **Official 4-Brand-Color Alignment for Ecosystem Cards**:
+    - Aligned the 4 ecosystem accordion cards with 123 Factory's canonical 4 brand colors (matching `StatOrbs.jsx` on the homepage):
+      - **100+ Workshops & Executive Seminars**: `#3CC79B` (Mint Green)
+      - **200+ Matchmaking & Industry Showcases**: `#E550CE` (Orchid Pink / Magenta)
+      - **300+ Go-to-Market & Market Access**: `#2D9CDB` (Sky Blue)
+      - **400+ Strategic Insights & Market Intelligence**: `#FFAB00` (Amber Yellow)
+    - Applied the respective brand accent colors to tag highlights, border transitions, and subtle diffuse glows on hover.
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification

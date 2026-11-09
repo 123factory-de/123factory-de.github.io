@@ -2217,8 +2217,8 @@ export default function TeamView() {
             <div
               className="metric-photo-card"
               style={{
-                '--card-accent': '#FF5A36',
-                '--card-glow': 'rgba(255, 90, 54, 0.22)',
+                '--card-accent': '#3CC79B',
+                '--card-glow': 'rgba(60, 199, 155, 0.22)',
               }}
             >
               <div className="metric-photo-bg-wrap">
@@ -2250,8 +2250,8 @@ export default function TeamView() {
             <div
               className="metric-photo-card"
               style={{
-                '--card-accent': '#00D2B4',
-                '--card-glow': 'rgba(0, 210, 180, 0.22)',
+                '--card-accent': '#E550CE',
+                '--card-glow': 'rgba(229, 80, 206, 0.22)',
               }}
             >
               <div className="metric-photo-bg-wrap">
@@ -2283,8 +2283,8 @@ export default function TeamView() {
             <div
               className="metric-photo-card"
               style={{
-                '--card-accent': '#FFAB00',
-                '--card-glow': 'rgba(255, 171, 0, 0.22)',
+                '--card-accent': '#2D9CDB',
+                '--card-glow': 'rgba(45, 156, 219, 0.22)',
               }}
             >
               <div className="metric-photo-bg-wrap">
@@ -2316,8 +2316,8 @@ export default function TeamView() {
             <div
               className="metric-photo-card"
               style={{
-                '--card-accent': '#4D7CFE',
-                '--card-glow': 'rgba(77, 124, 254, 0.22)',
+                '--card-accent': '#FFAB00',
+                '--card-glow': 'rgba(255, 171, 0, 0.22)',
               }}
             >
               <div className="metric-photo-bg-wrap">
