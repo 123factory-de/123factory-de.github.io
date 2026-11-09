@@ -35,17 +35,16 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Clicking on Berlin (HQ) or Seoul Office in the footer now directly opens the interactive dark-mode Google Maps view with the office address and an "Open Maps ↗" button.
   - Unified modal dimensions and media aspect ratio (`aspect-ratio: 16 / 10`) for consistent map viewing.
 - **Staggered Ecosystem Milestones (The Numbers Behind Our Ecosystem)**:
-  - Replaced the bento grid in "The Numbers Behind Our Ecosystem" with a staggered, alternating timeline structure (Left, Right, Left, Right) inspired by user-provided reference.
-  - Placed a minimal pennant flag icon (`◁|`) positioned above each milestone box.
-  - Styled each counter value (`100+`, `200+`, `300+`, `400+`) inside a glowing, rounded pill box with radiant multi-stop sunset/violet gradients (`linear-gradient(115deg, ...)`).
-  - Positioned the descriptive metric labels directly beneath each box (`Workshops & Executive Seminars`, `Matchmaking & Industry Showcases`, `GtM & Market Access`, `Strategic Insights & Market Intelligence`).
-  - Added subtle matrix dot grid backdrop (`radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px)`).
+  - Replaced the bento grid in "The Numbers Behind Our Ecosystem" with a clean, seamless staggered timeline structure (Left, Right, Left, Right) with zero background borders or dot-matrix noise.
+  - Enlarged the pennant flag icon (`26x34px`) and positioned it directly atop each counter box.
+  - Applied 123 Factory's signature 4-color blend gradient (`#FFAB00` Gold, `#E550CE` Magenta, `#2D9CDB` Blue, `#3CC79B` Mint) across all milestone boxes with radiant ambient glow.
+  - Placed the descriptive labels directly underneath each milestone box (`Workshops & Executive Seminars`, `Matchmaking & Industry Showcases`, `GtM & Market Access`, `Strategic Insights & Market Intelligence`).
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
-- Verified "The Numbers Behind Our Ecosystem" renders with 4 staggered milestone cards alternating Left-Right-Left-Right with pennant flags, vibrant glowing gradient boxes with animated counters, and clean labels beneath.
+- Verified "The Numbers Behind Our Ecosystem" renders cleanly with 4 staggered milestone cards alternating Left-Right-Left-Right with enlarged pennant flags directly atop the boxes, signature 4-color brand gradient boxes with animated counters, and clean labels beneath without any dot grid background.
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 - Verified closing CTA section renders cleanly in dark mode without any eyebrow text.

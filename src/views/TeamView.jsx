@@ -977,20 +977,18 @@ export default function TeamView() {
           max-width: 620px;
         }
 
-        /* Staggered Ecosystem Milestones (Left-Right-Left-Right with Flag and Gradient Box) */
+        /* Staggered Ecosystem Milestones (Left-Right-Left-Right with Flag and 4-Color Gradient Box) */
         .ecosystem-timeline-grid {
           display: flex;
           flex-direction: column;
-          gap: clamp(44px, 5.5vw, 76px);
+          gap: clamp(56px, 7vw, 96px);
           width: 100%;
           box-sizing: border-box;
           position: relative;
-          background-color: #08090D;
-          background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px);
-          background-size: 30px 30px;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          padding: clamp(64px, 8vw, 110px) clamp(24px, 6vw, 90px);
+          background: transparent;
+          border: none;
+          padding: 0;
+          margin-top: clamp(24px, 3.5vw, 48px);
         }
 
         .ecosystem-milestone {
@@ -1000,12 +998,12 @@ export default function TeamView() {
 
         .ecosystem-milestone.is-left {
           justify-content: flex-start;
-          padding-left: clamp(0px, 6vw, 80px);
+          padding-left: clamp(16px, 8vw, 140px);
         }
 
         .ecosystem-milestone.is-right {
           justify-content: flex-end;
-          padding-right: clamp(0px, 6vw, 80px);
+          padding-right: clamp(16px, 8vw, 140px);
         }
 
         @media (max-width: 768px) {
@@ -1015,71 +1013,59 @@ export default function TeamView() {
             padding-right: 0;
           }
           .ecosystem-milestone.is-right {
-            justify-content: flex-start;
-            margin-left: clamp(20px, 8vw, 44px);
+            justify-content: flex-end;
           }
         }
 
         .milestone-content {
-          display: flex;
+          display: inline-flex;
           flex-direction: column;
           align-items: flex-start;
           position: relative;
-          max-width: clamp(260px, 32vw, 380px);
+          max-width: clamp(280px, 32vw, 420px);
+        }
+
+        .ecosystem-milestone.is-right .milestone-content {
+          align-items: flex-end;
+          text-align: right;
         }
 
         .milestone-flag-wrap {
           display: flex;
-          width: 100%;
-          margin-bottom: 8px;
-          color: rgba(255, 255, 255, 0.85);
+          margin-bottom: 6px;
+          color: rgba(255, 255, 255, 0.95);
         }
 
         .ecosystem-milestone.is-left .milestone-flag-wrap {
-          justify-content: flex-end;
-          padding-right: 28px;
+          padding-left: 8px;
         }
 
         .ecosystem-milestone.is-right .milestone-flag-wrap {
-          justify-content: flex-start;
-          padding-left: 28px;
+          padding-right: 8px;
+        }
+
+        .milestone-flag-icon {
+          width: clamp(24px, 2.4vw, 30px);
+          height: clamp(30px, 3vw, 38px);
+          display: block;
         }
 
         .milestone-box {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: clamp(14px, 1.5vw, 18px) clamp(28px, 3.2vw, 44px);
+          padding: clamp(14px, 1.6vw, 20px) clamp(32px, 3.5vw, 52px);
           border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.22);
-          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0.28);
+          background: linear-gradient(118deg, #FFAB00 0%, #E550CE 35%, #2D9CDB 70%, #3CC79B 100%);
+          box-shadow: 0 16px 40px rgba(229, 80, 206, 0.3), 0 4px 18px rgba(255, 171, 0, 0.25);
           cursor: default;
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
         }
 
         .milestone-box:hover {
-          transform: translateY(-2px) scale(1.02);
-        }
-
-        /* Radiant glowing gradients matching reference */
-        .milestone-box.box-1 {
-          background: linear-gradient(115deg, #F43F5E 0%, #A855F7 35%, #4F46E5 72%, #1E1B4B 100%);
-          box-shadow: 0 14px 34px rgba(168, 85, 247, 0.35), 0 4px 14px rgba(244, 63, 94, 0.25);
-        }
-
-        .milestone-box.box-2 {
-          background: linear-gradient(115deg, #FB923C 0%, #D946EF 38%, #3B82F6 75%, #0F172A 100%);
-          box-shadow: 0 14px 34px rgba(217, 70, 239, 0.35), 0 4px 14px rgba(251, 146, 60, 0.25);
-        }
-
-        .milestone-box.box-3 {
-          background: linear-gradient(115deg, #A855F7 0%, #EC4899 36%, #F97316 70%, #1E1B4B 100%);
-          box-shadow: 0 14px 34px rgba(236, 72, 153, 0.35), 0 4px 14px rgba(168, 85, 247, 0.25);
-        }
-
-        .milestone-box.box-4 {
-          background: linear-gradient(115deg, #C026D3 0%, #EA580C 40%, #4338CA 78%, #172554 100%);
-          box-shadow: 0 14px 34px rgba(234, 88, 12, 0.35), 0 4px 14px rgba(192, 38, 211, 0.25);
+          transform: translateY(-2px) scale(1.025);
+          box-shadow: 0 20px 48px rgba(229, 80, 206, 0.4), 0 6px 22px rgba(45, 156, 219, 0.3);
         }
 
         .milestone-number {
@@ -2103,12 +2089,12 @@ export default function TeamView() {
             <div className="ecosystem-milestone is-left">
               <div className="milestone-content">
                 <div className="milestone-flag-wrap">
-                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="15" y1="2" x2="15" y2="20" />
-                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="22" y1="2" x2="22" y2="32" />
+                    <path d="M 22 4 L 4 13 L 22 22 Z" />
                   </svg>
                 </div>
-                <div className="milestone-box box-1">
+                <div className="milestone-box">
                   <span className="milestone-number">
                     <AnimatedStatCounter value={100} inView={metricsInView} />
                   </span>
@@ -2123,12 +2109,12 @@ export default function TeamView() {
             <div className="ecosystem-milestone is-right">
               <div className="milestone-content">
                 <div className="milestone-flag-wrap">
-                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="15" y1="2" x2="15" y2="20" />
-                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="22" y1="2" x2="22" y2="32" />
+                    <path d="M 22 4 L 4 13 L 22 22 Z" />
                   </svg>
                 </div>
-                <div className="milestone-box box-2">
+                <div className="milestone-box">
                   <span className="milestone-number">
                     <AnimatedStatCounter value={200} inView={metricsInView} />
                   </span>
@@ -2143,12 +2129,12 @@ export default function TeamView() {
             <div className="ecosystem-milestone is-left">
               <div className="milestone-content">
                 <div className="milestone-flag-wrap">
-                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="15" y1="2" x2="15" y2="20" />
-                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="22" y1="2" x2="22" y2="32" />
+                    <path d="M 22 4 L 4 13 L 22 22 Z" />
                   </svg>
                 </div>
-                <div className="milestone-box box-3">
+                <div className="milestone-box">
                   <span className="milestone-number">
                     <AnimatedStatCounter value={300} inView={metricsInView} />
                   </span>
@@ -2163,12 +2149,12 @@ export default function TeamView() {
             <div className="ecosystem-milestone is-right">
               <div className="milestone-content">
                 <div className="milestone-flag-wrap">
-                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="15" y1="2" x2="15" y2="20" />
-                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
+                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="22" y1="2" x2="22" y2="32" />
+                    <path d="M 22 4 L 4 13 L 22 22 Z" />
                   </svg>
                 </div>
-                <div className="milestone-box box-4">
+                <div className="milestone-box">
                   <span className="milestone-number">
                     <AnimatedStatCounter value={400} inView={metricsInView} />
                   </span>
