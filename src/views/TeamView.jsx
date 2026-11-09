@@ -1491,57 +1491,50 @@ export default function TeamView() {
         }
 
         /* =========================================================================
-           SECTION 7: DUAL-HUB PRESENCE (WORLD MAP // BERLIN & SEOUL)
+           SECTION 7: DUAL-HUB PRESENCE (ZOOMED CORRIDOR MAP // BERLIN & SEOUL)
            ========================================================================= */
-        .world-office-section-wrap {
-          width: 100%;
-          margin: 0 auto;
-        }
-
-        .world-map-viewport {
+        .corridor-map-container {
           width: 100%;
           position: relative;
-          aspect-ratio: 784 / 458;
-          background: #07070A;
-          border: 1px solid rgba(255, 255, 255, 0.09);
-          border-radius: 6px;
-          overflow: hidden;
-          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+          aspect-ratio: 400 / 185;
+          margin: 0 auto;
+          background: transparent;
+          border: none;
+          box-shadow: none;
         }
 
-        .world-map-svg {
+        .corridor-map-svg {
           width: 100%;
           height: 100%;
           display: block;
         }
 
-        /* Grayish matte tech world map styling (User: "세계지도를 약간 회색빛돌게 해주고") */
-        .world-countries-group path {
-          fill: #1A1C23;
+        /* Grayish matte tech continent styling */
+        .corridor-countries-group path {
+          fill: #191B22;
           stroke: rgba(255, 255, 255, 0.07);
           stroke-width: 0.5px;
-          transition: fill 0.25s ease, stroke 0.25s ease;
+          transition: fill 0.2s ease;
         }
 
-        .world-countries-group path:hover {
-          fill: #262934;
+        .corridor-countries-group path:hover {
+          fill: #242732;
         }
 
-        /* Highlight Germany & South Korea */
-        .world-countries-group #de {
-          fill: #2C2F3D;
+        /* Subtle focus on Germany & South Korea */
+        .corridor-countries-group #de {
+          fill: #262936;
           stroke: rgba(255, 171, 0, 0.6);
-          stroke-width: 0.9px;
+          stroke-width: 0.8px;
         }
 
-        .world-countries-group #kr {
-          fill: #2C2F3D;
+        .corridor-countries-group #kr {
+          fill: #262936;
           stroke: rgba(60, 199, 155, 0.6);
-          stroke-width: 0.9px;
+          stroke-width: 0.8px;
         }
 
-        /* Corridor flight line animation */
-        .world-corridor-flight-line {
+        .corridor-arc-flight-line {
           animation: corridorDash 20s linear infinite;
         }
 
@@ -1551,426 +1544,103 @@ export default function TeamView() {
           }
         }
 
-        /* Interactive HTML Pins & Address Cards */
-        .world-pin-container {
+        /* Ultra-Clean Location Pins & Labels */
+        .corridor-pin {
           position: absolute;
-          transform: translate(-50%, -100%);
+          text-decoration: none;
           cursor: pointer;
           z-index: 10;
-          pointer-events: auto;
-          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+          display: block;
+          transition: transform 0.2s ease;
         }
 
-        .world-pin-container:hover,
-        .world-pin-container.is-hovered {
-          transform: translate(-50%, -105%) scale(1.03);
+        .corridor-pin.berlin-pin {
+          transform: translate(-50%, -100%);
+          margin-top: -6px;
+        }
+
+        .corridor-pin.seoul-pin {
+          transform: translate(-70%, -100%);
+          margin-top: -6px;
+        }
+
+        .corridor-pin:hover {
+          transform: translate(-50%, -104%) scale(1.03);
           z-index: 20;
         }
 
-        .world-pin-stem {
-          width: 1.5px;
-          height: 24px;
-          margin: 0 auto;
-          opacity: 0.75;
+        .corridor-pin.seoul-pin:hover {
+          transform: translate(-70%, -104%) scale(1.03);
+          z-index: 20;
         }
 
-        /* Address Card floating above pin */
-        .world-pin-card {
-          background: rgba(12, 13, 17, 0.92);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+        .corridor-pin-card {
+          background: rgba(14, 15, 20, 0.88);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
           border: 1px solid rgba(255, 255, 255, 0.12);
-          border-radius: 6px;
-          padding: 10px 14px;
-          min-width: 200px;
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+          padding: 7px 11px;
+          white-space: nowrap;
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .world-pin-container:hover .world-pin-card {
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 255, 255, 0.1);
-        }
-
-        .berlin-pin:hover .world-pin-card {
+        .berlin-pin:hover .corridor-pin-card {
           border-color: #FFAB00;
+          box-shadow: 0 4px 16px rgba(255, 171, 0, 0.18);
         }
 
-        .seoul-pin:hover .world-pin-card {
+        .seoul-pin:hover .corridor-pin-card {
           border-color: #3CC79B;
+          box-shadow: 0 4px 16px rgba(60, 199, 155, 0.18);
         }
 
-        .world-pin-card-top {
+        .corridor-pin-title {
+          font-family: var(--font-sans);
+          font-size: 13px;
+          font-weight: 700;
+          color: #FFFFFF;
           display: flex;
           align-items: center;
           gap: 6px;
-          margin-bottom: 4px;
+          line-height: 1.2;
         }
 
-        .world-pin-badge-dot {
+        .corridor-pin-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
           display: inline-block;
-          box-shadow: 0 0 6px currentColor;
         }
 
-        .world-pin-card-hub {
-          font-family: var(--font-sans);
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          color: #FFFFFF;
+        .corridor-pin-dot.berlin {
+          background: #FFAB00;
+          box-shadow: 0 0 6px #FFAB00;
         }
 
-        .world-pin-click-hint {
-          margin-left: auto;
-          font-family: monospace;
-          font-size: 9.5px;
-          color: rgba(255, 255, 255, 0.5);
-          padding: 1px 5px;
-          background: rgba(255, 255, 255, 0.08);
-          border-radius: 3px;
+        .corridor-pin-dot.seoul {
+          background: #3CC79B;
+          box-shadow: 0 0 6px #3CC79B;
         }
 
-        .world-pin-card-address {
-          font-family: var(--font-sans);
-          font-size: 12px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1.4;
-          margin-bottom: 6px;
-          white-space: nowrap;
-        }
-
-        .world-pin-card-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 8px;
-          padding-top: 5px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .world-pin-coord-tag {
-          font-family: monospace;
-          font-size: 9px;
-          color: rgba(255, 255, 255, 0.45);
-        }
-
-        .world-pin-action-label {
-          font-family: var(--font-sans);
-          font-size: 10px;
-          font-weight: 600;
-          color: #FFAB00;
-        }
-
-        .seoul-pin .world-pin-action-label {
-          color: #3CC79B;
-        }
-
-        /* Bottom Bar on Map */
-        .world-map-bottom-bar {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 10px 16px;
-          background: linear-gradient(180deg, transparent, rgba(7, 7, 10, 0.95));
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
-          pointer-events: none;
-        }
-
-        .world-map-legend-item {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-family: monospace;
-          font-size: 10.5px;
-          color: rgba(255, 255, 255, 0.7);
-          letter-spacing: 0.06em;
-        }
-
-        .world-legend-dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-        }
-
-        .world-map-legend-corridor {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-family: monospace;
-          font-size: 9.5px;
-          color: rgba(255, 255, 255, 0.45);
-          letter-spacing: 0.12em;
-        }
-
-        .world-legend-corridor-line {
-          width: 24px;
-          height: 1px;
-          background: linear-gradient(90deg, #FFAB00, #FFFFFF, #3CC79B);
-        }
-
-        /* Summary Cards below map */
-        .world-offices-summary-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-          margin-top: 24px;
-        }
-
-        .world-summary-card {
-          background: #0A0B0E;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 4px;
-          padding: 24px;
-          cursor: pointer;
-          transition: all 0.25s ease;
-        }
-
-        .world-summary-card:hover {
-          border-color: rgba(255, 255, 255, 0.25);
-          background: #0E0F14;
-          transform: translateY(-2px);
-        }
-
-        .world-summary-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 12px;
-        }
-
-        .world-summary-badge {
-          font-family: monospace;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          padding: 3px 8px;
-          border: 1px solid;
-          border-radius: 2px;
-        }
-
-        .world-summary-map-btn {
-          font-family: var(--font-sans);
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.6);
-          transition: color 0.2s;
-        }
-
-        .world-summary-card:hover .world-summary-map-btn {
-          color: #FFFFFF;
-        }
-
-        .world-summary-title {
-          font-family: var(--font-sans);
-          font-size: 18px;
-          font-weight: 700;
-          color: #FFFFFF;
-          margin: 0 0 6px 0;
-        }
-
-        .world-summary-address {
-          font-family: var(--font-sans);
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.7);
-          margin: 0 0 4px 0;
-        }
-
-        .world-summary-coords {
-          font-family: monospace;
-          font-size: 11.5px;
-          color: rgba(255, 255, 255, 0.4);
-          margin: 0;
-        }
-
-        /* Modal Popup */
-        .world-map-modal-backdrop {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.75);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          z-index: 9999;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 20px;
-          animation: modalFadeIn 0.2s ease-out;
-        }
-
-        @keyframes modalFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        .world-map-modal-content {
-          background: #0E0F14;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 8px;
-          width: 100%;
-          max-width: 620px;
-          overflow: hidden;
-          box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
-          animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes modalScaleUp {
-          from { transform: scale(0.96); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
-        }
-
-        .world-modal-header {
-          padding: 20px 24px 16px 24px;
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .world-modal-hub-tag {
-          font-family: monospace;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          display: block;
-          margin-bottom: 4px;
-        }
-
-        .world-modal-title {
-          font-family: var(--font-sans);
-          font-size: 20px;
-          font-weight: 700;
-          color: #FFFFFF;
-          margin: 0;
-        }
-
-        .world-modal-close-btn {
-          background: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          color: rgba(255, 255, 255, 0.7);
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.2s;
-        }
-
-        .world-modal-close-btn:hover {
-          border-color: #FFFFFF;
-          color: #FFFFFF;
-        }
-
-        .world-modal-address-bar {
-          padding: 12px 24px;
-          background: rgba(255, 255, 255, 0.02);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 12px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .world-modal-address-info {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-family: var(--font-sans);
-          font-size: 13.5px;
-          color: rgba(255, 255, 255, 0.85);
-        }
-
-        .world-modal-copy-btn {
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          color: #FFFFFF;
-          padding: 5px 10px;
-          border-radius: 3px;
+        .corridor-pin-address {
           font-family: var(--font-sans);
           font-size: 11.5px;
-          cursor: pointer;
-          white-space: nowrap;
-          transition: background 0.2s;
-        }
-
-        .world-modal-copy-btn:hover {
-          background: rgba(255, 255, 255, 0.16);
-        }
-
-        .world-modal-tags {
-          padding: 14px 24px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .world-modal-tag {
-          font-family: var(--font-sans);
-          font-size: 11px;
-          padding: 3px 8px;
-          border-radius: 2px;
-          background: rgba(255, 255, 255, 0.04);
           color: rgba(255, 255, 255, 0.65);
-          border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .world-modal-actions {
-          padding: 16px 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background: #090A0D;
-        }
-
-        .world-modal-coords {
-          font-family: monospace;
-          font-size: 11.5px;
-          color: rgba(255, 255, 255, 0.45);
-        }
-
-        .world-modal-launch-btn {
-          color: #000000;
-          font-family: var(--font-sans);
-          font-size: 13px;
-          font-weight: 700;
-          padding: 10px 18px;
-          border-radius: 3px;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          transition: opacity 0.2s;
-        }
-
-        .world-modal-launch-btn:hover {
-          opacity: 0.9;
+          margin-top: 2px;
+          padding-left: 12px;
         }
 
         @media (max-width: 768px) {
-          .world-pin-card {
-            min-width: 140px;
-            padding: 6px 8px;
+          .corridor-pin-card {
+            padding: 5px 8px;
           }
-          .world-pin-card-address {
-            font-size: 10px;
-            max-width: 140px;
-            overflow: hidden;
-            text-overflow: ellipsis;
+          .corridor-pin-title {
+            font-size: 11px;
           }
-          .world-pin-action-label,
-          .world-pin-coord-tag {
-            display: none;
-          }
-          .world-offices-summary-grid {
-            grid-template-columns: 1fr;
+          .corridor-pin-address {
+            font-size: 9.5px;
+            padding-left: 10px;
           }
         }
 

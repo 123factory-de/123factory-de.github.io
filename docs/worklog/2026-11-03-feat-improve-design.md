@@ -17,16 +17,15 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Added clean responsive breakpoints (`repeat(3, 1fr)` at `<= 1280px`, `repeat(2, 1fr)` at `<= 768px`).
 - **Portfolio-Inspired Details & Minimalist Styling**:
   - Removed corner country badges, hover country labels (`KR` / `DE`), and hover arrow (`↗`) for a pure, distraction-free visual presentation.
-- **Dual-Hub Presence Section (Interactive Grayish World Map)**:
-  - Added dedicated global hubs section (`#offices`) under the partners grid featuring a cohesive, interactive world map component (`WorldOfficeMap.jsx`).
-  - Styled continental landmasses in a sleek, muted tech grayish tone (`#1A1C23`) with high-precision ISO country vectors, graticule reference grid lines, and subtle highlights for Germany and Korea.
-  - Rendered a dynamic bilateral geodesic corridor arc bridging Berlin and Seoul with animated data packet pulses.
-  - Pinned exact locations for both hubs with pulsing radar beacon animations:
-    - **Berlin HQ**: Bismarckstraße 10-12, 10625 Berlin (Gold accent `#FFAB00`).
-    - **Seoul Office**: Saimdang-ro 8-gil 13, Seocho-gu, Seoul (Emerald accent `#3CC79B`).
-  - Added floating address badges directly on/above each pin showing hub title, full address, and coordinates.
-  - Implemented interactive hover effects (scale-up, elevation, glow) and on-click actions:
-    - Clicking a pin or badge triggers a browser Google Maps popup window and opens an in-page Google Maps modal popup featuring full address copy, tags, and direct map navigation.
+- **Dual-Hub Presence Section (Minimalist Zoomed Corridor Map)**:
+  - Added dedicated global hubs section (`#offices`) under the partners grid featuring a zoomed Eurasia corridor map (`WorldOfficeMap.jsx`).
+  - Cropped the viewport to focus directly on the corridor between Germany (Europe) and South Korea (Asia), removing non-relevant continents.
+  - Removed all enclosing rectangular borders, background container boxes, and bottom duplicate cards for an unconstrained, ultra-minimal aesthetic.
+  - Styled landmasses in subtle matte slate-gray with clean highlights on Germany and Korea, connected by a dashed bilateral geodesic flight arc.
+  - Streamlined office pins to essential information only:
+    - **Berlin HQ**: `Bismarckstraße 10-12` (Gold dot `#FFAB00`).
+    - **Seoul Office**: `Saimdang-ro 8-gil 13` (Emerald dot `#3CC79B`).
+  - Direct native link: clicking either location directly opens the Google Maps address in a new tab without complex modals or popups.
   - Connected the new section to the sticky subnav bar for seamless navigation.
 
 ## Verification
