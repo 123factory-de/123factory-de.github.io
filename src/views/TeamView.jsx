@@ -977,129 +977,130 @@ export default function TeamView() {
           max-width: 620px;
         }
 
-        /* Earlybird-Inspired Minimal Bento Grid for The Numbers */
-        .earlybird-bento-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1.08fr;
-          grid-template-rows: minmax(260px, auto) minmax(260px, auto);
-          gap: clamp(16px, 1.8vw, 24px);
+        /* Staggered Ecosystem Milestones (Left-Right-Left-Right with Flag and Gradient Box) */
+        .ecosystem-timeline-grid {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(44px, 5.5vw, 76px);
           width: 100%;
           box-sizing: border-box;
-        }
-
-        .earlybird-card {
-          background: #0B0B0E;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          padding: clamp(28px, 3vw, 40px);
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
           position: relative;
-          overflow: hidden;
-          box-sizing: border-box;
-          border-radius: 4px;
-          transition: border-color 0.25s ease;
+          background-color: #08090D;
+          background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px);
+          background-size: 30px 30px;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding: clamp(64px, 8vw, 110px) clamp(24px, 6vw, 90px);
         }
 
-        .earlybird-card:hover {
-          border-color: rgba(255, 255, 255, 0.18);
+        .ecosystem-milestone {
+          display: flex;
+          width: 100%;
         }
 
-        .earlybird-card-wide {
-          grid-column: 1 / 3;
-          grid-row: 1;
+        .ecosystem-milestone.is-left {
+          justify-content: flex-start;
+          padding-left: clamp(0px, 6vw, 80px);
         }
 
-        .earlybird-card-tall {
-          grid-column: 3 / 4;
-          grid-row: 1 / 3;
+        .ecosystem-milestone.is-right {
+          justify-content: flex-end;
+          padding-right: clamp(0px, 6vw, 80px);
+        }
+
+        @media (max-width: 768px) {
+          .ecosystem-milestone.is-left,
+          .ecosystem-milestone.is-right {
+            padding-left: 0;
+            padding-right: 0;
+          }
+          .ecosystem-milestone.is-right {
+            justify-content: flex-start;
+            margin-left: clamp(20px, 8vw, 44px);
+          }
+        }
+
+        .milestone-content {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          align-items: flex-start;
+          position: relative;
+          max-width: clamp(260px, 32vw, 380px);
         }
 
-        @media (max-width: 1024px) {
-          .earlybird-bento-grid {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
-          }
-          .earlybird-card-wide {
-            grid-column: 1 / 3;
-          }
-          .earlybird-card-tall {
-            grid-column: 1 / 3;
-            grid-row: auto;
-            min-height: 320px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .earlybird-bento-grid {
-            grid-template-columns: 1fr;
-          }
-          .earlybird-card-wide,
-          .earlybird-card-tall {
-            grid-column: 1;
-            grid-row: auto;
-          }
-        }
-
-        .earlybird-card-header {
+        .milestone-flag-wrap {
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: clamp(24px, 3vw, 36px);
+          width: 100%;
+          margin-bottom: 8px;
+          color: rgba(255, 255, 255, 0.85);
         }
 
-        .earlybird-tag {
-          font-family: var(--font-mono, monospace);
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(255, 255, 255, 0.4);
+        .ecosystem-milestone.is-left .milestone-flag-wrap {
+          justify-content: flex-end;
+          padding-right: 28px;
         }
 
-        .earlybird-badge {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
+        .ecosystem-milestone.is-right .milestone-flag-wrap {
+          justify-content: flex-start;
+          padding-left: 28px;
+        }
+
+        .milestone-box {
+          display: inline-flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.85);
+          padding: clamp(14px, 1.5vw, 18px) clamp(28px, 3.2vw, 44px);
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          position: relative;
+          cursor: default;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
         }
 
-        .earlybird-number-wrap {
+        .milestone-box:hover {
+          transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Radiant glowing gradients matching reference */
+        .milestone-box.box-1 {
+          background: linear-gradient(115deg, #F43F5E 0%, #A855F7 35%, #4F46E5 72%, #1E1B4B 100%);
+          box-shadow: 0 14px 34px rgba(168, 85, 247, 0.35), 0 4px 14px rgba(244, 63, 94, 0.25);
+        }
+
+        .milestone-box.box-2 {
+          background: linear-gradient(115deg, #FB923C 0%, #D946EF 38%, #3B82F6 75%, #0F172A 100%);
+          box-shadow: 0 14px 34px rgba(217, 70, 239, 0.35), 0 4px 14px rgba(251, 146, 60, 0.25);
+        }
+
+        .milestone-box.box-3 {
+          background: linear-gradient(115deg, #A855F7 0%, #EC4899 36%, #F97316 70%, #1E1B4B 100%);
+          box-shadow: 0 14px 34px rgba(236, 72, 153, 0.35), 0 4px 14px rgba(168, 85, 247, 0.25);
+        }
+
+        .milestone-box.box-4 {
+          background: linear-gradient(115deg, #C026D3 0%, #EA580C 40%, #4338CA 78%, #172554 100%);
+          box-shadow: 0 14px 34px rgba(234, 88, 12, 0.35), 0 4px 14px rgba(192, 38, 211, 0.25);
+        }
+
+        .milestone-number {
           font-family: var(--font-sans);
-          font-weight: 800;
-          letter-spacing: -0.05em;
-          line-height: 0.88;
-          font-size: clamp(64px, 7vw, 108px);
+          font-size: clamp(24px, 2.4vw, 32px);
+          font-weight: 700;
           color: #FFFFFF;
-          margin-bottom: clamp(20px, 2.5vw, 32px);
+          letter-spacing: -0.02em;
+          line-height: 1;
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          white-space: nowrap;
         }
 
-        .earlybird-number-hero {
-          font-size: clamp(84px, 9.5vw, 148px);
-          line-height: 0.85;
-          color: #FFFFFF;
-        }
-
-        .earlybird-card-footer {
-          margin-top: auto;
-        }
-
-        .earlybird-label {
+        .milestone-label {
           font-family: var(--font-sans);
-          font-size: clamp(14px, 1.15vw, 17px);
-          font-weight: 600;
-          letter-spacing: -0.015em;
-          color: rgba(255, 255, 255, 0.85);
+          font-size: clamp(14px, 1.2vw, 17.5px);
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.72);
+          letter-spacing: -0.01em;
+          margin-top: 14px;
           line-height: 1.35;
-          display: block;
           word-break: keep-all;
         }
 
@@ -2096,81 +2097,85 @@ export default function TeamView() {
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
           </p>
-          {/* EARLYBIRD-INSPIRED MINIMAL BENTO GRID (COMPACT & ALIGNED TO TEXT) */}
-          <div className="earlybird-bento-grid">
-            {/* CARD 1: 100+ (Wide Card: Workshops & Executive Seminars) */}
-            <div className="earlybird-card earlybird-card-wide">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">01 // PLATFORM</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
+          {/* ECOSYSTEM METRICS STAGGERED TIMELINE (LEFT-RIGHT-LEFT-RIGHT) */}
+          <div className="ecosystem-timeline-grid">
+            {/* ITEM 1 - LEFT: 100+ Workshops & Executive Seminars */}
+            <div className="ecosystem-milestone is-left">
+              <div className="milestone-content">
+                <div className="milestone-flag-wrap">
+                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="15" y1="2" x2="15" y2="20" />
+                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
                   </svg>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={100} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Workshops & Executive Seminars</span>
+                <div className="milestone-box box-1">
+                  <span className="milestone-number">
+                    <AnimatedStatCounter value={100} inView={metricsInView} />
+                  </span>
+                </div>
+                <div className="milestone-label">
+                  Workshops & Executive Seminars
+                </div>
               </div>
             </div>
 
-            {/* CARD 2: 200+ (Matchmaking & Industry Showcases) */}
-            <div className="earlybird-card">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">02 // NETWORK</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
+            {/* ITEM 2 - RIGHT: 200+ Matchmaking & Industry Showcases */}
+            <div className="ecosystem-milestone is-right">
+              <div className="milestone-content">
+                <div className="milestone-flag-wrap">
+                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="15" y1="2" x2="15" y2="20" />
+                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
                   </svg>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={200} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Matchmaking & Industry Showcases</span>
+                <div className="milestone-box box-2">
+                  <span className="milestone-number">
+                    <AnimatedStatCounter value={200} inView={metricsInView} />
+                  </span>
+                </div>
+                <div className="milestone-label">
+                  Matchmaking & Industry Showcases
+                </div>
               </div>
             </div>
 
-            {/* CARD 3: 300+ (GtM & Market Access) */}
-            <div className="earlybird-card">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">03 // MARKET ACCESS</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
+            {/* ITEM 3 - LEFT: 300+ GtM & Market Access */}
+            <div className="ecosystem-milestone is-left">
+              <div className="milestone-content">
+                <div className="milestone-flag-wrap">
+                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="15" y1="2" x2="15" y2="20" />
+                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
                   </svg>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={300} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">GtM & Market Access</span>
+                <div className="milestone-box box-3">
+                  <span className="milestone-number">
+                    <AnimatedStatCounter value={300} inView={metricsInView} />
+                  </span>
+                </div>
+                <div className="milestone-label">
+                  GtM & Market Access
+                </div>
               </div>
             </div>
 
-            {/* CARD 4: 400+ (Hero Tall Card: Strategic Insights & Market Intelligence) */}
-            <div className="earlybird-card earlybird-card-tall">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">04 // INTELLIGENCE</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
+            {/* ITEM 4 - RIGHT: 400+ Strategic Insights & Market Intelligence */}
+            <div className="ecosystem-milestone is-right">
+              <div className="milestone-content">
+                <div className="milestone-flag-wrap">
+                  <svg width="18" height="22" viewBox="0 0 18 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
+                    <line x1="15" y1="2" x2="15" y2="20" />
+                    <path d="M 15 3 L 3 8.5 L 15 14 Z" />
                   </svg>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap earlybird-number-hero">
-                <AnimatedStatCounter value={400} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Strategic Insights & Market Intelligence</span>
+                <div className="milestone-box box-4">
+                  <span className="milestone-number">
+                    <AnimatedStatCounter value={400} inView={metricsInView} />
+                  </span>
+                </div>
+                <div className="milestone-label">
+                  Strategic Insights & Market Intelligence
+                </div>
               </div>
             </div>
           </div>

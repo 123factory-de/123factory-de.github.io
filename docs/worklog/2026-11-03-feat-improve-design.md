@@ -34,15 +34,18 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Removed photos and photo/map toggle buttons from the Footer office modal for both Berlin and Seoul.
   - Clicking on Berlin (HQ) or Seoul Office in the footer now directly opens the interactive dark-mode Google Maps view with the office address and an "Open Maps ↗" button.
   - Unified modal dimensions and media aspect ratio (`aspect-ratio: 16 / 10`) for consistent map viewing.
-- **Minimalist Closing CTA (Dark Theme)**:
-  - Maintained the unified dark theme (`#0A0A0A`) for the closing CTA section on the About page.
-  - Removed the small eyebrow label (`Get Started // Global Scale`) per user request for an ultra-clean, clutter-free presentation.
-  - Featured the bold heading "Let’s build cross-border ventures together" with sleek white primary button (`Contact Berlin & Seoul Office ➔`) and outlined secondary button (`Explore Acceleration Programs ↗`).
+- **Staggered Ecosystem Milestones (The Numbers Behind Our Ecosystem)**:
+  - Replaced the bento grid in "The Numbers Behind Our Ecosystem" with a staggered, alternating timeline structure (Left, Right, Left, Right) inspired by user-provided reference.
+  - Placed a minimal pennant flag icon (`◁|`) positioned above each milestone box.
+  - Styled each counter value (`100+`, `200+`, `300+`, `400+`) inside a glowing, rounded pill box with radiant multi-stop sunset/violet gradients (`linear-gradient(115deg, ...)`).
+  - Positioned the descriptive metric labels directly beneath each box (`Workshops & Executive Seminars`, `Matchmaking & Industry Showcases`, `GtM & Market Access`, `Strategic Insights & Market Intelligence`).
+  - Added subtle matrix dot grid backdrop (`radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px)`).
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
-- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#offices`.
+- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
+- Verified "The Numbers Behind Our Ecosystem" renders with 4 staggered milestone cards alternating Left-Right-Left-Right with pennant flags, vibrant glowing gradient boxes with animated counters, and clean labels beneath.
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 - Verified closing CTA section renders cleanly in dark mode without any eyebrow text.
