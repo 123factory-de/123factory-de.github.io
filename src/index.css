@@ -2504,12 +2504,9 @@ button:active, .button:active, a[role="button"]:active, .circle-node-button:acti
   transition: max-width 0.3s ease;
 }
 
-.office-modal-content.is-berlin {
-  max-width: 860px;
-}
-
+.office-modal-content.is-berlin,
 .office-modal-content.is-seoul {
-  max-width: 660px;
+  max-width: 820px;
 }
 
 @keyframes modalScaleUp {
@@ -2546,26 +2543,19 @@ button:active, .button:active, a[role="button"]:active, .circle-node-button:acti
 
 .office-close-btn-float:hover {
   background: rgba(255, 255, 255, 0.2);
-  color: #FFAB00;
-  border-color: #FFAB00;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
   transform: rotate(90deg);
 }
 
 .office-modal-media-area {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 52vh;
+  min-height: 280px;
   background: #060608;
   overflow: hidden;
-}
-
-.office-modal-content.is-berlin .office-modal-media-area {
-  aspect-ratio: 16 / 9;
-  max-height: 58vh;
-}
-
-.office-modal-content.is-seoul .office-modal-media-area {
-  aspect-ratio: 4 / 3;
-  max-height: 60vh;
 }
 
 .office-minimal-img {
@@ -2636,18 +2626,24 @@ button:active, .button:active, a[role="button"]:active, .circle-node-button:acti
 }
 
 .office-minimal-ext-icon {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12.5px;
+  font-weight: 500;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 4px;
-  transition: color 0.2s ease;
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .office-minimal-ext-icon:hover {
-  color: #FFAB00;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ==========================================================================

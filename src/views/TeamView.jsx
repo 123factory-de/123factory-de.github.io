@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import WorldOfficeMap from '../components/WorldOfficeMap';
 
 // 18 Partners Data from Home Marquee
 const ALL_PARTNERS = [
@@ -311,11 +312,42 @@ function AnimatedStatCounter({ value, inView }) {
   return <span>{displayValue}+</span>;
 }
 
+function formatOfficeTime(timeZone) {
+  try {
+    return new Date().toLocaleTimeString('en-GB', {
+      timeZone,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+  } catch (e) {
+    return '--:--:--';
+  }
+}
+
+
+
 export default function TeamView() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeStep, setActiveStep] = useState(0);
   const [metricsInView, setMetricsInView] = useState(false);
   const metricsRef = useRef(null);
+
+  const [officeTimes, setOfficeTimes] = useState({
+    berlin: formatOfficeTime('Europe/Berlin'),
+    seoul: formatOfficeTime('Asia/Seoul'),
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setOfficeTimes({
+        berlin: formatOfficeTime('Europe/Berlin'),
+        seoul: formatOfficeTime('Asia/Seoul'),
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const navItems = [
     { id: 'overview', label: 'Overview' },
@@ -324,6 +356,7 @@ export default function TeamView() {
     { id: 'services', label: '03 · Our Services' },
     { id: 'team', label: '04 · Leadership & Team' },
     { id: 'partners', label: '05 · 18 Global Partners' },
+    { id: 'offices', label: '06 · Global Hubs' },
   ];
 
   const scrollToSection = (id) => {
@@ -342,7 +375,7 @@ export default function TeamView() {
   // Scroll spy to update active nav tab
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['overview', 'how-we-work', 'impact', 'services', 'team', 'partners'];
+      const sections = ['overview', 'how-we-work', 'impact', 'services', 'team', 'partners', 'offices'];
       const scrollPosition = window.scrollY + 180;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -396,6 +429,14 @@ export default function TeamView() {
           max-width: 1360px;
           margin: 0 auto;
           padding: 0 clamp(24px, 5vw, 80px);
+          box-sizing: border-box;
+        }
+
+        .about-container-wide {
+          width: 100%;
+          max-width: 1840px;
+          margin: 0 auto;
+          padding: 0 clamp(20px, 3.5vw, 56px);
           box-sizing: border-box;
         }
 
@@ -459,7 +500,7 @@ export default function TeamView() {
 
         /* Section Spacing & Headers */
         .about-section {
-          padding-top: clamp(90px, 12vh, 160px);
+          padding-top: clamp(120px, 15vh, 200px);
         }
 
         .about-eyebrow {
@@ -479,7 +520,7 @@ export default function TeamView() {
           line-height: 1.08;
           letter-spacing: -0.035em;
           color: #FFFFFF;
-          margin: 0 0 clamp(48px, 5.5vw, 76px) 0;
+          margin: 0 0 clamp(54px, 6vw, 84px) 0;
           width: 100%;
           max-width: 100%;
           text-align: left;
@@ -492,7 +533,7 @@ export default function TeamView() {
           line-height: 1.15;
           letter-spacing: -0.03em;
           color: #FFFFFF;
-          margin: 0 0 clamp(20px, 2.5vh, 32px) 0;
+          margin: 0 0 clamp(24px, 3vh, 36px) 0;
           max-width: 980px;
         }
 
@@ -566,7 +607,7 @@ export default function TeamView() {
         .about-hero-full-container {
           width: 100%;
           max-width: 1840px;
-          margin: clamp(80px, 9.5vw, 140px) auto 0;
+          margin: clamp(110px, 13vw, 180px) auto 0;
           padding: 0 clamp(16px, 1.8vw, 32px);
           box-sizing: border-box;
         }
@@ -599,7 +640,7 @@ export default function TeamView() {
         .methodology-wide-container {
           width: 100%;
           max-width: 1560px;
-          margin: clamp(60px, 7vw, 100px) auto 0;
+          margin: clamp(70px, 8vw, 110px) auto 0;
           padding: 0 clamp(16px, 2.5vw, 40px);
           box-sizing: border-box;
         }
@@ -607,7 +648,7 @@ export default function TeamView() {
         .methodology-rows-wrap {
           display: flex;
           flex-direction: column;
-          gap: clamp(64px, 8vw, 110px);
+          gap: clamp(80px, 9vw, 130px);
           width: 100%;
         }
 
@@ -616,13 +657,6 @@ export default function TeamView() {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
           gap: clamp(40px, 5.5vw, 84px);
           align-items: center;
-          padding-bottom: clamp(48px, 6vw, 84px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .methodology-row:last-child {
-          border-bottom: none;
-          padding-bottom: 0;
         }
 
         @media (max-width: 960px) {
@@ -944,264 +978,399 @@ export default function TeamView() {
           max-width: 620px;
         }
 
-        /* Earlybird-Inspired Minimal Bento Grid for The Numbers */
-        .earlybird-bento-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1.08fr;
-          grid-template-rows: minmax(260px, auto) minmax(260px, auto);
-          gap: clamp(16px, 1.8vw, 24px);
+        /* Expanding Horizontal Accordion Metric Cards with Color Hover & Detail Reveal */
+        .ecosystem-metrics-grid {
+          display: flex;
+          gap: clamp(14px, 1.4vw, 22px);
           width: 100%;
           box-sizing: border-box;
-        }
-
-        .earlybird-card {
-          background: #0B0B0E;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          padding: clamp(28px, 3vw, 40px);
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          position: relative;
-          overflow: hidden;
-          box-sizing: border-box;
-          border-radius: 4px;
-          transition: border-color 0.25s ease;
-        }
-
-        .earlybird-card:hover {
-          border-color: rgba(255, 255, 255, 0.18);
-        }
-
-        .earlybird-card-wide {
-          grid-column: 1 / 3;
-          grid-row: 1;
-        }
-
-        .earlybird-card-tall {
-          grid-column: 3 / 4;
-          grid-row: 1 / 3;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          margin-top: clamp(24px, 3vw, 48px);
+          min-height: 500px;
         }
 
         @media (max-width: 1024px) {
-          .earlybird-bento-grid {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
-          }
-          .earlybird-card-wide {
-            grid-column: 1 / 3;
-          }
-          .earlybird-card-tall {
-            grid-column: 1 / 3;
-            grid-row: auto;
-            min-height: 320px;
+          .ecosystem-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            min-height: auto;
           }
         }
 
         @media (max-width: 640px) {
-          .earlybird-bento-grid {
+          .ecosystem-metrics-grid {
             grid-template-columns: 1fr;
-          }
-          .earlybird-card-wide,
-          .earlybird-card-tall {
-            grid-column: 1;
-            grid-row: auto;
+            gap: 16px;
           }
         }
 
-        .earlybird-card-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: clamp(24px, 3vw, 36px);
-        }
-
-        .earlybird-tag {
-          font-family: var(--font-mono, monospace);
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(255, 255, 255, 0.4);
-        }
-
-        .earlybird-badge {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.85);
-        }
-
-        .earlybird-number-wrap {
-          font-family: var(--font-sans);
-          font-weight: 800;
-          letter-spacing: -0.05em;
-          line-height: 0.88;
-          font-size: clamp(64px, 7vw, 108px);
-          color: #FFFFFF;
-          margin-bottom: clamp(20px, 2.5vw, 32px);
-        }
-
-        .earlybird-number-hero {
-          font-size: clamp(84px, 9.5vw, 148px);
-          line-height: 0.85;
-          color: #FFFFFF;
-        }
-
-        .earlybird-card-footer {
-          margin-top: auto;
-        }
-
-        .earlybird-label {
-          font-family: var(--font-sans);
-          font-size: clamp(14px, 1.15vw, 17px);
-          font-weight: 600;
-          letter-spacing: -0.015em;
-          color: rgba(255, 255, 255, 0.85);
-          line-height: 1.35;
-          display: block;
-          word-break: keep-all;
-        }
-
-        /* Services Dual Portal Cards */
-        .about-services-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: clamp(40px, 5.5vw, 76px);
-          margin-top: 0;
-        }
-
-        @media (max-width: 860px) {
-          .about-services-grid {
-            grid-template-columns: 1fr;
-            gap: 36px;
-          }
-        }
-
-        .about-service-card {
-          background: #141417;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: clamp(36px, 4.5vw, 64px);
-          box-sizing: border-box;
+        .metric-photo-card {
+          position: relative;
+          flex: 1;
+          min-width: 0;
+          height: clamp(480px, 34vw, 540px);
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: #08080B;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          min-height: 480px;
-          border-radius: 4px;
-          transition: transform 0.25s ease, border-color 0.25s ease;
+          padding: clamp(24px, 2.2vw, 36px);
+          box-sizing: border-box;
+          cursor: default;
+          transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      opacity 0.45s ease,
+                      border-color 0.4s ease,
+                      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      box-shadow 0.4s ease;
         }
 
-        .about-service-card:hover {
-          transform: translateY(-2px);
-          border-color: rgba(255, 255, 255, 0.25);
+        @media (min-width: 1025px) {
+          .metric-photo-card:hover {
+            flex: 2.85;
+            border-color: var(--card-accent, rgba(255, 255, 255, 0.45));
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 32px var(--card-glow, rgba(255, 255, 255, 0.08));
+          }
+
+          .ecosystem-metrics-grid:hover .metric-photo-card:not(:hover) {
+            flex: 0.72;
+            opacity: 0.65;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .metric-photo-card {
+            height: auto;
+            min-height: 380px;
+          }
+        }
+
+        .metric-photo-bg-wrap {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          overflow: hidden;
+        }
+
+        .metric-photo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(100%) contrast(115%) brightness(0.35);
+          transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.6s ease;
+          display: block;
+        }
+
+        .metric-photo-card:hover .metric-photo-img {
+          transform: scale(1.05);
+          filter: grayscale(0%) contrast(108%) brightness(0.68) saturate(1.15);
+        }
+
+        .metric-photo-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 9, 13, 0.5) 0%,
+            rgba(8, 9, 13, 0.25) 35%,
+            rgba(8, 9, 13, 0.88) 75%,
+            rgba(8, 9, 13, 0.98) 100%
+          );
+          transition: background 0.6s ease;
+        }
+
+        .metric-photo-card:hover .metric-photo-overlay {
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 9, 13, 0.4) 0%,
+            rgba(8, 9, 13, 0.12) 30%,
+            rgba(8, 9, 13, 0.82) 70%,
+            rgba(8, 9, 13, 0.96) 100%
+          );
+        }
+
+        .metric-photo-content {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 100%;
+        }
+
+        .metric-photo-tag {
+          font-family: var(--font-mono, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.6);
+          transition: color 0.4s ease;
+        }
+
+        .metric-photo-card:hover .metric-photo-tag {
+          color: var(--card-accent, #FFFFFF);
+        }
+
+        .metric-photo-text-block {
+          margin-top: auto;
+        }
+
+        .metric-photo-number {
+          font-family: var(--font-sans);
+          font-size: clamp(48px, 4.4vw, 70px);
+          font-weight: 800;
+          line-height: 0.95;
+          letter-spacing: -0.04em;
+          color: #FFFFFF;
+          margin-bottom: 10px;
+          text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
+          white-space: nowrap;
+        }
+
+        .metric-photo-label {
+          font-family: var(--font-sans);
+          font-size: clamp(15px, 1.2vw, 18px);
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 1.35;
+          letter-spacing: -0.015em;
+          word-break: keep-all;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .metric-photo-desc {
+          font-family: var(--font-sans);
+          font-size: clamp(13.5px, 1.05vw, 15px);
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.88);
+          letter-spacing: -0.01em;
+          word-break: keep-all;
+          max-width: 640px;
+          margin-top: 16px;
+        }
+
+        @media (min-width: 1025px) {
+          .metric-photo-desc {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: opacity 0.4s ease 0.12s,
+                        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+                        max-height 0.45s ease;
+          }
+
+          .metric-photo-card:hover .metric-photo-desc {
+            opacity: 1;
+            max-height: 180px;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+        }
+
+        .milestone-number {
+          font-family: var(--font-sans);
+          font-size: clamp(24px, 2.4vw, 32px);
+          font-weight: 700;
+          color: #FFFFFF;
+          letter-spacing: -0.02em;
+          line-height: 1;
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          white-space: nowrap;
+        }
+
+        .milestone-label {
+          font-family: var(--font-sans);
+          font-size: clamp(14px, 1.2vw, 17.5px);
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.72);
+          letter-spacing: -0.01em;
+          margin-top: 14px;
+          line-height: 1.35;
+          word-break: keep-all;
+        }
+
+        /* Services Dual Portal Horizontal Cards */
+        .about-services-grid {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(32px, 4vw, 52px);
+          width: 100%;
+          margin-top: 0;
+        }
+
+        .about-service-card {
+          background: #111115;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: clamp(36px, 4.2vw, 56px);
+          box-sizing: border-box;
+          display: grid;
+          grid-template-columns: 1.15fr 1fr;
+          gap: clamp(36px, 4.5vw, 68px);
+          align-items: center;
+          border-radius: 12px;
+          position: relative;
+          text-decoration: none;
+          color: inherit;
+          cursor: pointer;
+          user-select: none;
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.35s ease,
+                      box-shadow 0.45s ease,
+                      background-color 0.35s ease;
+        }
+
+        .about-service-card:active {
+          transform: translateY(-1px) scale(0.995);
+        }
+
+        @media (max-width: 920px) {
+          .about-service-card {
+            grid-template-columns: 1fr;
+            gap: 28px;
+            padding: clamp(28px, 4vw, 40px);
+          }
+        }
+
+        /* Subtle Ambient Halo Glows on Card Hover */
+        .about-service-card-startups:hover {
+          background: #141419;
+          border-color: rgba(255, 171, 0, 0.5);
+          transform: translateY(-4px);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                      0 0 45px rgba(255, 171, 0, 0.2),
+                      0 0 90px rgba(255, 171, 0, 0.08);
+        }
+
+        .about-service-card-startups:hover .about-service-eyebrow {
+          color: #FFAB00;
+        }
+
+        .about-service-card-corporates:hover {
+          background: #141419;
+          border-color: rgba(60, 199, 155, 0.5);
+          transform: translateY(-4px);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                      0 0 45px rgba(60, 199, 155, 0.2),
+                      0 0 90px rgba(60, 199, 155, 0.08);
+        }
+
+        .about-service-card-corporates:hover .about-service-eyebrow {
+          color: #3CC79B;
+        }
+
+        .about-service-left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         .about-service-eyebrow {
+          font-family: var(--font-mono, monospace);
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.45);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
           display: block;
+          transition: color 0.35s ease;
         }
 
         .about-service-title {
-          font-size: clamp(26px, 2.5vw, 38px);
+          font-size: clamp(24px, 2.2vw, 34px);
           font-weight: 700;
           letter-spacing: -0.025em;
-          line-height: 1.2;
+          line-height: 1.22;
           color: #FFFFFF;
-          margin: 0 0 20px 0;
+          margin: 0 0 16px 0;
           word-break: keep-all;
         }
 
-        /* Service Cards Action Buttons with Landing Page Brand Glow */
-        .about-btn-startups {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: #FFAB00;
-          color: #0A0A0A;
-          border: 1px solid #FFAB00;
+        .about-service-arrow {
+          display: inline-block;
           font-family: var(--font-sans);
-          font-size: 15px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-          padding: 18px 36px;
-          text-decoration: none;
-          border-radius: 2px;
-          box-shadow: 0 4px 16px rgba(255, 171, 0, 0.25);
-          transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+          font-weight: 400;
+          margin-left: 8px;
+          color: rgba(255, 255, 255, 0.35);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                      color 0.3s ease;
         }
 
-        .about-btn-startups:hover {
-          background: #FFB81E;
-          border-color: #FFB81E;
-          transform: translateY(-2px);
-          box-shadow: 0 0 32px rgba(255, 171, 0, 0.65), 0 0 65px rgba(255, 171, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.5);
+        .about-service-card-startups:hover .about-service-arrow {
+          color: #FFAB00;
+          transform: translate(4px, -4px);
         }
 
-        .about-btn-corporates {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: #27C99F;
-          color: #0A0A0A;
-          border: 1px solid #27C99F;
-          font-family: var(--font-sans);
-          font-size: 15px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-          padding: 18px 36px;
-          text-decoration: none;
-          border-radius: 2px;
-          box-shadow: 0 4px 16px rgba(39, 201, 159, 0.25);
-          transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .about-btn-corporates:hover {
-          background: #34D6AC;
-          border-color: #34D6AC;
-          transform: translateY(-2px);
-          box-shadow: 0 0 32px rgba(39, 201, 159, 0.65), 0 0 65px rgba(39, 201, 159, 0.35), 0 8px 24px rgba(0, 0, 0, 0.5);
+        .about-service-card-corporates:hover .about-service-arrow {
+          color: #3CC79B;
+          transform: translate(4px, -4px);
         }
 
         .about-service-desc {
           font-size: 15px;
           line-height: 1.65;
-          color: rgba(255, 255, 255, 0.65);
-          margin: 0 0 32px 0;
+          color: rgba(255, 255, 255, 0.68);
+          margin: 0;
+          max-width: 540px;
+          word-break: keep-all;
+        }
+
+        .about-service-right {
+          width: 100%;
         }
 
         .about-service-list {
           list-style: none;
           padding: 0;
-          margin: 0 0 36px 0;
+          margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 15px;
+          background: transparent;
+          border: none;
         }
 
         .about-service-item {
-          font-size: 14px;
+          font-size: clamp(14px, 1.05vw, 15.5px);
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
+          color: rgba(255, 255, 255, 0.82);
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 14px;
+          line-height: 1.5;
+          transition: color 0.25s ease;
         }
 
-        .about-service-item::before {
-          content: '—';
-          color: rgba(255, 255, 255, 0.35);
+        .about-service-card:hover .about-service-item {
+          color: rgba(255, 255, 255, 0.95);
+        }
+
+        .about-service-card-startups .about-service-item::before {
+          content: '';
+          display: inline-block;
+          width: 6.5px;
+          height: 6.5px;
+          border-radius: 50%;
+          background: #FFAB00;
+          box-shadow: 0 0 8px rgba(255, 171, 0, 0.6);
+          flex-shrink: 0;
+        }
+
+        .about-service-card-corporates .about-service-item::before {
+          content: '';
+          display: inline-block;
+          width: 6.5px;
+          height: 6.5px;
+          border-radius: 50%;
+          background: #3CC79B;
+          box-shadow: 0 0 8px rgba(60, 199, 155, 0.6);
+          flex-shrink: 0;
         }
 
         /* Team Section Grid */
@@ -1310,25 +1479,26 @@ export default function TeamView() {
           line-height: 1.35;
         }
 
-        /* 18 Partners Continuous Grid (Dark Mode Portfolio Style) */
+        /* 18 Partners Continuous Full-Bleed Grid (Portfolio Style) */
         .about-partners-grid {
           display: grid;
           grid-template-columns: repeat(6, 1fr);
           border-top: 1px solid rgba(255, 255, 255, 0.12);
           border-left: 1px solid rgba(255, 255, 255, 0.12);
           margin-top: 0;
+          margin-bottom: clamp(60px, 8vw, 100px);
           width: 100%;
           box-sizing: border-box;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1280px) {
           .about-partners-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
         @media (max-width: 768px) {
           .about-partners-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
           }
         }
         @media (max-width: 480px) {
@@ -1363,7 +1533,7 @@ export default function TeamView() {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: clamp(12px, 1.5vw, 22px);
+          padding: clamp(18px, 2.5vw, 36px);
           box-sizing: border-box;
           pointer-events: none;
         }
@@ -1371,8 +1541,8 @@ export default function TeamView() {
         .about-partner-logo {
           width: 100%;
           height: 100%;
-          max-width: clamp(140px, 11.5vw, 175px);
-          max-height: clamp(50px, 4.5vw, 66px);
+          max-width: clamp(120px, 9.5vw, 160px);
+          max-height: clamp(44px, 3.8vw, 58px);
           object-fit: contain;
           object-position: center;
           filter: brightness(0) invert(1);
@@ -1402,32 +1572,6 @@ export default function TeamView() {
 
         .about-partner-card:hover .about-partner-hover-overlay {
           opacity: 1;
-        }
-
-        .about-partner-hover-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .about-partner-hover-country {
-          font-family: var(--font-mono, monospace);
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #FFAB00;
-        }
-
-        .about-partner-hover-arrow {
-          font-size: 15px;
-          color: rgba(255, 255, 255, 0.7);
-          transition: transform 0.2s ease, color 0.2s ease;
-        }
-
-        .about-partner-card:hover .about-partner-hover-arrow {
-          transform: translate(2px, -2px);
-          color: #FFAB00;
         }
 
         .about-partner-hover-mid {
@@ -1482,19 +1626,294 @@ export default function TeamView() {
           text-overflow: ellipsis;
         }
 
-        /* Divider Line */
-        .about-divider-line {
+        /* =========================================================================
+           SECTION 7: DUAL-HUB PRESENCE (ZOOMED CORRIDOR MAP // BERLIN & SEOUL)
+           ========================================================================= */
+        .about-office-map-bleed {
           width: 100%;
-          height: 1px;
-          background: rgba(255, 255, 255, 0.08);
-          margin: clamp(70px, 9vh, 120px) 0 0 0;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 0 clamp(16px, 2.5vw, 36px);
+          box-sizing: border-box;
         }
 
-        /* Minimal Closing CTA */
+        .corridor-map-container {
+          width: 100%;
+          max-width: 100%;
+          position: relative;
+          aspect-ratio: 400 / 185;
+          margin: 0 auto;
+          background: transparent;
+          border: none;
+          box-shadow: none;
+        }
+
+        .corridor-map-svg {
+          width: 100%;
+          height: 100%;
+          display: block;
+          -webkit-mask-image: radial-gradient(ellipse 84% 80% at 50% 50%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 84% 80% at 50% 50%, #000 55%, transparent 100%);
+        }
+
+        /* Grayish matte tech continent styling - 100% Seamless Borderless Silhouette */
+        .corridor-countries-group {
+          pointer-events: none;
+        }
+
+        .corridor-countries-group path {
+          fill: #191B22;
+          stroke: #191B22;
+          stroke-width: 2.2px;
+          stroke-linejoin: round;
+          stroke-linecap: round;
+          paint-order: stroke fill;
+        }
+
+        .corridor-countries-group #de,
+        .corridor-countries-group #kr {
+          fill: #191B22;
+          stroke: #191B22;
+          stroke-width: 2.2px;
+        }
+
+        /* Clean & Elegant Dotted Flight Arc connecting Berlin and Seoul (#D8DFE8) */
+        .corridor-arc-flight-line {
+          stroke: #D8DFE8;
+          stroke-width: 1.2px;
+          stroke-linecap: round;
+          stroke-dasharray: 2 6;
+          filter: drop-shadow(0 0 3px rgba(216, 223, 232, 0.45));
+          animation: corridorFlow 14s linear infinite;
+        }
+
+        @keyframes corridorFlow {
+          from {
+            stroke-dashoffset: 48;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /* =========================================================================
+           HIGHLIGHTED TERRITORIES: GERMANY & SOUTH KOREA (BRIGHT NEUTRAL TONES)
+           ========================================================================= */
+        .corridor-hub-countries {
+          pointer-events: auto;
+        }
+
+        .country-link {
+          cursor: pointer;
+          outline: none;
+        }
+
+        .country-shape {
+          cursor: pointer;
+          transform-box: fill-box;
+          transform-origin: center;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                      fill 0.3s ease,
+                      stroke 0.3s ease,
+                      filter 0.3s ease;
+        }
+
+        /* Germany - Luminous Crisp Platinum Neutral (Berlin HQ) */
+        .country-shape.country-germany {
+          fill: #D8DFE8;
+          stroke: #D8DFE8;
+          stroke-width: 0.8px;
+          stroke-linejoin: round;
+          stroke-linecap: round;
+          filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.45));
+        }
+
+        .germany-link:hover .country-germany,
+        .country-shape.country-germany.is-active,
+        .country-germany:hover {
+          transform: scale(1.22);
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
+          stroke-width: 1.2px;
+          filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.6));
+        }
+
+        /* South Korea - Luminous Crisp Platinum Neutral (Seoul Office) */
+        .country-shape.country-korea {
+          fill: #D8DFE8;
+          stroke: #D8DFE8;
+          stroke-width: 0.8px;
+          stroke-linejoin: round;
+          stroke-linecap: round;
+          filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.45));
+        }
+
+        .korea-link:hover .country-korea,
+        .country-shape.country-korea.is-active,
+        .country-korea:hover {
+          transform: scale(1.3);
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
+          stroke-width: 1.2px;
+          filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.6));
+        }
+
+        /* =========================================================================
+           FLOATING OFFICE CARDS ANCHORED ABOVE BERLIN & SEOUL (PHOTOS + ADDRESS)
+           ========================================================================= */
+        .corridor-office-card {
+          position: absolute;
+          text-decoration: none;
+          cursor: pointer;
+          z-index: 25;
+          width: clamp(175px, 14vw, 220px);
+          background: rgba(14, 16, 22, 0.92);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 8px;
+          padding: 8px;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 255, 255, 0.04);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.3s ease,
+                      box-shadow 0.3s ease;
+        }
+
+        .corridor-office-card.berlin-card {
+          left: 19%;
+          top: 52%;
+          transform: translate(-50%, -100%);
+        }
+
+        .corridor-office-card.seoul-card {
+          left: 84%;
+          top: 64%;
+          transform: translate(-70%, -100%);
+        }
+
+        .corridor-office-card:hover,
+        .corridor-office-card.is-active {
+          border-color: rgba(255, 255, 255, 0.65);
+          box-shadow: 0 20px 44px rgba(0, 0, 0, 0.9), 0 0 28px rgba(255, 255, 255, 0.25);
+        }
+
+        .corridor-office-card.berlin-card:hover,
+        .corridor-office-card.berlin-card.is-active {
+          transform: translate(-50%, -104%) scale(1.03);
+        }
+
+        .corridor-office-card.seoul-card:hover,
+        .corridor-office-card.seoul-card.is-active {
+          transform: translate(-70%, -104%) scale(1.03);
+        }
+
+        .card-thumb-wrap {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          border-radius: 5px;
+          overflow: hidden;
+          background: #0A0A0A;
+        }
+
+        .card-thumb-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.4s ease;
+        }
+
+        .corridor-office-card:hover .card-thumb-img,
+        .corridor-office-card.is-active .card-thumb-img {
+          transform: scale(1.06);
+        }
+
+        .card-city-tag {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          background: rgba(10, 12, 16, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #FFFFFF;
+          font-family: var(--font-sans);
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          padding: 3px 7px;
+          border-radius: 3px;
+          line-height: 1.2;
+        }
+
+        .card-info {
+          padding: 7px 4px 2px 4px;
+        }
+
+        .card-street {
+          font-family: var(--font-sans);
+          font-size: 12px;
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 1.3;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-city {
+          font-family: var(--font-sans);
+          font-size: 10.5px;
+          color: rgba(255, 255, 255, 0.65);
+          margin-top: 2px;
+          line-height: 1.2;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-connector-line {
+          position: absolute;
+          bottom: -14px;
+          left: 50%;
+          width: 1px;
+          height: 14px;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+          transform: translateX(-50%);
+          pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+          .corridor-office-card {
+            width: clamp(140px, 36vw, 175px);
+            padding: 6px;
+          }
+          .card-city-tag {
+            font-size: 9.5px;
+            padding: 2px 5px;
+          }
+          .card-street {
+            font-size: 10.5px;
+          }
+          .card-city {
+            font-size: 9px;
+          }
+        }
+
+        /* Divider Line (Removed for clean editorial whitespace) */
+        .about-divider-line {
+          display: none;
+        }
+
+        /* =========================================================================
+           MINIMALIST CLOSING CTA (DARK THEME)
+           ========================================================================= */
         .about-cta-wrap {
-          margin-top: clamp(100px, 14vh, 180px);
-          border-top: 1px solid rgba(255, 255, 255, 0.15);
-          padding-top: clamp(60px, 8vh, 100px);
+          margin-top: clamp(120px, 15vh, 200px);
+          border-top: none;
+          padding-top: clamp(40px, 6vh, 80px);
+          padding-bottom: clamp(70px, 9vh, 130px);
         }
 
         .about-cta-grid {
@@ -1555,6 +1974,14 @@ export default function TeamView() {
           border: 1px solid rgba(255, 255, 255, 0.25);
           font-family: var(--font-sans);
           font-size: 15px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          padding: 18px 36px;
+          text-decoration: none;
+          cursor: pointer;
+          transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
         .about-btn-secondary:hover {
           border-color: #FFFFFF;
           background: rgba(255, 255, 255, 0.08);
@@ -1601,7 +2028,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             Expanding across continents cannot be left to trial and error. Inspired by top global venture studios, our 5-phase acceleration methodology systematically de-risks cross-border venture creation from Day 0 scouting to institutional syndication.
@@ -1782,8 +2209,6 @@ export default function TeamView() {
         </div>
       </section>
 
-      <div className="about-container"><div className="about-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 3: IMPACT & METRICS (THE 4 CORE NUMBERS FROM HERO)
          ========================================================================= */}
@@ -1798,93 +2223,152 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
           </p>
-          {/* EARLYBIRD-INSPIRED MINIMAL BENTO GRID (COMPACT & ALIGNED TO TEXT) */}
-          <div className="earlybird-bento-grid">
-            {/* CARD 1: 100+ (Wide Card: Workshops & Executive Seminars) */}
-            <div className="earlybird-card earlybird-card-wide">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">01 // PLATFORM</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
+        </div>
+
+        {/* 4 HORIZONTAL ACCORDION METRIC CARDS WITH COLOR HOVER & EXPANDED DETAIL */}
+        <div className="about-container-wide">
+          <div className="ecosystem-metrics-grid">
+            {/* CARD 1: 100+ Workshops & Executive Seminars */}
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#3CC79B',
+                '--card-glow': 'rgba(60, 199, 155, 0.22)',
+              }}
+            >
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/corporates/corporate-hero.jpg"
+                  alt="Workshops & Executive Seminars"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">01 // WORKSHOPS</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
+                    <AnimatedStatCounter value={100} inView={metricsInView} />
+                  </div>
+                  <div className="metric-photo-label">
+                    Workshops & Executive Seminars
+                  </div>
+                  <div className="metric-photo-desc">
+                    Tailored bilateral masterclasses, C-level executive roundtables, and cross-border innovation sprints aligning German industrial leaders with Korean deep-tech pioneers.
+                  </div>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={100} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Workshops & Executive Seminars</span>
               </div>
             </div>
 
-            {/* CARD 2: 200+ (Matchmaking & Industry Showcases) */}
-            <div className="earlybird-card">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">02 // NETWORK</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
+            {/* CARD 2: 200+ Matchmaking & Industry Showcases */}
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#E550CE',
+                '--card-glow': 'rgba(229, 80, 206, 0.22)',
+              }}
+            >
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/corporates/scouting-demoday.jpg"
+                  alt="Matchmaking & Industry Showcases"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">02 // SHOWCASES</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
+                    <AnimatedStatCounter value={200} inView={metricsInView} />
+                  </div>
+                  <div className="metric-photo-label">
+                    Matchmaking & Industry Showcases
+                  </div>
+                  <div className="metric-photo-desc">
+                    Curated demo days, closed-door corporate pitching sessions, and 1-on-1 bilateral buyer matchmaking connecting pre-vetted scaleups directly with European enterprise buyers.
+                  </div>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={200} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Matchmaking & Industry Showcases</span>
               </div>
             </div>
 
-            {/* CARD 3: 300+ (GtM & Market Access) */}
-            <div className="earlybird-card">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">03 // MARKET ACCESS</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
+            {/* CARD 3: 300+ Go-to-Market & Market Access */}
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#2D9CDB',
+                '--card-glow': 'rgba(45, 156, 219, 0.22)',
+              }}
+            >
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/startups/startups-scaleups.jpg"
+                  alt="Go-to-Market & Market Access"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">03 // MARKET ACCESS</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
+                    <AnimatedStatCounter value={300} inView={metricsInView} />
+                  </div>
+                  <div className="metric-photo-label">
+                    Go-to-Market & Market Access
+                  </div>
+                  <div className="metric-photo-desc">
+                    Full-lifecycle market entry: local entity formation, European and Asian regulatory roadmaps, commercial pilot deployment, and localized enterprise sales distribution.
+                  </div>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap">
-                <AnimatedStatCounter value={300} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">GtM & Market Access</span>
               </div>
             </div>
 
-            {/* CARD 4: 400+ (Hero Tall Card: Strategic Insights & Market Intelligence) */}
-            <div className="earlybird-card earlybird-card-tall">
-              <div className="earlybird-card-header">
-                <span className="earlybird-tag">04 // INTELLIGENCE</span>
-                <div className="earlybird-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
+            {/* CARD 4: 400+ Strategic Insights & Market Intelligence */}
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#FFAB00',
+                '--card-glow': 'rgba(255, 171, 0, 0.22)',
+              }}
+            >
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/about/about-hero-keynote.jpg"
+                  alt="Strategic Insights & Market Intelligence"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">04 // INTELLIGENCE</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
+                    <AnimatedStatCounter value={400} inView={metricsInView} />
+                  </div>
+                  <div className="metric-photo-label">
+                    Strategic Insights & Market Intelligence
+                  </div>
+                  <div className="metric-photo-desc">
+                    Actionable deep-tech scouting dossiers, proprietary cross-border intelligence briefs, and strategic venture landscape assessments for corporate decision-makers.
+                  </div>
                 </div>
-              </div>
-              <div className="earlybird-number-wrap earlybird-number-hero">
-                <AnimatedStatCounter value={400} inView={metricsInView} />
-              </div>
-              <div className="earlybird-card-footer">
-                <span className="earlybird-label">Strategic Insights & Market Intelligence</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Ultra-Wide Workshop Photo Matching Hero Presentation */}
-        <div className="about-hero-full-container" style={{ marginTop: 'clamp(56px, 7vw, 96px)' }}>
+        <div className="about-hero-full-container" style={{ marginTop: 'clamp(140px, 16vw, 240px)' }}>
           <div className="about-photo-frame about-photo-frame-hero">
             <img
               src="/about/about-team-table.jpg"
@@ -1894,8 +2378,6 @@ export default function TeamView() {
           </div>
         </div>
       </section>
-
-      <div className="about-container"><div className="about-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 4: OUR SERVICES (FOR STARTUPS & FOR CORPORATES)
@@ -1911,7 +2393,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             We serve both sides of the innovation equation: empowering tech ventures to scale internationally while helping European enterprises build agile startup partnerships.
@@ -1919,12 +2401,19 @@ export default function TeamView() {
 
           <div className="about-services-grid">
             {/* CARD 1: FOR STARTUPS */}
-            <div className="about-service-card">
-              <div>
-                <h3 className="about-service-title">Cross-Border Acceleration<br />& Market Entry</h3>
+            <Link to="/startups" className="about-service-card about-service-card-startups">
+              <div className="about-service-left">
+                <span className="about-service-eyebrow">01 // FOR STARTUPS & SCALEUPS</span>
+                <h3 className="about-service-title">
+                  Cross-Border Acceleration<br />& Market Entry
+                  <span className="about-service-arrow">↗</span>
+                </h3>
                 <p className="about-service-desc">
                   Tailored acceleration pipelines providing founders with on-the-ground operational support, market validation, non-dilutive capital, and European distribution channels.
                 </p>
+              </div>
+
+              <div className="about-service-right">
                 <ul className="about-service-list">
                   <li className="about-service-item">Early-Stage Go-to-Market & PMF Validation Sprints</li>
                   <li className="about-service-item">Accelerators & Scale-ups Soft-Landing (Berlin)</li>
@@ -1933,20 +2422,22 @@ export default function TeamView() {
                   <li className="about-service-item">European Retail & B2B Commercial Sales (Mobani)</li>
                 </ul>
               </div>
-              <div>
-                <Link to="/startups" className="about-btn-startups" style={{ width: '100%', boxSizing: 'border-box' }}>
-                  Explore Startups Programs →
-                </Link>
-              </div>
-            </div>
+            </Link>
 
             {/* CARD 2: FOR CORPORATES */}
-            <div className="about-service-card">
-              <div>
-                <h3 className="about-service-title">Corporate Venturing<br />& Strategic Scouting</h3>
+            <Link to="/corporates" className="about-service-card about-service-card-corporates">
+              <div className="about-service-left">
+                <span className="about-service-eyebrow">02 // FOR CORPORATE INNOVATION</span>
+                <h3 className="about-service-title">
+                  Corporate Venturing<br />& Strategic Scouting
+                  <span className="about-service-arrow">↗</span>
+                </h3>
                 <p className="about-service-desc">
                   Helping multinational corporations and mid-market leaders identify breakthrough startups, run high-velocity commercial pilots, and build sustainable venture arms.
                 </p>
+              </div>
+
+              <div className="about-service-right">
                 <ul className="about-service-list">
                   <li className="about-service-item">Curated Startup Deal Sourcing & Deep-Tech Scouting</li>
                   <li className="about-service-item">Commercial Pilot & Paid PoC Project Management</li>
@@ -1955,17 +2446,10 @@ export default function TeamView() {
                   <li className="about-service-item">Bilateral Ecosystem Immersion & Executive Summits</li>
                 </ul>
               </div>
-              <div>
-                <Link to="/corporates" className="about-btn-corporates" style={{ width: '100%', boxSizing: 'border-box' }}>
-                  Explore Corporate Venturing →
-                </Link>
-              </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
-
-      <div className="about-container"><div className="about-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 5: THE BUILDERS
@@ -1981,7 +2465,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             We are entrepreneurs, venture builders, and international operators stationed between Berlin and Seoul — dedicated to eliminating the friction of cross-border growth.
@@ -2003,8 +2487,6 @@ export default function TeamView() {
         </div>
       </section>
 
-      <div className="about-container"><div className="about-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 6: 18 GLOBAL PARTNERS (COMPREHENSIVE GRID VIEW)
          ========================================================================= */}
@@ -2019,64 +2501,85 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(75px, 8.5vw, 120px) 0',
             wordBreak: 'keep-all'
           }}>
             Our cross-border programs are co-created with top public agencies, research universities, multinational corporate innovation hubs, and trade associations across Korea and Germany.
           </p>
+        </div>
 
-          {/* 18 Partners Grid (Dark Mode Portfolio Style: 6 cols x 3 rows) */}
-          <div className="about-partners-grid">
-            {ALL_PARTNERS.map((partner) => (
-              <a
-                key={partner.name}
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about-partner-card"
-                title={`${partner.enName || partner.name} — ${partner.tag}`}
-              >
-                <div className="about-partner-logo-wrap">
-                  <img
-                    src={partner.logo}
-                    alt={partner.enName || partner.name}
-                    className="about-partner-logo"
-                    loading="lazy"
-                  />
+        {/* 18 Partners Edge-to-Edge Grid (Portfolio Style: 6 cols x 3 rows, no side margins) */}
+        <div className="about-partners-grid">
+          {ALL_PARTNERS.map((partner) => (
+            <a
+              key={partner.name}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-partner-card"
+              title={`${partner.enName || partner.name} — ${partner.tag}`}
+            >
+              <div className="about-partner-logo-wrap">
+                <img
+                  src={partner.logo}
+                  alt={partner.enName || partner.name}
+                  className="about-partner-logo"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="about-partner-hover-overlay">
+                <div className="about-partner-hover-mid">
+                  <h4 className="about-partner-hover-name">{partner.enName || partner.name}</h4>
+                  {partner.desc && (
+                    <p className="about-partner-hover-desc">{partner.desc}</p>
+                  )}
                 </div>
-                <div className="about-partner-hover-overlay">
-                  <div className="about-partner-hover-top">
-                    <span className="about-partner-hover-country">{partner.country}</span>
-                    <span className="about-partner-hover-arrow">↗</span>
-                  </div>
-                  <div className="about-partner-hover-mid">
-                    <h4 className="about-partner-hover-name">{partner.enName || partner.name}</h4>
-                    {partner.desc && (
-                      <p className="about-partner-hover-desc">{partner.desc}</p>
-                    )}
-                  </div>
-                  <div className="about-partner-hover-bottom">
-                    <span className="about-partner-hover-tag">{partner.tag}</span>
-                  </div>
+                <div className="about-partner-hover-bottom">
+                  <span className="about-partner-hover-tag">{partner.tag}</span>
                 </div>
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
       {/* =========================================================================
-          MINIMALIST DIRECT CTA
+          SECTION 7: DUAL-HUB PRESENCE (BERLIN HQ & SEOUL OFFICE)
+         ========================================================================= */}
+      <section id="offices" className="about-section">
+        <div className="about-container">
+          <h2 className="about-display-h2">
+            Anchored in Berlin and Seoul
+          </h2>
+          <p style={{
+            fontSize: 'clamp(21px, 2vw, 28px)',
+            color: 'rgba(255, 255, 255, 0.72)',
+            maxWidth: '100%',
+            lineHeight: 1.45,
+            letterSpacing: '-0.015em',
+            margin: '0 0 clamp(64px, 7vw, 100px) 0',
+            wordBreak: 'keep-all'
+          }}>
+            Our cross-border infrastructure bridges Europe and Asia in real time. We operate dedicated hubs in Berlin and Seoul to provide ground-level market entry, regulatory landing, and cross-border syndication.
+          </p>
+        </div>
+
+        {/* Wide bleed map with minimal edge margins */}
+        <div className="about-office-map-bleed">
+          <WorldOfficeMap />
+        </div>
+      </section>
+
+      {/* =========================================================================
+          MINIMALIST DIRECT CTA (DARK THEME)
          ========================================================================= */}
       <div className="about-container">
         <div className="about-cta-wrap">
           <div className="about-cta-grid">
             <div>
-              <span className="about-eyebrow" style={{ marginBottom: '16px' }}>
-                Start the Dialogue
-              </span>
               <h2 className="about-cta-title">
-                Let’s build cross-border ventures together.
+                Let’s turn your vision into real momentum, together.
               </h2>
             </div>
             <div className="about-cta-actions">
@@ -2084,14 +2587,21 @@ export default function TeamView() {
                 href="mailto:hello@123factory.de"
                 className="about-btn-primary"
               >
-                Contact Berlin & Seoul Office →
+                Contact Berlin & Seoul Office ➔
               </a>
-              <Link
-                to="/startups"
+              <button
+                type="button"
+                onClick={() => {
+                  const input = document.querySelector('.form-input-field');
+                  if (input) {
+                    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    input.focus();
+                  }
+                }}
                 className="about-btn-secondary"
               >
-                Explore Acceleration Programs
-              </Link>
+                Subscribe to Our Newsletter ↗
+              </button>
             </div>
           </div>
         </div>
