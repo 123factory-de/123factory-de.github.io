@@ -1,5 +1,5 @@
 ---
-title: Remove top sticky subnavigation from Startup page
+title: Update Startup page layout and hero section styling
 date: 2026-11-09
 branch: feat/startup-menu-update
 request-source: "Chat, 2026-11-09"
@@ -7,14 +7,23 @@ request-source: "Chat, 2026-11-09"
 
 ## Request
 
-User asked to delete the top navigation section that splits the startups page into Overview, Early‑Stage, etc., i.e., remove the sticky sub‑navigation bar at the top of the startups page.
+1. Remove the top sticky subnavigation that split the startups page into Overview, Early‑Stage, etc.
+2. Remove hover zoom effect on the hero photography.
+3. Remove the photo caption text ("123 Factory Berlin & Seoul · Bridging innovative Asian & European ventures with global markets.").
+4. Remove the thin divider line above the 01/02 track cards grid.
+5. Increase spacing/margin between the photo and the track cards grid.
 
 ## Changes
 
-- Deleted the entire sticky navigation block (`<nav className=\"startups-subnav-sticky\">…</nav>`) from `src/views/StudioView.jsx` (lines 652‑668).
-- Updated the JSX accordingly; no other files were touched.
+- In `src/views/StudioView.jsx`:
+  - Removed `<nav className="startups-subnav-sticky">` block.
+  - Removed `.startups-photo-frame:hover img` zoom scale and transition.
+  - Removed `<span className="startups-photo-caption">` text element under the hero image.
+  - Removed `border-top` divider and top padding on `.startups-programs-grid`.
+  - Increased `margin-top` on `.startups-programs-grid` to `clamp(60px, 8vh, 100px)` for cleaner, airy spacing.
 
 ## Verification
 
-- Ran `npm run build` locally; the build completed successfully with no errors.
-- Verified that the site builds and the navigation bar no longer appears on the startups page.
+- Ran `npm run build` locally; production build succeeded without issues.
+- Checked styles and verified clean layout with no console or syntax errors.
+

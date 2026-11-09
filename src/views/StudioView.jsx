@@ -209,7 +209,7 @@ export default function StudioView() {
           width: 100%;
           overflow: hidden;
           background: #F4F4F4;
-          margin: clamp(40px, 5vh, 72px) 0;
+          margin: clamp(40px, 5vh, 72px) 0 0 0;
         }
 
         .startups-photo-frame img {
@@ -217,19 +217,6 @@ export default function StudioView() {
           height: auto;
           display: block;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .startups-photo-frame:hover img {
-          transform: scale(1.015);
-        }
-
-        .startups-photo-caption {
-          font-size: 12px;
-          letter-spacing: 0.02em;
-          color: rgba(10, 10, 10, 0.45);
-          margin-top: 12px;
-          display: block;
         }
 
         /* 6-Item Overview Grid */
@@ -237,9 +224,7 @@ export default function StudioView() {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: clamp(24px, 3.5vw, 56px);
-          border-top: 1px solid rgba(0, 0, 0, 0.08);
-          padding-top: clamp(40px, 5vh, 64px);
-          margin-top: clamp(40px, 5vh, 64px);
+          margin-top: clamp(60px, 8vh, 100px);
         }
 
         @media (max-width: 900px) {
@@ -685,9 +670,6 @@ export default function StudioView() {
               loading="eager"
             />
           </div>
-          <span className="startups-photo-caption">
-            123 Factory Berlin & Seoul · Bridging innovative Asian & European ventures with global markets.
-          </span>
 
           {/* 6 Programs Quick Jump Grid */}
           <div className="startups-programs-grid">
