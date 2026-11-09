@@ -30,12 +30,17 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
     - **Seoul Office**: Updated high-resolution exterior building photography (`/offices/seoul.jpg`), badge tag `Seoul Office ↗`, and street address (`Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea`).
   - Linked each card directly to Google Maps.
   - Implemented bidirectional hover states: hovering over a card highlights the country territory below, and hovering over a country highlights its respective office card.
+- **Direct Map View in Footer Office Cards**:
+  - Removed photos and photo/map toggle buttons from the Footer office modal for both Berlin and Seoul.
+  - Clicking on Berlin (HQ) or Seoul Office in the footer now directly opens the interactive dark-mode Google Maps view with the office address and an "Open Maps ↗" button.
+  - Unified modal dimensions and media aspect ratio (`aspect-ratio: 16 / 10`) for consistent map viewing.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#offices`.
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
+- Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 
 
 
