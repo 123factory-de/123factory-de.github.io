@@ -977,95 +977,132 @@ export default function TeamView() {
           max-width: 620px;
         }
 
-        /* Staggered Ecosystem Milestones (Left-Right-Left-Right with Flag and 4-Color Gradient Box) */
-        .ecosystem-timeline-grid {
-          display: flex;
-          flex-direction: column;
-          gap: clamp(56px, 7vw, 96px);
+        /* Rectangular Ecosystem Metric Cards with Dark B&W Background Photos */
+        .ecosystem-metrics-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: clamp(16px, 1.8vw, 24px);
           width: 100%;
           box-sizing: border-box;
+          margin-top: clamp(24px, 3vw, 48px);
+        }
+
+        @media (max-width: 1024px) {
+          .ecosystem-metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .ecosystem-metrics-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+        }
+
+        .metric-photo-card {
           position: relative;
-          background: transparent;
-          border: none;
-          padding: 0;
-          margin-top: clamp(24px, 3.5vw, 48px);
-        }
-
-        .ecosystem-milestone {
+          aspect-ratio: 3 / 4;
+          min-height: 380px;
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: #08080B;
           display: flex;
-          width: 100%;
-        }
-
-        .ecosystem-milestone.is-left {
-          justify-content: flex-start;
-          padding-left: clamp(16px, 8vw, 140px);
-        }
-
-        .ecosystem-milestone.is-right {
-          justify-content: flex-end;
-          padding-right: clamp(16px, 8vw, 140px);
-        }
-
-        @media (max-width: 768px) {
-          .ecosystem-milestone.is-left,
-          .ecosystem-milestone.is-right {
-            padding-left: 0;
-            padding-right: 0;
-          }
-          .ecosystem-milestone.is-right {
-            justify-content: flex-end;
-          }
-        }
-
-        .milestone-content {
-          display: inline-flex;
           flex-direction: column;
-          align-items: flex-start;
-          position: relative;
-          max-width: clamp(280px, 32vw, 420px);
+          justify-content: space-between;
+          padding: clamp(24px, 2.4vw, 32px);
+          box-sizing: border-box;
+          cursor: default;
+          transition: border-color 0.35s ease,
+                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      box-shadow 0.35s ease;
         }
 
-        .ecosystem-milestone.is-right .milestone-content {
-          align-items: flex-end;
-          text-align: right;
+        .metric-photo-card:hover {
+          border-color: rgba(255, 255, 255, 0.45);
+          transform: translateY(-4px);
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 28px rgba(255, 255, 255, 0.06);
         }
 
-        .milestone-flag-wrap {
-          display: flex;
-          margin-bottom: 6px;
-          color: rgba(255, 255, 255, 0.95);
+        .metric-photo-bg-wrap {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          overflow: hidden;
         }
 
-        .ecosystem-milestone.is-left .milestone-flag-wrap {
-          padding-left: 8px;
-        }
-
-        .ecosystem-milestone.is-right .milestone-flag-wrap {
-          padding-right: 8px;
-        }
-
-        .milestone-flag-icon {
-          width: clamp(24px, 2.4vw, 30px);
-          height: clamp(30px, 3vw, 38px);
+        .metric-photo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(100%) contrast(115%) brightness(0.36);
+          transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.65s ease;
           display: block;
         }
 
-        .milestone-box {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: clamp(14px, 1.6vw, 20px) clamp(32px, 3.5vw, 52px);
-          border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.28);
-          background: linear-gradient(118deg, #FFAB00 0%, #E550CE 35%, #2D9CDB 70%, #3CC79B 100%);
-          box-shadow: 0 16px 40px rgba(229, 80, 206, 0.3), 0 4px 18px rgba(255, 171, 0, 0.25);
-          cursor: default;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        .metric-photo-card:hover .metric-photo-img {
+          transform: scale(1.06);
+          filter: grayscale(100%) contrast(120%) brightness(0.46);
         }
 
-        .milestone-box:hover {
-          transform: translateY(-2px) scale(1.025);
-          box-shadow: 0 20px 48px rgba(229, 80, 206, 0.4), 0 6px 22px rgba(45, 156, 219, 0.3);
+        .metric-photo-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 9, 13, 0.45) 0%,
+            rgba(8, 9, 13, 0.2) 35%,
+            rgba(8, 9, 13, 0.88) 80%,
+            rgba(8, 9, 13, 0.98) 100%
+          );
+        }
+
+        .metric-photo-content {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          width: 100%;
+        }
+
+        .metric-photo-tag {
+          font-family: var(--font-mono, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        .metric-photo-text-block {
+          margin-top: auto;
+        }
+
+        .metric-photo-number {
+          font-family: var(--font-sans);
+          font-size: clamp(52px, 4.6vw, 72px);
+          font-weight: 800;
+          line-height: 0.95;
+          letter-spacing: -0.04em;
+          color: #FFFFFF;
+          margin-bottom: 10px;
+          text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
+        }
+
+        .metric-photo-label {
+          font-family: var(--font-sans);
+          font-size: clamp(15px, 1.2vw, 18px);
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 1.35;
+          letter-spacing: -0.015em;
+          word-break: keep-all;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
         }
 
         .milestone-number {
@@ -2083,84 +2120,100 @@ export default function TeamView() {
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
           </p>
-          {/* ECOSYSTEM METRICS STAGGERED TIMELINE (LEFT-RIGHT-LEFT-RIGHT) */}
-          <div className="ecosystem-timeline-grid">
-            {/* ITEM 1 - LEFT: 100+ Workshops & Executive Seminars */}
-            <div className="ecosystem-milestone is-left">
-              <div className="milestone-content">
-                <div className="milestone-flag-wrap">
-                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="22" y1="2" x2="22" y2="32" />
-                    <path d="M 22 4 L 4 13 L 22 22 Z" />
-                  </svg>
-                </div>
-                <div className="milestone-box">
-                  <span className="milestone-number">
+          {/* 4 RECTANGULAR METRIC CARDS WITH DARK B&W PHOTOS & WHITE TYPOGRAPHY */}
+          <div className="ecosystem-metrics-grid">
+            {/* CARD 1: 100+ Workshops & Executive Seminars */}
+            <div className="metric-photo-card">
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/corporates/corporate-hero.jpg"
+                  alt="Workshops & Executive Seminars"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">01 // WORKSHOPS</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
                     <AnimatedStatCounter value={100} inView={metricsInView} />
-                  </span>
-                </div>
-                <div className="milestone-label">
-                  Workshops & Executive Seminars
+                  </div>
+                  <div className="metric-photo-label">
+                    Workshops & Executive Seminars
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* ITEM 2 - RIGHT: 200+ Matchmaking & Industry Showcases */}
-            <div className="ecosystem-milestone is-right">
-              <div className="milestone-content">
-                <div className="milestone-flag-wrap">
-                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="22" y1="2" x2="22" y2="32" />
-                    <path d="M 22 4 L 4 13 L 22 22 Z" />
-                  </svg>
-                </div>
-                <div className="milestone-box">
-                  <span className="milestone-number">
+            {/* CARD 2: 200+ Matchmaking & Industry Showcases */}
+            <div className="metric-photo-card">
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/corporates/scouting-demoday.jpg"
+                  alt="Matchmaking & Industry Showcases"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">02 // SHOWCASES</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
                     <AnimatedStatCounter value={200} inView={metricsInView} />
-                  </span>
-                </div>
-                <div className="milestone-label">
-                  Matchmaking & Industry Showcases
+                  </div>
+                  <div className="metric-photo-label">
+                    Matchmaking & Industry Showcases
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* ITEM 3 - LEFT: 300+ GtM & Market Access */}
-            <div className="ecosystem-milestone is-left">
-              <div className="milestone-content">
-                <div className="milestone-flag-wrap">
-                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="22" y1="2" x2="22" y2="32" />
-                    <path d="M 22 4 L 4 13 L 22 22 Z" />
-                  </svg>
-                </div>
-                <div className="milestone-box">
-                  <span className="milestone-number">
+            {/* CARD 3: 300+ GtM & Market Access */}
+            <div className="metric-photo-card">
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/startups/startups-scaleups.jpg"
+                  alt="GtM & Market Access"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">03 // MARKET ACCESS</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
                     <AnimatedStatCounter value={300} inView={metricsInView} />
-                  </span>
-                </div>
-                <div className="milestone-label">
-                  GtM & Market Access
+                  </div>
+                  <div className="metric-photo-label">
+                    GtM & Market Access
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* ITEM 4 - RIGHT: 400+ Strategic Insights & Market Intelligence */}
-            <div className="ecosystem-milestone is-right">
-              <div className="milestone-content">
-                <div className="milestone-flag-wrap">
-                  <svg width="26" height="34" viewBox="0 0 26 34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="milestone-flag-icon">
-                    <line x1="22" y1="2" x2="22" y2="32" />
-                    <path d="M 22 4 L 4 13 L 22 22 Z" />
-                  </svg>
-                </div>
-                <div className="milestone-box">
-                  <span className="milestone-number">
+            {/* CARD 4: 400+ Strategic Insights & Market Intelligence */}
+            <div className="metric-photo-card">
+              <div className="metric-photo-bg-wrap">
+                <img
+                  src="/about/about-hero-keynote.jpg"
+                  alt="Strategic Insights & Market Intelligence"
+                  className="metric-photo-img"
+                  loading="lazy"
+                />
+                <div className="metric-photo-overlay" />
+              </div>
+              <div className="metric-photo-content">
+                <div className="metric-photo-tag">04 // INTELLIGENCE</div>
+                <div className="metric-photo-text-block">
+                  <div className="metric-photo-number">
                     <AnimatedStatCounter value={400} inView={metricsInView} />
-                  </span>
-                </div>
-                <div className="milestone-label">
-                  Strategic Insights & Market Intelligence
+                  </div>
+                  <div className="metric-photo-label">
+                    Strategic Insights & Market Intelligence
+                  </div>
                 </div>
               </div>
             </div>
