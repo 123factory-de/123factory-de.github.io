@@ -16,7 +16,9 @@ request-source: "Chat, 2026-11-09"
 8. Remove the faint horizontal divider line under the overview grid.
 9. Replace section numbers `01`, `02`, `03` with 1, 2, and 3 glowing orange dots (`#FFAB00`), and remove the "Startup Programs · " prefix from each eyebrow.
 10. Increase margin below the display headline (`We back early-stage founders...`) before the two-column lede paragraph.
-11. Vertically align the 3 feature items on the right (Structured Early-Stage Playbook, Product-Market Fit Validation, European Soft-Landing Pad) flush with the top and bottom of the photo on the left.
+12. In Section 3 (Funding & Investment), remove the photo caption ("Investor syndication, roadshows, and capital allocation across European and Asian venture networks.").
+13. In Sections 4, 5, and 6, remove the "04 // Proprietary Platform · ", "05 // Open Innovation Hub · ", and "06 // Commercial Platform · " prefixes, leaving clean labels (`Bilateral R&D Intelligence`, `Corporate Venture & Pilots`, `European Market Entry`).
+14. In Section 4, replace the generic photo next to fundingdb with a compact preview widget of Funding DB adapted from the Home page's "On Your Radar" section.
 
 ## Changes
 
@@ -33,6 +35,9 @@ request-source: "Chat, 2026-11-09"
   - Updated Section 1, 2, and 3 eyebrows to display 1, 2, and 3 orange dots respectively, with cleanly formatted titles (`Early-Stage Support`, `Accelerators & Scale-ups`, `Funding & Investment`).
   - Increased `.startups-display-h2` bottom margin to `clamp(44px, 5.5vh, 72px)` for clean separation above the lede paragraph.
   - Set `.startups-feature-split.has-feature-list` to `align-items: stretch` with `justify-content: space-between` on `.startups-feature-list`, perfectly aligning the top of the first item and bottom of the last item with the adjacent photo frame.
+  - Removed the photo caption in Section 3 (`Funding & Investment`).
+  - Simplified eyebrows in Section 4 (`Bilateral R&D Intelligence`), Section 5 (`Corporate Venture & Pilots`), and Section 6 (`European Market Entry`).
+  - Replaced the Section 4 photo with a styled `.fundingdb-mini-box` containing live window dots, title badge, live pulse indicator, and active grant cards linking directly to `fundingdb.123factory.de`.
 
 ## Verification
 

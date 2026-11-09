@@ -563,6 +563,203 @@ export default function StudioView() {
           text-decoration: underline;
         }
 
+        /* Funding DB Mini Preview Box */
+        .fundingdb-mini-box {
+          background: #0E0F14;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 16px;
+          padding: clamp(18px, 2.2vw, 26px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          color: #FFFFFF;
+          width: 100%;
+          box-sizing: border-box;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .fundingdb-mini-box:hover {
+          transform: translateY(-3px);
+          border-color: rgba(96, 165, 250, 0.4);
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(96, 165, 250, 0.15);
+        }
+
+        .fundingdb-mini-box .radar-box-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 12px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          margin-bottom: 12px;
+        }
+
+        .fundingdb-mini-box .radar-header-left {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .fundingdb-mini-box .radar-window-dots {
+          display: flex;
+          gap: 6px;
+        }
+
+        .fundingdb-mini-box .r-w-dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          opacity: 0.75;
+        }
+        .fundingdb-mini-box .r-red { background: #FF5F56; }
+        .fundingdb-mini-box .r-yellow { background: #FFBD2E; }
+        .fundingdb-mini-box .r-green { background: #27C93F; }
+
+        .fundingdb-mini-box .radar-header-title-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .fundingdb-mini-box .radar-box-title {
+          margin: 0;
+          font-family: var(--font-sans);
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+
+        .fundingdb-mini-box .radar-box-badge {
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          color: #60A5FA;
+          background: rgba(96, 165, 250, 0.1);
+          border: 1px solid rgba(96, 165, 250, 0.25);
+          padding: 2px 7px;
+          border-radius: 999px;
+          letter-spacing: 0.04em;
+        }
+
+        .fundingdb-mini-box .radar-live-indicator {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .fundingdb-mini-box .radar-pulse-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #60A5FA;
+          box-shadow: 0 0 8px #60A5FA;
+          animation: radarPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes radarPulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.35; transform: scale(0.8); }
+        }
+
+        .fundingdb-mini-box .radar-box-meta {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+          margin-bottom: 12px;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+
+        .fundingdb-mini-box .radar-box-count {
+          font-family: monospace;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 11.5px;
+        }
+
+        .fundingdb-mini-box .radar-cards-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .fundingdb-mini-box .radar-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: rgba(255, 255, 255, 0.035);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 10px;
+          padding: 11px 14px;
+          text-decoration: none;
+          color: inherit;
+          transition: all 0.2s ease;
+        }
+
+        .fundingdb-mini-box .radar-card:hover {
+          background: rgba(255, 255, 255, 0.07);
+          border-color: rgba(96, 165, 250, 0.4);
+          transform: translateY(-1px);
+        }
+
+        .fundingdb-mini-box .radar-card-topline {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 4px;
+        }
+
+        .fundingdb-mini-box .radar-card-tag {
+          font-family: monospace;
+          font-size: 10px;
+          font-weight: 600;
+          padding: 2px 6px;
+          border-radius: 4px;
+          color: #60A5FA;
+          background: rgba(96, 165, 250, 0.12);
+        }
+
+        .fundingdb-mini-box .radar-card-dday {
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .fundingdb-mini-box .radar-card-name {
+          margin: 0 0 2px 0;
+          font-family: var(--font-sans);
+          font-size: 13.5px;
+          font-weight: 600;
+          line-height: 1.35;
+          color: #ffffff;
+        }
+
+        .fundingdb-mini-box .radar-card-sub {
+          margin: 0;
+          font-size: 11.5px;
+          line-height: 1.4;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .fundingdb-mini-box .radar-card-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 6px;
+          padding-top: 6px;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          font-size: 11px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
         /* Mobani Sales Platform Section (06) */
         .mobani-highlight-card {
           border: 1px solid rgba(0, 0, 0, 0.08);
@@ -918,9 +1115,6 @@ export default function StudioView() {
               loading="lazy"
             />
           </div>
-          <span className="startups-photo-caption">
-            Investor syndication, roadshows, and capital allocation across European and Asian venture networks.
-          </span>
 
           <div className="startups-deliverables-grid">
             <div className="startups-deliverable-card">
@@ -954,7 +1148,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="funding-db" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">04 // Proprietary Platform · Bilateral R&D Intelligence</span>
+          <span className="startups-eyebrow">Bilateral R&amp;D Intelligence</span>
           <h2 className="startups-display-h2">
             Non-Dilutive R&D Capital Intelligence
           </h2>
@@ -985,13 +1179,78 @@ export default function StudioView() {
           </div>
 
           <div className="startups-feature-split">
-            <div className="startups-photo-frame" style={{ margin: 0 }}>
-              <img
-                src="/startups/startups-sprint.jpg"
-                alt="Funding DB Grant Intelligence"
-                loading="lazy"
-              />
+            <div className="fundingdb-mini-box">
+              <div className="radar-box-header">
+                <div className="radar-header-left">
+                  <div className="radar-window-dots">
+                    <span className="r-w-dot r-red" />
+                    <span className="r-w-dot r-yellow" />
+                    <span className="r-w-dot r-green" />
+                  </div>
+                  <div className="radar-header-title-wrap">
+                    <h4 className="radar-box-title">
+                      Funding<em style={{ fontStyle: 'normal', color: '#60A5FA' }}>DB</em>
+                    </h4>
+                    <span className="radar-box-badge">R&amp;D Capital</span>
+                  </div>
+                </div>
+
+                <div className="radar-header-right">
+                  <span className="radar-live-indicator">
+                    <span className="radar-pulse-dot" />
+                    LIVE
+                  </span>
+                </div>
+              </div>
+
+              <div className="radar-box-meta">
+                <span>European &amp; German bilateral grants</span>
+                <span className="radar-box-count">92+ Registered</span>
+              </div>
+
+              <div className="radar-cards-list">
+                <a
+                  href="https://fundingdb.123factory.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="radar-card radar-card-blue"
+                >
+                  <div className="radar-card-main">
+                    <div className="radar-card-topline">
+                      <span className="radar-card-tag">Bilateral</span>
+                      <span className="radar-card-dday">Active Call</span>
+                    </div>
+                    <h5 className="radar-card-name">Korea-Germany 2+2 Joint R&amp;D 2026</h5>
+                    <p className="radar-card-sub">KIAT × BMBF/DLR · AI &amp; DeepTech</p>
+                  </div>
+                  <div className="radar-card-footer">
+                    <span>Up to €350K / KRW 500M</span>
+                    <span>↗</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://fundingdb.123factory.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="radar-card radar-card-blue"
+                >
+                  <div className="radar-card-main">
+                    <div className="radar-card-topline">
+                      <span className="radar-card-tag">Eureka</span>
+                      <span className="radar-card-dday">D-5</span>
+                    </div>
+                    <h5 className="radar-card-name">CELTIC-NEXT Autumn Call 2026</h5>
+                    <p className="radar-card-sub">EUREKA Cluster · Next-Gen Telecom &amp; ICT</p>
+                  </div>
+                  <div className="radar-card-footer">
+                    <span>Up to €350K / KRW 500M</span>
+                    <span>↗</span>
+                  </div>
+                </a>
+              </div>
             </div>
+
             <div>
               <h3 style={{ fontSize: 'clamp(22px, 2.2vw, 32px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 16px 0' }}>
                 fundingdb.123factory.de
@@ -1019,7 +1278,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="open-innovation" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">05 // Open Innovation Hub · Corporate Venture & Pilots</span>
+          <span className="startups-eyebrow">Corporate Venture &amp; Pilots</span>
           <h2 className="startups-display-h2">
             Find Your Next Corporate Partner in Europe
           </h2>
@@ -1193,7 +1452,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="mobani" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">06 // Commercial Platform · European Market Entry</span>
+          <span className="startups-eyebrow">European Market Entry</span>
           <h2 className="startups-display-h2">
             Direct Commercial Expansion into Germany & France
           </h2>
