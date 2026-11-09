@@ -1493,8 +1493,17 @@ export default function TeamView() {
         /* =========================================================================
            SECTION 7: DUAL-HUB PRESENCE (ZOOMED CORRIDOR MAP // BERLIN & SEOUL)
            ========================================================================= */
+        .about-office-map-bleed {
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 0 clamp(16px, 2.5vw, 36px);
+          box-sizing: border-box;
+        }
+
         .corridor-map-container {
           width: 100%;
+          max-width: 100%;
           position: relative;
           aspect-ratio: 400 / 185;
           margin: 0 auto;
@@ -1509,38 +1518,38 @@ export default function TeamView() {
           display: block;
         }
 
-        /* Grayish matte tech continent styling */
+        /* Grayish matte tech continent styling - Clean borderless silhouette */
+        .corridor-countries-group {
+          pointer-events: none;
+        }
+
         .corridor-countries-group path {
           fill: #191B22;
-          stroke: rgba(255, 255, 255, 0.07);
-          stroke-width: 0.5px;
-          transition: fill 0.2s ease;
+          stroke: none;
         }
 
-        .corridor-countries-group path:hover {
-          fill: #242732;
-        }
-
-        /* Subtle focus on Germany & South Korea */
+        /* Subtle tone on Germany & South Korea without border */
         .corridor-countries-group #de {
-          fill: #262936;
-          stroke: rgba(255, 171, 0, 0.6);
-          stroke-width: 0.8px;
+          fill: #222530;
+          stroke: none;
         }
 
         .corridor-countries-group #kr {
-          fill: #262936;
-          stroke: rgba(60, 199, 155, 0.6);
-          stroke-width: 0.8px;
+          fill: #222530;
+          stroke: none;
         }
 
+        /* Calm breathing glow for corridor flight line */
         .corridor-arc-flight-line {
-          animation: corridorDash 20s linear infinite;
+          animation: corridorCalmPulse 4.5s ease-in-out infinite alternate;
         }
 
-        @keyframes corridorDash {
-          to {
-            stroke-dashoffset: -1000;
+        @keyframes corridorCalmPulse {
+          0% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0.9;
           }
         }
 
@@ -2231,7 +2240,6 @@ export default function TeamView() {
          ========================================================================= */}
       <section id="offices" className="about-section" style={{ paddingTop: 'clamp(70px, 9vh, 120px)' }}>
         <div className="about-container">
-          <span className="about-eyebrow">Dual-Hub Infrastructure</span>
           <h2 className="about-display-h2">
             Anchored in Berlin and Seoul
           </h2>
@@ -2246,8 +2254,10 @@ export default function TeamView() {
           }}>
             Our cross-border infrastructure bridges Europe and Asia in real time. We operate dedicated hubs in Berlin and Seoul to provide ground-level market entry, regulatory landing, and cross-border syndication.
           </p>
+        </div>
 
-          {/* Interactive World Map Dual-Hub Presence */}
+        {/* Wide bleed map with minimal edge margins */}
+        <div className="about-office-map-bleed">
           <WorldOfficeMap />
         </div>
       </section>

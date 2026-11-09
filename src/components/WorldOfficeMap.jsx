@@ -37,37 +37,31 @@ export default function WorldOfficeMap() {
           <path
             d="M 428,387 Q 562,305 696,414"
             fill="none"
-            stroke="rgba(255, 255, 255, 0.15)"
-            strokeWidth="1.5"
+            stroke="rgba(255, 255, 255, 0.08)"
+            strokeWidth="1.2"
           />
-          {/* Dashed Gradient Arc */}
+          {/* Calm Dashed Gradient Arc */}
           <path
             d="M 428,387 Q 562,305 696,414"
             fill="none"
             stroke="url(#corridorArcGrad)"
             strokeWidth="1.2"
-            strokeDasharray="4 4"
+            strokeDasharray="3 3"
             className="corridor-arc-flight-line"
           />
         </g>
 
-        {/* Pin Beacons on Map */}
+        {/* Clean Static Pin Beacons on Map */}
         {/* Berlin Beacon */}
         <g transform="translate(428, 387)">
-          <circle cx="0" cy="0" r="10" fill="none" stroke="#FFAB00" strokeWidth="0.8" opacity="0.6">
-            <animate attributeName="r" values="4;14;4" dur="2.8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.8s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="0" cy="0" r="2.8" fill="#FFAB00" />
+          <circle cx="0" cy="0" r="5" fill="none" stroke="#FFAB00" strokeWidth="0.8" opacity="0.45" />
+          <circle cx="0" cy="0" r="2.6" fill="#FFAB00" />
         </g>
 
         {/* Seoul Beacon */}
         <g transform="translate(696, 414)">
-          <circle cx="0" cy="0" r="10" fill="none" stroke="#3CC79B" strokeWidth="0.8" opacity="0.6">
-            <animate attributeName="r" values="4;14;4" dur="2.8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.8s" repeatCount="indefinite" />
-          </circle>
-          <circle cx="0" cy="0" r="2.8" fill="#3CC79B" />
+          <circle cx="0" cy="0" r="5" fill="none" stroke="#3CC79B" strokeWidth="0.8" opacity="0.45" />
+          <circle cx="0" cy="0" r="2.6" fill="#3CC79B" />
         </g>
       </svg>
 
