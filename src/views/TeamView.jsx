@@ -500,7 +500,7 @@ export default function TeamView() {
 
         /* Section Spacing & Headers */
         .about-section {
-          padding-top: clamp(90px, 12vh, 160px);
+          padding-top: clamp(120px, 15vh, 200px);
         }
 
         .about-eyebrow {
@@ -520,7 +520,7 @@ export default function TeamView() {
           line-height: 1.08;
           letter-spacing: -0.035em;
           color: #FFFFFF;
-          margin: 0 0 clamp(48px, 5.5vw, 76px) 0;
+          margin: 0 0 clamp(54px, 6vw, 84px) 0;
           width: 100%;
           max-width: 100%;
           text-align: left;
@@ -533,7 +533,7 @@ export default function TeamView() {
           line-height: 1.15;
           letter-spacing: -0.03em;
           color: #FFFFFF;
-          margin: 0 0 clamp(20px, 2.5vh, 32px) 0;
+          margin: 0 0 clamp(24px, 3vh, 36px) 0;
           max-width: 980px;
         }
 
@@ -607,7 +607,7 @@ export default function TeamView() {
         .about-hero-full-container {
           width: 100%;
           max-width: 1840px;
-          margin: clamp(80px, 9.5vw, 140px) auto 0;
+          margin: clamp(110px, 13vw, 180px) auto 0;
           padding: 0 clamp(16px, 1.8vw, 32px);
           box-sizing: border-box;
         }
@@ -640,7 +640,7 @@ export default function TeamView() {
         .methodology-wide-container {
           width: 100%;
           max-width: 1560px;
-          margin: clamp(60px, 7vw, 100px) auto 0;
+          margin: clamp(70px, 8vw, 110px) auto 0;
           padding: 0 clamp(16px, 2.5vw, 40px);
           box-sizing: border-box;
         }
@@ -648,7 +648,7 @@ export default function TeamView() {
         .methodology-rows-wrap {
           display: flex;
           flex-direction: column;
-          gap: clamp(64px, 8vw, 110px);
+          gap: clamp(80px, 9vw, 130px);
           width: 100%;
         }
 
@@ -1869,17 +1869,17 @@ export default function TeamView() {
           width: 100%;
           height: 1px;
           background: rgba(255, 255, 255, 0.08);
-          margin: clamp(70px, 9vh, 120px) 0 0 0;
+          margin: clamp(90px, 11vh, 150px) 0 0 0;
         }
 
         /* =========================================================================
            MINIMALIST CLOSING CTA (DARK THEME)
            ========================================================================= */
         .about-cta-wrap {
-          margin-top: clamp(80px, 12vh, 160px);
+          margin-top: clamp(120px, 15vh, 200px);
           border-top: 1px solid rgba(255, 255, 255, 0.14);
-          padding-top: clamp(60px, 8vh, 100px);
-          padding-bottom: clamp(60px, 8vh, 120px);
+          padding-top: clamp(70px, 9vh, 120px);
+          padding-bottom: clamp(70px, 9vh, 130px);
         }
 
         .about-cta-grid {
@@ -1979,6 +1979,8 @@ export default function TeamView() {
         </div>
       </section>
 
+      <div className="about-container"><div className="about-divider-line" /></div>
+
       {/* =========================================================================
           SECTION 2: HOW WE WORK (PSL STUDIO INSPIRED 6-STEP ACCELERATOR METHODOLOGY)
          ========================================================================= */}
@@ -1993,7 +1995,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             Expanding across continents cannot be left to trial and error. Inspired by top global venture studios, our 5-phase acceleration methodology systematically de-risks cross-border venture creation from Day 0 scouting to institutional syndication.
@@ -2190,7 +2192,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
@@ -2362,7 +2364,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             We serve both sides of the innovation equation: empowering tech ventures to scale internationally while helping European enterprises build agile startup partnerships.
@@ -2432,7 +2434,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(80px, 9vw, 130px) 0',
+            margin: '0 0 clamp(90px, 10vw, 150px) 0',
             wordBreak: 'keep-all'
           }}>
             We are entrepreneurs, venture builders, and international operators stationed between Berlin and Seoul — dedicated to eliminating the friction of cross-border growth.
@@ -2470,7 +2472,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(60px, 7vw, 90px) 0',
+            margin: '0 0 clamp(75px, 8.5vw, 120px) 0',
             wordBreak: 'keep-all'
           }}>
             Our cross-border programs are co-created with top public agencies, research universities, multinational corporate innovation hubs, and trade associations across Korea and Germany.
@@ -2518,7 +2520,7 @@ export default function TeamView() {
       {/* =========================================================================
           SECTION 7: DUAL-HUB PRESENCE (BERLIN HQ & SEOUL OFFICE)
          ========================================================================= */}
-      <section id="offices" className="about-section" style={{ paddingTop: 'clamp(70px, 9vh, 120px)' }}>
+      <section id="offices" className="about-section">
         <div className="about-container">
           <h2 className="about-display-h2">
             Anchored in Berlin and Seoul
@@ -2529,7 +2531,7 @@ export default function TeamView() {
             maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(48px, 6vw, 72px) 0',
+            margin: '0 0 clamp(64px, 7vw, 100px) 0',
             wordBreak: 'keep-all'
           }}>
             Our cross-border infrastructure bridges Europe and Asia in real time. We operate dedicated hubs in Berlin and Seoul to provide ground-level market entry, regulatory landing, and cross-border syndication.

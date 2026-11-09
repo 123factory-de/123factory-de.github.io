@@ -53,13 +53,19 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - **Unified Header Alignment**: Placed "The Numbers Behind Our Ecosystem" title and lede paragraph inside standard `.about-container` to maintain unified vertical grid alignment with the preceding "Our Methodology" section, while keeping only the accordion cards grid inside `.about-container-wide`.
   - **Ultra-Wide Breakout Layout (`.about-container-wide`)**: Expanded the cards container from `1360px` to `1840px` (`padding: 0 clamp(20px, 3.5vw, 56px)`), dramatically reducing left/right margins and allowing the accordion cards to stretch wide (~390px in idle, ~850px when expanded).
   - **Enhanced Card Heights & Proportions**: Scaled card height to `clamp(480px, 34vw, 540px)` and expanded description text width to `max-width: 640px` for high-end editorial proportions.
-  - **Generous Bottom Breathing Space**: Increased margin before the workshop photo from `clamp(56px, 7vw, 96px)` to `clamp(140px, 16vw, 240px)`, eliminating visual congestion between the cards and the photo beneath.
+  - **Generous Vertical Spacing & Paragraph Breathing Room Across About Us**:
+    - Increased global section padding `.about-section` to `clamp(120px, 15vh, 200px)` (up from 90px-160px).
+    - Expanded spacing between the hero mission lead text and the keynote breakout photo to `clamp(110px, 13vw, 180px)` (up from 80px-140px).
+    - Inserted an elegant divider line between the hero keynote photo and the "Our Methodology" section for consistent section separation.
+    - Expanded bottom margins on all section lede paragraphs across Methodology, Impact, Services, Builders, Partners, and Offices (`clamp(90px, 10vw, 150px)`).
+    - Increased vertical gaps between methodology phases (`clamp(80px, 9vw, 130px)`), divider line margins (`clamp(90px, 11vh, 150px)`), and closing CTA top margin (`clamp(120px, 15vh, 200px)`).
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
+- Verified generous vertical spacing, breathable paragraphs, and balanced dividers across the entire About Us page.
 - Verified "The Numbers Behind Our Ecosystem" title and description are perfectly aligned with "Our Methodology", while the accordion cards below break out widely across the viewport (`max-width: 1840px`).
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
