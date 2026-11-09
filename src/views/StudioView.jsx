@@ -649,23 +649,7 @@ export default function StudioView() {
         }
       `}</style>
 
-      {/* Sticky Minimal Navigation */}
-      <nav className="startups-subnav-sticky" aria-label="Startups Subnavigation">
-        <div className="startups-container">
-          <div className="startups-subnav-inner">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`startups-subnav-btn ${activeTab === item.id ? 'is-active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+
 
       {/* =========================================================================
           SECTION 0: OVERVIEW & PHILOSOPHY
