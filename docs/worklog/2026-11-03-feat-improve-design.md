@@ -27,7 +27,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 - **Floating Office Cards with Photos & Addresses**:
   - Added two floating architectural glass cards anchored directly above Berlin and Seoul on the map:
     - **Berlin HQ**: High-resolution exterior photography (`/offices/berlin.jpg`), badge tag `Berlin HQ ↗`, and street address (`Bismarckstraße 10-12, 10625 Berlin, Germany`).
-    - **Seoul Office**: High-resolution exterior photography (`/offices/seoul.jpg`), badge tag `Seoul Office ↗`, and street address (`Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea`).
+    - **Seoul Office**: Updated high-resolution exterior building photography (`/offices/seoul.jpg`), badge tag `Seoul Office ↗`, and street address (`Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea`).
   - Linked each card directly to Google Maps.
   - Implemented bidirectional hover states: hovering over a card highlights the country territory below, and hovering over a country highlights its respective office card.
 
@@ -35,7 +35,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#offices`.
-- Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, and floating photo cards for Berlin and Seoul.
+- Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 
 
 
