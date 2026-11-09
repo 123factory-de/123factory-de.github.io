@@ -58,13 +58,18 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
     - Expanded spacing between the hero mission lead text and the keynote breakout photo to `clamp(110px, 13vw, 180px)` (up from 80px-140px).
     - Inserted an elegant divider line between the hero keynote photo and the "Our Methodology" section for consistent section separation.
     - Expanded bottom margins on all section lede paragraphs across Methodology, Impact, Services, Builders, Partners, and Offices (`clamp(90px, 10vw, 150px)`).
-    - Increased vertical gaps between methodology phases (`clamp(80px, 9vw, 130px)`), divider line margins (`clamp(90px, 11vh, 150px)`), and closing CTA top margin (`clamp(120px, 15vh, 200px)`).
+  - **Core Capabilities Horizontal Layout & Ambient Halo Glows**:
+    - Replaced the previous side-by-side vertical cards with wide, expansive horizontal cards (`.about-service-card`) stacked in a flex column.
+    - Inside each card, implemented an editorial 2-column layout (`1.15fr 1fr`): the left side displays category eyebrow, headline, description, and action button; the right side displays a framed list of 5 key capabilities.
+    - **Neutral Action Buttons**: Replaced saturated orange and green buttons with crisp, high-contrast neutral buttons (`.about-service-btn-neutral` with pure white background, dark typography, and refined hover lift).
+    - **Calm Ambient Halos on Card Hover**: Hovering over the Startups card radiates an ambient, diffuse orange/amber halo glow (`0 0 45px rgba(255, 171, 0, 0.18), 0 0 90px rgba(255, 171, 0, 0.08)`); hovering over the Corporates card radiates an ambient green halo glow (`0 0 45px rgba(39, 201, 159, 0.18), 0 0 90px rgba(39, 201, 159, 0.08)`).
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
-- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
+- Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#services`.
+- Verified Core Capabilities displays wide horizontal cards with left-column text/neutral button and right-column framed capabilities list, radiating gentle orange and green ambient halos on hover.
 - Verified generous vertical spacing, breathable paragraphs, and balanced dividers across the entire About Us page.
 - Verified "The Numbers Behind Our Ecosystem" title and description are perfectly aligned with "Our Methodology", while the accordion cards below break out widely across the viewport (`max-width: 1840px`).
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.

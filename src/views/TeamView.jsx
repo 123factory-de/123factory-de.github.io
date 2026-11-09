@@ -1202,133 +1202,157 @@ export default function TeamView() {
           word-break: keep-all;
         }
 
-        /* Services Dual Portal Cards */
+        /* Services Dual Portal Horizontal Cards */
         .about-services-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: clamp(40px, 5.5vw, 76px);
+          display: flex;
+          flex-direction: column;
+          gap: clamp(32px, 4vw, 52px);
+          width: 100%;
           margin-top: 0;
         }
 
-        @media (max-width: 860px) {
-          .about-services-grid {
+        .about-service-card {
+          background: #111115;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: clamp(36px, 4.2vw, 56px);
+          box-sizing: border-box;
+          display: grid;
+          grid-template-columns: 1.15fr 1fr;
+          gap: clamp(36px, 4.5vw, 68px);
+          align-items: center;
+          border-radius: 12px;
+          position: relative;
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.35s ease,
+                      box-shadow 0.45s ease;
+        }
+
+        @media (max-width: 920px) {
+          .about-service-card {
             grid-template-columns: 1fr;
-            gap: 36px;
+            gap: 28px;
+            padding: clamp(28px, 4vw, 40px);
           }
         }
 
-        .about-service-card {
-          background: #141417;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: clamp(36px, 4.5vw, 64px);
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          min-height: 480px;
-          border-radius: 4px;
-          transition: transform 0.25s ease, border-color 0.25s ease;
+        /* Subtle Ambient Halo Glows on Card Hover */
+        .about-service-card-startups:hover {
+          border-color: rgba(255, 171, 0, 0.45);
+          transform: translateY(-3px);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                      0 0 45px rgba(255, 171, 0, 0.18),
+                      0 0 90px rgba(255, 171, 0, 0.08);
         }
 
-        .about-service-card:hover {
-          transform: translateY(-2px);
-          border-color: rgba(255, 255, 255, 0.25);
+        .about-service-card-startups:hover .about-service-eyebrow {
+          color: #FFAB00;
+        }
+
+        .about-service-card-corporates:hover {
+          border-color: rgba(39, 201, 159, 0.45);
+          transform: translateY(-3px);
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75),
+                      0 0 45px rgba(39, 201, 159, 0.18),
+                      0 0 90px rgba(39, 201, 159, 0.08);
+        }
+
+        .about-service-card-corporates:hover .about-service-eyebrow {
+          color: #27C99F;
+        }
+
+        .about-service-left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         .about-service-eyebrow {
+          font-family: var(--font-mono, monospace);
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.45);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
           display: block;
+          transition: color 0.35s ease;
         }
 
         .about-service-title {
-          font-size: clamp(26px, 2.5vw, 38px);
+          font-size: clamp(24px, 2.2vw, 34px);
           font-weight: 700;
           letter-spacing: -0.025em;
-          line-height: 1.2;
+          line-height: 1.22;
           color: #FFFFFF;
-          margin: 0 0 20px 0;
+          margin: 0 0 16px 0;
           word-break: keep-all;
-        }
-
-        /* Service Cards Action Buttons with Landing Page Brand Glow */
-        .about-btn-startups {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: #FFAB00;
-          color: #0A0A0A;
-          border: 1px solid #FFAB00;
-          font-family: var(--font-sans);
-          font-size: 15px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-          padding: 18px 36px;
-          text-decoration: none;
-          border-radius: 2px;
-          box-shadow: 0 4px 16px rgba(255, 171, 0, 0.25);
-          transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .about-btn-startups:hover {
-          background: #FFB81E;
-          border-color: #FFB81E;
-          transform: translateY(-2px);
-          box-shadow: 0 0 32px rgba(255, 171, 0, 0.65), 0 0 65px rgba(255, 171, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.5);
-        }
-
-        .about-btn-corporates {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: #27C99F;
-          color: #0A0A0A;
-          border: 1px solid #27C99F;
-          font-family: var(--font-sans);
-          font-size: 15px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-          padding: 18px 36px;
-          text-decoration: none;
-          border-radius: 2px;
-          box-shadow: 0 4px 16px rgba(39, 201, 159, 0.25);
-          transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        .about-btn-corporates:hover {
-          background: #34D6AC;
-          border-color: #34D6AC;
-          transform: translateY(-2px);
-          box-shadow: 0 0 32px rgba(39, 201, 159, 0.65), 0 0 65px rgba(39, 201, 159, 0.35), 0 8px 24px rgba(0, 0, 0, 0.5);
         }
 
         .about-service-desc {
           font-size: 15px;
           line-height: 1.65;
-          color: rgba(255, 255, 255, 0.65);
-          margin: 0 0 32px 0;
+          color: rgba(255, 255, 255, 0.68);
+          margin: 0 0 28px 0;
+          max-width: 540px;
+          word-break: keep-all;
+        }
+
+        /* Clean Neutral Action Buttons */
+        .about-service-btn-neutral {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          background: #FFFFFF;
+          color: #0A0A0C;
+          border: 1px solid #FFFFFF;
+          font-family: var(--font-sans);
+          font-size: 14.5px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          padding: 15px 30px;
+          text-decoration: none;
+          border-radius: 4px;
+          width: fit-content;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+          transition: background-color 0.25s ease,
+                      color 0.25s ease,
+                      transform 0.25s ease,
+                      box-shadow 0.25s ease;
+        }
+
+        .about-service-btn-neutral:hover {
+          background: #E4E8EE;
+          border-color: #E4E8EE;
+          color: #000000;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+        }
+
+        .about-service-right {
+          width: 100%;
         }
 
         .about-service-list {
           list-style: none;
-          padding: 0;
-          margin: 0 0 36px 0;
+          padding: clamp(22px, 2.5vw, 32px);
+          margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 14px;
+          background: rgba(255, 255, 255, 0.025);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 8px;
         }
 
         .about-service-item {
-          font-size: 14px;
+          font-size: clamp(13.5px, 1.05vw, 15px);
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.9);
+          color: rgba(255, 255, 255, 0.88);
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 12px;
+          line-height: 1.45;
         }
 
         .about-service-item::before {
@@ -2372,12 +2396,19 @@ export default function TeamView() {
 
           <div className="about-services-grid">
             {/* CARD 1: FOR STARTUPS */}
-            <div className="about-service-card">
-              <div>
+            <div className="about-service-card about-service-card-startups">
+              <div className="about-service-left">
+                <span className="about-service-eyebrow">01 // FOR STARTUPS & SCALEUPS</span>
                 <h3 className="about-service-title">Cross-Border Acceleration<br />& Market Entry</h3>
                 <p className="about-service-desc">
                   Tailored acceleration pipelines providing founders with on-the-ground operational support, market validation, non-dilutive capital, and European distribution channels.
                 </p>
+                <Link to="/startups" className="about-service-btn-neutral">
+                  Explore Startups Programs →
+                </Link>
+              </div>
+
+              <div className="about-service-right">
                 <ul className="about-service-list">
                   <li className="about-service-item">Early-Stage Go-to-Market & PMF Validation Sprints</li>
                   <li className="about-service-item">Accelerators & Scale-ups Soft-Landing (Berlin)</li>
@@ -2386,20 +2417,22 @@ export default function TeamView() {
                   <li className="about-service-item">European Retail & B2B Commercial Sales (Mobani)</li>
                 </ul>
               </div>
-              <div>
-                <Link to="/startups" className="about-btn-startups" style={{ width: '100%', boxSizing: 'border-box' }}>
-                  Explore Startups Programs →
-                </Link>
-              </div>
             </div>
 
             {/* CARD 2: FOR CORPORATES */}
-            <div className="about-service-card">
-              <div>
+            <div className="about-service-card about-service-card-corporates">
+              <div className="about-service-left">
+                <span className="about-service-eyebrow">02 // FOR CORPORATE INNOVATION</span>
                 <h3 className="about-service-title">Corporate Venturing<br />& Strategic Scouting</h3>
                 <p className="about-service-desc">
                   Helping multinational corporations and mid-market leaders identify breakthrough startups, run high-velocity commercial pilots, and build sustainable venture arms.
                 </p>
+                <Link to="/corporates" className="about-service-btn-neutral">
+                  Explore Corporate Venturing →
+                </Link>
+              </div>
+
+              <div className="about-service-right">
                 <ul className="about-service-list">
                   <li className="about-service-item">Curated Startup Deal Sourcing & Deep-Tech Scouting</li>
                   <li className="about-service-item">Commercial Pilot & Paid PoC Project Management</li>
@@ -2407,11 +2440,6 @@ export default function TeamView() {
                   <li className="about-service-item">Corporate Venture Capital (CVC) Co-Investment</li>
                   <li className="about-service-item">Bilateral Ecosystem Immersion & Executive Summits</li>
                 </ul>
-              </div>
-              <div>
-                <Link to="/corporates" className="about-btn-corporates" style={{ width: '100%', boxSizing: 'border-box' }}>
-                  Explore Corporate Venturing →
-                </Link>
               </div>
             </div>
           </div>
