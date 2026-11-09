@@ -977,20 +977,22 @@ export default function TeamView() {
           max-width: 620px;
         }
 
-        /* Rectangular Ecosystem Metric Cards with Dark B&W Background Photos */
+        /* Expanding Horizontal Accordion Metric Cards with Color Hover & Detail Reveal */
         .ecosystem-metrics-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: clamp(16px, 1.8vw, 24px);
+          display: flex;
+          gap: clamp(12px, 1.4vw, 20px);
           width: 100%;
           box-sizing: border-box;
           margin-top: clamp(24px, 3vw, 48px);
+          min-height: 480px;
         }
 
         @media (max-width: 1024px) {
           .ecosystem-metrics-grid {
+            display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            min-height: auto;
           }
         }
 
@@ -1003,27 +1005,44 @@ export default function TeamView() {
 
         .metric-photo-card {
           position: relative;
-          aspect-ratio: 3 / 4;
-          min-height: 380px;
-          border-radius: 10px;
+          flex: 1;
+          min-width: 0;
+          height: 480px;
+          border-radius: 12px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.12);
           background: #08080B;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          padding: clamp(24px, 2.4vw, 32px);
+          padding: clamp(22px, 2vw, 32px);
           box-sizing: border-box;
-          cursor: default;
-          transition: border-color 0.35s ease,
-                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                      box-shadow 0.35s ease;
+          cursor: pointer;
+          transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                      opacity 0.45s ease,
+                      border-color 0.4s ease,
+                      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      box-shadow 0.4s ease;
         }
 
-        .metric-photo-card:hover {
-          border-color: rgba(255, 255, 255, 0.45);
-          transform: translateY(-4px);
-          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 28px rgba(255, 255, 255, 0.06);
+        @media (min-width: 1025px) {
+          .metric-photo-card:hover {
+            flex: 2.75;
+            border-color: var(--card-accent, rgba(255, 255, 255, 0.45));
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 32px var(--card-glow, rgba(255, 255, 255, 0.08));
+          }
+
+          .ecosystem-metrics-grid:hover .metric-photo-card:not(:hover) {
+            flex: 0.75;
+            opacity: 0.65;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .metric-photo-card {
+            height: auto;
+            min-height: 380px;
+          }
         }
 
         .metric-photo-bg-wrap {
@@ -1037,15 +1056,15 @@ export default function TeamView() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: grayscale(100%) contrast(115%) brightness(0.36);
-          transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                      filter 0.65s ease;
+          filter: grayscale(100%) contrast(115%) brightness(0.35);
+          transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                      filter 0.6s ease;
           display: block;
         }
 
         .metric-photo-card:hover .metric-photo-img {
-          transform: scale(1.06);
-          filter: grayscale(100%) contrast(120%) brightness(0.46);
+          transform: scale(1.05);
+          filter: grayscale(0%) contrast(108%) brightness(0.68) saturate(1.15);
         }
 
         .metric-photo-overlay {
@@ -1053,10 +1072,21 @@ export default function TeamView() {
           inset: 0;
           background: linear-gradient(
             to bottom,
-            rgba(8, 9, 13, 0.45) 0%,
-            rgba(8, 9, 13, 0.2) 35%,
-            rgba(8, 9, 13, 0.88) 80%,
+            rgba(8, 9, 13, 0.5) 0%,
+            rgba(8, 9, 13, 0.25) 35%,
+            rgba(8, 9, 13, 0.88) 75%,
             rgba(8, 9, 13, 0.98) 100%
+          );
+          transition: background 0.6s ease;
+        }
+
+        .metric-photo-card:hover .metric-photo-overlay {
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 9, 13, 0.4) 0%,
+            rgba(8, 9, 13, 0.12) 30%,
+            rgba(8, 9, 13, 0.82) 70%,
+            rgba(8, 9, 13, 0.96) 100%
           );
         }
 
@@ -1077,6 +1107,11 @@ export default function TeamView() {
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.6);
+          transition: color 0.4s ease;
+        }
+
+        .metric-photo-card:hover .metric-photo-tag {
+          color: var(--card-accent, #FFFFFF);
         }
 
         .metric-photo-text-block {
@@ -1085,13 +1120,14 @@ export default function TeamView() {
 
         .metric-photo-number {
           font-family: var(--font-sans);
-          font-size: clamp(52px, 4.6vw, 72px);
+          font-size: clamp(48px, 4.4vw, 70px);
           font-weight: 800;
           line-height: 0.95;
           letter-spacing: -0.04em;
           color: #FFFFFF;
           margin-bottom: 10px;
           text-shadow: 0 4px 18px rgba(0, 0, 0, 0.85);
+          white-space: nowrap;
         }
 
         .metric-photo-label {
@@ -1103,6 +1139,37 @@ export default function TeamView() {
           letter-spacing: -0.015em;
           word-break: keep-all;
           text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .metric-photo-desc {
+          font-family: var(--font-sans);
+          font-size: clamp(13px, 1.05vw, 14.5px);
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.85);
+          letter-spacing: -0.01em;
+          word-break: keep-all;
+          max-width: 540px;
+          margin-top: 14px;
+        }
+
+        @media (min-width: 1025px) {
+          .metric-photo-desc {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: opacity 0.4s ease 0.12s,
+                        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+                        max-height 0.45s ease;
+          }
+
+          .metric-photo-card:hover .metric-photo-desc {
+            opacity: 1;
+            max-height: 180px;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
         }
 
         .milestone-number {
@@ -2120,10 +2187,16 @@ export default function TeamView() {
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
           </p>
-          {/* 4 RECTANGULAR METRIC CARDS WITH DARK B&W PHOTOS & WHITE TYPOGRAPHY */}
+          {/* 4 HORIZONTAL ACCORDION METRIC CARDS WITH COLOR HOVER & EXPANDED DETAIL */}
           <div className="ecosystem-metrics-grid">
             {/* CARD 1: 100+ Workshops & Executive Seminars */}
-            <div className="metric-photo-card">
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#FF5A36',
+                '--card-glow': 'rgba(255, 90, 54, 0.22)',
+              }}
+            >
               <div className="metric-photo-bg-wrap">
                 <img
                   src="/corporates/corporate-hero.jpg"
@@ -2142,12 +2215,21 @@ export default function TeamView() {
                   <div className="metric-photo-label">
                     Workshops & Executive Seminars
                   </div>
+                  <div className="metric-photo-desc">
+                    Tailored bilateral masterclasses, C-level executive roundtables, and cross-border innovation sprints aligning German industrial leaders with Korean deep-tech pioneers.
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* CARD 2: 200+ Matchmaking & Industry Showcases */}
-            <div className="metric-photo-card">
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#00D2B4',
+                '--card-glow': 'rgba(0, 210, 180, 0.22)',
+              }}
+            >
               <div className="metric-photo-bg-wrap">
                 <img
                   src="/corporates/scouting-demoday.jpg"
@@ -2166,12 +2248,21 @@ export default function TeamView() {
                   <div className="metric-photo-label">
                     Matchmaking & Industry Showcases
                   </div>
+                  <div className="metric-photo-desc">
+                    Curated demo days, closed-door corporate pitching sessions, and 1-on-1 bilateral buyer matchmaking connecting pre-vetted scaleups directly with European enterprise buyers.
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* CARD 3: 300+ Go-to-Market & Market Access */}
-            <div className="metric-photo-card">
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#FFAB00',
+                '--card-glow': 'rgba(255, 171, 0, 0.22)',
+              }}
+            >
               <div className="metric-photo-bg-wrap">
                 <img
                   src="/startups/startups-scaleups.jpg"
@@ -2190,12 +2281,21 @@ export default function TeamView() {
                   <div className="metric-photo-label">
                     Go-to-Market & Market Access
                   </div>
+                  <div className="metric-photo-desc">
+                    Full-lifecycle market entry: local entity formation, European and Asian regulatory roadmaps, commercial pilot deployment, and localized enterprise sales distribution.
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* CARD 4: 400+ Strategic Insights & Market Intelligence */}
-            <div className="metric-photo-card">
+            <div
+              className="metric-photo-card"
+              style={{
+                '--card-accent': '#4D7CFE',
+                '--card-glow': 'rgba(77, 124, 254, 0.22)',
+              }}
+            >
               <div className="metric-photo-bg-wrap">
                 <img
                   src="/about/about-hero-keynote.jpg"
@@ -2213,6 +2313,9 @@ export default function TeamView() {
                   </div>
                   <div className="metric-photo-label">
                     Strategic Insights & Market Intelligence
+                  </div>
+                  <div className="metric-photo-desc">
+                    Actionable deep-tech scouting dossiers, proprietary cross-border intelligence briefs, and strategic venture landscape assessments for corporate decision-makers.
                   </div>
                 </div>
               </div>

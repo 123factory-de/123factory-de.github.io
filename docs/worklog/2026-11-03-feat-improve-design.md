@@ -42,12 +42,22 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
     - **400+ Strategic Insights & Market Intelligence**: `/about/about-hero-keynote.jpg` (Keynote presentation with market intelligence screen)
   - Applied dark B&W photo filtering (`grayscale(100%) contrast(115%) brightness(0.36)`) with subtle gradient vignettes for optimal readability.
   - Rendered big bold white counters (`100+`, `200+`, `300+`, `400+`) and white descriptive typography directly over the photo cards with subtle lift and zoom effects on hover.
+- **Expanding Horizontal Accordion Metric Cards with Full-Color Hover & Methodology Copy**:
+  - Implemented an interactive horizontal accordion layout on desktop: hovering over any of the 4 cards expands its width dynamically (`flex: 2.75`), while the other 3 cards compress smoothly (`flex: 0.75; opacity: 0.65;`).
+  - **Grayscale to Full-Color Transition**: The background photography smoothly transitions from moody dark black-and-white (`grayscale(100%)`) to vibrant full color (`grayscale(0%) contrast(108%) brightness(0.68) saturate(1.15)`) exclusively on the hovered card.
+  - **Methodology Detail Reveal**: Unveils tailored descriptive copy on hover explaining how 123 Factory conducts each respective pillar:
+    - **100+ Workshops & Executive Seminars**: Tailored bilateral masterclasses, C-level executive roundtables, and cross-border innovation sprints aligning German industrial leaders with Korean deep-tech pioneers.
+    - **200+ Matchmaking & Industry Showcases**: Curated demo days, closed-door corporate pitching sessions, and 1-on-1 bilateral buyer matchmaking connecting pre-vetted scaleups directly with European enterprise buyers.
+    - **300+ Go-to-Market & Market Access**: Full-lifecycle market entry: local entity formation, European and Asian regulatory roadmaps, commercial pilot deployment, and localized enterprise sales distribution.
+    - **400+ Strategic Insights & Market Intelligence**: Actionable deep-tech scouting dossiers, proprietary cross-border intelligence briefs, and strategic venture landscape assessments for corporate decision-makers.
+  - **Brand Accent Illuminations**: Each card features a distinct brand accent color (`#FF5A36`, `#00D2B4`, `#FFAB00`, `#4D7CFE`) for tag highlights, border transitions, and subtle atmospheric glows on hover.
+  - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
-- Verified "The Numbers Behind Our Ecosystem" displays 4 rectangular cards with atmospheric dark B&W photos, bold white numbers, and clean white labels.
+- Verified "The Numbers Behind Our Ecosystem" displays 4 horizontal accordion cards that expand on hover, shift photos from B&W to full color, and reveal rich descriptive text.
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 - Verified closing CTA section renders cleanly in dark mode without any eyebrow text.
