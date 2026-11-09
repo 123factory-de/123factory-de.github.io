@@ -1528,19 +1528,20 @@ export default function TeamView() {
         .corridor-countries-group path {
           fill: #191B22;
           stroke: #191B22;
-          stroke-width: 0.8px;
+          stroke-width: 2.2px;
           stroke-linejoin: round;
           stroke-linecap: round;
+          paint-order: stroke fill;
         }
 
         .corridor-countries-group #de,
         .corridor-countries-group #kr {
           fill: #191B22;
           stroke: #191B22;
-          stroke-width: 0.8px;
+          stroke-width: 2.2px;
         }
 
-        /* Thin & Smooth Flowing Flight Arc connecting Berlin and Seoul */
+        /* Thin & Smooth Flowing Flight Arc connecting Berlin and Seoul (Neutral Tone) */
         .corridor-arc-flight-line {
           animation: corridorFlow 8s linear infinite;
         }
@@ -1555,7 +1556,7 @@ export default function TeamView() {
         }
 
         /* =========================================================================
-           HIGHLIGHTED TERRITORIES: GERMANY (ORANGE) & SOUTH KOREA (GREEN)
+           HIGHLIGHTED TERRITORIES: GERMANY & SOUTH KOREA (BRIGHT NEUTRAL TONES)
            ========================================================================= */
         .corridor-hub-countries {
           pointer-events: auto;
@@ -1576,42 +1577,187 @@ export default function TeamView() {
                       filter 0.3s ease;
         }
 
-        /* Germany - Warm Amber / Orange (Berlin HQ) */
+        /* Germany - Luminous Crisp Platinum Neutral (Berlin HQ) */
         .country-shape.country-germany {
-          fill: #FFAB00;
-          stroke: #FFAB00;
+          fill: #D8DFE8;
+          stroke: #D8DFE8;
           stroke-width: 0.8px;
           stroke-linejoin: round;
           stroke-linecap: round;
-          filter: drop-shadow(0 0 6px rgba(255, 171, 0, 0.5));
+          filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.45));
         }
 
         .germany-link:hover .country-germany,
+        .country-shape.country-germany.is-active,
         .country-germany:hover {
           transform: scale(1.22);
-          fill: #FFC033;
-          stroke: #FFE082;
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
           stroke-width: 1.2px;
-          filter: drop-shadow(0 0 12px #FFAB00) drop-shadow(0 0 24px rgba(255, 171, 0, 0.85));
+          filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.6));
         }
 
-        /* South Korea - Vibrant Emerald / Green (Seoul Office) */
+        /* South Korea - Luminous Crisp Platinum Neutral (Seoul Office) */
         .country-shape.country-korea {
-          fill: #3CC79B;
-          stroke: #3CC79B;
+          fill: #D8DFE8;
+          stroke: #D8DFE8;
           stroke-width: 0.8px;
           stroke-linejoin: round;
           stroke-linecap: round;
-          filter: drop-shadow(0 0 6px rgba(60, 199, 155, 0.5));
+          filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.45));
         }
 
         .korea-link:hover .country-korea,
+        .country-shape.country-korea.is-active,
         .country-korea:hover {
           transform: scale(1.3);
-          fill: #4ADE80;
-          stroke: #A7F3D0;
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
           stroke-width: 1.2px;
-          filter: drop-shadow(0 0 12px #3CC79B) drop-shadow(0 0 24px rgba(60, 199, 155, 0.85));
+          filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.6));
+        }
+
+        /* =========================================================================
+           FLOATING OFFICE CARDS ANCHORED ABOVE BERLIN & SEOUL (PHOTOS + ADDRESS)
+           ========================================================================= */
+        .corridor-office-card {
+          position: absolute;
+          text-decoration: none;
+          cursor: pointer;
+          z-index: 25;
+          width: clamp(175px, 14vw, 220px);
+          background: rgba(14, 16, 22, 0.92);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 8px;
+          padding: 8px;
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 255, 255, 0.04);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.3s ease,
+                      box-shadow 0.3s ease;
+        }
+
+        .corridor-office-card.berlin-card {
+          left: 19%;
+          top: 52%;
+          transform: translate(-50%, -100%);
+        }
+
+        .corridor-office-card.seoul-card {
+          left: 84%;
+          top: 64%;
+          transform: translate(-70%, -100%);
+        }
+
+        .corridor-office-card:hover,
+        .corridor-office-card.is-active {
+          border-color: rgba(255, 255, 255, 0.65);
+          box-shadow: 0 20px 44px rgba(0, 0, 0, 0.9), 0 0 28px rgba(255, 255, 255, 0.25);
+        }
+
+        .corridor-office-card.berlin-card:hover,
+        .corridor-office-card.berlin-card.is-active {
+          transform: translate(-50%, -104%) scale(1.03);
+        }
+
+        .corridor-office-card.seoul-card:hover,
+        .corridor-office-card.seoul-card.is-active {
+          transform: translate(-70%, -104%) scale(1.03);
+        }
+
+        .card-thumb-wrap {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          border-radius: 5px;
+          overflow: hidden;
+          background: #0A0A0A;
+        }
+
+        .card-thumb-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.4s ease;
+        }
+
+        .corridor-office-card:hover .card-thumb-img,
+        .corridor-office-card.is-active .card-thumb-img {
+          transform: scale(1.06);
+        }
+
+        .card-city-tag {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          background: rgba(10, 12, 16, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #FFFFFF;
+          font-family: var(--font-sans);
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          padding: 3px 7px;
+          border-radius: 3px;
+          line-height: 1.2;
+        }
+
+        .card-info {
+          padding: 7px 4px 2px 4px;
+        }
+
+        .card-street {
+          font-family: var(--font-sans);
+          font-size: 12px;
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 1.3;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-city {
+          font-family: var(--font-sans);
+          font-size: 10.5px;
+          color: rgba(255, 255, 255, 0.65);
+          margin-top: 2px;
+          line-height: 1.2;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-connector-line {
+          position: absolute;
+          bottom: -14px;
+          left: 50%;
+          width: 1px;
+          height: 14px;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+          transform: translateX(-50%);
+          pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+          .corridor-office-card {
+            width: clamp(140px, 36vw, 175px);
+            padding: 6px;
+          }
+          .card-city-tag {
+            font-size: 9.5px;
+            padding: 2px 5px;
+          }
+          .card-street {
+            font-size: 10.5px;
+          }
+          .card-city {
+            font-size: 9px;
+          }
         }
 
         /* Divider Line */
