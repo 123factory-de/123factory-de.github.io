@@ -23,7 +23,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 - **Sophisticated Monochromatic Neutral Palette**:
   - Replaced yellow and green fills with a luminous, refined bright neutral platinum tone (`#D8DFE8`) for both Germany (Berlin) and South Korea (Seoul).
   - Hovering scales up the country geometry smoothly and illuminates it with a pure white glow (`drop-shadow(0 0 12px rgba(255, 255, 255, 0.95))`).
-  - Switched the flowing flight arc animation to a bright neutral gradient (`#FFFFFF` to `#D8DFE8`) with subtle pulsing radiance.
+  - Replaced the previous gradient flight line with a clean, elegant dotted arc (`stroke: #D8DFE8; stroke-dasharray: 2 6; stroke-linecap: round;`) directly matching the exact neutral color of Germany and Korea, removing the clunky backing track and animating with a peaceful, calm 14s stream.
 - **Floating Office Cards with Photos & Addresses**:
   - Added two floating architectural glass cards anchored directly above Berlin and Seoul on the map:
     - **Berlin HQ**: High-resolution exterior photography (`/offices/berlin.jpg`), badge tag `Berlin HQ ↗`, and street address (`Bismarckstraße 10-12, 10625 Berlin, Germany`).
@@ -39,7 +39,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#offices`.
-- Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
+- Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 
 

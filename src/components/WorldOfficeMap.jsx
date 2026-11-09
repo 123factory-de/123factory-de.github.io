@@ -20,13 +20,6 @@ export default function WorldOfficeMap() {
         aria-label="Eurasia Corridor Map spanning Germany and South Korea"
       >
         <defs>
-          {/* Luminous Bright Neutral Corridor Arc */}
-          <linearGradient id="corridorNeutralArc" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#D8DFE8" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.9" />
-          </linearGradient>
-
           {/* Morphology Dilation filter to seal all hairline seams between landmass polygons */}
           <filter id="seamlessDilate" x="-10%" y="-10%" width="120%" height="120%">
             <feMorphology operator="dilate" radius="0.8" />
@@ -108,22 +101,15 @@ export default function WorldOfficeMap() {
           </a>
         </g>
 
-        {/* Connecting Flight/Corridor Arc (Thin Bright Neutral Stream) */}
+        {/* Connecting Flight/Corridor Dotted Arc directly linking Berlin and Seoul */}
         <g className="corridor-arc-group" pointerEvents="none">
-          {/* Subtle backing track */}
           <path
             d="M 426,394 Q 562,310 699,417"
             fill="none"
-            stroke="rgba(255, 255, 255, 0.12)"
-            strokeWidth="0.75"
-          />
-          {/* Thinner Calm Animated Dashed Gradient Arc */}
-          <path
-            d="M 426,394 Q 562,310 699,417"
-            fill="none"
-            stroke="url(#corridorNeutralArc)"
-            strokeWidth="0.85"
-            strokeDasharray="4 6"
+            stroke="#D8DFE8"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeDasharray="2 6"
             className="corridor-arc-flight-line"
           />
         </g>

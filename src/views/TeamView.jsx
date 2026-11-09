@@ -1541,14 +1541,19 @@ export default function TeamView() {
           stroke-width: 2.2px;
         }
 
-        /* Thin & Smooth Flowing Flight Arc connecting Berlin and Seoul (Neutral Tone) */
+        /* Clean & Elegant Dotted Flight Arc connecting Berlin and Seoul (#D8DFE8) */
         .corridor-arc-flight-line {
-          animation: corridorFlow 8s linear infinite;
+          stroke: #D8DFE8;
+          stroke-width: 1.2px;
+          stroke-linecap: round;
+          stroke-dasharray: 2 6;
+          filter: drop-shadow(0 0 3px rgba(216, 223, 232, 0.45));
+          animation: corridorFlow 14s linear infinite;
         }
 
         @keyframes corridorFlow {
           from {
-            stroke-dashoffset: 40;
+            stroke-dashoffset: 48;
           }
           to {
             stroke-dashoffset: 0;
