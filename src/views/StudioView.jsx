@@ -187,7 +187,7 @@ export default function StudioView() {
           line-height: 1.08;
           letter-spacing: -0.035em;
           color: #0A0A0A;
-          margin: 0 0 clamp(24px, 3vh, 36px) 0;
+          margin: 0 0 clamp(44px, 5.5vh, 72px) 0;
           max-width: 980px;
         }
 
@@ -305,10 +305,50 @@ export default function StudioView() {
           margin: clamp(50px, 7vh, 90px) 0;
         }
 
+        .startups-feature-split.has-feature-list {
+          align-items: stretch;
+        }
+
+        .startups-feature-split.has-feature-list .startups-photo-frame {
+          height: 100%;
+          display: flex;
+        }
+
+        .startups-feature-split.has-feature-list .startups-photo-frame img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          aspect-ratio: 3 / 2;
+        }
+
+        .startups-feature-list-wrap {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-between;
+        }
+
+        /* Clean Feature List */
+        .startups-feature-list {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+        }
+
         @media (max-width: 860px) {
           .startups-feature-split {
             grid-template-columns: 1fr;
             gap: 32px;
+          }
+          .startups-feature-split.has-feature-list {
+            align-items: flex-start;
+          }
+          .startups-feature-list-wrap,
+          .startups-feature-list {
+            height: auto;
+            justify-content: flex-start;
+            gap: 28px;
           }
         }
 
@@ -317,13 +357,6 @@ export default function StudioView() {
         }
         .startups-feature-split.is-reversed > * {
           direction: ltr;
-        }
-
-        /* Clean Feature List */
-        .startups-feature-list {
-          display: flex;
-          flex-direction: column;
-          gap: 28px;
         }
 
         .startups-feature-item {
@@ -749,7 +782,7 @@ export default function StudioView() {
             </p>
           </div>
 
-          <div className="startups-feature-split">
+          <div className="startups-feature-split has-feature-list">
             <div className="startups-photo-frame" style={{ margin: 0 }}>
               <img
                 src="/startups/startups-early-stage.jpg"
@@ -758,7 +791,7 @@ export default function StudioView() {
               />
             </div>
 
-            <div>
+            <div className="startups-feature-list-wrap">
               <div className="startups-feature-list">
                 <div className="startups-feature-item">
                   <h3 className="startups-feature-item-title">Structured Early-Stage Playbook</h3>
@@ -813,7 +846,7 @@ export default function StudioView() {
             </p>
           </div>
 
-          <div className="startups-feature-split is-reversed">
+          <div className="startups-feature-split is-reversed has-feature-list">
             <div className="startups-photo-frame" style={{ margin: 0 }}>
               <img
                 src="/startups/startups-scaleups.jpg"
@@ -822,7 +855,7 @@ export default function StudioView() {
               />
             </div>
 
-            <div>
+            <div className="startups-feature-list-wrap">
               <div className="startups-feature-list">
                 <div className="startups-feature-item">
                   <h3 className="startups-feature-item-title">Validation & Localization</h3>
