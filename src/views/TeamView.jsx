@@ -2180,22 +2180,25 @@ export default function TeamView() {
           SECTION 3: IMPACT & METRICS (THE 4 CORE NUMBERS FROM HERO)
          ========================================================================= */}
       <section id="impact" className="about-section" ref={metricsRef}>
-        <div className="about-container-wide">
+        <div className="about-container">
           <h2 className="about-display-h2">
             The Numbers Behind Our Ecosystem
           </h2>
           <p style={{
             fontSize: 'clamp(21px, 2vw, 28px)',
             color: 'rgba(255, 255, 255, 0.72)',
-            maxWidth: '1200px',
+            maxWidth: '100%',
             lineHeight: 1.45,
             letterSpacing: '-0.015em',
-            margin: '0 0 clamp(44px, 5vw, 68px) 0',
+            margin: '0 0 clamp(80px, 9vw, 130px) 0',
             wordBreak: 'keep-all'
           }}>
             Over the past years, 123 Factory has translated bilateral strategic initiatives into quantifiable commercial traction across Europe and Asia.
           </p>
-          {/* 4 HORIZONTAL ACCORDION METRIC CARDS WITH COLOR HOVER & EXPANDED DETAIL */}
+        </div>
+
+        {/* 4 HORIZONTAL ACCORDION METRIC CARDS WITH COLOR HOVER & EXPANDED DETAIL */}
+        <div className="about-container-wide">
           <div className="ecosystem-metrics-grid">
             {/* CARD 1: 100+ Workshops & Executive Seminars */}
             <div

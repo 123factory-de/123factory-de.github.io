@@ -50,8 +50,8 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
     - **200+ Matchmaking & Industry Showcases**: Curated demo days, closed-door corporate pitching sessions, and 1-on-1 bilateral buyer matchmaking connecting pre-vetted scaleups directly with European enterprise buyers.
     - **300+ Go-to-Market & Market Access**: Full-lifecycle market entry: local entity formation, European and Asian regulatory roadmaps, commercial pilot deployment, and localized enterprise sales distribution.
     - **400+ Strategic Insights & Market Intelligence**: Actionable deep-tech scouting dossiers, proprietary cross-border intelligence briefs, and strategic venture landscape assessments for corporate decision-makers.
-  - **Brand Accent Illuminations**: Each card features a distinct brand accent color (`#FF5A36`, `#00D2B4`, `#FFAB00`, `#4D7CFE`) for tag highlights, border transitions, and subtle atmospheric glows on hover.
-  - **Ultra-Wide Breakout Layout (`.about-container-wide`)**: Expanded the section container from `1360px` to `1840px` (`padding: 0 clamp(20px, 3.5vw, 56px)`), dramatically reducing left/right margins and allowing the accordion cards to stretch wide (~390px in idle, ~850px when expanded).
+  - **Unified Header Alignment**: Placed "The Numbers Behind Our Ecosystem" title and lede paragraph inside standard `.about-container` to maintain unified vertical grid alignment with the preceding "Our Methodology" section, while keeping only the accordion cards grid inside `.about-container-wide`.
+  - **Ultra-Wide Breakout Layout (`.about-container-wide`)**: Expanded the cards container from `1360px` to `1840px` (`padding: 0 clamp(20px, 3.5vw, 56px)`), dramatically reducing left/right margins and allowing the accordion cards to stretch wide (~390px in idle, ~850px when expanded).
   - **Enhanced Card Heights & Proportions**: Scaled card height to `clamp(480px, 34vw, 540px)` and expanded description text width to `max-width: 640px` for high-end editorial proportions.
   - **Generous Bottom Breathing Space**: Increased margin before the workshop photo from `clamp(56px, 7vw, 96px)` to `clamp(140px, 16vw, 240px)`, eliminating visual congestion between the cards and the photo beneath.
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
@@ -60,7 +60,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#impact`.
-- Verified "The Numbers Behind Our Ecosystem" spans wide across the viewport (`max-width: 1840px`) with expansive accordion cards and generous bottom breathing room before the workshop photo.
+- Verified "The Numbers Behind Our Ecosystem" title and description are perfectly aligned with "Our Methodology", while the accordion cards below break out widely across the viewport (`max-width: 1840px`).
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
 - Verified closing CTA section renders cleanly in dark mode without any eyebrow text.
