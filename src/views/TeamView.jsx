@@ -657,13 +657,6 @@ export default function TeamView() {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
           gap: clamp(40px, 5.5vw, 84px);
           align-items: center;
-          padding-bottom: clamp(48px, 6vw, 84px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .methodology-row:last-child {
-          border-bottom: none;
-          padding-bottom: 0;
         }
 
         @media (max-width: 960px) {
@@ -1888,12 +1881,9 @@ export default function TeamView() {
           }
         }
 
-        /* Divider Line */
+        /* Divider Line (Removed for clean editorial whitespace) */
         .about-divider-line {
-          width: 100%;
-          height: 1px;
-          background: rgba(255, 255, 255, 0.08);
-          margin: clamp(90px, 11vh, 150px) 0 0 0;
+          display: none;
         }
 
         /* =========================================================================
@@ -1901,8 +1891,8 @@ export default function TeamView() {
            ========================================================================= */
         .about-cta-wrap {
           margin-top: clamp(120px, 15vh, 200px);
-          border-top: 1px solid rgba(255, 255, 255, 0.14);
-          padding-top: clamp(70px, 9vh, 120px);
+          border-top: none;
+          padding-top: clamp(40px, 6vh, 80px);
           padding-bottom: clamp(70px, 9vh, 130px);
         }
 
@@ -2002,8 +1992,6 @@ export default function TeamView() {
           </div>
         </div>
       </section>
-
-      <div className="about-container"><div className="about-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 2: HOW WE WORK (PSL STUDIO INSPIRED 6-STEP ACCELERATOR METHODOLOGY)
@@ -2200,8 +2188,6 @@ export default function TeamView() {
         </div>
       </section>
 
-      <div className="about-container"><div className="about-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 3: IMPACT & METRICS (THE 4 CORE NUMBERS FROM HERO)
          ========================================================================= */}
@@ -2372,8 +2358,6 @@ export default function TeamView() {
         </div>
       </section>
 
-      <div className="about-container"><div className="about-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 4: OUR SERVICES (FOR STARTUPS & FOR CORPORATES)
          ========================================================================= */}
@@ -2446,8 +2430,6 @@ export default function TeamView() {
         </div>
       </section>
 
-      <div className="about-container"><div className="about-divider-line" /></div>
-
       {/* =========================================================================
           SECTION 5: THE BUILDERS
          ========================================================================= */}
@@ -2483,8 +2465,6 @@ export default function TeamView() {
           </div>
         </div>
       </section>
-
-      <div className="about-container"><div className="about-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 6: 18 GLOBAL PARTNERS (COMPREHENSIVE GRID VIEW)
@@ -2542,8 +2522,6 @@ export default function TeamView() {
           ))}
         </div>
       </section>
-
-      <div className="about-container"><div className="about-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 7: DUAL-HUB PRESENCE (BERLIN HQ & SEOUL OFFICE)

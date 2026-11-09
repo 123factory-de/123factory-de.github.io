@@ -53,10 +53,10 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - **Unified Header Alignment**: Placed "The Numbers Behind Our Ecosystem" title and lede paragraph inside standard `.about-container` to maintain unified vertical grid alignment with the preceding "Our Methodology" section, while keeping only the accordion cards grid inside `.about-container-wide`.
   - **Ultra-Wide Breakout Layout (`.about-container-wide`)**: Expanded the cards container from `1360px` to `1840px` (`padding: 0 clamp(20px, 3.5vw, 56px)`), dramatically reducing left/right margins and allowing the accordion cards to stretch wide (~390px in idle, ~850px when expanded).
   - **Enhanced Card Heights & Proportions**: Scaled card height to `clamp(480px, 34vw, 540px)` and expanded description text width to `max-width: 640px` for high-end editorial proportions.
-  - **Generous Vertical Spacing & Paragraph Breathing Room Across About Us**:
+  - **Generous Vertical Spacing & Elimination of Thin Divider Lines**:
+    - Removed all faint, thin divider lines (`.about-divider-line`) between sections across the entire About Us page, as well as the border lines separating methodology rows, letting pure editorial whitespace create modern, seamless section transitions.
     - Increased global section padding `.about-section` to `clamp(120px, 15vh, 200px)` (up from 90px-160px).
     - Expanded spacing between the hero mission lead text and the keynote breakout photo to `clamp(110px, 13vw, 180px)` (up from 80px-140px).
-    - Inserted an elegant divider line between the hero keynote photo and the "Our Methodology" section for consistent section separation.
     - Expanded bottom margins on all section lede paragraphs across Methodology, Impact, Services, Builders, Partners, and Offices (`clamp(90px, 10vw, 150px)`).
   - **Core Capabilities Horizontal Layout & Ambient Halo Glows**:
     - Replaced the previous side-by-side vertical cards with wide, expansive horizontal cards (`.about-service-card`) stacked in a flex column.
