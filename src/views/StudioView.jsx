@@ -1452,7 +1452,7 @@ export default function StudioView() {
 
           <div className="startups-photo-frame" style={{ margin: '0 0 clamp(48px, 6vh, 72px) 0' }}>
             <img
-              src="/startups/startups-traction.jpg"
+              src="/startups/startups-mobani.jpg"
               alt="Mobani European Sales Execution"
               loading="lazy"
             />

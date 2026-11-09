@@ -20,6 +20,7 @@ request-source: "Chat, 2026-11-09"
 13. In Sections 4 and 5, remove the "04 // Proprietary Platform · " and "05 // Open Innovation Hub · " prefixes, leaving clean labels (`Bilateral R&D Intelligence`, `Corporate Venture & Pilots`).
 14. In Section 4, replace the generic photo next to fundingdb with a compact preview widget of Funding DB adapted from the Home page's "On Your Radar" section.
 15. In Section 6 (Mobani), change the eyebrow from "European Market Entry" to "European Sales Infrastructure", and replace the cluttered nested-box card layout with a clean, open layout matching the rest of the site (clean link header, borderless photo frame, and 3-column deliverables grid).
+16. Replace the Mobani section photo with the user-provided AsiaBerlin Summit 2025 event photo, precisely cropping out the bottom watermark logos.
 
 ## Changes
 
@@ -40,6 +41,7 @@ request-source: "Chat, 2026-11-09"
   - Simplified eyebrows in Section 4 (`Bilateral R&D Intelligence`) and Section 5 (`Corporate Venture & Pilots`).
   - Replaced the Section 4 photo with a styled `.fundingdb-mini-box` containing live window dots, title badge, live pulse indicator, and active grant cards linking directly to `fundingdb.123factory.de`.
   - Changed Section 6 eyebrow to `European Sales Infrastructure` and restructured Mobani layout into an open, unnested design with a top platform link header, clean photo frame, and 3-column deliverables grid.
+  - Cropped the bottom watermark from the user's uploaded photo and saved it to `public/startups/startups-mobani.jpg`, referenced in Section 6.
 
 ## Verification
 
