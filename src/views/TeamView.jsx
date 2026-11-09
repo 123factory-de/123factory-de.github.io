@@ -1773,10 +1773,19 @@ export default function TeamView() {
           margin: clamp(70px, 9vh, 120px) 0 0 0;
         }
 
-        /* Minimal Closing CTA */
+        /* =========================================================================
+           MINIMALIST CLOSING CTA (WHITE THEME - EXACT MATCH WITH STARTUPS PAGE)
+           ========================================================================= */
+        .about-cta-section {
+          background-color: #FFFFFF;
+          color: #0A0A0A;
+          width: 100%;
+          margin-top: clamp(60px, 10vh, 120px);
+          padding: clamp(80px, 12vh, 140px) 0 clamp(90px, 14vh, 160px) 0;
+        }
+
         .about-cta-wrap {
-          margin-top: clamp(100px, 14vh, 180px);
-          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          border-top: 1px solid #0A0A0A;
           padding-top: clamp(60px, 8vh, 100px);
         }
 
@@ -1794,12 +1803,22 @@ export default function TeamView() {
           }
         }
 
+        .about-cta-eyebrow {
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(10, 10, 10, 0.45);
+          display: block;
+          margin-bottom: clamp(18px, 2.5vh, 28px);
+        }
+
         .about-cta-title {
           font-size: clamp(36px, 5vw, 76px);
           font-weight: 700;
           line-height: 1.05;
           letter-spacing: -0.04em;
-          color: #FFFFFF;
+          color: #0A0A0A;
           margin: 0;
         }
 
@@ -1813,8 +1832,8 @@ export default function TeamView() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          background: #FFFFFF;
-          color: #0A0A0A;
+          background: #0A0A0A;
+          color: #FFFFFF;
           font-family: var(--font-sans);
           font-size: 15px;
           font-weight: 600;
@@ -1825,7 +1844,7 @@ export default function TeamView() {
         }
 
         .about-btn-primary:hover {
-          background: #E5E5E5;
+          background: #333333;
           transform: translateY(-1px);
         }
 
@@ -1834,13 +1853,20 @@ export default function TeamView() {
           align-items: center;
           justify-content: center;
           background: transparent;
-          color: #FFFFFF;
-          border: 1px solid rgba(255, 255, 255, 0.25);
+          color: #0A0A0A;
+          border: 1px solid rgba(0, 0, 0, 0.18);
           font-family: var(--font-sans);
           font-size: 15px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          padding: 18px 36px;
+          text-decoration: none;
+          transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
         .about-btn-secondary:hover {
-          border-color: #FFFFFF;
-          background: rgba(255, 255, 255, 0.08);
+          border-color: #0A0A0A;
+          background: rgba(0, 0, 0, 0.03);
         }
       `}</style>
 
@@ -2375,36 +2401,38 @@ export default function TeamView() {
       </section>
 
       {/* =========================================================================
-          MINIMALIST DIRECT CTA
+          MINIMALIST DIRECT CTA (WHITE BACKGROUND THEME MATCHING STARTUPS PAGE)
          ========================================================================= */}
-      <div className="about-container">
-        <div className="about-cta-wrap">
-          <div className="about-cta-grid">
-            <div>
-              <span className="about-eyebrow" style={{ marginBottom: '16px' }}>
-                Start the Dialogue
-              </span>
-              <h2 className="about-cta-title">
-                Let’s build cross-border ventures together.
-              </h2>
-            </div>
-            <div className="about-cta-actions">
-              <a
-                href="mailto:hello@123factory.de"
-                className="about-btn-primary"
-              >
-                Contact Berlin & Seoul Office →
-              </a>
-              <Link
-                to="/startups"
-                className="about-btn-secondary"
-              >
-                Explore Acceleration Programs
-              </Link>
+      <section className="about-cta-section">
+        <div className="about-container">
+          <div className="about-cta-wrap">
+            <div className="about-cta-grid">
+              <div>
+                <span className="about-cta-eyebrow">
+                  Get Started // Global Scale
+                </span>
+                <h2 className="about-cta-title">
+                  Let’s build cross-border ventures together.
+                </h2>
+              </div>
+              <div className="about-cta-actions">
+                <a
+                  href="mailto:hello@123factory.de"
+                  className="about-btn-primary"
+                >
+                  Contact Berlin & Seoul Office ➔
+                </a>
+                <Link
+                  to="/startups"
+                  className="about-btn-secondary"
+                >
+                  Explore Acceleration Programs ↗
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

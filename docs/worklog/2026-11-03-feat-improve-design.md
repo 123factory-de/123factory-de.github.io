@@ -34,6 +34,9 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
   - Removed photos and photo/map toggle buttons from the Footer office modal for both Berlin and Seoul.
   - Clicking on Berlin (HQ) or Seoul Office in the footer now directly opens the interactive dark-mode Google Maps view with the office address and an "Open Maps ↗" button.
   - Unified modal dimensions and media aspect ratio (`aspect-ratio: 16 / 10`) for consistent map viewing.
+- **Closing CTA Section White Theme (Matching Startups Page)**:
+  - Transformed the bottom closing CTA on the About page ("Let’s build cross-border ventures together") into a clean, full-width white section (`background-color: #FFFFFF; color: #0A0A0A;`).
+  - Adopted the exact architectural typography, eyebrow (`Get Started // Global Scale`), button styling (`about-btn-primary`, `about-btn-secondary`), and top divider border from the bottom of the Startups page (`/startups`).
 
 ## Verification
 
@@ -41,6 +44,7 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about#offices`.
 - Verified map spans wide across the viewport with seamless borderless landmasses, zero hairline seams between countries, natural gradient dissolution on all four edges, bright neutral platinum highlighting, clean `#D8DFE8` dotted arc line connecting Berlin and Seoul, and floating photo cards for Berlin and Seoul with the updated Seoul office exterior image.
 - Verified clicking Footer office items (Berlin and Seoul) directly opens Google Maps without photo tabs or photo previews.
+- Verified About page closing CTA section renders with a crisp, minimal white background matching the Startups page bottom section.
 
 
 
