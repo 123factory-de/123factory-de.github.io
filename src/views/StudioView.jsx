@@ -761,37 +761,6 @@ export default function StudioView() {
         }
 
         /* Mobani Sales Platform Section (06) */
-        .mobani-highlight-card {
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          padding: clamp(32px, 5vw, 64px);
-          background: #FAFAFA;
-          margin: clamp(40px, 5vh, 64px) 0;
-        }
-
-        .mobani-photo-slot {
-          width: 100%;
-          min-height: 380px;
-          background: #EFEFEF;
-          border: 1px dashed rgba(0, 0, 0, 0.2);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 40px 24px;
-          box-sizing: border-box;
-          margin: 24px 0;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .mobani-photo-slot img {
-          width: 100%;
-          height: auto;
-          max-height: 520px;
-          object-fit: cover;
-          display: block;
-        }
 
         /* Minimal Closing CTA */
         .startups-cta-wrap {
@@ -1452,7 +1421,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="mobani" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">European Market Entry</span>
+          <span className="startups-eyebrow">European Sales Infrastructure</span>
           <h2 className="startups-display-h2">
             Direct Commercial Expansion into Germany & France
           </h2>
@@ -1466,60 +1435,49 @@ export default function StudioView() {
             </p>
           </div>
 
-          {/* Mobani Showcase Card */}
-          <div className="mobani-highlight-card">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '20px' }}>
-              <div>
-                <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFAB00', display: 'block', marginBottom: '4px' }}>
-                  European Sales Infrastructure
-                </span>
-                <h3 style={{ fontSize: 'clamp(24px, 2.5vw, 36px)', fontWeight: 700, letterSpacing: '-0.03em', margin: 0 }}>
-                  Mobani European Sales Platform
-                </h3>
-              </div>
-              <a
-                href="https://www.mobani.eu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="startups-btn-primary"
-                style={{ padding: '14px 28px', fontSize: '14px' }}
-              >
-                Visit mobani.eu ↗
-              </a>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', marginBottom: 'clamp(24px, 3vh, 36px)' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(10, 10, 10, 0.5)' }}>
+              Mobani European Sales Platform · mobani.eu
+            </span>
+            <a
+              href="https://www.mobani.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="startups-btn-primary"
+              style={{ padding: '14px 28px', fontSize: '14px' }}
+            >
+              Visit mobani.eu ↗
+            </a>
+          </div>
+
+          <div className="startups-photo-frame" style={{ margin: '0 0 clamp(48px, 6vh, 72px) 0' }}>
+            <img
+              src="/startups/startups-traction.jpg"
+              alt="Mobani European Sales Execution"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="startups-deliverables-grid">
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">Germany & France Retail Access</h4>
+              <p className="startups-deliverable-desc">
+                Direct commercial matchmaking with top department stores, boutique retail chains, and major European e-commerce distribution channels.
+              </p>
             </div>
 
-            {/* Dedicated Photo Space for User's Upcoming Sales Photos */}
-            <div className="mobani-photo-slot">
-              <img
-                src="/startups/startups-traction.jpg"
-                alt="Mobani European Sales Execution"
-              />
-              <span className="startups-photo-caption" style={{ marginTop: '14px', textAlign: 'center' }}>
-                Mobani Sales Execution · Korean Fashion, B2C & B2B European Market Entry (Germany & France)
-              </span>
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">B2B & Enterprise Sourcing</h4>
+              <p className="startups-deliverable-desc">
+                Structured buyer meetings, trade showroom representation, localized contract negotiation, and continuous revenue pipeline management.
+              </p>
             </div>
 
-            <div className="startups-deliverables-grid" style={{ marginTop: '36px' }}>
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">Germany & France Retail Access</h4>
-                <p className="startups-deliverable-desc">
-                  Direct commercial matchmaking with top department stores, boutique retail chains, and major European e-commerce distribution channels.
-                </p>
-              </div>
-
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">B2B & Enterprise Sourcing</h4>
-                <p className="startups-deliverable-desc">
-                  Structured buyer meetings, trade showroom representation, localized contract negotiation, and continuous revenue pipeline management.
-                </p>
-              </div>
-
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">Full Logistics & Tax Compliance</h4>
-                <p className="startups-deliverable-desc">
-                  Eliminating cross-border friction: EU VAT registration, customs clearance, local warehousing, and European fulfillment infrastructure.
-                </p>
-              </div>
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">Full Logistics & Tax Compliance</h4>
+              <p className="startups-deliverable-desc">
+                Eliminating cross-border friction: EU VAT registration, customs clearance, local warehousing, and European fulfillment infrastructure.
+              </p>
             </div>
           </div>
         </div>
