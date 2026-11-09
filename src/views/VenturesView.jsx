@@ -540,23 +540,7 @@ export default function VenturesView() {
         }
       `}</style>
 
-      {/* Sticky Minimal Navigation */}
-      <nav className="corp-subnav-sticky" aria-label="Corporate Subnavigation">
-        <div className="corp-container">
-          <div className="corp-subnav-inner">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`corp-subnav-btn ${activeTab === item.id ? 'is-active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+
 
       {/* =========================================================================
           SECTION 0: OVERVIEW & PHILOSOPHY

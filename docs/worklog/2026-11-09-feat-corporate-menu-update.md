@@ -8,6 +8,7 @@ request-source: chat, 2026-11-09
 ## Request
 
 Apply subtle polish and styling consistency to the Corporate Venturing page (`src/views/VenturesView.jsx`) mirroring the recent refinements made to the Startups page without drastically changing the overall layout:
+- Remove the top sticky subnavigation bar (`Overview`, `01 · Startup Scouting`, `02 · Venture Governance`, `03 · Investment Support`).
 - Remove image mouse hover zoom effects.
 - Clean up the 3-pillar focus overview cards by removing small category numbers/labels (`01 // FOCUS`) and arrow links (`Explore Scouting ↓`), replacing them with interactive cards showing an emerald/green (`#3CC79B`) border, subtle background, and soft shadow on mouse hover.
 - Replace numeric section indicators (`01`, `02`, `03`) with glowing emerald dot indicators (1 dot for Scouting, 2 dots for Governance, 3 dots for Investment).
@@ -16,6 +17,7 @@ Apply subtle polish and styling consistency to the Corporate Venturing page (`sr
 ## Changes
 
 - `src/views/VenturesView.jsx`:
+  - Removed top sticky subnavigation bar (`<nav className="corp-subnav-sticky">...</nav>`).
   - Added `.corp-dots-wrap` and `.corp-dot` CSS rules using the corporate emerald color `#3CC79B` with soft glow box shadow (`rgba(60, 199, 155, 0.55)`).
   - Updated `.corp-eyebrow` to `display: inline-flex; align-items: center; gap: 10px;`.
   - Removed hover scale transform on `.corp-photo-frame:hover img`.
