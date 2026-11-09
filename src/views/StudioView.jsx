@@ -223,14 +223,14 @@ export default function StudioView() {
         .startups-programs-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: clamp(24px, 3.5vw, 56px);
+          gap: clamp(20px, 2.5vw, 32px);
           margin-top: clamp(60px, 8vh, 100px);
         }
 
         @media (max-width: 900px) {
           .startups-programs-grid {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 20px;
           }
         }
 
@@ -238,47 +238,36 @@ export default function StudioView() {
           display: flex;
           flex-direction: column;
           cursor: pointer;
+          padding: clamp(24px, 2.8vw, 36px);
+          border-radius: 12px;
+          border: 1.5px solid transparent;
+          background: transparent;
+          box-sizing: border-box;
+          transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
         }
 
-        .startups-program-num {
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          color: rgba(10, 10, 10, 0.4);
-          margin-bottom: 12px;
+        .startups-program-card:hover {
+          border-color: #FFAB00;
+          background-color: rgba(255, 171, 0, 0.03);
+          box-shadow: 0 10px 30px rgba(255, 171, 0, 0.08);
+          transform: translateY(-3px);
         }
 
         .startups-program-title {
-          font-size: clamp(20px, 1.8vw, 26px);
+          font-size: clamp(20px, 1.8vw, 25px);
           font-weight: 700;
           letter-spacing: -0.03em;
           color: #0A0A0A;
-          margin: 0 0 12px 0;
-          line-height: 1.2;
+          margin: 0 0 14px 0;
+          line-height: 1.25;
         }
 
         .startups-program-desc {
           font-size: 14.5px;
           line-height: 1.6;
-          color: rgba(10, 10, 10, 0.62);
-          margin: 0 0 18px 0;
+          color: rgba(10, 10, 10, 0.65);
+          margin: 0;
           flex: 1 1 auto;
-        }
-
-        .startups-program-link {
-          font-size: 12.5px;
-          font-weight: 600;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          color: #0A0A0A;
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          transition: gap 0.2s ease;
-        }
-
-        .startups-program-card:hover .startups-program-link {
-          gap: 10px;
         }
 
         /* Divider Line */
@@ -674,57 +663,45 @@ export default function StudioView() {
           {/* 6 Programs Quick Jump Grid */}
           <div className="startups-programs-grid">
             <div className="startups-program-card" onClick={() => scrollToSection('early-stage')}>
-              <span className="startups-program-num">01 // TRACK</span>
               <h2 className="startups-program-title">Early-Stage Support</h2>
               <p className="startups-program-desc">
                 Product-market fit validation, German ICP definition, and soft-landing pad in Berlin.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('scaleups')}>
-              <span className="startups-program-num">02 // TRACK</span>
               <h2 className="startups-program-title">Accelerators & Scale-ups</h2>
               <p className="startups-program-desc">
                 Technical validation, CE/GDPR compliance readiness, and commercial revenue acceleration.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('funding')}>
-              <span className="startups-program-num">03 // TRACK</span>
               <h2 className="startups-program-title">Funding & Investment</h2>
               <p className="startups-program-desc">
                 Precision fundraising strategy, investor matchmaking roadshows, and deal structuring.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('funding-db')}>
-              <span className="startups-program-num">04 // PLATFORM</span>
               <h2 className="startups-program-title">Bilateral R&D (Funding DB)</h2>
               <p className="startups-program-desc">
                 Structured intelligence tracking European and bilateral R&D grants for tech ventures.
               </p>
-              <span className="startups-program-link">Explore Platform ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('open-innovation')}>
-              <span className="startups-program-num">05 // PLATFORM</span>
               <h2 className="startups-program-title">Corporate Ventures & Pilots</h2>
               <p className="startups-program-desc">
                 Open Innovation Hub aggregating commercial challenges from European corporations.
               </p>
-              <span className="startups-program-link">Explore Hub ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('mobani')}>
-              <span className="startups-program-num">06 // PLATFORM</span>
               <h2 className="startups-program-title">Sales Platform (Mobani)</h2>
               <p className="startups-program-desc">
                 Commercial market entry platform expanding Korean Fashion, B2C & B2B brands into Germany and France.
               </p>
-              <span className="startups-program-link">Explore Mobani ↓</span>
             </div>
           </div>
         </div>
