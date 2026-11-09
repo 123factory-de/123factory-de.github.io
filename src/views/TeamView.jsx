@@ -1516,41 +1516,95 @@ export default function TeamView() {
           width: 100%;
           height: 100%;
           display: block;
+          -webkit-mask-image: radial-gradient(ellipse 84% 80% at 50% 50%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 84% 80% at 50% 50%, #000 55%, transparent 100%);
         }
 
-        /* Grayish matte tech continent styling - Clean borderless silhouette */
+        /* Grayish matte tech continent styling - 100% Seamless Borderless Silhouette */
         .corridor-countries-group {
           pointer-events: none;
         }
 
         .corridor-countries-group path {
           fill: #191B22;
-          stroke: none;
+          stroke: #191B22;
+          stroke-width: 0.8px;
+          stroke-linejoin: round;
+          stroke-linecap: round;
         }
 
-        /* Subtle tone on Germany & South Korea without border */
-        .corridor-countries-group #de {
-          fill: #222530;
-          stroke: none;
-        }
-
+        .corridor-countries-group #de,
         .corridor-countries-group #kr {
-          fill: #222530;
-          stroke: none;
+          fill: #191B22;
+          stroke: #191B22;
+          stroke-width: 0.8px;
         }
 
-        /* Calm breathing glow for corridor flight line */
+        /* Thin & Smooth Flowing Flight Arc connecting Berlin and Seoul */
         .corridor-arc-flight-line {
-          animation: corridorCalmPulse 4.5s ease-in-out infinite alternate;
+          animation: corridorFlow 8s linear infinite;
         }
 
-        @keyframes corridorCalmPulse {
-          0% {
-            opacity: 0.5;
+        @keyframes corridorFlow {
+          from {
+            stroke-dashoffset: 40;
           }
-          100% {
-            opacity: 0.9;
+          to {
+            stroke-dashoffset: 0;
           }
+        }
+
+        /* Map Pin Beacons & City Hover Effects */
+        .corridor-beacon {
+          transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+          transform-box: fill-box;
+          transform-origin: center;
+          cursor: pointer;
+        }
+
+        .corridor-beacon.is-active,
+        .corridor-beacon:hover {
+          transform: scale(1.4);
+        }
+
+        .berlin-beacon.is-active .beacon-halo,
+        .berlin-beacon:hover .beacon-halo {
+          stroke: #FFAB00;
+          opacity: 0.95;
+          stroke-width: 1.2px;
+          filter: drop-shadow(0 0 8px #FFAB00);
+        }
+
+        .berlin-beacon.is-active .beacon-core,
+        .berlin-beacon:hover .beacon-core {
+          fill: #FFD166;
+          filter: drop-shadow(0 0 12px #FFAB00);
+        }
+
+        .berlin-beacon.is-active .beacon-glow,
+        .berlin-beacon:hover .beacon-glow {
+          opacity: 0.35;
+          transition: opacity 0.25s ease;
+        }
+
+        .seoul-beacon.is-active .beacon-halo,
+        .seoul-beacon:hover .beacon-halo {
+          stroke: #3CC79B;
+          opacity: 0.95;
+          stroke-width: 1.2px;
+          filter: drop-shadow(0 0 8px #3CC79B);
+        }
+
+        .seoul-beacon.is-active .beacon-core,
+        .seoul-beacon:hover .beacon-core {
+          fill: #6EE7B7;
+          filter: drop-shadow(0 0 12px #3CC79B);
+        }
+
+        .seoul-beacon.is-active .beacon-glow,
+        .seoul-beacon:hover .beacon-glow {
+          opacity: 0.35;
+          transition: opacity 0.25s ease;
         }
 
         /* Ultra-Clean Location Pins & Labels */
@@ -1560,7 +1614,7 @@ export default function TeamView() {
           cursor: pointer;
           z-index: 10;
           display: block;
-          transition: transform 0.2s ease;
+          transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .corridor-pin.berlin-pin {
@@ -1573,14 +1627,56 @@ export default function TeamView() {
           margin-top: -6px;
         }
 
-        .corridor-pin:hover {
-          transform: translate(-50%, -104%) scale(1.03);
-          z-index: 20;
+        /* Berlin Pin Hover / Active State */
+        .corridor-pin.berlin-pin:hover,
+        .corridor-pin.berlin-pin.is-active {
+          transform: translate(-50%, -106%) scale(1.08);
+          z-index: 30;
         }
 
-        .corridor-pin.seoul-pin:hover {
-          transform: translate(-70%, -104%) scale(1.03);
-          z-index: 20;
+        .berlin-pin:hover .corridor-pin-card,
+        .berlin-pin.is-active .corridor-pin-card {
+          border-color: #FFAB00;
+          box-shadow: 0 0 30px rgba(255, 171, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.9);
+          background: rgba(22, 18, 10, 0.96);
+        }
+
+        .berlin-pin:hover .corridor-pin-title,
+        .berlin-pin.is-active .corridor-pin-title {
+          color: #FFD166;
+          text-shadow: 0 0 12px rgba(255, 171, 0, 0.85);
+        }
+
+        .berlin-pin:hover .corridor-pin-dot.berlin,
+        .berlin-pin.is-active .corridor-pin-dot.berlin {
+          transform: scale(1.4);
+          box-shadow: 0 0 16px 4px #FFAB00;
+        }
+
+        /* Seoul Pin Hover / Active State */
+        .corridor-pin.seoul-pin:hover,
+        .corridor-pin.seoul-pin.is-active {
+          transform: translate(-70%, -106%) scale(1.08);
+          z-index: 30;
+        }
+
+        .seoul-pin:hover .corridor-pin-card,
+        .seoul-pin.is-active .corridor-pin-card {
+          border-color: #3CC79B;
+          box-shadow: 0 0 30px rgba(60, 199, 155, 0.6), 0 4px 16px rgba(0, 0, 0, 0.9);
+          background: rgba(10, 24, 18, 0.96);
+        }
+
+        .seoul-pin:hover .corridor-pin-title,
+        .seoul-pin.is-active .corridor-pin-title {
+          color: #6EE7B7;
+          text-shadow: 0 0 12px rgba(60, 199, 155, 0.85);
+        }
+
+        .seoul-pin:hover .corridor-pin-dot.seoul,
+        .seoul-pin.is-active .corridor-pin-dot.seoul {
+          transform: scale(1.4);
+          box-shadow: 0 0 16px 4px #3CC79B;
         }
 
         .corridor-pin-card {
@@ -1591,17 +1687,7 @@ export default function TeamView() {
           border-radius: 4px;
           padding: 7px 11px;
           white-space: nowrap;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .berlin-pin:hover .corridor-pin-card {
-          border-color: #FFAB00;
-          box-shadow: 0 4px 16px rgba(255, 171, 0, 0.18);
-        }
-
-        .seoul-pin:hover .corridor-pin-card {
-          border-color: #3CC79B;
-          box-shadow: 0 4px 16px rgba(60, 199, 155, 0.18);
+          transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
         }
 
         .corridor-pin-title {
@@ -1613,6 +1699,7 @@ export default function TeamView() {
           align-items: center;
           gap: 6px;
           line-height: 1.2;
+          transition: color 0.25s ease, text-shadow 0.25s ease;
         }
 
         .corridor-pin-dot {
@@ -1620,6 +1707,7 @@ export default function TeamView() {
           height: 6px;
           border-radius: 50%;
           display: inline-block;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .corridor-pin-dot.berlin {
