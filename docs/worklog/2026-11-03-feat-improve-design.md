@@ -68,12 +68,14 @@ Update the "Built Alongside Industry Leaders" partners section on the About Us p
       - **300+ Go-to-Market & Market Access**: `#2D9CDB` (Sky Blue)
       - **400+ Strategic Insights & Market Intelligence**: `#FFAB00` (Amber Yellow)
     - Applied the respective brand accent colors to tag highlights, border transitions, and subtle diffuse glows on hover.
+  - **Informational Cursor (`cursor: default`)**: Changed hover cursor from `pointer` to `default` so users understand the accordion cards reveal informational methodology details on hover rather than acting as clickable navigation links.
   - **Responsive Fallback**: Automatically shifts to a 2-column (tablet) or 1-column (mobile) grid where explanatory text remains naturally formatted.
 
 ## Verification
 
 - Built application via `npm run build` with zero warnings or errors.
 - Verified real-time updates and responsive layout on dev server at `http://localhost:5175/about`.
+- Verified ecosystem accordion cards display the default arrow cursor (`cursor: default`) on hover, avoiding false click affordance while maintaining fluid expand-and-color animations.
 - Verified closing CTA displays `"Let’s turn your vision into real momentum, together."` with primary contact button and newsletter button that smoothly scrolls to and focuses the email input.
 - Verified Core Capabilities displays wide horizontal cards with left-column text/neutral button and right-column framed capabilities list, radiating gentle orange and green ambient halos on hover.
 - Verified generous vertical spacing, breathable paragraphs, and balanced dividers across the entire About Us page.

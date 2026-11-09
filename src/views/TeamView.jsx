@@ -1018,7 +1018,7 @@ export default function TeamView() {
           justify-content: space-between;
           padding: clamp(24px, 2.2vw, 36px);
           box-sizing: border-box;
-          cursor: pointer;
+          cursor: default;
           transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1),
                       opacity 0.45s ease,
                       border-color 0.4s ease,
