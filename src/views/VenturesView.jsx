@@ -50,16 +50,17 @@ export default function VenturesView() {
           color: #0A0A0A;
           font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
           min-height: 100vh;
-          padding-bottom: clamp(100px, 12vw, 180px);
+          padding-top: clamp(100px, 8vw, 120px);
+          padding-bottom: clamp(140px, 14vw, 220px);
           -webkit-font-smoothing: antialiased;
         }
 
-        /* Container with generous ~5cm airy margins */
+        /* Container matching Feed and Portfolio 1400px with exact padding */
         .corp-container {
           width: 100%;
-          max-width: 1360px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 0 clamp(24px, 5vw, 80px);
+          padding: 0 clamp(24px, 4.5vw, 64px);
           box-sizing: border-box;
         }
 
@@ -124,7 +125,11 @@ export default function VenturesView() {
 
         /* Section Spacing & Headers */
         .corp-section {
-          padding-top: clamp(90px, 12vh, 160px);
+          padding-top: clamp(130px, 16vh, 220px);
+        }
+
+        .corp-section#overview {
+          padding-top: clamp(48px, 6vw, 88px);
         }
 
         .corp-eyebrow {
@@ -136,7 +141,7 @@ export default function VenturesView() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          margin-bottom: clamp(18px, 2.5vh, 28px);
+          margin-bottom: clamp(24px, 3vh, 36px);
         }
 
         .corp-dots-wrap {
@@ -155,6 +160,7 @@ export default function VenturesView() {
           flex-shrink: 0;
         }
 
+        /* Hero Headline matching exact PSL / Feed / Portfolio style */
         .corp-display-h1 {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(38px, 5.6vw, 76px);
@@ -164,18 +170,18 @@ export default function VenturesView() {
           color: #252423;
           margin: 0 0 clamp(48px, 5.5vw, 76px) 0;
           width: 100%;
-          max-width: 100%;
+          max-width: 960px;
           text-align: left;
           word-break: keep-all;
         }
 
         .corp-display-h2 {
-          font-size: clamp(34px, 4.6vw, 68px);
+          font-size: clamp(34px, 4.4vw, 66px);
           font-weight: 700;
-          line-height: 1.08;
+          line-height: 1.1;
           letter-spacing: -0.035em;
           color: #0A0A0A;
-          margin: 0 0 clamp(44px, 5.5vh, 72px) 0;
+          margin: 0 0 clamp(52px, 6.5vh, 88px) 0;
           max-width: 980px;
         }
 
@@ -183,7 +189,7 @@ export default function VenturesView() {
           display: grid;
           grid-template-columns: 1.1fr 1fr;
           gap: clamp(40px, 6vw, 100px);
-          margin-bottom: clamp(48px, 6vh, 80px);
+          margin-bottom: clamp(64px, 8vh, 108px);
         }
 
         @media (max-width: 860px) {
@@ -207,7 +213,7 @@ export default function VenturesView() {
           font-weight: 400;
           line-height: 1.65;
           color: rgba(10, 10, 10, 0.65);
-          margin: 0 0 18px 0;
+          margin: 0 0 20px 0;
         }
 
         /* Large Hero Photography */
@@ -215,7 +221,7 @@ export default function VenturesView() {
           width: 100%;
           overflow: hidden;
           background: #F4F4F4;
-          margin: clamp(40px, 5vh, 72px) 0 0 0;
+          margin: clamp(48px, 6vh, 80px) 0 0 0;
         }
 
         .corp-photo-frame img {
@@ -238,7 +244,7 @@ export default function VenturesView() {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: clamp(20px, 2.5vw, 32px);
-          margin-top: clamp(60px, 8vh, 100px);
+          margin-top: clamp(80px, 10vh, 130px);
         }
 
         @media (max-width: 900px) {
@@ -252,7 +258,7 @@ export default function VenturesView() {
           display: flex;
           flex-direction: column;
           cursor: pointer;
-          padding: clamp(24px, 2.8vw, 36px);
+          padding: clamp(28px, 3vw, 40px);
           border-radius: 12px;
           border: 1.5px solid transparent;
           background: transparent;
@@ -289,15 +295,15 @@ export default function VenturesView() {
           width: 100%;
           height: 1px;
           background: rgba(0, 0, 0, 0.08);
-          margin-top: clamp(90px, 12vh, 160px);
+          margin-top: clamp(130px, 16vh, 220px);
         }
 
         .corp-feature-split {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: clamp(40px, 6vw, 100px);
+          gap: clamp(48px, 6vw, 104px);
           align-items: center;
-          margin: clamp(50px, 7vh, 90px) 0;
+          margin: clamp(64px, 8vh, 108px) 0;
         }
 
         .corp-feature-split.has-feature-list {
@@ -356,7 +362,7 @@ export default function VenturesView() {
 
         .corp-feature-item {
           border-left: 2px solid #0A0A0A;
-          padding-left: 20px;
+          padding-left: 22px;
         }
 
         .corp-feature-item-title {
@@ -364,7 +370,7 @@ export default function VenturesView() {
           font-weight: 700;
           letter-spacing: -0.02em;
           color: #0A0A0A;
-          margin: 0 0 6px 0;
+          margin: 0 0 8px 0;
         }
 
         .corp-feature-item-desc {
@@ -378,15 +384,15 @@ export default function VenturesView() {
         .corp-deliverables-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: clamp(24px, 3.5vw, 48px);
-          margin-top: clamp(76px, 10vh, 136px);
+          gap: clamp(28px, 3.5vw, 48px);
+          margin-top: clamp(88px, 11vh, 148px);
         }
 
         @media (max-width: 900px) {
           .corp-deliverables-grid {
             grid-template-columns: 1fr;
             gap: 40px;
-            margin-top: 56px;
+            margin-top: 60px;
           }
         }
 
@@ -422,8 +428,8 @@ export default function VenturesView() {
         .corp-invest-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: clamp(32px, 4vw, 64px);
-          margin-top: clamp(48px, 6vh, 80px);
+          gap: clamp(36px, 4.5vw, 72px);
+          margin-top: clamp(64px, 8vh, 100px);
         }
 
         @media (max-width: 768px) {
@@ -464,9 +470,9 @@ export default function VenturesView() {
 
         /* Minimal Closing CTA */
         .corp-cta-wrap {
-          margin-top: clamp(100px, 14vh, 180px);
+          margin-top: clamp(140px, 18vh, 240px);
           border-top: 1px solid #0A0A0A;
-          padding-top: clamp(60px, 8vh, 100px);
+          padding-top: clamp(80px, 10vh, 120px);
         }
 
         .corp-cta-grid {
