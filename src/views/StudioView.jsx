@@ -790,12 +790,20 @@ export default function StudioView() {
         }
 
         .startups-cta-title {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(36px, 5vw, 76px);
           font-weight: 700;
           line-height: 1.05;
           letter-spacing: -0.04em;
           color: #0A0A0A;
           margin: 0;
+          word-break: keep-all;
+        }
+
+        @media (max-width: 768px) {
+          .cta-line-break {
+            display: none;
+          }
         }
 
         .startups-cta-actions {
@@ -1496,9 +1504,8 @@ export default function StudioView() {
         <div className="startups-cta-wrap">
           <div className="startups-cta-grid">
             <div>
-              <span className="startups-eyebrow">Get Started // Global Scale</span>
               <h2 className="startups-cta-title">
-                Ready to scale across borders?
+                Ready to scale<br className="cta-line-break" />across borders?
               </h2>
             </div>
             <div className="startups-cta-actions">

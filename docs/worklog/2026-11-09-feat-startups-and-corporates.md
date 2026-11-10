@@ -25,6 +25,14 @@ Combine the refined Startups and Corporate Venturing page updates into a unified
 3. **Cross-Page Design Alignment**:
    - Synchronized page top starting position, container width (`1400px`), padding (`0 clamp(24px, 4.5vw, 64px)`), and hero title styling with Feed (`FeedView.jsx`) and Portfolio (`CompaniesView.jsx`).
    - Expanded vertical spacing and completely standardized spacing tokens (section padding, lede margins, cards grids, dividers, feature splits, and closing CTAs) identically across both Startups and Corporates.
+4. **Bottom Closing CTA Harmonization (About Us, Startups, Corporates)**:
+   - Removed category eyebrows (`Get Started // Global Scale`, `Get Started // Corporate Innovation`).
+   - Unified headline typography across all three pages: `clamp(36px, 5vw, 76px)`, line-height 1.05, letter-spacing -0.04em, weight 700, and `word-break: keep-all;`.
+   - Balanced each headline into a clean 2-line layout on desktop/tablet with responsive `.cta-line-break` (`display: none` under 768px):
+     - Startups: `Ready to scale<br />across borders?`
+     - Corporates: `Let’s build your<br />venture capability.`
+     - About Us: shortened from 3 lines / orphan word down to `Let’s turn your vision<br />into real momentum.`, matching the 2-line rhythm while keeping distinct messaging.
+   - Aligned About Us closing CTA container margins (`clamp(140px, 18vh, 240px)`) and top border separator with Startups and Corporates.
 
 ## Changes
 
@@ -34,11 +42,16 @@ Combine the refined Startups and Corporate Venturing page updates into a unified
   - Set container max-width to `1400px` and padding to `0 clamp(24px, 4.5vw, 64px)`.
   - Harmonized hero titles (`.startups-display-h1`, `.corp-display-h1`) with `max-width: 960px` and identical typography.
   - Expanded and unified section gaps to `clamp(130px, 16vh, 220px)`, lede grid margins to `clamp(64px, 8vh, 108px)`, feature split spacing to `clamp(64px, 8vh, 108px)`, deliverables grid margins to `clamp(88px, 11vh, 148px)`, and closing CTA margins to `clamp(140px, 18vh, 240px)`.
+  - Removed small eyebrow tags from closing CTA sections.
+  - Standardized `.startups-cta-title` and `.corp-cta-title` font, line breaks, and responsive handling.
+- `src/views/TeamView.jsx`:
+  - Aligned `.about-cta-wrap` margins and border to match Startups and Corporates.
+  - Standardized `.about-cta-title` typography and adjusted headline text to 2 lines (`Let’s turn your vision<br className="cta-line-break" />into real momentum.`).
 - `public/startups/startups-mobani.jpg`: added cropped event photo.
 
 ## Verification
 
 - Tested merge cleanly with zero conflicts.
 - Ran `npm run build` locally with Vite 5.4.21; build succeeded with exit code 0.
-- Verified both `/startups` and `/corporates` return HTTP 200 on local dev server (port 5175).
+- Verified `/startups`, `/corporates`, and `/about` in dev server (port 5175).
 - Scanned with gitleaks rules to ensure no secrets or personal data were introduced.

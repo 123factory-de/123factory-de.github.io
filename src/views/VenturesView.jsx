@@ -490,12 +490,20 @@ export default function VenturesView() {
         }
 
         .corp-cta-title {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(36px, 5vw, 76px);
           font-weight: 700;
           line-height: 1.05;
           letter-spacing: -0.04em;
           color: #0A0A0A;
           margin: 0;
+          word-break: keep-all;
+        }
+
+        @media (max-width: 768px) {
+          .cta-line-break {
+            display: none;
+          }
         }
 
         .corp-cta-actions {
@@ -906,9 +914,8 @@ export default function VenturesView() {
         <div className="corp-cta-wrap">
           <div className="corp-cta-grid">
             <div>
-              <span className="corp-eyebrow">Get Started // Corporate Innovation</span>
               <h2 className="corp-cta-title">
-                Let’s build your venture capability.
+                Let’s build your<br className="cta-line-break" />venture capability.
               </h2>
             </div>
             <div className="corp-cta-actions">

@@ -1910,9 +1910,9 @@ export default function TeamView() {
            MINIMALIST CLOSING CTA (DARK THEME)
            ========================================================================= */
         .about-cta-wrap {
-          margin-top: clamp(120px, 15vh, 200px);
-          border-top: none;
-          padding-top: clamp(40px, 6vh, 80px);
+          margin-top: clamp(140px, 18vh, 240px);
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+          padding-top: clamp(80px, 10vh, 120px);
           padding-bottom: clamp(70px, 9vh, 130px);
         }
 
@@ -1931,12 +1931,20 @@ export default function TeamView() {
         }
 
         .about-cta-title {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(36px, 5vw, 76px);
           font-weight: 700;
           line-height: 1.05;
           letter-spacing: -0.04em;
           color: #FFFFFF;
           margin: 0;
+          word-break: keep-all;
+        }
+
+        @media (max-width: 768px) {
+          .cta-line-break {
+            display: none;
+          }
         }
 
         .about-cta-actions {
@@ -2579,7 +2587,7 @@ export default function TeamView() {
           <div className="about-cta-grid">
             <div>
               <h2 className="about-cta-title">
-                Let’s turn your vision into real momentum, together.
+                Let’s turn your vision<br className="cta-line-break" />into real momentum.
               </h2>
             </div>
             <div className="about-cta-actions">
