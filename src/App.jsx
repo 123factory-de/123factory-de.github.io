@@ -15,6 +15,7 @@ import ArticleDetailView from './views/ArticleDetailView';
 import AgbView from './views/AgbView';
 import ImpressumView from './views/ImpressumView';
 import DatenschutzView from './views/DatenschutzView';
+import AudiShowcaseView from './views/AudiShowcaseView';
 
 // Helper component to scroll to top on route change
 function ScrollToTop() {
@@ -39,6 +40,9 @@ export default function App() {
         <Route path="/corporates" element={<VenturesView />} />
         <Route path="/portfolio" element={<CompaniesView />} />
         <Route path="/contact" element={<FeedView />} />
+        <Route path="/audi" element={<AudiShowcaseView />} />
+        <Route path="/showcase" element={<AudiShowcaseView />} />
+        <Route path="/audi-showcase" element={<AudiShowcaseView />} />
         {/* Legacy aliases */}
         <Route path="/studio" element={<StudioView />} />
         <Route path="/ventures" element={<VenturesView />} />
