@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const KINETIC = [
   [['Bridging', 'CROSS-BORDER'], ['Korea', 'SEOUL'], ['and', null], ['Europe.', 'BERLIN']],
   [['Igniting', 'MOMENTUM'], ['global', 'NETWORK'], ['connection.', 'MARKET ACCESS']],
-  [['Empowering', 'HANDS-ON'], ['bold', 'FOUNDER-FIRST'], ['startups.', '0 TO 1']],
+  [['Empowering', 'HANDS-ON'], ['bold', 'FOUNDER-FIRST'], ['startups.', 'SHOWCASE ↗']],
 ];
 
 export function KineticOption({ as: Tag = 'h2' }) {
   const [activeId, setActiveId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
@@ -28,12 +30,21 @@ export function KineticOption({ as: Tag = 'h2' }) {
             const on = activeId === id;
             const dim = activeId && !on;
             const isClickable = Boolean(badge);
+            const isStartupWord = w.toLowerCase().includes('startup');
+            const WordTag = isStartupWord ? Link : 'span';
+            const wordProps = isStartupWord
+              ? { to: '/audi', title: 'Explore Curated Innovation Showcase' }
+              : {};
 
             return (
-              <span
+              <WordTag
                 key={id}
-                className={isClickable ? 'kinetic-word-clickable' : ''}
+                {...wordProps}
+                className={`${isClickable ? 'kinetic-word-clickable' : ''} ${isStartupWord ? 'kinetic-word-startups' : ''}`}
                 onClick={(e) => {
+                  if (isStartupWord) {
+                    return; // React Router Link handles navigation
+                  }
                   if (isClickable) {
                     e.stopPropagation();
                     setActiveId(prev => (prev === id ? null : id));
@@ -44,6 +55,7 @@ export function KineticOption({ as: Tag = 'h2' }) {
                   display: 'inline-block',
                   cursor: isClickable ? 'pointer' : 'default',
                   userSelect: 'none',
+                  textDecoration: 'none',
                   color: on ? '#FFAB00' : dim ? 'rgba(255,255,255,0.28)' : '#fff',
                   transform: on ? 'translateY(-8px)' : 'none',
                   transition: 'all .35s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -75,7 +87,7 @@ export function KineticOption({ as: Tag = 'h2' }) {
                   </span>
                 )}
                 {w}
-              </span>
+              </WordTag>
             );
           })}
         </div>
@@ -84,6 +96,10 @@ export function KineticOption({ as: Tag = 'h2' }) {
         @keyframes kineticBadgePop {
           0% { opacity: 0; transform: translate(-50%, 6px) scale(0.9); }
           100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        }
+        .kinetic-word-startups:hover {
+          color: #FFAB00 !important;
+          transform: translateY(-6px) !important;
         }
       `}</style>
     </Tag>

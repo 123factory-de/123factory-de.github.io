@@ -7,8 +7,6 @@ const OFFICE_DATA = {
     name: 'Berlin (HQ)',
     city: 'Berlin, Germany',
     address: 'Bismarckstraße 10-12, 10625 Berlin, Germany',
-    photo: '/offices/berlin.jpg',
-    caption: '123 Factory Berlin HQ — Bismarckstraße 10-12, Charlottenburg',
     embedUrl: 'https://maps.google.com/maps?q=Bismarckstra%C3%9Fe%2010-12,%2010625%20Berlin,%20Germany&t=&z=16&ie=UTF8&iwloc=&output=embed',
     externalMapUrl: 'https://www.google.com/maps/search/?api=1&query=Bismarckstra%C3%9Fe+10-12,+10625+Berlin,+Germany',
   },
@@ -17,8 +15,6 @@ const OFFICE_DATA = {
     name: 'Seoul Office',
     city: 'Seoul, Korea',
     address: 'Saimdang-ro 8-gil 13, Seocho-gu, Seoul, Korea',
-    photo: '/offices/seoul.jpg',
-    caption: '123 Factory Seoul Office — Saimdang-ro 8-gil 13, Seocho-gu',
     embedUrl: 'https://maps.google.com/maps?q=Saimdang-ro%208-gil%2013,%20Seocho-gu,%20Seoul,%20Korea&t=&z=16&ie=UTF8&iwloc=&output=embed',
     externalMapUrl: 'https://www.google.com/maps/search/?api=1&query=Saimdang-ro+8-gil+13,+Seocho-gu,+Seoul,+Korea',
   },
@@ -28,7 +24,6 @@ export default function Footer() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [activeOffice, setActiveOffice] = useState(null); // 'berlin' | 'seoul' | null
-  const [modalTab, setModalTab] = useState('photo'); // 'photo' | 'map'
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -155,14 +150,10 @@ export default function Footer() {
                 role="button"
                 tabIndex={0}
                 className="footer-office-item"
-                onClick={() => {
-                  setActiveOffice('berlin');
-                  setModalTab('photo');
-                }}
+                onClick={() => setActiveOffice('berlin')}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     setActiveOffice('berlin');
-                    setModalTab('photo');
                   }
                 }}
               >
@@ -179,14 +170,10 @@ export default function Footer() {
                 role="button"
                 tabIndex={0}
                 className="footer-office-item"
-                onClick={() => {
-                  setActiveOffice('seoul');
-                  setModalTab('photo');
-                }}
+                onClick={() => setActiveOffice('seoul')}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     setActiveOffice('seoul');
-                    setModalTab('photo');
                   }
                 }}
               >
@@ -227,14 +214,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Office Lightbox Pop-up Modal */}
+      {/* Office Map Lightbox Pop-up Modal */}
       {activeOffice && OFFICE_DATA[activeOffice] && (
         <div
           className="office-modal-overlay"
           onClick={() => setActiveOffice(null)}
           role="dialog"
           aria-modal="true"
-          aria-label={`${OFFICE_DATA[activeOffice].name} Details`}
+          aria-label={`${OFFICE_DATA[activeOffice].name} Map`}
         >
           <div
             className={`office-modal-content is-${activeOffice}`}
@@ -251,23 +238,15 @@ export default function Footer() {
               ✕
             </button>
 
-            {/* Media Area (Photo or Map) */}
+            {/* Direct Map Area */}
             <div className="office-modal-media-area">
-              {modalTab === 'photo' ? (
-                <img
-                  src={OFFICE_DATA[activeOffice].photo}
-                  alt={OFFICE_DATA[activeOffice].name}
-                  className="office-minimal-img"
-                />
-              ) : (
-                <iframe
-                  title={`${OFFICE_DATA[activeOffice].name} Map`}
-                  src={OFFICE_DATA[activeOffice].embedUrl}
-                  className="office-map-frame"
-                  loading="lazy"
-                  allowFullScreen
-                />
-              )}
+              <iframe
+                title={`${OFFICE_DATA[activeOffice].name} Map`}
+                src={OFFICE_DATA[activeOffice].embedUrl}
+                className="office-map-frame"
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
 
             {/* Minimal Bottom Info Bar */}
@@ -281,23 +260,8 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Discreet Photo / Map Toggle & External Link */}
+              {/* Direct External Map Link */}
               <div className="office-minimal-actions">
-                <button
-                  type="button"
-                  className={`office-minimal-toggle ${modalTab === 'photo' ? 'active' : ''}`}
-                  onClick={() => setModalTab('photo')}
-                >
-                  Photo
-                </button>
-                <span style={{ color: 'rgba(255, 255, 255, 0.2)', fontSize: '12px' }}>/</span>
-                <button
-                  type="button"
-                  className={`office-minimal-toggle ${modalTab === 'map' ? 'active' : ''}`}
-                  onClick={() => setModalTab('map')}
-                >
-                  Map
-                </button>
                 <a
                   href={OFFICE_DATA[activeOffice].externalMapUrl}
                   target="_blank"
@@ -306,7 +270,7 @@ export default function Footer() {
                   title="Open in Google Maps"
                   aria-label="Open in Google Maps"
                 >
-                  ↗
+                  <span style={{ marginRight: '4px', fontSize: '12.5px' }}>Open Maps</span>↗
                 </a>
               </div>
             </div>

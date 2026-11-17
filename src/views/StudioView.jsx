@@ -61,16 +61,17 @@ export default function StudioView() {
           color: #0A0A0A;
           font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
           min-height: 100vh;
-          padding-bottom: clamp(100px, 12vw, 180px);
+          padding-top: clamp(100px, 8vw, 120px);
+          padding-bottom: clamp(140px, 14vw, 220px);
           -webkit-font-smoothing: antialiased;
         }
 
-        /* Container with generous airy margins */
+        /* Container matching Feed and Portfolio 1400px with exact padding */
         .startups-container {
           width: 100%;
-          max-width: 1360px;
+          max-width: 1400px;
           margin: 0 auto;
-          padding: 0 clamp(24px, 5vw, 80px);
+          padding: 0 clamp(24px, 4.5vw, 64px);
           box-sizing: border-box;
         }
 
@@ -135,7 +136,11 @@ export default function StudioView() {
 
         /* Section Spacing & Headers */
         .startups-section {
-          padding-top: clamp(90px, 12vh, 160px);
+          padding-top: clamp(130px, 16vh, 220px);
+        }
+
+        .startups-section#overview {
+          padding-top: clamp(48px, 6vw, 88px);
         }
 
         .startups-eyebrow {
@@ -144,11 +149,29 @@ export default function StudioView() {
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: rgba(10, 10, 10, 0.45);
-          display: block;
-          margin-bottom: clamp(18px, 2.5vh, 28px);
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: clamp(24px, 3vh, 36px);
         }
 
-        /* Hero Headline matching exact Cross-Border Expansion Made Simple style */
+        .startups-dots-wrap {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+        }
+
+        .startups-dot {
+          display: inline-block;
+          width: 6.5px;
+          height: 6.5px;
+          border-radius: 50%;
+          background: #FFAB00;
+          box-shadow: 0 0 8px rgba(255, 171, 0, 0.55);
+          flex-shrink: 0;
+        }
+
+        /* Hero Headline matching exact PSL / Feed / Portfolio style */
         .startups-display-h1 {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(38px, 5.6vw, 76px);
@@ -158,18 +181,18 @@ export default function StudioView() {
           color: #252423;
           margin: 0 0 clamp(48px, 5.5vw, 76px) 0;
           width: 100%;
-          max-width: 100%;
+          max-width: 960px;
           text-align: left;
           word-break: keep-all;
         }
 
         .startups-display-h2 {
-          font-size: clamp(32px, 4.2vw, 64px);
+          font-size: clamp(34px, 4.4vw, 66px);
           font-weight: 700;
-          line-height: 1.08;
+          line-height: 1.1;
           letter-spacing: -0.035em;
           color: #0A0A0A;
-          margin: 0 0 clamp(24px, 3vh, 36px) 0;
+          margin: 0 0 clamp(52px, 6.5vh, 88px) 0;
           max-width: 980px;
         }
 
@@ -177,7 +200,7 @@ export default function StudioView() {
           display: grid;
           grid-template-columns: 1.1fr 1fr;
           gap: clamp(40px, 6vw, 100px);
-          margin-bottom: clamp(48px, 6vh, 80px);
+          margin-bottom: clamp(64px, 8vh, 108px);
         }
 
         @media (max-width: 860px) {
@@ -201,7 +224,7 @@ export default function StudioView() {
           font-weight: 400;
           line-height: 1.65;
           color: rgba(10, 10, 10, 0.65);
-          margin: 0 0 18px 0;
+          margin: 0 0 20px 0;
         }
 
         /* Large Hero Photography */
@@ -209,7 +232,7 @@ export default function StudioView() {
           width: 100%;
           overflow: hidden;
           background: #F4F4F4;
-          margin: clamp(40px, 5vh, 72px) 0;
+          margin: clamp(48px, 6vh, 80px) 0 0 0;
         }
 
         .startups-photo-frame img {
@@ -217,35 +240,20 @@ export default function StudioView() {
           height: auto;
           display: block;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .startups-photo-frame:hover img {
-          transform: scale(1.015);
-        }
-
-        .startups-photo-caption {
-          font-size: 12px;
-          letter-spacing: 0.02em;
-          color: rgba(10, 10, 10, 0.45);
-          margin-top: 12px;
-          display: block;
         }
 
         /* 6-Item Overview Grid */
         .startups-programs-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: clamp(24px, 3.5vw, 56px);
-          border-top: 1px solid rgba(0, 0, 0, 0.08);
-          padding-top: clamp(40px, 5vh, 64px);
-          margin-top: clamp(40px, 5vh, 64px);
+          gap: clamp(20px, 2.5vw, 32px);
+          margin-top: clamp(80px, 10vh, 130px);
         }
 
         @media (max-width: 900px) {
           .startups-programs-grid {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 20px;
           }
         }
 
@@ -253,47 +261,36 @@ export default function StudioView() {
           display: flex;
           flex-direction: column;
           cursor: pointer;
+          padding: clamp(28px, 3vw, 40px);
+          border-radius: 12px;
+          border: 1.5px solid transparent;
+          background: transparent;
+          box-sizing: border-box;
+          transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
         }
 
-        .startups-program-num {
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          color: rgba(10, 10, 10, 0.4);
-          margin-bottom: 12px;
+        .startups-program-card:hover {
+          border-color: #FFAB00;
+          background-color: rgba(255, 171, 0, 0.03);
+          box-shadow: 0 10px 30px rgba(255, 171, 0, 0.08);
+          transform: translateY(-3px);
         }
 
         .startups-program-title {
-          font-size: clamp(20px, 1.8vw, 26px);
+          font-size: clamp(20px, 1.8vw, 25px);
           font-weight: 700;
           letter-spacing: -0.03em;
           color: #0A0A0A;
-          margin: 0 0 12px 0;
-          line-height: 1.2;
+          margin: 0 0 14px 0;
+          line-height: 1.25;
         }
 
         .startups-program-desc {
           font-size: 14.5px;
           line-height: 1.6;
-          color: rgba(10, 10, 10, 0.62);
-          margin: 0 0 18px 0;
+          color: rgba(10, 10, 10, 0.65);
+          margin: 0;
           flex: 1 1 auto;
-        }
-
-        .startups-program-link {
-          font-size: 12.5px;
-          font-weight: 600;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          color: #0A0A0A;
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          transition: gap 0.2s ease;
-        }
-
-        .startups-program-card:hover .startups-program-link {
-          gap: 10px;
         }
 
         /* Divider Line */
@@ -301,22 +298,62 @@ export default function StudioView() {
           width: 100%;
           height: 1px;
           background: rgba(0, 0, 0, 0.08);
-          margin-top: clamp(90px, 12vh, 160px);
+          margin-top: clamp(130px, 16vh, 220px);
         }
 
         /* Split Feature Layout */
         .startups-feature-split {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: clamp(40px, 6vw, 100px);
+          gap: clamp(48px, 6vw, 104px);
           align-items: center;
-          margin: clamp(50px, 7vh, 90px) 0;
+          margin: clamp(64px, 8vh, 108px) 0;
+        }
+
+        .startups-feature-split.has-feature-list {
+          align-items: stretch;
+        }
+
+        .startups-feature-split.has-feature-list .startups-photo-frame {
+          height: 100%;
+          display: flex;
+        }
+
+        .startups-feature-split.has-feature-list .startups-photo-frame img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          aspect-ratio: 3 / 2;
+        }
+
+        .startups-feature-list-wrap {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-between;
+        }
+
+        /* Clean Feature List */
+        .startups-feature-list {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
         }
 
         @media (max-width: 860px) {
           .startups-feature-split {
             grid-template-columns: 1fr;
             gap: 32px;
+          }
+          .startups-feature-split.has-feature-list {
+            align-items: flex-start;
+          }
+          .startups-feature-list-wrap,
+          .startups-feature-list {
+            height: auto;
+            justify-content: flex-start;
+            gap: 28px;
           }
         }
 
@@ -327,16 +364,9 @@ export default function StudioView() {
           direction: ltr;
         }
 
-        /* Clean Feature List */
-        .startups-feature-list {
-          display: flex;
-          flex-direction: column;
-          gap: 28px;
-        }
-
         .startups-feature-item {
           border-left: 2px solid #0A0A0A;
-          padding-left: 20px;
+          padding-left: 22px;
         }
 
         .startups-feature-item-title {
@@ -344,7 +374,7 @@ export default function StudioView() {
           font-weight: 700;
           letter-spacing: -0.02em;
           color: #0A0A0A;
-          margin: 0 0 6px 0;
+          margin: 0 0 8px 0;
         }
 
         .startups-feature-item-desc {
@@ -358,14 +388,15 @@ export default function StudioView() {
         .startups-deliverables-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: clamp(24px, 3.5vw, 48px);
-          margin-top: clamp(48px, 6vh, 80px);
+          gap: clamp(28px, 3.5vw, 48px);
+          margin-top: clamp(88px, 11vh, 148px);
         }
 
         @media (max-width: 900px) {
           .startups-deliverables-grid {
             grid-template-columns: 1fr;
             gap: 40px;
+            margin-top: 60px;
           }
         }
 
@@ -405,7 +436,7 @@ export default function StudioView() {
           border-top: 1px solid rgba(0, 0, 0, 0.12);
           border-bottom: 1px solid rgba(0, 0, 0, 0.12);
           padding: clamp(28px, 3.5vw, 44px) 0;
-          margin: clamp(40px, 5vh, 64px) 0;
+          margin: clamp(52px, 6.5vh, 88px) 0;
         }
 
         @media (max-width: 680px) {
@@ -538,44 +569,210 @@ export default function StudioView() {
           text-decoration: underline;
         }
 
-        /* Mobani Sales Platform Section (06) */
-        .mobani-highlight-card {
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          padding: clamp(32px, 5vw, 64px);
-          background: #FAFAFA;
-          margin: clamp(40px, 5vh, 64px) 0;
-        }
-
-        .mobani-photo-slot {
-          width: 100%;
-          min-height: 380px;
-          background: #EFEFEF;
-          border: 1px dashed rgba(0, 0, 0, 0.2);
+        /* Funding DB Mini Preview Box */
+        .fundingdb-mini-box {
+          background: #0E0F14;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 16px;
+          padding: clamp(18px, 2.2vw, 26px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 40px 24px;
+          color: #FFFFFF;
+          width: 100%;
           box-sizing: border-box;
-          margin: 24px 0;
-          position: relative;
-          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
-        .mobani-photo-slot img {
-          width: 100%;
-          height: auto;
-          max-height: 520px;
-          object-fit: cover;
-          display: block;
+        .fundingdb-mini-box:hover {
+          transform: translateY(-3px);
+          border-color: rgba(96, 165, 250, 0.4);
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 30px rgba(96, 165, 250, 0.15);
         }
+
+        .fundingdb-mini-box .radar-box-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 12px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          margin-bottom: 12px;
+        }
+
+        .fundingdb-mini-box .radar-header-left {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .fundingdb-mini-box .radar-window-dots {
+          display: flex;
+          gap: 6px;
+        }
+
+        .fundingdb-mini-box .r-w-dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          opacity: 0.75;
+        }
+        .fundingdb-mini-box .r-red { background: #FF5F56; }
+        .fundingdb-mini-box .r-yellow { background: #FFBD2E; }
+        .fundingdb-mini-box .r-green { background: #27C93F; }
+
+        .fundingdb-mini-box .radar-header-title-wrap {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .fundingdb-mini-box .radar-box-title {
+          margin: 0;
+          font-family: var(--font-sans);
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+        }
+
+        .fundingdb-mini-box .radar-box-badge {
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          color: #60A5FA;
+          background: rgba(96, 165, 250, 0.1);
+          border: 1px solid rgba(96, 165, 250, 0.25);
+          padding: 2px 7px;
+          border-radius: 999px;
+          letter-spacing: 0.04em;
+        }
+
+        .fundingdb-mini-box .radar-live-indicator {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .fundingdb-mini-box .radar-pulse-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #60A5FA;
+          box-shadow: 0 0 8px #60A5FA;
+          animation: radarPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes radarPulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.35; transform: scale(0.8); }
+        }
+
+        .fundingdb-mini-box .radar-box-meta {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.5);
+          margin-bottom: 12px;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+
+        .fundingdb-mini-box .radar-box-count {
+          font-family: monospace;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 11.5px;
+        }
+
+        .fundingdb-mini-box .radar-cards-list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .fundingdb-mini-box .radar-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: rgba(255, 255, 255, 0.035);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 10px;
+          padding: 11px 14px;
+          text-decoration: none;
+          color: inherit;
+          transition: all 0.2s ease;
+        }
+
+        .fundingdb-mini-box .radar-card:hover {
+          background: rgba(255, 255, 255, 0.07);
+          border-color: rgba(96, 165, 250, 0.4);
+          transform: translateY(-1px);
+        }
+
+        .fundingdb-mini-box .radar-card-topline {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 4px;
+        }
+
+        .fundingdb-mini-box .radar-card-tag {
+          font-family: monospace;
+          font-size: 10px;
+          font-weight: 600;
+          padding: 2px 6px;
+          border-radius: 4px;
+          color: #60A5FA;
+          background: rgba(96, 165, 250, 0.12);
+        }
+
+        .fundingdb-mini-box .radar-card-dday {
+          font-family: monospace;
+          font-size: 10.5px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .fundingdb-mini-box .radar-card-name {
+          margin: 0 0 2px 0;
+          font-family: var(--font-sans);
+          font-size: 13.5px;
+          font-weight: 600;
+          line-height: 1.35;
+          color: #ffffff;
+        }
+
+        .fundingdb-mini-box .radar-card-sub {
+          margin: 0;
+          font-size: 11.5px;
+          line-height: 1.4;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .fundingdb-mini-box .radar-card-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 6px;
+          padding-top: 6px;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          font-size: 11px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobani Sales Platform Section (06) */
 
         /* Minimal Closing CTA */
         .startups-cta-wrap {
-          margin-top: clamp(100px, 14vh, 180px);
+          margin-top: clamp(140px, 18vh, 240px);
           border-top: 1px solid #0A0A0A;
-          padding-top: clamp(60px, 8vh, 100px);
+          padding-top: clamp(80px, 10vh, 120px);
         }
 
         .startups-cta-grid {
@@ -593,12 +790,20 @@ export default function StudioView() {
         }
 
         .startups-cta-title {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-size: clamp(36px, 5vw, 76px);
           font-weight: 700;
           line-height: 1.05;
           letter-spacing: -0.04em;
           color: #0A0A0A;
           margin: 0;
+          word-break: keep-all;
+        }
+
+        @media (max-width: 768px) {
+          .cta-line-break {
+            display: none;
+          }
         }
 
         .startups-cta-actions {
@@ -649,23 +854,7 @@ export default function StudioView() {
         }
       `}</style>
 
-      {/* Sticky Minimal Navigation */}
-      <nav className="startups-subnav-sticky" aria-label="Startups Subnavigation">
-        <div className="startups-container">
-          <div className="startups-subnav-inner">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`startups-subnav-btn ${activeTab === item.id ? 'is-active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+
 
       {/* =========================================================================
           SECTION 0: OVERVIEW & PHILOSOPHY
@@ -701,77 +890,65 @@ export default function StudioView() {
               loading="eager"
             />
           </div>
-          <span className="startups-photo-caption">
-            123 Factory Berlin & Seoul · Bridging innovative Asian & European ventures with global markets.
-          </span>
 
           {/* 6 Programs Quick Jump Grid */}
           <div className="startups-programs-grid">
             <div className="startups-program-card" onClick={() => scrollToSection('early-stage')}>
-              <span className="startups-program-num">01 // TRACK</span>
               <h2 className="startups-program-title">Early-Stage Support</h2>
               <p className="startups-program-desc">
                 Product-market fit validation, German ICP definition, and soft-landing pad in Berlin.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('scaleups')}>
-              <span className="startups-program-num">02 // TRACK</span>
               <h2 className="startups-program-title">Accelerators & Scale-ups</h2>
               <p className="startups-program-desc">
                 Technical validation, CE/GDPR compliance readiness, and commercial revenue acceleration.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('funding')}>
-              <span className="startups-program-num">03 // TRACK</span>
               <h2 className="startups-program-title">Funding & Investment</h2>
               <p className="startups-program-desc">
                 Precision fundraising strategy, investor matchmaking roadshows, and deal structuring.
               </p>
-              <span className="startups-program-link">Explore Program ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('funding-db')}>
-              <span className="startups-program-num">04 // PLATFORM</span>
               <h2 className="startups-program-title">Bilateral R&D (Funding DB)</h2>
               <p className="startups-program-desc">
                 Structured intelligence tracking European and bilateral R&D grants for tech ventures.
               </p>
-              <span className="startups-program-link">Explore Platform ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('open-innovation')}>
-              <span className="startups-program-num">05 // PLATFORM</span>
               <h2 className="startups-program-title">Corporate Ventures & Pilots</h2>
               <p className="startups-program-desc">
                 Open Innovation Hub aggregating commercial challenges from European corporations.
               </p>
-              <span className="startups-program-link">Explore Hub ↓</span>
             </div>
 
             <div className="startups-program-card" onClick={() => scrollToSection('mobani')}>
-              <span className="startups-program-num">06 // PLATFORM</span>
               <h2 className="startups-program-title">Sales Platform (Mobani)</h2>
               <p className="startups-program-desc">
                 Commercial market entry platform expanding Korean Fashion, B2C & B2B brands into Germany and France.
               </p>
-              <span className="startups-program-link">Explore Mobani ↓</span>
             </div>
           </div>
         </div>
       </section>
-
-      <div className="startups-container"><div className="startups-divider-line" /></div>
 
       {/* =========================================================================
           SECTION 1: EARLY-STAGE SUPPORT
          ========================================================================= */}
       <section id="early-stage" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">01 // Startup Programs · Early-Stage Support</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+            </span>
+            Early-Stage Support
+          </span>
           <h2 className="startups-display-h2">
             We back early-stage founders with the tools, guidance, and network to find traction and grow with clarity.
           </h2>
@@ -785,7 +962,7 @@ export default function StudioView() {
             </p>
           </div>
 
-          <div className="startups-feature-split">
+          <div className="startups-feature-split has-feature-list">
             <div className="startups-photo-frame" style={{ margin: 0 }}>
               <img
                 src="/startups/startups-early-stage.jpg"
@@ -794,7 +971,7 @@ export default function StudioView() {
               />
             </div>
 
-            <div>
+            <div className="startups-feature-list-wrap">
               <div className="startups-feature-list">
                 <div className="startups-feature-item">
                   <h3 className="startups-feature-item-title">Structured Early-Stage Playbook</h3>
@@ -829,7 +1006,13 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="scaleups" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">02 // Startup Programs · Accelerators & Scale-ups</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+            </span>
+            Accelerators & Scale-ups
+          </span>
           <h2 className="startups-display-h2">
             Scale smart, grow globally: technical validation & commercial revenue acceleration.
           </h2>
@@ -843,7 +1026,7 @@ export default function StudioView() {
             </p>
           </div>
 
-          <div className="startups-feature-split is-reversed">
+          <div className="startups-feature-split is-reversed has-feature-list">
             <div className="startups-photo-frame" style={{ margin: 0 }}>
               <img
                 src="/startups/startups-scaleups.jpg"
@@ -852,7 +1035,7 @@ export default function StudioView() {
               />
             </div>
 
-            <div>
+            <div className="startups-feature-list-wrap">
               <div className="startups-feature-list">
                 <div className="startups-feature-item">
                   <h3 className="startups-feature-item-title">Validation & Localization</h3>
@@ -887,7 +1070,14 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="funding" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">03 // Startup Programs · Funding & Investment</span>
+          <span className="startups-eyebrow">
+            <span className="startups-dots-wrap">
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+              <span className="startups-dot" />
+            </span>
+            Funding & Investment
+          </span>
           <h2 className="startups-display-h2">
             Fueling ambition with the right capital: precision fundraising & syndication.
           </h2>
@@ -908,9 +1098,6 @@ export default function StudioView() {
               loading="lazy"
             />
           </div>
-          <span className="startups-photo-caption">
-            Investor syndication, roadshows, and capital allocation across European and Asian venture networks.
-          </span>
 
           <div className="startups-deliverables-grid">
             <div className="startups-deliverable-card">
@@ -944,7 +1131,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="funding-db" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">04 // Proprietary Platform · Bilateral R&D Intelligence</span>
+          <span className="startups-eyebrow">Bilateral R&amp;D Intelligence</span>
           <h2 className="startups-display-h2">
             Non-Dilutive R&D Capital Intelligence
           </h2>
@@ -975,13 +1162,78 @@ export default function StudioView() {
           </div>
 
           <div className="startups-feature-split">
-            <div className="startups-photo-frame" style={{ margin: 0 }}>
-              <img
-                src="/startups/startups-sprint.jpg"
-                alt="Funding DB Grant Intelligence"
-                loading="lazy"
-              />
+            <div className="fundingdb-mini-box">
+              <div className="radar-box-header">
+                <div className="radar-header-left">
+                  <div className="radar-window-dots">
+                    <span className="r-w-dot r-red" />
+                    <span className="r-w-dot r-yellow" />
+                    <span className="r-w-dot r-green" />
+                  </div>
+                  <div className="radar-header-title-wrap">
+                    <h4 className="radar-box-title">
+                      Funding<em style={{ fontStyle: 'normal', color: '#60A5FA' }}>DB</em>
+                    </h4>
+                    <span className="radar-box-badge">R&amp;D Capital</span>
+                  </div>
+                </div>
+
+                <div className="radar-header-right">
+                  <span className="radar-live-indicator">
+                    <span className="radar-pulse-dot" />
+                    LIVE
+                  </span>
+                </div>
+              </div>
+
+              <div className="radar-box-meta">
+                <span>European &amp; German bilateral grants</span>
+                <span className="radar-box-count">92+ Registered</span>
+              </div>
+
+              <div className="radar-cards-list">
+                <a
+                  href="https://fundingdb.123factory.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="radar-card radar-card-blue"
+                >
+                  <div className="radar-card-main">
+                    <div className="radar-card-topline">
+                      <span className="radar-card-tag">Bilateral</span>
+                      <span className="radar-card-dday">Active Call</span>
+                    </div>
+                    <h5 className="radar-card-name">Korea-Germany 2+2 Joint R&amp;D 2026</h5>
+                    <p className="radar-card-sub">KIAT × BMBF/DLR · AI &amp; DeepTech</p>
+                  </div>
+                  <div className="radar-card-footer">
+                    <span>Up to €350K / KRW 500M</span>
+                    <span>↗</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://fundingdb.123factory.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="radar-card radar-card-blue"
+                >
+                  <div className="radar-card-main">
+                    <div className="radar-card-topline">
+                      <span className="radar-card-tag">Eureka</span>
+                      <span className="radar-card-dday">D-5</span>
+                    </div>
+                    <h5 className="radar-card-name">CELTIC-NEXT Autumn Call 2026</h5>
+                    <p className="radar-card-sub">EUREKA Cluster · Next-Gen Telecom &amp; ICT</p>
+                  </div>
+                  <div className="radar-card-footer">
+                    <span>Up to €350K / KRW 500M</span>
+                    <span>↗</span>
+                  </div>
+                </a>
+              </div>
             </div>
+
             <div>
               <h3 style={{ fontSize: 'clamp(22px, 2.2vw, 32px)', fontWeight: 700, letterSpacing: '-0.03em', margin: '0 0 16px 0' }}>
                 fundingdb.123factory.de
@@ -1009,7 +1261,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="open-innovation" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">05 // Open Innovation Hub · Corporate Venture & Pilots</span>
+          <span className="startups-eyebrow">Corporate Venture &amp; Pilots</span>
           <h2 className="startups-display-h2">
             Find Your Next Corporate Partner in Europe
           </h2>
@@ -1183,7 +1435,7 @@ export default function StudioView() {
          ========================================================================= */}
       <section id="mobani" className="startups-section">
         <div className="startups-container">
-          <span className="startups-eyebrow">06 // Commercial Platform · European Market Entry</span>
+          <span className="startups-eyebrow">European Sales Infrastructure</span>
           <h2 className="startups-display-h2">
             Direct Commercial Expansion into Germany & France
           </h2>
@@ -1197,60 +1449,49 @@ export default function StudioView() {
             </p>
           </div>
 
-          {/* Mobani Showcase Card */}
-          <div className="mobani-highlight-card">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', marginBottom: '20px' }}>
-              <div>
-                <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#FFAB00', display: 'block', marginBottom: '4px' }}>
-                  European Sales Infrastructure
-                </span>
-                <h3 style={{ fontSize: 'clamp(24px, 2.5vw, 36px)', fontWeight: 700, letterSpacing: '-0.03em', margin: 0 }}>
-                  Mobani European Sales Platform
-                </h3>
-              </div>
-              <a
-                href="https://www.mobani.eu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="startups-btn-primary"
-                style={{ padding: '14px 28px', fontSize: '14px' }}
-              >
-                Visit mobani.eu ↗
-              </a>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', marginBottom: 'clamp(24px, 3vh, 36px)' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(10, 10, 10, 0.5)' }}>
+              Mobani European Sales Platform · mobani.eu
+            </span>
+            <a
+              href="https://www.mobani.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="startups-btn-primary"
+              style={{ padding: '14px 28px', fontSize: '14px' }}
+            >
+              Visit mobani.eu ↗
+            </a>
+          </div>
+
+          <div className="startups-photo-frame" style={{ margin: '0 0 clamp(48px, 6vh, 72px) 0' }}>
+            <img
+              src="/startups/startups-mobani.jpg"
+              alt="Mobani European Sales Execution"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="startups-deliverables-grid">
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">Germany & France Retail Access</h4>
+              <p className="startups-deliverable-desc">
+                Direct commercial matchmaking with top department stores, boutique retail chains, and major European e-commerce distribution channels.
+              </p>
             </div>
 
-            {/* Dedicated Photo Space for User's Upcoming Sales Photos */}
-            <div className="mobani-photo-slot">
-              <img
-                src="/startups/startups-traction.jpg"
-                alt="Mobani European Sales Execution"
-              />
-              <span className="startups-photo-caption" style={{ marginTop: '14px', textAlign: 'center' }}>
-                Mobani Sales Execution · Korean Fashion, B2C & B2B European Market Entry (Germany & France)
-              </span>
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">B2B & Enterprise Sourcing</h4>
+              <p className="startups-deliverable-desc">
+                Structured buyer meetings, trade showroom representation, localized contract negotiation, and continuous revenue pipeline management.
+              </p>
             </div>
 
-            <div className="startups-deliverables-grid" style={{ marginTop: '36px' }}>
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">Germany & France Retail Access</h4>
-                <p className="startups-deliverable-desc">
-                  Direct commercial matchmaking with top department stores, boutique retail chains, and major European e-commerce distribution channels.
-                </p>
-              </div>
-
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">B2B & Enterprise Sourcing</h4>
-                <p className="startups-deliverable-desc">
-                  Structured buyer meetings, trade showroom representation, localized contract negotiation, and continuous revenue pipeline management.
-                </p>
-              </div>
-
-              <div className="startups-deliverable-card">
-                <h4 className="startups-deliverable-title">Full Logistics & Tax Compliance</h4>
-                <p className="startups-deliverable-desc">
-                  Eliminating cross-border friction: EU VAT registration, customs clearance, local warehousing, and European fulfillment infrastructure.
-                </p>
-              </div>
+            <div className="startups-deliverable-card">
+              <h4 className="startups-deliverable-title">Full Logistics & Tax Compliance</h4>
+              <p className="startups-deliverable-desc">
+                Eliminating cross-border friction: EU VAT registration, customs clearance, local warehousing, and European fulfillment infrastructure.
+              </p>
             </div>
           </div>
         </div>
@@ -1263,9 +1504,8 @@ export default function StudioView() {
         <div className="startups-cta-wrap">
           <div className="startups-cta-grid">
             <div>
-              <span className="startups-eyebrow">Get Started // Global Scale</span>
               <h2 className="startups-cta-title">
-                Ready to scale across borders?
+                Ready to scale<br className="cta-line-break" />across borders?
               </h2>
             </div>
             <div className="startups-cta-actions">
