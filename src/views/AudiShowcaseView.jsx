@@ -3,34 +3,33 @@ import { Link } from 'react-router-dom';
 import portfolioData from '../data/portfolioData.json';
 
 // =========================================================================
-// GOOGLE DRIVE IR DECK LINK CONFIGURATION
-// Easily paste Google Drive URLs here for each startup.
-// If a URL is empty, an interactive slide preview & placeholder is shown.
+// OFFICIAL STARTUP WEBSITES
+// Directly linked to each startup's verified official homepage
 // =========================================================================
-export const IR_DECK_LINKS = {
-  // Mobility
-  banf: '',
-  perseus: '',
-  vtouch: '',
-  linetron: '',
-  mobilwithus: '',
-  smartride: '',
-  'klio-design': '',
+export const COMPANY_WEBSITES = {
+  // Mobility & SDV
+  banf: 'https://www.banf.ai',
+  perseus: 'https://www.cyberperseus.com',
+  vtouch: 'https://vtouch.io',
+  linetron: 'https://linetron.net',
+  mobilwithus: 'https://www.mobilwithus.com',
+  smartride: 'https://www.smartride.co.kr',
+  'klio-design': 'http://www.kliodesign.com',
 
   // Energy & Battery
-  abr: '',
-  poen: '',
-  vsion: '',
-  apgreen: '',
-  day1lab: '',
-  somuna: '',
+  abr: 'https://en.adbatteryrecycle.com',
+  poen: 'https://poen.co.kr',
+  vsion: 'https://vsion.global',
+  apgreen: 'https://apgreen.net',
+  day1lab: 'https://day1-lab.com',
+  somuna: 'https://somuna.co.kr',
 
   // AI & Deep Tech
-  'nota-ai': '',
-  visionspace: '',
-  trobai: '',
-  'ipin-labs': '',
-  'ait-studio': '',
+  'nota-ai': 'https://www.nota.ai',
+  visionspace: 'https://visionspace.co.kr',
+  trobai: 'https://www.trobai.com',
+  'ipin-labs': 'https://ipinlabs.com',
+  'ait-studio': 'https://aitstudio.co.kr',
 };
 
 // =========================================================================
@@ -203,17 +202,15 @@ export default function AudiShowcaseView() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCompany, setActiveCompany] = useState(null);
   const [activeTabInModal, setActiveTabInModal] = useState('overview');
-  const [deckModalCompany, setDeckModalCompany] = useState(null);
-  const [deckSlideIndex, setDeckSlideIndex] = useState(0);
-  const [copiedLink, setCopiedLink] = useState(false);
 
   // Filter curated companies from portfolioData.json
   const curatedList = useMemo(() => {
     const curatedKeys = Object.keys(CURATED_DETAILS);
     return portfolioData
-      .filter(item => curatedKeys.includes(item.id))
-      .map(item => ({
+      .filter((item) => curatedKeys.includes(item.id))
+      .map((item) => ({
         ...item,
+        website: COMPANY_WEBSITES[item.id] || '#',
         curated: CURATED_DETAILS[item.id],
       }))
       .sort((a, b) => {
@@ -228,7 +225,7 @@ export default function AudiShowcaseView() {
 
   // Filtered by Category & Search
   const filteredCompanies = useMemo(() => {
-    return curatedList.filter(company => {
+    return curatedList.filter((company) => {
       const matchesCat =
         selectedCategory === 'all' || company.curated.category === selectedCategory;
       if (!matchesCat) return false;
@@ -249,24 +246,20 @@ export default function AudiShowcaseView() {
     });
   }, [curatedList, selectedCategory, searchQuery]);
 
-  // Handle ESC key to close modals
+  // Handle ESC key to close modal
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        if (deckModalCompany) {
-          setDeckModalCompany(null);
-        } else if (activeCompany) {
-          setActiveCompany(null);
-        }
+      if (e.key === 'Escape' && activeCompany) {
+        setActiveCompany(null);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [deckModalCompany, activeCompany]);
+  }, [activeCompany]);
 
-  // Lock body scroll when any modal is open
+  // Lock body scroll when modal is open
   useEffect(() => {
-    if (activeCompany || deckModalCompany) {
+    if (activeCompany) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -274,16 +267,7 @@ export default function AudiShowcaseView() {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [activeCompany, deckModalCompany]);
-
-  // Copy link handler
-  const handleCopyDeckLink = (companyId) => {
-    const driveLink = IR_DECK_LINKS[companyId] || window.location.href;
-    navigator.clipboard.writeText(driveLink).then(() => {
-      setCopiedLink(true);
-      setTimeout(() => setCopiedLink(false), 2500);
-    });
-  };
+  }, [activeCompany]);
 
   return (
     <div className="audi-showcase-page">
@@ -432,7 +416,6 @@ export default function AudiShowcaseView() {
               {filteredCompanies.map((company) => {
                 const isMobility = company.curated.category === 'mobility';
                 const isEnergy = company.curated.category === 'energy';
-                const isAI = company.curated.category === 'ai';
 
                 const themeColor = isMobility
                   ? '#FFAB00'
@@ -511,7 +494,7 @@ export default function AudiShowcaseView() {
                       ))}
                     </div>
 
-                    {/* Card Actions Footer */}
+                    {/* Card Actions Footer: Deep Dive + Direct Website Link */}
                     <div className="audi-card-actions">
                       <button
                         className="audi-card-btn-primary"
@@ -525,17 +508,17 @@ export default function AudiShowcaseView() {
                         <span className="audi-btn-arrow">→</span>
                       </button>
 
-                      <button
-                        className="audi-card-btn-deck"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setDeckModalCompany(company);
-                          setDeckSlideIndex(0);
-                        }}
+                      <a
+                        href={company.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="audi-card-btn-website"
+                        onClick={(e) => e.stopPropagation()}
+                        title={`Visit ${company.name} official website`}
                       >
-                        <span className="audi-deck-icon">📄</span>
-                        IR Deck
-                      </button>
+                        <span className="audi-web-icon">🌐</span>
+                        Website ↗
+                      </a>
                     </div>
                   </div>
                 );
@@ -577,7 +560,7 @@ export default function AudiShowcaseView() {
       </section>
 
       {/* ===================================================================
-          MODAL 1: COMPANY DEEP DIVE MODAL
+          MODAL: COMPANY DEEP DIVE (WITH DIRECT WEBSITE ACTION)
           =================================================================== */}
       {activeCompany && (
         <div className="audi-modal-backdrop" onClick={() => setActiveCompany(null)}>
@@ -611,15 +594,15 @@ export default function AudiShowcaseView() {
               </div>
 
               <div className="audi-modal-header-actions">
-                <button
-                  className="audi-btn-deck-highlight"
-                  onClick={() => {
-                    setDeckModalCompany(activeCompany);
-                    setDeckSlideIndex(0);
-                  }}
+                <a
+                  href={activeCompany.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="audi-btn-web-highlight"
+                  title="Open official website in new tab"
                 >
-                  <span>📄 View IR Deck</span>
-                </button>
+                  <span>🌐 Visit Website ↗</span>
+                </a>
                 <button
                   className="audi-modal-close-btn"
                   onClick={() => setActiveCompany(null)}
@@ -792,206 +775,20 @@ export default function AudiShowcaseView() {
                 Close
               </button>
               <div className="audi-modal-footer-right">
-                <button
+                <a
+                  href={activeCompany.website}
+                  target="_blank"
+                  rel="noreferrer"
                   className="audi-btn-secondary"
-                  onClick={() => {
-                    setDeckModalCompany(activeCompany);
-                    setDeckSlideIndex(0);
-                  }}
                 >
-                  Open IR Pitch Deck ↗
-                </button>
+                  Visit Official Website ↗
+                </a>
                 <a
                   href={`mailto:hello@123factory.de?subject=PoC%20Inquiry%20-%20${encodeURIComponent(activeCompany.name)}`}
                   className="audi-btn-primary"
                 >
                   Request Technical Intro
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ===================================================================
-          MODAL 2: IR DECK VIEWER & GOOGLE DRIVE CONNECTOR
-          =================================================================== */}
-      {deckModalCompany && (
-        <div className="audi-modal-backdrop" onClick={() => setDeckModalCompany(null)}>
-          <div
-            className="audi-deck-modal-container"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Deck Header */}
-            <div className="audi-deck-header">
-              <div className="audi-deck-header-info">
-                <span className="audi-deck-confidential-tag">
-                  CONFIDENTIAL // AUDI VENTURE SCOUTING
-                </span>
-                <h3 className="audi-deck-title">
-                  {deckModalCompany.name} — Executive Pitch &amp; PoC Deck
-                </h3>
-              </div>
-              <button
-                className="audi-modal-close-btn"
-                onClick={() => setDeckModalCompany(null)}
-                title="Close"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Google Drive Status Bar */}
-            <div className="audi-deck-drive-bar">
-              <div className="audi-drive-status-left">
-                <span className="audi-drive-logo">▲</span>
-                <div className="audi-drive-texts">
-                  <strong>Google Drive Link:</strong>{' '}
-                  {IR_DECK_LINKS[deckModalCompany.id] ? (
-                    <span className="audi-drive-connected">Connected &amp; Ready</span>
-                  ) : (
-                    <span className="audi-drive-pending">Staged Placeholder (Ready for Drive URL)</span>
-                  )}
-                </div>
-              </div>
-
-              <div className="audi-drive-actions">
-                <button
-                  className="audi-deck-copy-btn"
-                  onClick={() => handleCopyDeckLink(deckModalCompany.id)}
-                >
-                  {copiedLink ? '✓ Copied!' : 'Copy Link'}
-                </button>
-
-                {IR_DECK_LINKS[deckModalCompany.id] ? (
-                  <a
-                    href={IR_DECK_LINKS[deckModalCompany.id]}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="audi-deck-open-btn"
-                  >
-                    Open in Google Drive ↗
-                  </a>
-                ) : (
-                  <button
-                    className="audi-deck-open-btn"
-                    onClick={() => {
-                      alert(
-                        `[Demo Mode] Real Google Drive link has not been linked yet for ${deckModalCompany.name}. Paste the URL into IR_DECK_LINKS['${deckModalCompany.id}'] in AudiShowcaseView.jsx to link it instantly.`
-                      );
-                    }}
-                  >
-                    Connect Drive Link ↗
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Interactive Presentation Slide Viewer Frame */}
-            <div className="audi-deck-viewer-frame">
-              {/* Slide 0: Executive Overview */}
-              {deckSlideIndex === 0 && (
-                <div className="audi-slide-content">
-                  <div className="audi-slide-badge">SLIDE 01 // EXECUTIVE SUMMARY</div>
-                  <h2 className="audi-slide-heading">{deckModalCompany.name}</h2>
-                  <p className="audi-slide-subheading">{deckModalCompany.summary}</p>
-
-                  <div className="audi-slide-card">
-                    <span className="audi-slide-label">AUDI INNOVATION FIT</span>
-                    <p className="audi-slide-text">{deckModalCompany.curated.audiRelevance}</p>
-                  </div>
-
-                  <div className="audi-slide-metrics">
-                    <div className="audi-slide-stat">
-                      <span className="stat-label">Category</span>
-                      <span className="stat-val">{deckModalCompany.curated.categoryLabel}</span>
-                    </div>
-                    <div className="audi-slide-stat">
-                      <span className="stat-label">Stage</span>
-                      <span className="stat-val">{deckModalCompany.badge || 'Venture Ready'}</span>
-                    </div>
-                    <div className="audi-slide-stat">
-                      <span className="stat-label">Origin</span>
-                      <span className="stat-val">Seoul, South Korea</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Slide 1: Technology & IP */}
-              {deckSlideIndex === 1 && (
-                <div className="audi-slide-content">
-                  <div className="audi-slide-badge">SLIDE 02 // PROPRIETARY IP &amp; ARCHITECTURE</div>
-                  <h2 className="audi-slide-heading">Core Technology Deep Dive</h2>
-                  <p className="audi-slide-body">
-                    {deckModalCompany.parsedSections && deckModalCompany.parsedSections['Technology & Product']
-                      ? deckModalCompany.parsedSections['Technology & Product']
-                      : deckModalCompany.summary}
-                  </p>
-
-                  <div className="audi-slide-pills">
-                    {deckModalCompany.curated.keyMetrics.map((km, i) => (
-                      <span key={i} className="audi-slide-pill">• {km}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Slide 2: Pilot / PoC Scope */}
-              {deckSlideIndex === 2 && (
-                <div className="audi-slide-content">
-                  <div className="audi-slide-badge">SLIDE 03 // AUDI PILOT &amp; POC PROPOSAL</div>
-                  <h2 className="audi-slide-heading">Enterprise Engagement Scope</h2>
-                  <p className="audi-slide-body highlight">
-                    {deckModalCompany.curated.pocScope}
-                  </p>
-
-                  <div className="audi-slide-card">
-                    <span className="audi-slide-label">VALIDATION BENCHMARK</span>
-                    <p className="audi-slide-text">{deckModalCompany.curated.oemValidation}</p>
-                  </div>
-                </div>
-              )}
-
-              {/* Slide 3: Commercial Traction & Roadmaps */}
-              {deckSlideIndex === 3 && (
-                <div className="audi-slide-content">
-                  <div className="audi-slide-badge">SLIDE 04 // TRACTION &amp; COLLABORATION</div>
-                  <h2 className="audi-slide-heading">Milestones &amp; Next Steps</h2>
-                  <p className="audi-slide-body">
-                    {deckModalCompany.parsedSections && deckModalCompany.parsedSections['Traction & References']
-                      ? deckModalCompany.parsedSections['Traction & References']
-                      : 'Commercial deployment underway with verified enterprise partnerships and technical certifications.'}
-                  </p>
-
-                  <div className="audi-slide-cta-banner">
-                    <span>Contact 123 Factory for full 20+ page unredacted data room and bilateral technical meetings.</span>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Slide Navigation Controls */}
-            <div className="audi-deck-footer">
-              <div className="audi-deck-counter">
-                Slide <strong>{deckSlideIndex + 1}</strong> of <strong>4</strong>
-              </div>
-
-              <div className="audi-deck-nav-buttons">
-                <button
-                  className="audi-btn-deck-nav"
-                  disabled={deckSlideIndex === 0}
-                  onClick={() => setDeckSlideIndex((prev) => Math.max(0, prev - 1))}
-                >
-                  ← Previous
-                </button>
-                <button
-                  className="audi-btn-deck-nav"
-                  disabled={deckSlideIndex === 3}
-                  onClick={() => setDeckSlideIndex((prev) => Math.min(3, prev + 1))}
-                >
-                  Next →
-                </button>
               </div>
             </div>
           </div>
@@ -1478,25 +1275,30 @@ export default function AudiShowcaseView() {
           transform: translateX(3px);
         }
 
-        .audi-card-btn-deck {
+        .audi-card-btn-website {
           display: inline-flex;
           align-items: center;
           justify-content: center;
           gap: 6px;
           background: rgba(255, 255, 255, 0.04);
-          color: rgba(255, 255, 255, 0.7);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: rgba(255, 255, 255, 0.85);
+          border: 1px solid rgba(255, 255, 255, 0.12);
           border-radius: 10px;
           padding: 10px 14px;
           font-size: 13px;
           font-weight: 600;
+          text-decoration: none;
           cursor: pointer;
           transition: all 0.2s ease;
         }
-        .audi-card-btn-deck:hover {
-          background: rgba(255, 255, 255, 0.12);
+        .audi-card-btn-website:hover {
+          background: rgba(255, 255, 255, 0.15);
           color: #FFFFFF;
-          border-color: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.3);
+          transform: translateY(-1px);
+        }
+        .audi-web-icon {
+          font-size: 13px;
         }
 
         /* -------------------------------------------------------------
@@ -1578,7 +1380,7 @@ export default function AudiShowcaseView() {
         }
 
         /* -------------------------------------------------------------
-           MODALS (DEEP DIVE & IR DECK)
+           MODALS (DEEP DIVE)
            ------------------------------------------------------------- */
         .audi-modal-backdrop {
           position: fixed;
@@ -1692,23 +1494,25 @@ export default function AudiShowcaseView() {
           gap: 12px;
         }
 
-        .audi-btn-deck-highlight {
+        .audi-btn-web-highlight {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: rgba(255, 171, 0, 0.15);
-          border: 1px solid rgba(255, 171, 0, 0.4);
-          color: #FFAB00;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          color: #FFFFFF;
           border-radius: 10px;
           padding: 8px 16px;
           font-size: 13px;
           font-weight: 700;
+          text-decoration: none;
           cursor: pointer;
           transition: all 0.2s ease;
         }
-        .audi-btn-deck-highlight:hover {
-          background: #FFAB00;
-          color: #000000;
+        .audi-btn-web-highlight:hover {
+          background: #FFFFFF;
+          color: #0A0A0A;
+          border-color: #FFFFFF;
         }
 
         .audi-modal-close-btn {
@@ -1933,11 +1737,13 @@ export default function AudiShowcaseView() {
           padding: 10px 18px;
           font-size: 13px;
           font-weight: 600;
+          text-decoration: none;
           cursor: pointer;
           transition: all 0.2s ease;
         }
         .audi-btn-secondary:hover {
           background: rgba(255, 255, 255, 0.15);
+          color: #FFFFFF;
         }
 
         .audi-btn-primary {
@@ -1955,273 +1761,6 @@ export default function AudiShowcaseView() {
         .audi-btn-primary:hover {
           background: #EDEDED;
           transform: translateY(-1px);
-        }
-
-        /* -------------------------------------------------------------
-           IR DECK VIEWER MODAL
-           ------------------------------------------------------------- */
-        .audi-deck-modal-container {
-          background: #111113;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          border-radius: 24px;
-          width: 100%;
-          max-width: 860px;
-          max-height: 92vh;
-          display: flex;
-          flex-direction: column;
-          box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9);
-          animation: audiModalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-          overflow: hidden;
-        }
-
-        .audi-deck-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 24px 30px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .audi-deck-confidential-tag {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          color: #FFAB00;
-          display: block;
-          margin-bottom: 4px;
-        }
-
-        .audi-deck-title {
-          font-size: 20px;
-          font-weight: 700;
-          color: #FFFFFF;
-          margin: 0;
-        }
-
-        .audi-deck-drive-bar {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 14px 30px;
-          background: rgba(255, 255, 255, 0.03);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          gap: 16px;
-          flex-wrap: wrap;
-        }
-
-        .audi-drive-status-left {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-        .audi-drive-logo {
-          color: #4DA2FF;
-          font-size: 18px;
-        }
-        .audi-drive-texts {
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.7);
-        }
-        .audi-drive-connected {
-          color: #3CC79B;
-          font-weight: 600;
-        }
-        .audi-drive-pending {
-          color: #FFAB00;
-        }
-
-        .audi-drive-actions {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .audi-deck-copy-btn {
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          color: rgba(255, 255, 255, 0.85);
-          border-radius: 8px;
-          padding: 6px 12px;
-          font-size: 12px;
-          font-weight: 600;
-          cursor: pointer;
-        }
-        .audi-deck-copy-btn:hover {
-          background: rgba(255, 255, 255, 0.12);
-        }
-
-        .audi-deck-open-btn {
-          background: #FFFFFF;
-          color: #0A0A0A;
-          border: none;
-          border-radius: 8px;
-          padding: 6px 14px;
-          font-size: 12px;
-          font-weight: 700;
-          text-decoration: none;
-          cursor: pointer;
-          transition: background 0.2s ease;
-        }
-        .audi-deck-open-btn:hover {
-          background: #EDEDED;
-        }
-
-        /* Slide Viewer Frame */
-        .audi-deck-viewer-frame {
-          padding: 40px;
-          background: #0D0D0E;
-          min-height: 380px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        .audi-slide-content {
-          animation: audiFadeIn 0.2s ease;
-        }
-
-        .audi-slide-badge {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          color: rgba(255, 255, 255, 0.4);
-          margin-bottom: 12px;
-        }
-
-        .audi-slide-heading {
-          font-size: clamp(26px, 3.2vw, 36px);
-          font-weight: 700;
-          letter-spacing: -0.02em;
-          color: #FFFFFF;
-          margin: 0 0 12px 0;
-        }
-
-        .audi-slide-subheading {
-          font-size: 17px;
-          line-height: 1.5;
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0 0 28px 0;
-        }
-
-        .audi-slide-body {
-          font-size: 16px;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
-          margin: 0 0 24px 0;
-        }
-        .audi-slide-body.highlight {
-          color: #3CC79B;
-          font-weight: 500;
-          background: rgba(60, 199, 155, 0.08);
-          border-left: 3px solid #3CC79B;
-          padding: 16px;
-          border-radius: 0 8px 8px 0;
-        }
-
-        .audi-slide-card {
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 12px;
-          padding: 16px 20px;
-          margin-bottom: 24px;
-        }
-        .audi-slide-label {
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          color: #FFAB00;
-          display: block;
-          margin-bottom: 6px;
-        }
-        .audi-slide-text {
-          font-size: 14px;
-          line-height: 1.5;
-          color: #FFFFFF;
-          margin: 0;
-        }
-
-        .audi-slide-metrics {
-          display: flex;
-          gap: 28px;
-          flex-wrap: wrap;
-        }
-
-        .audi-slide-stat {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-        .stat-label {
-          font-size: 11px;
-          color: rgba(255, 255, 255, 0.45);
-          text-transform: uppercase;
-        }
-        .stat-val {
-          font-size: 15px;
-          font-weight: 600;
-          color: #FFFFFF;
-        }
-
-        .audi-slide-pills {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-        .audi-slide-pill {
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.85);
-        }
-
-        .audi-slide-cta-banner {
-          background: rgba(255, 171, 0, 0.1);
-          border: 1px solid rgba(255, 171, 0, 0.3);
-          border-radius: 10px;
-          padding: 14px 18px;
-          font-size: 13px;
-          color: #FFAB00;
-        }
-
-        /* Slide Footer */
-        .audi-deck-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 18px 30px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.02);
-        }
-
-        .audi-deck-counter {
-          font-size: 13px;
-          color: rgba(255, 255, 255, 0.5);
-        }
-        .audi-deck-counter strong {
-          color: #FFFFFF;
-        }
-
-        .audi-deck-nav-buttons {
-          display: flex;
-          gap: 10px;
-        }
-
-        .audi-btn-deck-nav {
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          color: #FFFFFF;
-          border-radius: 8px;
-          padding: 8px 16px;
-          font-size: 13px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-        .audi-btn-deck-nav:hover:not(:disabled) {
-          background: #FFFFFF;
-          color: #0A0A0A;
-        }
-        .audi-btn-deck-nav:disabled {
-          opacity: 0.3;
-          cursor: not-allowed;
         }
 
         .audi-empty-state {

@@ -17,9 +17,9 @@ Create a dedicated, confidential-grade corporate innovation showcase page for an
      1) **Mobility & SDV**: Sensors, SDV hypervisor virtualization, contactless in-cabin UI, automotive cybersecurity, and automated ECU testing.
      2) **Energy & Battery Circularity**: Direct lithium-ion battery recycling, second-life EV battery diagnosis & ESS, and switchable solar smart glass.
      3) **Edge & Industrial AI**: On-device AI model compression for ADAS/DMS, physical AI digital twin factory simulation, and neuro-symbolic decision engines.
-4. **Interactive Deep Dive & IR Deck Experience**:
+4. **Interactive Deep Dive & Official Website Links**:
    - Provide an in-depth modal for each company featuring automotive/Audi strategic fit, core technology architecture, proposed pilot/PoC scope, and OEM validation references.
-   - Include an interactive IR Pitch Deck modal with multi-slide presentation previews and Google Drive URL integration (with placeholder support for later configuration).
+   - Connect and link directly to each startup's verified official website URL on the card and inside the Deep Dive modal.
 
 ## Changes
 
@@ -27,9 +27,8 @@ Create a dedicated, confidential-grade corporate innovation showcase page for an
   - Created a comprehensive showcase view featuring 18 curated deep-tech companies (7 Mobility, 6 Energy, 5 AI).
   - Built an interactive control bar with category filter tabs and real-time keyword search.
   - Added enriched metadata (`CURATED_DETAILS`) specifying Audi strategic fit, OEM/Tier-1 validation benchmarks, and tailored PoC scopes for every startup.
-  - Implemented `IR_DECK_LINKS` configuration map for seamless Google Drive URL linking.
+  - Sourced and connected verified official website URLs for all 18 startups (`COMPANY_WEBSITES`) with direct `Website ↗` external links on both cards and modals.
   - Built a 4-tab Company Deep-Dive modal (Overview & Audi Fit, Technology & Architecture, Proposed PoC, Traction & References).
-  - Built an interactive 4-slide IR Deck Viewer modal with slide controls, confidential header, and Google Drive connect/copy actions.
 - `src/components/GiantStatementBanner.jsx`:
   - Enhanced the word "startups." in `KineticOption` to render as a React Router `<Link to="/audi">` with subtle hover lift and amber glow, allowing seamless navigation from the main hero.
 - `src/App.jsx`:
@@ -42,5 +41,5 @@ Create a dedicated, confidential-grade corporate innovation showcase page for an
   - Confirmed `/audi` loads with executive hero, metrics bar, and filter tabs.
   - Confirmed category filtering and search input function smoothly.
   - Confirmed Deep-Dive modal renders company details, tabs, and action buttons.
-  - Confirmed IR Deck modal opens, navigates through presentation slides, and supports Google Drive link copying.
+  - Confirmed each startup's `Website ↗` button connects to its verified official homepage (e.g. BANF -> banf.ai, ABR -> en.adbatteryrecycle.com, Perseus -> cyberperseus.com, etc.).
 - Scanned changes for secrets and personal data; no credentials or sensitive PII included.
